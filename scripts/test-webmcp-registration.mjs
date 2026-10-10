@@ -35,5 +35,23 @@ const cleanupAsync = await registerArticleTools({
 }, 'https://example.org');
 await cleanupAsync();
 assert.equal(asynchronous.size, 0, 'async cleanup must finish before resolving');
+// A second registration must not silently overwrite tools in a strict registry.
+const strict = new Map();
+const strictContext = {
+  registerTool: tool => {
+    if (strict.has(tool.name)) throw new Error('duplicate tool: ' + tool.name);
+    strict.set(tool.name, tool);
+  },
+  unregisterTool: name => { strict.delete(name); },
+};
+const firstCleanup = await registerArticleTools(strictContext, 'https://example.org');
+await assert.rejects(() => registerArticleTools(strictContext, 'https://example.org'), /duplicate tool/);
+assert.equal(strict.size, 2, 'duplicate registration must not corrupt existing tools');
+await firstCleanup();
+assert.equal(strict.size, 0, 'cleanup after rejected duplicate must remove original tools');
+const remountCleanup = await registerArticleTools(strictContext, 'https://example.org');
+assert.equal(strict.size, 2, 'registration after cleanup must succeed');
+await remountCleanup();
+assert.equal(strict.size, 0, 'remount cleanup must complete');
 delete globalThis.__testArticleTools;
 console.log('WebMCP registration, execution, cleanup and rollback checks passed');
