@@ -18,6 +18,12 @@ try {
       if (!(await navigation.count())) { failed = true; console.error(route, viewport.width, 'missing primary navigation'); }
       const main = page.locator('main');
       if (!(await main.count())) { failed = true; console.error(route, viewport.width, 'missing main landmark'); }
+      await page.keyboard.press('Tab');
+      const focused = await page.evaluate(() => {
+        const el = document.activeElement;
+        return !!el && el !== document.body && el !== document.documentElement;
+      });
+      if (!focused) { failed = true; console.error(route, viewport.width, 'keyboard Tab did not focus an element'); }
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
       if (overflow) { failed = true; console.error(route, viewport.width, 'horizontal page overflow'); }
       if (route === '/') {
