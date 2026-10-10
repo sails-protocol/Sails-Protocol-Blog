@@ -96,3 +96,7 @@ Substantive decision/failure narratives added to **9 canonical language editions
 ## Wave A closure of source-backed corrections — 2026-10-10
 
 Article **13** EN/PT-BR/ES received a substantive adversarial-provider authority/destination-binding narrative. Previously uncorrected Wave A articles **29** and **34** received pinned-source implementation boundaries, failure cases and test questions in all three languages (**6 new source-backed editions**). Cumulative source-backed correction coverage is now **19 distinct numbered articles / 57 canonical language editions** out of 48/144. This is *coverage of corrections*, not G1/G2 acceptance. The article 29 and 34 additions cite the historical pinned Protocol commit, not current-HEAD runtime proof. Browser Gate, CTO review and publication remain blocked; no merge.
+
+## Correction pass — articles 06 and 08 (2026-10-10)
+
+Six canonical editions received source-ledger localization, consistent maturity disclosures and removal of an accidental Spanish phrase from Portuguese. Article **06** EN/PT-BR/ES additionally replaced a broad claim that engineering reviews already include real database/concurrency/crash tests with the narrower source-inspected contract and an explicit requirement for exact-revision runtime evidence. This is a **claim-precision correction**, not G1/G2 approval. Source-backed coverage remains 19 articles / 57 editions; no tests or browser gate were executed.
