@@ -14,9 +14,9 @@ La idempotencia significa que repetir la misma operación prevista no produce un
 
 Una clave de API o un identificador de solicitud ayuda, pero no lo resuelve todo. Imaginemos que un servicio registra una operación completada y cae antes de responder. Tras reiniciar, un reintento debe encontrar el resultado anterior y no aplicar la liquidación de nuevo. Eso exige estado duradero y un límite transaccional claro.
 
-## Cómo abordamos el problema
+## La decisión de ingeniería
 
-En Sails P2P Trading SDK tratamos los reintentos como una cuestión de corrección económica. Nuestras revisiones incluyen escenarios con base de datos real, solicitudes concurrentes y pruebas de caída y recuperación. Las garantías exactas dependen de la operación, el adaptador y la evidencia aprobada para cada implementación. No llamaremos exactly-once a un flujo solo porque pasó una prueba unitaria.
+El SDK y el servicio inspeccionados implementan un contrato de idempotencia delimitado para crear operaciones. Inspeccionar ese código no equivale a garantizar su comportamiento en producción: la concurrencia con base de datos real, la recuperación tras caídas y la persistencia de claves en el cliente requieren evidencia de la revisión exacta probada. Una prueba unitaria aislada no demuestra efectos económicos exactly-once.
 
 ## Contrato concreto en el SDK de Sails
 
