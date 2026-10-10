@@ -1,0 +1,38 @@
+name: Browser accessibility audit
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  accessibility:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install locked site dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Build site
+        run: npm run build
+        env:
+          SITE_URL: https://sails-protocol-blog.netlify.app
+      - name: Install audit-only browser dependencies without modifying lockfile
+        run: npm install --no-save --package-lock=false --ignore-scripts --no-audit --no-fund playwright@1.56.1 @axe-core/playwright@4.10.2
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Start local preview
+        run: |
+          node_modules/.bin/docusaurus serve --host 127.0.0.1 --port 3000 --no-open > /tmp/blog-preview.log 2>&1 &
+          for i in $(seq 1 60); do
+            if curl --fail --silent http://127.0.0.1:3000/ >/dev/null; then exit 0; fi
+            sleep 2
+          done
+          cat /tmp/blog-preview.log
+          exit 1
+      - name: Audit core routes with axe
+        run: node scripts/test-a11y.mjs
