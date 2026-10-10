@@ -23,3 +23,20 @@ En Sails P2P Trading SDK tratamos los reintentos como una cuestión de correcci�
 En el próximo artículo veremos un problema relacionado, pero distinto: ¿qué ocurre cuando dos solicitudes llegan al mismo tiempo, antes de que una pueda observar el resultado de la otra?
 
 *Fuentes pendientes: enlazar commits inmutables, decisiones del CTO y pruebas antes de publicar.*
+
+## Contrato concreto en el SDK de Sails
+
+El método `OpenP2P.trade(offerId, amount, idempotencyKey?)` del SDK inspeccionado envía la clave opcional a `POST /v1/openp2p/trades`. La ruta valida una clave no vacía de hasta 200 caracteres y la pasa, junto con el participante autenticado, a `TradeService.createTrade()`. El servicio delimita el intento por el alcance `openp2p.trade.create`, el participante y los datos de oferta e importe. **Sin la clave, un reintento puede crear otra operación**; el propio SDK indica generar una clave por aceptación lógica y reutilizarla en los reintentos de esa aceptación. Una nueva aceptación deliberada requiere una clave nueva.
+
+**Escenario adversarial:** la operación se persiste, pero la respuesta caduca. La interfaz genera otra clave para cada reintento. Bajo este contrato, el servidor no puede reconocerlos como el mismo intento. **Límite:** se inspeccionó el código, pero no se certificó el comportamiento de todas las aplicaciones ni las pruebas de reinicio con Postgres.
+
+**Siguiente pregunta:** ¿qué aplicaciones conservan la clave del intento lógico tras reinicios y trabajo sin conexión?
+
+### Source ledger and maturity
+
+- [SDK method](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/packages/sails-sdk/src/modules/openp2p.ts)
+- [HTTP route](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.routes.ts)
+- [Trade service](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts)
+- [Common idempotency mechanism](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/common/idempotency.ts)
+
+*Source-inspected only. No new runtime verification, CTO approval or publication authorization.*
