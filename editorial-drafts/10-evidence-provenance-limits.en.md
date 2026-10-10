@@ -18,6 +18,14 @@ In our OpenProof work, we have defined policies for inline evidence and provider
 
 Evidence is also not truth by decree. A valid upload proves that a permitted actor submitted data under certain constraints. Whether that data establishes a payment, an agreement or misconduct remains a separate question for the relevant verification and dispute process.
 
+## Decision: authenticate the evidence, not the alleged payment
+
+A signed SHA-256 digest can bind uploaded bytes to a registered signing key. It cannot establish that the depicted transfer happened. The inspected `ProofService.attachEvidence()` checks claim access before accepting signed media; the provider records storage metadata, which is not independent settlement truth. A screenshot may be genuine and still misleading.
+
+## Failure: correct signature, wrong claim
+
+Consider a valid signature attached to an unrelated participant's proof. Cryptographic validity alone cannot authorize the attachment. The economic-scope check must reject it before storage. A separate abuse path is a very large or deeply nested payload: policy limits must be enforced before expensive canonicalization, hashing or persistence. Published limits and their exact enforcement are different evidence levels; do not equate them without current-head boundary tests.
+
 ## Conceptual diagram
 
 ```mermaid
