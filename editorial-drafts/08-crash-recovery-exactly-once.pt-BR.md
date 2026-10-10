@@ -26,17 +26,15 @@ O módulo comum de idempotência examinado distingue a criação durável dos ef
 
 **Próxima pergunta:** quais testes com Postgres real, reinício no SHA exato, evidências de outbox e recibos de provedores comprovam a recuperação de cada operação?
 
-### Source ledger and maturity
+### Fontes e nível de comprovação
 
-- [SDK method](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/packages/sails-sdk/src/modules/openp2p.ts)
-- [HTTP route](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.routes.ts)
-- [Trade service](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts)
-- [Common idempotency mechanism](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/common/idempotency.ts)
+- [Método do SDK](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/packages/sails-sdk/src/modules/openp2p.ts)
+- [Rota HTTP](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.routes.ts)
+- [Serviço de negociação](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts)
+- [Mecanismo comum de idempotência](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/common/idempotency.ts)
 
-*Source-inspected only. No new runtime verification, CTO approval or publication authorization.*
+*Somente inspeção de código. Sem nova verificação em execução, aprovação do CTO ou autorização de publicação.*
 
 ## Leia a seguir
 
 No próximo artigo vamos sair do comportamento dos processos e falar de pessoas e permissões: saber quem alguém é não significa saber o que ela pode fazer.
-
-
