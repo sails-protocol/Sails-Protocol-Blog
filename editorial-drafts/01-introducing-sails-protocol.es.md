@@ -25,3 +25,9 @@ Este blog seguirá el mismo método que utilizamos para construir: hacer pregunt
 En el próximo artículo veremos por qué los mercados P2P necesitan coordinación y qué hacen bien las plataformas que ya existen.
 
 *Revisión técnica pendiente. Las afirmaciones sobre implementación y madurez deben verificarse con el repositorio y la evidencia aprobada por el CTO antes de publicar.*
+
+## Límite de evidencia y fallo
+
+Visión, obligaciones y evidencia ejecutable tienen madurez distinta. **Fallo:** interpretar arquitectura o código inspeccionado como prueba de producción. Faltan pruebas del HEAD exacto y aprobación.
+
+- [PROTOCOL_INVARIANTS.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROTOCOL_INVARIANTS.md)
