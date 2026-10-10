@@ -80,3 +80,7 @@ This is a **cross-cutting institutional track**, not an automatic eighth season 
 ## Identity, naming and transport research dossier (2026-10-10)
 
 Added `editorial-drafts/research-identity-naming-transport.en.md` covering Spaces Protocol, Pubky, Nostr, Pear/P2P primitives and Iroh. This is **not** a completed integration claim or a new approved numbered article. Its verified upstream source links and questions feed articles 09, 13, 21, 30, 34 and 38. Next gate: verify the Sails implementation status and explicit identity/transport contracts at immutable source refs; then decide whether a standalone Day 0 article is necessary or whether the existing 48 topics adequately cover it. Preserve the seven-season baseline unless an owner/CTO scope decision changes it.
+
+## Modular placement decision: identity and transport (2026-10-10)
+
+Read [EDITORIAL-MODULAR-IDENTITY-TRANSPORT-MAP.md](./EDITORIAL-MODULAR-IDENTITY-TRANSPORT-MAP.md). Organize Spaces, Pubky and Nostr key/identity concerns under OpenIdentity; Pear, Iroh and Nostr message delivery under the cross-cutting Sails Node transport adapter layer; signed evidence under OpenProof; verified portable outcomes under OpenReputation; economic authority under OpenP2P/Trading SDK; external payment interpretation under OpenSettlement. OpenLiquidity/OpenAgents may consume these interfaces when developed. **This is a proposed editorial mapping, not confirmation of implementation or CTO approval.** Keep the seven-season baseline and enrich existing articles rather than create duplicate technology posts.
