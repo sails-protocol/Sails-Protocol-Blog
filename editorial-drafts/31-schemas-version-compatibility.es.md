@@ -15,3 +15,9 @@ Los esquemas son contratos ejecutables solo cuando la validación se aplica en e
 Las afirmaciones de compatibilidad requieren pruebas con fixtures entre versiones y políticas de migración precisas. Los nombres de paquetes, versiones de esquemas y matrices de soporte deben comprobarse en el código antes de publicar una tabla.
 
 *Verificación de fuentes y referencias exactas de API pendientes.*
+
+## Límite examinado en el código
+
+La conformidad acotada del álgebra no demuestra composición del ruleset ni compatibilidad universal. Un límite documentado no es prueba de ejecución del HEAD actual; hay que probar el fallo contra estado duradero antes de afirmar madurez.
+
+- [CONDITION_ALGEBRA_CONFORMANCE_EVIDENCE.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/CONDITION_ALGEBRA_CONFORMANCE_EVIDENCE.md)
