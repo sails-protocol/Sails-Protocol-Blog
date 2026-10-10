@@ -30,10 +30,10 @@ O primeiro lugar em que estamos colocando essa abordagem à prova é o Sails P2P
 
 No próximo texto, vamos conhecer os componentes da arquitetura e entender por que separamos protocolo, núcleo semântico, nós, SDKs e aplicações.
 
-*Revisão técnica pendente. Este artigo apresenta a motivação do projeto, não uma garantia de funcionalidades implementadas ou prontidão para produção.*
-
 ## Fronteira de evidência e falha
 
 Autorização e estado durável são responsabilidades concretas do serviço, não prova de coordenação entre plataformas. **Falha:** interpretar arquitetura ou código examinado como comprovação de produção. Ainda faltam testes no HEAD exato e aprovação.
 
 - [trade.service.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts)
+
+*Revisão técnica pendente. Este artigo apresenta a motivação do projeto, não uma garantia de funcionalidades implementadas ou prontidão para produção.*
