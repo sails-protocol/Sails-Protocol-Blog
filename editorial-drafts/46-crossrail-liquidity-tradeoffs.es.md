@@ -15,3 +15,17 @@ Separe cotización, ejecución de swap, custodia de puentes o proveedores, polí
 Un proveedor confirma la cotización, pero falla antes del swap. La recuperación debe conservar el último estado confirmado y mostrar el riesgo residual. No publique una matriz de redes admitidas sin verificar los adaptadores.
 
 *No production implementation or publication approval is asserted.*
+
+## Límite comprobado en el código: mapear activos no crea un puente
+
+El mapeo predeterminado de escrow inspeccionado es `BTC → MULTISIG`, `LN_BTC → LIGHTNING_HODL` y `USDT_ERC20 → WDK_USDT_EVM`. Son recomendaciones del código, **no** evidencia de aptitud para producción; el proveedor WDK declara expresamente que no es apto. Otros activos carecen de mapeo predeterminado real en este registro.
+
+La construcción de comisiones también está declarada solo para MULTISIG. Varios proveedores no prueban swap atómico entre cadenas, finalidad compartida ni enrutamiento de liquidez desplegado. Verifique por separado puente externo, cotización, custodia y recuperación.
+
+### Fuente primaria y revisión
+
+- [Provider registry, custody metadata, default asset routing and fee capability](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts)
+- [WDK custody](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/wdk-settlement.provider.ts)
+- [SAFE_GUARD_EVM verification limits](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/safe-guard-evm.provider.ts)
+
+*Source-inspected editorial correction; CTO approval, deployment verification and production publication remain pending.*
