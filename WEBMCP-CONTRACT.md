@@ -1,6 +1,6 @@
 # WebMCP Day-0 contract
 
-**Status:** Source and mocked lifecycle tests passed CI #76; real-browser validation remains outstanding. Day-0 release blocker.
+**Status:** Source and mocked lifecycle tests passed CI #94 (commit `8054a44`); browser accessibility audit #38 also passed on that commit. Real-browser WebMCP validation remains outstanding and is a Day-0 release blocker.
 
 WebMCP is a browser-native API, not an HTTP MCP server. The blog registers tools through `document.modelContext.registerTool` using an `AbortController` signal passed as the second argument to `registerTool`, following the Chrome Imperative API documentation. Aborting that signal unregisters the tools. Browsers without the API retain the ordinary site. Browsers without WebMCP continue to serve normal HTML, RSS and sitemap.
 
@@ -15,7 +15,7 @@ The article catalogue is generated from top-level `articles/*.md(x)` frontmatter
 
 ## Required validation before release
 1. CI passes TypeScript and production build.
-2. In a compatible Chrome build with WebMCP testing enabled, open the preview and inspect the available browser WebMCP developer tooling for registered tools (do not assume a `getTools()` method exists without confirming the browser API).
+2. In a compatible Chrome build with WebMCP testing enabled, open the preview and inspect the native `document.modelContext` API and use supported browser WebMCP developer tooling to discover registered tools. Verify the actual availability and signatures of `getTools()` and `executeTool()` against the browser build rather than relying on mocks.
 3. Confirm both tool names, input schemas and `readOnlyHint` annotations.
 4. Execute list, matching search, no-match search and invalid-input cases. Verify expected URLs and no side effects.
 5. Verify that browsers without WebMCP still render the site normally.
