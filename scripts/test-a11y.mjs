@@ -5,7 +5,8 @@ const browser = await chromium.launch({headless: true});
 let failed = false;
 try {
   for (const route of ['/', '/articles/', '/articles/what-is-sails-protocol']) {
-    const page = await browser.newPage({viewport: {width: 1280, height: 800}});
+    const context = await browser.newContext({viewport: {width: 1280, height: 800}});
+    const page = await context.newPage();
     try {
       const response = await page.goto(new URL(route, base).href, {waitUntil: 'networkidle'});
       if (!response?.ok()) throw new Error(route + ': HTTP ' + response?.status());
@@ -16,7 +17,7 @@ try {
           console.error(route, violation.id, violation.impact, violation.nodes.map(n => n.target).join(', '));
         }
       } else console.log(route, 'axe WCAG 2.1 AA: no detected violations');
-    } finally { await page.close(); }
+    } finally { await context.close(); }
   }
 } finally { await browser.close(); }
 if (failed) process.exitCode = 1;
