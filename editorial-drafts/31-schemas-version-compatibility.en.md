@@ -15,3 +15,9 @@ Schemas are executable contracts only when validation is enforced at the relevan
 Compatibility claims need fixture-based tests across versions and precise migration policies. Package names, schema versions and supported matrices must be checked in the source before publishing a compatibility table.
 
 *Source verification and exact API references pending.*
+
+## Source-inspected boundary
+
+Bounded algebra conformance is not published ruleset composition or universal compatibility. A documented boundary is not exact-head runtime proof; test the stated failure against durable state before asserting readiness.
+
+- [CONDITION_ALGEBRA_CONFORMANCE_EVIDENCE.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/CONDITION_ALGEBRA_CONFORMANCE_EVIDENCE.md)
