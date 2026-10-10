@@ -19,14 +19,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Install dependencies
-        run: |
-          if [ -f package-lock.json ]; then
-            npm ci --no-audit --no-fund
-          else
-            echo '::warning::REPRODUCIBILITY BLOCKER: package-lock.json missing; using npm install for diagnostic CI only.'
-            npm install --no-audit --no-fund
-          fi
+      - name: Install dependencies from lockfile
+        run: npm ci --no-audit --no-fund
       - name: Verify article catalogue matches source
         run: npm run check:articles
       - name: Verify WebMCP static contract
