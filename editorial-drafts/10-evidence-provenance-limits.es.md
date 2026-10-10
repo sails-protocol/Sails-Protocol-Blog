@@ -18,6 +18,14 @@ En el trabajo con OpenProof definimos políticas para evidencias inline y refere
 
 Una evidencia tampoco se convierte en verdad por decreto. Una carga válida demuestra que un actor autorizado presentó datos dentro de ciertos límites. Determinar si esos datos prueban un pago, un acuerdo o una conducta indebida sigue siendo una cuestión distinta para el proceso de verificación y disputa.
 
+## Decisión: autenticar la evidencia no autentica el pago
+
+Una firma sobre el digest SHA-256 puede vincular los bytes enviados a la clave registrada del firmante. No demuestra que la transferencia representada ocurrió. El `ProofService.attachEvidence()` inspeccionado verifica el acceso a la reclamación antes de aceptar medios firmados; el proveedor registra metadatos de almacenamiento, no la verdad independiente del pago. Una captura puede ser auténtica y engañosa a la vez.
+
+## Fallo: firma correcta, reclamación equivocada
+
+Una firma válida puede intentar adjuntarse a la prueba de otro participante. La validez criptográfica no autoriza esa asociación. La comprobación de alcance económico debe rechazarla antes de almacenar nada. Otro ataque utiliza cargas enormes o profundamente anidadas: los límites deben aplicarse antes de operaciones costosas de canonicalización, hash o persistencia. Definir límites y demostrar su aplicación en el HEAD actual son evidencias distintas.
+
 ## Diagrama conceptual
 
 ```mermaid
