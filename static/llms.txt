@@ -3,8 +3,8 @@
 > Editorial articles about open peer-to-peer economic coordination. This is not normative protocol documentation or a statement of production readiness.
 
 - [Articles](https://sails-protocol-blog.netlify.app/articles/): Technical and editorial writing
-- [Introduction](https://sails-protocol-blog.netlify.app/articles/what-is-sails-protocol): Conceptual introduction
+- [Introduction](https://sails-protocol-blog.netlify.app/articles/what-is-sails-protocol/): Conceptual introduction
 - [Protocol source of truth](https://github.com/sails-protocol/Sails-Protocol): Repository with implementation and technical decisions
-- [Editorial policy](https://github.com/sails-protocol/Sails-Protocol-Blog/blob/main/EDITORIAL-POLICY.md): Publication rules
+- [Editorial policy](https://github.com/sails-protocol/Sails-Protocol-Blog/blob/feat/blog-foundation-02/EDITORIAL-POLICY.md): Publication rules
 
 For claims about security, escrow, settlement, custody or readiness, verify the underlying implementation and CTO-approved evidence.
