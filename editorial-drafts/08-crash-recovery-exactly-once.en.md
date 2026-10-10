@@ -38,5 +38,3 @@ The inspected common idempotency module distinguishes a durable create from post
 ## Read next
 
 In the next article we turn from process behavior to people and permissions: knowing who someone is does not automatically tell us what they are allowed to do.
-
-
