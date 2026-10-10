@@ -35,3 +35,17 @@ flowchart TD
 The diagram is conceptual and does not establish implemented security guarantees.
 
 *Pending: immutable source references, threat model, verification evidence and CTO approval.*
+
+## A malicious provider is not just an unavailable provider
+
+The threat model explicitly warns that a protocol invariant is not an inherited deployment mitigation. A malicious operator can lie about provider receipts, omit data, or selectively present its own database associations. The Durable Protocol Truth investigation identifies a missing independently verifiable link between Outcome and DestinationBinding. Provider substitution evidence supports selected economic-meaning properties, not universal provider equivalence or full K3 conformance.
+
+**Adversarial exercise:** replace a settlement provider with one returning plausible but contradictory observations; require independently checkable destination evidence and fail-closed handling. This scenario is a proposed test, not a recorded PASS.
+
+### Source and maturity
+
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/DURABLE_PROTOCOL_TRUTH_EVIDENCE.md
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROVIDER_SUBSTITUTION_INVARIANCE_EVIDENCE.md
+
+*Historical evidence/source inspection only; no latest-head test or publication approval.*
