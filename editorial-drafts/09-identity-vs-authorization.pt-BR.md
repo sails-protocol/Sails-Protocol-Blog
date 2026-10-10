@@ -29,7 +29,6 @@ flowchart TD
 
 Este diagrama ilustra um princípio de projeto, não um comportamento de execução verificado.
 
-*Referências técnicas e aprovação pendentes.*
 
 ## Distinção comprovada: provar a chave não concede autorização
 
