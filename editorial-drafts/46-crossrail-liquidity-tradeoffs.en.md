@@ -15,3 +15,17 @@ Distinguish quoting, swap execution, bridge/provider custody, confirmation polic
 A provider confirms a quote but fails before completing a swap. Recovery must preserve the last confirmed state and disclose residual counterparty risk. Do not publish a supported-network matrix until exact adapters are verified.
 
 *No production implementation or publication approval is asserted.*
+
+## Source-backed boundary: mapped assets are not a universal bridge
+
+The inspected default escrow mapping is `BTC → MULTISIG`, `LN_BTC → LIGHTNING_HODL` and `USDT_ERC20 → WDK_USDT_EVM`. These are source-defined recommendations, **not** evidence that every mapping is eligible for production; the WDK provider explicitly says it is not. Other assets have no real default escrow mapping in this registry.
+
+Likewise, fee construction is presently declared only for MULTISIG. Do not infer an atomic cross-chain swap, shared finality or deployed liquidity routing from the existence of several settlement providers. Verify each external bridge, quote, custody and rollback boundary separately.
+
+### Primary source and review status
+
+- [Provider registry, custody metadata, default asset routing and fee capability](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts)
+- [WDK custody](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/wdk-settlement.provider.ts)
+- [SAFE_GUARD_EVM verification limits](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/safe-guard-evm.provider.ts)
+
+*Source-inspected editorial correction; CTO approval, deployment verification and production publication remain pending.*
