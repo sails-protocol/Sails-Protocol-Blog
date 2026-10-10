@@ -52,3 +52,7 @@ See [EDITORIAL-AUDIT-WAVE-A-2026-10-10.md](./EDITORIAL-AUDIT-WAVE-A-2026-10-10.m
 ## Provider-level audit and editorial corrections (2026-10-10)
 
 Read [EDITORIAL-AUDIT-CUSTODY-IDEMPOTENCY-MATRIX.md](./EDITORIAL-AUDIT-CUSTODY-IDEMPOTENCY-MATRIX.md). Source-inspected WDK EVM reference custody, Bitcoin MULTISIG client signature collection, Arkade LIGHTNING_HODL testnet scope, and optional `createTrade` idempotency key. Prepared three source-backed editorial companion drafts at `editorial-drafts/deep-revisions/06-43-idempotency-escrow-source-audit.{en,pt-BR,es}.md`. They are **not** approved replacements for the canonical articles. Material custody language and deployment-status verification remain open; no tests executed.
+
+## Wave A continued: SDK/route propagation and rail gates (2026-10-10)
+
+[EDITORIAL-AUDIT-WAVE-A-ROUTING-2026-10-10.md](./EDITORIAL-AUDIT-WAVE-A-ROUTING-2026-10-10.md) records source-backed findings A-05 through A-08: optional trade idempotency forwarded SDK → route → service; SAFE_GUARD_EVM as a fourth real provider with an explicit live-infrastructure verification limitation; asset-specific recommended escrow mappings; fee collection capable only for MULTISIG in the inspected registry; and dual-approval flag default false unless explicitly enabled. These are scoped code observations, not a deployment or end-to-end certification. G1/G2 remain open.
