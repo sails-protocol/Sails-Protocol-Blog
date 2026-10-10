@@ -2,17 +2,21 @@
 
 *Rascunho editorial. Temporada 4. Publicação não aprovada.*
 
-## A questão
+## A pergunta
 
- 
+O que um sistema comprova quando alguém envia um recibo? Um arquivo pode ser autêntico e pertencer a outro pagamento. Autenticidade dos bytes não é verdade da alegação.
 
-## Direção de projeto
+## A fronteira e a decisão
 
-m
+OpenProof busca registrar evidências atribuíveis sem transformar armazenamento em oráculo de liquidação. No serviço examinado, Ed25519 vincula o digest SHA-256 da mídia a uma chave, e o acesso à alegação é verificado. Isso ajuda a estabelecer procedência, mas não comprova que uma transferência foi liquidada. Evidências maiores ou não inline seguem o caminho do EvidenceProvider, cujos limites exigem verificação própria.
 
-## Evidência antes das afirmações
+## Falha e verificação
 
-n
+Um comprador envia um comprovante autêntico de outra transferência. A assinatura é válida, mas o vendedor não recebeu. Procedência, relevância e confirmação externa precisam permanecer separadas. Outro risco é aceitar evidência grande demais antes dos limites de recursos. Testes no HEAD exato devem comprovar rejeição sem efeitos econômicos, de armazenamento ou eventos posteriores; nenhum novo teste foi executado aqui.
+
+## Próxima pergunta
+
+Quem pode enviar cada referência e qual autoridade independente conecta a evidência ao pagamento real?
 
 ## Fluxo conceitual
 
