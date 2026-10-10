@@ -27,3 +27,9 @@ flowchart TD
 Text equivalent: the diagram shows the responsibility boundaries discussed above, not verified deployment.
 
 *Source references, technical review and owner publication approval pending.*
+
+## Inspected boundary and failure
+
+Private visibility is not immunity from collusion or unauthorized transitions. **Failure:** overstating design as verified deployment. The pinned source supports only the stated scope; runtime and CTO gates remain open.
+
+- [THREAT_MODEL.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md)
