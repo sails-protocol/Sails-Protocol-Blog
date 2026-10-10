@@ -133,3 +133,12 @@ html[data-theme='dark'] [class*='colorModeToggle'] button {
 @media (max-width: 850px) {
   .sails-season-grid { grid-template-columns: 1fr; }
 }
+
+
+/* Season reading paths: no draft content is exposed as a published link. */
+.sails-season-outline { list-style: decimal; padding-left: 1.5rem; max-width: 850px; }
+.sails-season-outline li { padding: .9rem .4rem; border-bottom: 1px solid var(--sails-line); }
+.sails-season-outline li span { display: block; font-weight: 600; }
+.sails-season-outline li small { display: block; color: var(--sails-muted); margin-top: .3rem; }
+.sails-season-status { display: inline-flex; gap: .3rem; font-weight: 650; text-underline-offset: .2rem; }
+.sails-season-card:focus-within { outline: 2px solid var(--ifm-color-primary); outline-offset: 3px; }
