@@ -18,12 +18,6 @@ Una transacción de base de datos puede hacer atómicos cambios relacionados en 
 
 En Sails, los escenarios de caída y recuperación forman parte de las evidencias de ingeniería que buscamos para las transiciones económicas. Queremos pruebas que detengan un proceso en puntos importantes, lo reinicien con estado duradero y comprueben que los invariantes siguen siendo válidos. Una afirmación sobre exactly-once debe identificar la operación, el límite de persistencia y la evidencia que la respalda.
 
-## Leer a continuación
-
-En el próximo artículo pasaremos del comportamiento de los procesos a las personas y los permisos: saber quién es alguien no significa saber qué puede hacer.
-
-*Fuentes pendientes: enlazar commits inmutables, decisiones del CTO y pruebas antes de publicar.*
-
 ## Persistencia duradera, respuesta perdida y reintento
 
 El módulo común de idempotencia inspeccionado distingue la creación duradera de las acciones posteriores y documenta ventanas de fallo anteriores: la escritura en la base funciona, pero falla el registro de finalización; dos reintentos compiten por recuperar una operación; o una excepción posterior a la persistencia se confunde con ausencia de efecto. El servicio de operaciones pasa funciones separadas de persistencia y acciones posteriores a `withIdempotency()`. Un resultado UNKNOWN exige reconciliación, no repetir efectos externos a ciegas.
@@ -40,3 +34,9 @@ El módulo común de idempotencia inspeccionado distingue la creación duradera 
 - [Common idempotency mechanism](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/common/idempotency.ts)
 
 *Source-inspected only. No new runtime verification, CTO approval or publication authorization.*
+
+## Leer a continuación
+
+En el próximo artículo pasaremos del comportamiento de los procesos a las personas y los permisos: saber quién es alguien no significa saber qué puede hacer.
+
+
