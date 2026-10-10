@@ -24,14 +24,12 @@ El servicio restringe cambios manuales de estado mediante `MANUAL_TRADE_TRANSITI
 
 **Siguiente prueba:** dos participantes autenticados compitiendo por la misma transición, un evento de escrow concurrente y reinicio con Postgres real. Sin evidencia del SHA exacto, no hay PASS.
 
-### Primary source / maturity
+### Fuente primaria y nivel de verificación
 
-- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts
+- [trade.service.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts)
 
-*Source inspection only; no new live test, CTO approval or publication authorization.*
+*Solo inspección del código; sin nuevas pruebas en ejecución, aprobación del CTO ni autorización de publicación.*
 
 ## Leer a continuación
 
 El próximo artículo conecta este tema con la recuperación: si un proceso cae a mitad de un flujo, ¿qué debe seguir siendo cierto cuando vuelva?
-
-
