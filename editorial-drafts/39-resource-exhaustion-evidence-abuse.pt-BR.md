@@ -6,6 +6,15 @@
 
 Um JSON aparentemente pequeno pode causar parsing, hashing ou armazenamento caros. Um participante malicioso pode explorar a diferença entre requisições aceitas e trabalho limitado.
 
+## Decisão: rejeitar antes do trabalho caro
+
+Um atacante pode usar muitas requisições pequenas com o mesmo efeito de um upload enorme. O orçamento precisa abranger bytes individuais, profundidade e complexidade, referências por prova, armazenamento acumulado e tentativas, vinculados a identidades duráveis e não só a contadores locais. O schema de descritores examinado mostra o marcador `externalReference: true`; ele, sozinho, não prova essas cotas. Exclusividade entre ponteiros e hash de mídia OpenProof são verificações distintas.
+
+## Falha: ponteiro externo apresentado como mídia verificada
+
+Um cliente envia uma URI bruta como se fosse referência vinculada à integridade. Aceitar sem verificar o tipo declarado permite uma falsa alegação de proveniência. Outra falha ocorre quando a rejeição acontece depois de gravar bytes ou emitir eventos. O gate editorial deve exigir aceitação no limite, rejeição em +1 e ausência de efeitos, pelo caminho real do serviço e pelo ledger durável de cotas.
+
+
 ## Limites e escolhas
 
 Limite tamanho, profundidade, complexidade, cotas cumulativas e tentativas no limite do serviço antes de trabalho caro. Atribua uso a atores autenticados e identificadores persistentes de prova, não apenas a contadores de processo.
