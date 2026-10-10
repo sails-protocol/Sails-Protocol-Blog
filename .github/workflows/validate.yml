@@ -29,6 +29,8 @@ jobs:
         run: node scripts/test-webmcp-execution.mjs
       - name: Verify WebMCP registration and rollback
         run: node scripts/test-webmcp-registration.mjs
+      - name: Verify Netlify security configuration
+        run: node scripts/verify-netlify-config.mjs
       - name: Typecheck
         run: npm run typecheck
       - name: Build
