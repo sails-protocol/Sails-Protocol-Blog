@@ -2,17 +2,17 @@
 
 *Rascunho editorial. Temporada 4. Publicação não aprovada.*
 
-## A questão
+## A pergunta
 
-n
+Um agente de IA pode negociar sem virar dono independente dos fundos?
 
-## Direção de projeto
+## Decisão e fronteira
 
-m
+O RFC trata agentes como delegados, não principais econômicos independentes. OpenAgents precisa de escopo, revogação, limites e autoridade responsável; a saída do modelo não autoriza liquidação.
 
-## Evidência antes das afirmações
+## Falha e evidência
 
-n
+Um agente pode propor negociação após o mandato expirar. O nó deve rejeitar antes de efeitos econômicos; comprovar autorização no commit exato. Não há garantia de agente autônomo implantado.
 
 ## Fluxo conceitual
 
