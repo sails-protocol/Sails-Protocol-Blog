@@ -30,3 +30,11 @@ flowchart LR
 Este diagrama ilustra un principio de diseño, no un comportamiento de ejecución verificado.
 
 *Referencias técnicas y aprobación pendientes.*
+
+## Límite respaldado por el código y próxima prueba
+
+El modelo de participantes describe billeteras y agentes; no demuestra reputación portable entre mercados.
+
+**Fallo a evitar:** presentar el límite inspeccionado como garantía de extremo a extremo ya desplegada. **Próxima verificación:** comportamiento en el HEAD exacto, pruebas de integración y evidencia operativa. Solo inspección de código; revisión editorial y del CTO pendientes.
+
+- [RFC-001-participant-model.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/rfcs/RFC-001-participant-model.md)
