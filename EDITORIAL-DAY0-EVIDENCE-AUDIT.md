@@ -120,3 +120,7 @@ Performed a focused second pass on articles **01, 02, 03, 05 and 11** across EN/
 ## Second-pass G1 narrative repair — Season 4, 2026-10-10
 
 Replaced visibly broken one-character placeholders (e.g. `A`, `U`, `m`, `n`) with idiomatic Question→Decision/Boundary→Failure/Evidence→Next Question prose in **articles 21, 22, 23, 24, 25 and 26**, all EN/PT-BR/ES: **18 repaired canonical editions**. Articles 22/24 distinguish signed evidence provenance versus payment truth, and rail-specific escrow readiness/recovery; articles 21/23/25/26 separate identity, reputation, liquidity and delegated agents from unverified deployment claims. These are substantial G1 repairs, **not G1 PASS**: the remaining catalog still requires editorial depth, line-level source validation, translation parity and CTO approval. No browser verification, merge or publication.
+
+## G1 placeholder remediation — article 20, 2026-10-10
+
+The next pass identified a remaining substantive Season 4 defect: article **20** still had one-character/empty body sections in EN/PT-BR/ES despite the prior first-pass 48/144 coverage. Replaced those sections with a coherent protocol-vs-module roadmap, authority boundary, failure scenario, evidence maturity and next question in **all three editions**. Spot-checked the ES editions of articles 20–27 for single-character section bodies (none remain). This does not prove catalog-wide editorial QA: an attempted full 144-file scan was interrupted by tool-call limits. G1/G2 and browser gates remain pending; no merge/publication.
