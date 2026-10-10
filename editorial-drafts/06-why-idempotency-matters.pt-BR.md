@@ -23,3 +23,20 @@ No Sails P2P Trading SDK, tratamos novas tentativas como uma questão de correç
 En el próximo artigo vamos tratar de um problema relacionado, mas diferente: o que acontece quando duas requisições chegam ao mesmo tempo, antes que uma consiga observar o resultado da outra?
 
 *Fontes pendentes: referenciar commits imutáveis, decisões do CTO e testes antes da publicação.*
+
+## Contrato concreto no SDK Sails
+
+O método `OpenP2P.trade(offerId, amount, idempotencyKey?)` do SDK examinado encaminha a chave opcional para `POST /v1/openp2p/trades`. A rota valida uma chave não vazia de até 200 caracteres e a envia, junto da identidade autenticada do participante, para `TradeService.createTrade()`. O serviço delimita a tentativa pelo escopo `openp2p.trade.create`, pelo participante e pelos dados da oferta e do valor. **Sem a chave, uma repetição pode criar outra negociação**; o próprio SDK orienta gerar uma chave por aceitação lógica e reutilizá-la nas tentativas da mesma aceitação. Uma nova aceitação intencional exige outra chave.
+
+**Cenário adversarial:** a operação é persistida, mas a resposta expira. A interface gera outra chave a cada tentativa. Nesse contrato, o servidor não consegue reconhecer as tentativas como a mesma intenção. **Limite:** a cadeia foi examinada no código, mas o comportamento de todos os aplicativos e os testes de crash/replay com Postgres não estão certificados aqui.
+
+**Próxima pergunta:** quais aplicativos preservam a chave da tentativa lógica após reinício ou operação offline?
+
+### Source ledger and maturity
+
+- [SDK method](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/packages/sails-sdk/src/modules/openp2p.ts)
+- [HTTP route](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.routes.ts)
+- [Trade service](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts)
+- [Common idempotency mechanism](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/common/idempotency.ts)
+
+*Source-inspected only. No new runtime verification, CTO approval or publication authorization.*
