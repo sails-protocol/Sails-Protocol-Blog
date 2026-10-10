@@ -25,3 +25,9 @@ This blog will follow the same method we use while building: ask the question, e
 Next, we will look more closely at why peer-to-peer markets need coordination and what existing platforms already do well.
 
 *Technical review pending. Claims about implementation and readiness must be checked against the repository and CTO-approved evidence before publication.*
+
+## Evidence boundary
+
+Protocol vision, implementation obligations and executable evidence have distinct maturity. **Failure:** mistaking documented intent for verified production behavior. Exact-head runtime evidence and release approval remain pending.
+
+- [PROTOCOL_INVARIANTS.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROTOCOL_INVARIANTS.md)
