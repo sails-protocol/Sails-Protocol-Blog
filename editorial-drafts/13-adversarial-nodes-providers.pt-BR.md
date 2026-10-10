@@ -22,6 +22,16 @@ Para o Sails Protocol, cenários de nós adversariais e provedores maliciosos pe
 
 Uma boa arquitetura precisa permitir perguntas desconfortáveis antes que um atacante as faça. Quais afirmações podem ser falsificadas? O que acontece se um provedor desaparecer? Um nó consegue esconder um evento economicamente relevante? Qual evidência demonstraria que uma defesa funciona de verdade? Essas perguntas orientarão futuros relatórios técnicos conforme surgirem evidências de implementação.
 
+## Decisão: resposta de provedor é alegação com proveniência
+
+Timeout significa que o resultado pode ser desconhecido, não necessariamente que a operação falhou. Recibos contraditórios indicam observadores em desacordo, não que o callback mais recente sempre vence. Um provedor malicioso pode relatar sucesso plausível e vinculá-lo ao destino errado. A pergunta é se os participantes conseguem verificar independentemente a cadeia **Authority → Outcome → DestinationBinding**, sem confiar apenas na associação interna do operador.
+
+A investigação histórica Durable Protocol Truth registra lacuna de verificação independente, sobretudo entre Outcome e DestinationBinding. A evidência de substituição de provedores sustenta propriedades semânticas selecionadas, não equivalência econômica de todos os provedores e redes. São achados delimitados, não prova de ataque explorado.
+
+## Falha: sucesso para o destino errado
+
+Imagine um provedor relatando liquidação concluída com identificador de transação aparentemente válido, mas sem vínculo verificável ao destino autorizado na negociação. Repetir uma transmissão mutável após timeout pode ampliar o risco. A integração deve preservar o estado desconhecido, reconciliar com evidência externa e não confundir resposta assinada com prova do destino correto. O teste precisa confrontar relatos contraditórios com a autoridade durável da negociação e dados de liquidação verificáveis.
+
 ## Diagrama conceitual
 
 ```mermaid
