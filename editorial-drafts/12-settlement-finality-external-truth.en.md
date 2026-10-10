@@ -22,6 +22,16 @@ Our Sails engineering work addresses the authority of payment accounts, trade bi
 
 The practical lesson is to keep uncertainty visible. A pending payment should remain pending until the relevant conditions are satisfied. A disputed signal should not silently become a final state. And a failed integration should have a recovery path that does not manufacture certainty.
 
+## Decision: keep four kinds of truth apart
+
+A local database commit records what the coordination service accepted. A provider callback reports what an external observer claims. A blockchain confirmation reflects a particular chain view, subject to the rail's finality and reorganization rules. An off-chain bank payment has its own reversal and dispute process. None of these observations automatically implies the others.
+
+For a concrete escrow integration, the operator must name the selected rail, who controls signing authority, which observation unlocks the next state and what happens when that observation is withdrawn. The inspected provider registry routes BTC to MULTISIG, LN_BTC to Arkade-based LIGHTNING_HODL and USDT_ERC20 to WDK EVM. Those are routing facts, **not** a shared finality guarantee.
+
+## Failure: a funding receipt that does not survive
+
+A service sees a funding notification and prematurely marks the economic outcome irreversible. The chain reorganizes or the provider later corrects the observation. Without an explicit reconciliation rule, local state can contradict the external asset's actual position. Multisig-specific recovery evidence must not be generalized to every adapter; testnet Arkade scope and the production-ineligible server-held WDK seed must remain visible in the public claim.
+
 ## Conceptual diagram
 
 ```mermaid
