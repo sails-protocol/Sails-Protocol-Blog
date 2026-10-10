@@ -48,5 +48,37 @@ try {
     } finally { await context.close(); }
   }
   }
+  // Mermaid regression: a global prefers-reduced-motion transition override once
+  // distorted Mermaid layout (nodes ~2000px apart, viewBox clipping the graph),
+  // making diagram text unreadable only for users who request reduced motion.
+  for (const reducedMotion of ['no-preference', 'reduce']) {
+    for (const viewport of [{width: 1280, height: 800}, {width: 390, height: 844}]) {
+      const context = await browser.newContext({viewport, reducedMotion});
+      const page = await context.newPage();
+      try {
+        await page.goto(new URL('/articles/what-is-sails-protocol/', base).href, {waitUntil: 'networkidle'});
+        await page.waitForSelector('article svg[id^="mermaid"] g.node', {timeout: 15000});
+        const m = await page.evaluate(() => {
+          const svg = document.querySelector('article svg[id^="mermaid"]');
+          const svgBox = svg.getBoundingClientRect();
+          const nodes = [...svg.querySelectorAll('g.node')].map(g => g.getBoundingClientRect());
+          const label = svg.querySelector('g.node foreignObject div, g.node text');
+          const vb = svg.viewBox.baseVal;
+          const gaps = nodes.slice(1).map((n, i) => n.top - nodes[i].bottom);
+          return {
+            count: nodes.length,
+            allInside: nodes.every(n => n.top >= svgBox.top - 1 && n.bottom <= svgBox.bottom + 1 && n.left >= svgBox.left - 1 && n.right <= svgBox.right + 1),
+            maxGap: Math.max(...gaps),
+            labelPx: parseFloat(getComputedStyle(label).fontSize) * (svgBox.width / vb.width),
+            aspect: vb.height / vb.width
+          };
+        });
+        const label = 'mermaid ' + viewport.width + ' reducedMotion=' + reducedMotion;
+        if (m.count !== 4 || !m.allInside || m.maxGap > 150 || m.labelPx < 12 || m.aspect > 3) {
+          failed = true; console.error(label, 'Mermaid diagram is distorted or illegible:', JSON.stringify(m));
+        } else console.log(label, 'diagram legible', JSON.stringify(m));
+      } finally { await context.close(); }
+    }
+  }
 } finally { await browser.close(); }
 if (failed) process.exitCode = 1;
