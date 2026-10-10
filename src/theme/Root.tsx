@@ -8,16 +8,16 @@ export default function Root({children}: {children: React.ReactNode}): React.JSX
     const context = (document as WebMCPDocument).modelContext;
     if (!context?.registerTool) return;
     let disposed = false;
-    let cleanup: (() => void) | undefined;
+    let cleanup: (() => Promise<void>) | undefined;
     void registerArticleTools(context, window.location.origin)
       .then(dispose => {
-        if (disposed) dispose();
+        if (disposed) void dispose();
         else cleanup = dispose;
       })
       .catch(error => console.warn('WebMCP registration failed:', error));
     return () => {
       disposed = true;
-      cleanup?.();
+      if (cleanup) void cleanup();
     };
   }, []);
   return <>{children}</>;
