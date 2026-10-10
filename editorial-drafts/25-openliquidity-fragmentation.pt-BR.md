@@ -2,17 +2,17 @@
 
 *Rascunho editorial. Temporada 4. Publicação não aprovada.*
 
-## A questão
+## A pergunta
 
-w
+Mostrar ofertas de vários mercados significa liquidez compartilhada? Não.
 
-## Direção de projeto
+## Decisão e fronteira
 
-u
+OpenLiquidity é uma direção de coordenação. Descoberta e roteamento precisam respeitar ativo, rede, preço, disponibilidade e permissões. A evidência de substituição cobre invariantes selecionados, não um livro operacional entre mercados.
 
-## Evidência antes das afirmações
+## Falha e evidência
 
-o
+Uma oferta visível pode ser inacessível à carteira por permissões ou meio de pagamento. Não anunciar profundidade executável só pela visibilidade; exigir contrapartes reais e testes entre clientes.
 
 ## Fluxo conceitual
 
