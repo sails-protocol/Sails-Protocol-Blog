@@ -100,3 +100,7 @@ Article **13** EN/PT-BR/ES received a substantive adversarial-provider authority
 ## Correction pass — articles 06 and 08 (2026-10-10)
 
 Six canonical editions received source-ledger localization, consistent maturity disclosures and removal of an accidental Spanish phrase from Portuguese. Article **06** EN/PT-BR/ES additionally replaced a broad claim that engineering reviews already include real database/concurrency/crash tests with the narrower source-inspected contract and an explicit requirement for exact-revision runtime evidence. This is a **claim-precision correction**, not G1/G2 approval. Source-backed coverage remains 19 articles / 57 editions; no tests or browser gate were executed.
+
+## Correction pass — articles 07 and 08 (2026-10-10)
+
+Article 07 EN/PT-BR/ES now uses localized source-maturity labels and descriptive immutable source links. Article 08 EN/PT-BR/ES replaces broad recovery-method prose with a narrower inspected-code claim: durable persistence versus post-persist work, requiring exact-revision restart and external reconciliation evidence before an exactly-once assertion. Six editions updated; source-backed coverage unchanged at 19/48 articles and 57/144 editions. No G1/G2 approval, browser verification or merge.
