@@ -31,3 +31,9 @@ The first place we are testing this approach is the Sails P2P Trading SDK. Its i
 Next, we will look at the components of the architecture and why we separate a protocol, a semantic core, node implementations, SDKs and applications.
 
 *Technical review pending. This article describes design motivation, not a guarantee of implemented capabilities or production readiness.*
+
+## Evidence boundary and failure mode
+
+Trade authorization and durable state are concrete service responsibilities, not proof of cross-platform coordination. **Failure:** interpreting this architectural or source-inspected statement as current production verification. Exact-head tests and approval are still required.
+
+- [trade.service.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts)
