@@ -40,5 +40,20 @@ if (existsSync('build/articles/what-is-sails-protocol/index.html')) {
     failed = true;
   }
 }
+// RSS and Atom must carry the explicit editorial description, not the
+// Docusaurus fallback \"Sails Protocol Blog Blog\".
+const feedDescription = 'Engineering notes on open P2P infrastructure';
+for (const [label, file] of [['RSS', 'build/articles/rss.xml'], ['Atom', 'build/articles/atom.xml']]) {
+  if (!existsSync(file)) {
+    console.error('MISSING:', label, file);
+    failed = true;
+    continue;
+  }
+  const feed = readFileSync(file, 'utf8');
+  if (!feed.includes(feedDescription) || feed.includes('Sails Protocol Blog Blog')) {
+    console.error(label + ': missing editorial description or stale default');
+    failed = true;
+  }
+}
 if (failed) process.exit(1);
 console.log('Build smoke checks passed.');
