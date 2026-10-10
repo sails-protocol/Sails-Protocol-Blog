@@ -2,17 +2,21 @@
 
 *Borrador editorial. Temporada 4. Publicación no aprobada.*
 
-## La cuestión
+## La pregunta
 
-B
+¿Puede un mismo flujo liquidar Bitcoin multisig, un pago Lightning retenido y un token EVM con idénticas reglas de finalidad? No. Cada red tiene autoridad externa y ventanas de fallo distintas.
 
-## Dirección de diseño
+## Decisión y límite
 
-a
+El registro inspeccionado incluye rutas MULTISIG, LIGHTNING_HODL, WDK_USDT_EVM y SAFE_GUARD_EVM. Su madurez no es equivalente: la ruta WDK_USDT_EVM con custodia en el servidor no es apta para producción, y SAFE_GUARD_EVM necesita evidencia en vivo con RPC financiado y bundler. La evidencia registrada de recuperación y conciliación cubre escenarios MULTISIG específicos, no todas las redes. La coordinación OpenSettlement debe mantener estas diferencias y no reducirlas a un único estado Liquidado.
 
-## Evidencia antes de las afirmaciones
+## Fallo y evidencia
 
-a
+Un proveedor agota el tiempo después de transmitir una operación. Repetir el efecto económico sin conciliar puede duplicarlo; suponer un fallo puede bloquear la operación. La evidencia de recuperación solo cubre la red probada. Una garantía entre redes exige recibos independientes, pruebas de reinicio del HEAD exacto y verificación del vínculo con el destino.
+
+## Siguiente pregunta
+
+¿Qué red demuestra finalidad, recuperación y vínculo con el destino ante un fallo real del proveedor?
 
 ## Flujo conceptual
 
