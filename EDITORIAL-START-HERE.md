@@ -75,3 +75,7 @@ Season 5 articles 28-34 have first drafts in EN, PT-BR and ES. The home and seas
 ## Editorial update: Season 6 (2026-10-10)
 
 Articles 35-41 now have first drafts in EN, PT-BR and ES. The home and season outline list six seasons. Total: 41 topics, 123 draft files. No article was published, no merge was made, and no build, browser or source-level verification was performed in this drafting pass. The new security-focused articles must not be mistaken for audits or guarantees. Season 7 remains proposed. Next work: Season 7 and especially the evidence/quality audit across the corpus.
+
+## Editorial scope baseline and progress (2026-10-10)
+
+**Read [EDITORIAL-DAY0-MASTER-BACKLOG.md](./EDITORIAL-DAY0-MASTER-BACKLOG.md) before creating more topics.** It defines the proposed seven-season / 48-topic / 144-language-edition Day 0 scope and the G0-G7 review gates. Current verified planning count: 41 article topics have first drafts in EN/PT-BR/ES (123 files); Season 7's seven topics (21 files) remain to draft. No article has been approved for publication. The baseline is a proposed scope freeze, not an owner-approved release or a prohibition on resolving material gaps. Do not expand the article count without documenting and approving a distinct uncovered need.
