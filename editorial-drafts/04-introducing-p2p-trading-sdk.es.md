@@ -18,4 +18,19 @@ El SDK busca permitir que distintas aplicaciones integren flujos de negociación
 
 El primer SDK es el punto de partida de una familia modular más amplia, no una prueba de que toda esa familia ya existe. A medida que avance la implementación, publicaremos ejemplos concretos, interfaces compatibles, evidencias de pruebas y limitaciones conocidas. Hasta entonces, este artículo explica la dirección del producto sin declarar que esté listo para producción.
 
+## Qué ofrece realmente la integración inspeccionada
+
+En la revisión fijada, el cliente OpenP2P del SDK expone `trade(offerId, amount, idempotencyKey?)`. La clave es opcional, pero tiene consecuencias económicas: omitirla puede crear otra operación tras perderse una respuesta. La ruta HTTP valida la clave proporcionada y envía el contexto del participante autenticado al servicio, que delimita el intento por acción, participante, oferta e importe. Es un contrato concreto, no prueba de que todas las billeteras conserven la clave durante reintentos sin conexión.
+
+**Fallo:** la aplicación genera una clave nueva cada vez que se pulsa Reintentar. El servidor interpreta intentos nuevos, no la repetición de la aceptación original. **Decisión:** persistir y reutilizar la clave de la misma aceptación lógica; generar otra solo para una aceptación realmente nueva.
+
+### Fuentes y nivel de verificación
+
+- [Cliente OpenP2P del SDK](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/packages/sails-sdk/src/modules/openp2p.ts)
+- [Ruta HTTP de operaciones](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.routes.ts)
+- [Servicio de operaciones](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts)
+
+*Inspección del código en revisión fijada; sin nueva prueba de cliente/reinicio ni aprobación de publicación.*
+
+
 *Revisión técnica y factual pendiente. No publicar sin aprobación explícita.*
