@@ -104,3 +104,7 @@ Six canonical editions received source-ledger localization, consistent maturity 
 ## Correction pass — articles 07 and 08 (2026-10-10)
 
 Article 07 EN/PT-BR/ES now uses localized source-maturity labels and descriptive immutable source links. Article 08 EN/PT-BR/ES replaces broad recovery-method prose with a narrower inspected-code claim: durable persistence versus post-persist work, requiring exact-revision restart and external reconciliation evidence before an exactly-once assertion. Six editions updated; source-backed coverage unchanged at 19/48 articles and 57/144 editions. No G1/G2 approval, browser verification or merge.
+
+## Source-backed coverage pass — articles 03 and 04 (2026-10-10)
+
+Canonical article **03** EN/PT-BR/ES now distinguishes conceptual Sails Protocol/Core/Node/SDK architecture from concrete inspected OpenP2P implementation and separately required deployment/interoperability evidence. Canonical article **04** EN/PT-BR/ES now cites the inspected SDK, HTTP route and trade service for the optional idempotency-key contract and its lost-response failure. **6 newly source-backed editions**, bringing coverage to **21 of 48 articles / 63 of 144 language editions**. The historical source revision is pinned; no exact-head tests, G1/G2 sign-off, Browser Gate, merge or publication are implied.
