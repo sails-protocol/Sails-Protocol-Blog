@@ -25,3 +25,9 @@ flowchart LR
 Equivalente textual: a intenção de projeto passa por uma integração delimitada e verificação independente. Não comprova implantação.
 
 *Source verification, references, editorial review and owner approval pending.*
+
+## Escopo fundamentado em fonte
+
+OpenFinance é módulo proposto, não serviço financeiro comprovado em produção. **Falha:** tratar design ou API examinada como prontidão universal de produção. Testes no HEAD exato e aprovação seguem pendentes.
+
+- [PROTOCOL_INVARIANTS.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROTOCOL_INVARIANTS.md)
