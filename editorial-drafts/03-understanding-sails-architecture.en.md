@@ -32,5 +32,4 @@ The protocol's invariant document distinguishes architectural laws, implementati
 
 *Source-inspected at the pinned revision; not a production or CTO approval claim.*
 
-
 *Technical and factual review pending. Do not publish before explicit approval.*
