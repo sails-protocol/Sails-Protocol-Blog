@@ -21,3 +21,12 @@ Um primeiro teste útil deve repetir a mesma intenção, disputar duas ações c
 O SDK oferece chave opcional de idempotência; o cliente precisa preservá-la entre tentativas. **Falha:** tratar design ou API examinada como prontidão universal de produção. Testes no HEAD exato e aprovação seguem pendentes.
 
 - [openp2p.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/packages/sails-sdk/src/modules/openp2p.ts)
+
+## Contrato de aceitação da integração
+
+A assinatura examinada do SDK é `trade(offerId, amount, idempotencyKey?)`. Como a chave é opcional na API, o cliente deve gerar uma chave estável para cada aceitação lógica, persisti-la antes do envio e reutilizá-la após uma resposta ambígua. A rota valida a chave recebida; o serviço a delimita ao participante autenticado, à ação e aos dados da negociação. Uma nova aceitação do usuário é outra intenção, não uma tentativa repetida.
+
+**Contraexemplo:** o aplicativo recria a chave ao reconectar. A segunda chamada pode ser interpretada como nova aceitação. **Evidência necessária:** teste de integração no HEAD exato com mesma chave, payload diferente, chamadas concorrentes e reinício do processo, usando persistência real. Este artigo não afirma que esses testes foram executados.
+
+- [Rota de negociação](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.routes.ts)
+- [Serviço de negociação](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts)
