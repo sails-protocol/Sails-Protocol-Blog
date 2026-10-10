@@ -9,6 +9,7 @@ const seasons = [
   {number: '04', title: 'Beyond the Trading SDK', description: 'The modular vision: identity, proof, reputation, settlement, liquidity, agents and open finance.', count: 8},
   {number: '05', title: 'Developer Journey and Interoperability', description: 'SDK integration, wallet adapters, schemas, nodes, observability and provider boundaries.', count: 7},
   {number: '06', title: 'Security, Verification and Production Readiness', description: 'Threat models, malicious nodes, restart safety, privacy, resource bounds and incident learning.', count: 7},
+  {number: '07', title: 'Real-World Economic Flows', description: 'PIX, DePix, escrow, incentives, private markets, cross-rail settlement and governance.', count: 7},
 ];
 
 export default function Home(): React.JSX.Element {
