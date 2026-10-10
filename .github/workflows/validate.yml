@@ -25,6 +25,8 @@ jobs:
         run: npm run check:articles
       - name: Verify WebMCP static contract
         run: node scripts/verify-webmcp.mjs
+      - name: Execute WebMCP tool tests
+        run: node scripts/test-webmcp-execution.mjs
       - name: Typecheck
         run: npm run typecheck
       - name: Build
