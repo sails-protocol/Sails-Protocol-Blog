@@ -30,7 +30,6 @@ flowchart TD
 
 Este diagrama ilustra un principio de diseño, no un comportamiento de ejecución verificado.
 
-
 ## Límite comprobado de evidencias
 
 En `ProofService.attachEvidence()`, el servicio comprueba primero el acceso al alcance económico de la Claim y luego verifica una firma Ed25519 contra la clave registrada del remitente sobre el resumen SHA-256 del archivo. Una firma válida demuestra autoría e integridad de bytes, **no** que se haya producido un pago bancario. El proveedor almacena bytes y devuelve metadatos; los metadatos no demuestran validez de la prueba. El sistema de archivos local es de referencia y existe un proveedor compatible con S3 orientado a producción. No afirmar cuotas Day 0 ni límites inline sin inspeccionar su aplicación actual.
@@ -39,7 +38,7 @@ En `ProofService.attachEvidence()`, el servicio comprueba primero el acceso al a
 
 ### Source ledger
 
-- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/proof.service.ts
-- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/evidence-provider.ts
+- [proof.service.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/proof.service.ts)
+- [evidence-provider.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/evidence-provider.ts)
 
 *Source-inspected; external payment verification, live tests, CTO review and publication pending.*
