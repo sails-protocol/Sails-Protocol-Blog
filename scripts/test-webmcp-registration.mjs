@@ -10,8 +10,8 @@ const load = (path, substitutions = []) => {
   return import('data:text/javascript;base64,' + Buffer.from(js).toString('base64'));
 };
 const {articleTools} = await load('src/webmcp/article-tools.ts', [[/^import ARTICLES from .*?;\s*/m, 'const ARTICLES = ' + JSON.stringify(catalogue) + ';\n']]);
-const {registerArticleTools} = await load('src/webmcp/register-tools.ts', [[/^import \{articleTools\} from .*?;\s*/m, 'const articleTools = globalThis.__testArticleTools;\n']]);
 globalThis.__testArticleTools = articleTools;
+const {registerArticleTools} = await load('src/webmcp/register-tools.ts', [[/^import \{articleTools\} from .*?;\s*/m, 'const articleTools = globalThis.__testArticleTools;\n']]);
 const registered = new Map();
 const context = {
   registerTool: tool => {registered.set(tool.name, tool);},
