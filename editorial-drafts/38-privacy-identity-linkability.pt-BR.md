@@ -15,3 +15,9 @@ Modele identificadores públicos, horários, histórico de ofertas, metadados de
 Uma alegação de privacidade exige rastrear fluxos reais, armazenamento e observabilidade da rede. Este artigo não afirma anonimato de implementação implantada.
 
 *No verified implementation claim or permission to publish is implied by this draft.*
+
+## Evidência de fonte e fronteira de falha
+
+Catálogos de ameaças e design de identidade não comprovam desvinculação nem privacidade implantada. O próximo gate exige verificação operacional no HEAD exato; a fonte não autoriza lançamento.
+
+- [THREAT_MODEL.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md)
