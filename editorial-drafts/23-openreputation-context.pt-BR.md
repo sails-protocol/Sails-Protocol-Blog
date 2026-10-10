@@ -2,17 +2,17 @@
 
 *Rascunho editorial. Temporada 4. Publicação não aprovada.*
 
-## A questão
+## A pergunta
 
-e
+Boa reputação em um mercado vale em outro? Só com contexto.
 
-## Direção de projeto
+## Decisão e fronteira
 
-e
+OpenReputation é uma direção para sinais portáveis e atribuíveis, não uma nota universal. O modelo define participantes, mas não implementa pontuação entre mercados ou política comum. Cada aplicação decide o que aceita.
 
-## Evidência antes das afirmações
+## Falha e evidência
 
-a
+Um sinal de negociação bem-sucedida sem rede de pagamento, histórico de disputa e emissor pode enganar outro mercado. Comprovar procedência, consentimento, revogação e política local antes de prometer portabilidade.
 
 ## Fluxo conceitual
 
