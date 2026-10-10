@@ -44,3 +44,7 @@ Each number appears in exactly one wave. These are **queues, not completed audit
 For each wave, create article-specific claim tables and evidence citations; revise EN, reconcile PT-BR/ES; perform accessibility review; run site tests; submit to CTO and owner. Record every finding and resolution with date, reviewer, exact commit and test outputs.
 
 **NO MATERIAL FINDING UNDER THE RUG.**
+
+## First source-backed audit pass (2026-10-10)
+
+See [EDITORIAL-AUDIT-WAVE-A-2026-10-10.md](./EDITORIAL-AUDIT-WAVE-A-2026-10-10.md) for findings A-01 through A-04 with immutable Sails source commit and primary file links. The correct main repository is `sails-protocol/Sails-Protocol`, not the previous historical `alan-schramm/Sails-Protocol` path. Material editorial custody/rail discrepancy remains open. These are targeted documentary findings, not runtime test results, and G2 remains open.
