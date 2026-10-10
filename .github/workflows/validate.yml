@@ -27,6 +27,8 @@ jobs:
         run: node scripts/verify-webmcp.mjs
       - name: Execute WebMCP tool tests
         run: node scripts/test-webmcp-execution.mjs
+      - name: Verify WebMCP registration and rollback
+        run: node scripts/test-webmcp-registration.mjs
       - name: Typecheck
         run: npm run typecheck
       - name: Build
