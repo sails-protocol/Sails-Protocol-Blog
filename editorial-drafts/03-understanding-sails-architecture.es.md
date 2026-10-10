@@ -18,4 +18,19 @@ Sails P2P Trading SDK es el primer módulo en el que nos concentramos. Eso no si
 
 Un diagrama ordenado ayuda, pero no demuestra que el sistema funcione. Las preguntas importantes son prácticas: ¿quién puede cambiar el estado de una operación?, ¿qué operación de base de datos tiene autoridad?, ¿qué sobrevive a una caída?, ¿qué nunca debe repetirse? Utilizamos estas preguntas para comprobar que la separación de capas sea real y no solamente visual. En los próximos artículos exploraremos las respuestas, incluso cuando todavía falten evidencias.
 
+## Límite de evidencia: arquitectura e implementación
+
+El documento de invariantes distingue principios arquitectónicos, obligaciones de implementación y evidencia ejecutable. Aquí importa: nombrar Sails Core y Sails Node define responsabilidades previstas, pero no demuestra que un nodo independiente ejecute todos los módulos. El repositorio inspeccionado contiene un servicio concreto de operaciones OpenP2P y un cliente SDK. Son puntos de implementación más acotados, no prueba automática de interoperabilidad entre Satsails Wallet, Sails Market y aplicaciones de terceros. Las afirmaciones públicas sobre despliegue y compatibilidad requieren contratos versionados, pruebas y evidencia operativa.
+
+**Fallo a evitar:** alguien interpreta un diagrama de cinco capas como prueba de que todas pueden desplegarse por separado y están verificadas en producción. El diagrama distribuye responsabilidades; no es una matriz de lanzamientos.
+
+### Fuentes y límites
+
+- [Invariantes del protocolo](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROTOCOL_INVARIANTS.md)
+- [Servicio de operaciones](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts)
+- [Cliente OpenP2P del SDK](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/packages/sails-sdk/src/modules/openp2p.ts)
+
+*Código inspeccionado en revisión fijada; no implica aprobación del CTO ni verificación de producción.*
+
+
 *Revisión técnica y factual pendiente. No publicar sin aprobación explícita.*
