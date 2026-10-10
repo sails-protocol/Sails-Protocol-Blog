@@ -21,3 +21,11 @@ Afirmações de compatibilidade exigem testes com fixtures entre versões e pol�
 Conformidade delimitada da álgebra não comprova composição do ruleset nem compatibilidade universal. Fronteira documentada não é prova de execução no HEAD atual; testar a falha contra estado durável antes de afirmar prontidão.
 
 - [CONDITION_ALGEBRA_CONFORMANCE_EVIDENCE.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/CONDITION_ALGEBRA_CONFORMANCE_EVIDENCE.md)
+
+## Decisão de compatibilidade: significado econômico antes do número da versão
+
+Um schema pode ser aceito e, ainda assim, cliente e nó discordarem sobre o que uma operação autoriza. A conformidade registrada da álgebra de condições cobre propriedades delimitadas; não comprova composição do ruleset publicado nem compatibilidade retroativa universal. Uma migração precisa definir compatibilidade estrutural e semântica, inclusive a rejeição de campos econômicos desconhecidos ou alterados.
+
+**Falha:** um cliente antigo ignora uma condição nova, mas exibe a negociação como executável. **Evidência necessária:** testes com fixtures de cliente antigo/nó novo e cliente novo/nó antigo, casos negativos, versões fixadas e política de migração aprovada. Compartilhar a versão do pacote não é prova de segurança.
+
+- [Evidência da álgebra de condições](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/CONDITION_ALGEBRA_CONFORMANCE_EVIDENCE.md)
