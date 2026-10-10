@@ -35,3 +35,17 @@ flowchart TD
 O diagrama é conceitual e não comprova garantias de segurança implementadas.
 
 *Pendente: fontes imutáveis, modelo de ameaças, evidências de verificação e aprovação do CTO.*
+
+## Provedor malicioso não é apenas provedor indisponível
+
+O modelo de ameaças alerta que um invariante do protocolo não significa mitigação automaticamente implementada em cada deployment. Um operador malicioso pode mentir sobre recibos, omitir dados ou selecionar associações de seu banco. A investigação Durable Protocol Truth aponta falta de vínculo independentemente verificável entre Outcome e DestinationBinding. A evidência de substituição de provedores sustenta propriedades econômicas selecionadas, não equivalência universal nem conformidade K3 integral.
+
+**Teste adversarial:** substituir um provedor por outro que devolve observações plausíveis, porém contraditórias, e exigir evidência independente do destino e falha segura. É teste proposto, não PASS.
+
+### Source and maturity
+
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/DURABLE_PROTOCOL_TRUTH_EVIDENCE.md
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROVIDER_SUBSTITUTION_INVARIANCE_EVIDENCE.md
+
+*Historical evidence/source inspection only; no latest-head test or publication approval.*
