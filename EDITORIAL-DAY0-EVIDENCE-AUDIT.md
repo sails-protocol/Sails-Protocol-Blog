@@ -68,3 +68,7 @@ Added article **07** (manual state-transition authority and concurrency caveat),
 ## Wave A conformance residuals and canonical updates (2026-10-10)
 
 Articles **36, 37, 40** now contain source-linked conformance caveats in EN/PT-BR/ES. Running total: **13 unique numbered articles / 39 canonical language editions with source-backed corrections** (out of 48/144); **zero articles approved**. CTO-facing material handoff: [EDITORIAL-CTO-MATERIAL-RESIDUALS-2026-10-10.md](./EDITORIAL-CTO-MATERIAL-RESIDUALS-2026-10-10.md). Open residuals: MULTISIG-scoped recovery vs other rails; independently verifiable Authority → Outcome → DestinationBinding; evidence hierarchy. These are observations from inspected code and historical evidence records, not current-head execution proof. Browser Gate remains incomplete and SHA-specific.
+
+## Wave A threat, resource and compatibility correction (2026-10-10)
+
+Source-backed additions were made to canonical articles **13, 35, 39, 48** in EN/PT-BR/ES (**12 more editions**). Cumulative coverage: **17 distinct articles / 51 canonical language editions** containing bounded technical corrections, not 51 completed G1/G2 acceptances. Sources include the threat model, durable truth residuals, provider-substitution conformance, condition-algebra conformance and dispute evidence-descriptor schema. A current-HEAD execution sweep is still required before claiming remediation of any historically recorded residual. No merge, site change or release authorization.
