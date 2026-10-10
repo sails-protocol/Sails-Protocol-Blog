@@ -23,14 +23,14 @@ export default function Home(): React.JSX.Element {
         <section className="sails-section" aria-labelledby="seasons-heading">
           <p className="sails-kicker">GUIDED READING</p>
           <h2 id="seasons-heading">Seasons</h2>
-          <p>Three connected reading paths. Articles are added only after technical and editorial approval.</p>
+          <p>Four connected reading paths. Articles are added only after technical and editorial approval.</p>
           <div className="sails-season-grid">
             {seasons.map((season) => (
               <article className="sails-season-card" key={season.number}>
                 <small>SEASON {season.number} · {season.count} PLANNED ARTICLES</small>
                 <h3>{season.title}</h3>
                 <p>{season.description}</p>
-                <span className="sails-season-status">Editorial series in preparation</span>
+                <Link className="sails-season-status" to={"/seasons/#season-" + season.number}>View reading path <span aria-hidden="true">→</span></Link>
               </article>
             ))}
           </div>
