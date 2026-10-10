@@ -26,12 +26,10 @@ The trade service constrains client-requested status changes with `MANUAL_TRADE_
 
 ### Primary source / maturity
 
-- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts
+- [trade.service.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts)
 
 *Source inspection only; no new live test, CTO approval or publication authorization.*
 
 ## Read next
 
 The next article connects this to recovery: if a process crashes halfway through a workflow, what must remain true when it starts again?
-
-
