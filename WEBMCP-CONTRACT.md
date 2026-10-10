@@ -1,6 +1,6 @@
 # WebMCP Day-0 contract
 
-**Status:** Implemented in source, pending CI and real-browser validation. Day-0 release blocker.
+**Status:** Source and mocked lifecycle tests passed CI #48; real-browser validation remains outstanding. Day-0 release blocker.
 
 WebMCP is a browser-native API, not an HTTP MCP server. The blog registers tools through `document.modelContext.registerTool` on supported browsers. Browsers without WebMCP continue to serve normal HTML, RSS and sitemap.
 
@@ -11,11 +11,11 @@ WebMCP is a browser-native API, not an HTTP MCP server. The blog registers tools
 No mutation tools, backend credentials, user information or protocol settlement operations are exposed.
 
 ## Constraints
-The initial catalogue is explicitly maintained in `src/theme/Root.tsx`. **Every new published article must update the catalogue** until an automated build-time generator is implemented. This is a known maintenance limitation, not a completed dynamic index.
+The article catalogue is generated from top-level `articles/*.md(x)` frontmatter by `scripts/generate-article-index.mjs` into `src/generated/articles.json`. CI enforces consistency via `npm run check:articles`. The generator currently supports a limited subset of frontmatter syntax and top-level article paths only; nested articles and complex YAML require deliberate parser changes and tests. The catalogue reflects source metadata and is not an independent proof of editorial approval.
 
 ## Required validation before release
 1. CI passes TypeScript and production build.
-2. In a compatible Chrome build with WebMCP testing enabled, open the preview and inspect `document.modelContext.getTools()`.
+2. In a compatible Chrome build with WebMCP testing enabled, open the preview and inspect the available browser WebMCP developer tooling for registered tools (do not assume a `getTools()` method exists without confirming the browser API).
 3. Confirm both tool names, input schemas and `readOnlyHint` annotations.
 4. Execute list, matching search, no-match search and invalid-input cases. Verify expected URLs and no side effects.
 5. Verify that browsers without WebMCP still render the site normally.
