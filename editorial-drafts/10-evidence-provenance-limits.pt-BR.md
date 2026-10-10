@@ -18,6 +18,14 @@ No trabalho com OpenProof, definimos políticas para evidências inline e refer�
 
 Evidência também não vira verdade por decreto. Um envio válido demonstra que um ator autorizado apresentou dados dentro de certos limites. Saber se esses dados comprovam pagamento, acordo ou conduta inadequada continua sendo uma questão separada para o processo de verificação e disputa.
 
+## Decisão: autenticar a evidência não é autenticar o pagamento
+
+Uma assinatura sobre o digest SHA-256 pode vincular os bytes enviados à chave registrada de quem assina. Não comprova que a transferência retratada aconteceu. O `ProofService.attachEvidence()` examinado verifica acesso à alegação antes de aceitar mídia assinada; o provedor registra metadados de armazenamento, não a verdade independente do pagamento. Uma captura de tela pode ser autêntica e ainda induzir a erro.
+
+## Falha: assinatura correta, alegação errada
+
+Considere uma assinatura válida anexada à prova de outro participante. Validade criptográfica não autoriza o vínculo. A verificação de escopo econômico precisa rejeitar a tentativa antes do armazenamento. Outro ataque usa payloads enormes ou profundamente aninhados: os limites devem ser aplicados antes de canonicalização, hash ou persistência custosos. Definir limites e comprovar seu enforcement no HEAD atual são etapas distintas.
+
 ## Diagrama conceitual
 
 ```mermaid
