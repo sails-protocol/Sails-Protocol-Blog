@@ -19,3 +19,11 @@ A trade may involve an on-chain transfer, a wallet, a payment provider or a bank
 The strongest claims about a financial workflow should survive uncomfortable questions. What if two completion requests race? What if the service restarts between recording a claim and applying its effect? What if a provider is unavailable? Our engineering reviews use these scenarios to demand evidence rather than rely on optimistic diagrams. Where a scenario remains unresolved, it stays unresolved in our public explanations too.
 
 *Technical and factual review pending. Do not publish before explicit approval.*
+
+## Source-backed boundary and next test
+
+A signed evidence digest attributes bytes to a registered key, not a completed bank payment.
+
+**Failure to avoid:** presenting this inspected boundary as a deployed end-to-end guarantee. **Next verification:** exact-head behavior, integration tests and operational evidence. Source inspection only; editorial and CTO approval pending.
+
+- [proof.service.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/proof.service.ts)
