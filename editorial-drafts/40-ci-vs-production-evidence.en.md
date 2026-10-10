@@ -15,3 +15,16 @@ Keep a chain of evidence: requirement, invariant, source commit, test environmen
 Publication should quote exact scope and known blind spots. A passing check is evidence for that check, not universal proof of safety or production readiness.
 
 *No verified implementation claim or permission to publish is implied by this draft.*
+
+## What the evidence records actually prove
+
+The Recovery/Reconciliation Conformance report distinguishes reused tests and scoped MULTISIG recovery from unproven cross-rail automation. The Durable Protocol Truth report is expressly investigation-only and documents independent-verification gaps rather than a passed production property. A CI result, a documented investigation, a conformance suite and a live provider receipt answer different questions. None can substitute for the others.
+
+**Review rule:** each claim needs the exact commit, environment, rail, failure injection, result and residuals. If a test used mocks, state which properties were mocked; if the investigation found a missing property, preserve it in the public-facing maturity statement.
+
+### Evidence ledger
+
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/RECOVERY_RECONCILIATION_CONFORMANCE_EVIDENCE.md
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/DURABLE_PROTOCOL_TRUTH_EVIDENCE.md
+
+*Historical evidence record and source inspection; latest deployment, CTO review and publication remain unverified.*
