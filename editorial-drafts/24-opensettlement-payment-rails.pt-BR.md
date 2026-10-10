@@ -2,17 +2,21 @@
 
 *Rascunho editorial. Temporada 4. Publicação não aprovada.*
 
-## A questão
+## A pergunta
 
- 
+Um mesmo fluxo pode liquidar Bitcoin multisig, um pagamento Lightning em retenção e um token EVM com as mesmas regras de finalidade? Não. Cada rede tem autoridade externa e janelas de falha próprias.
 
-## Direção de projeto
+## Decisão e fronteira
 
-m
+O registro examinado inclui caminhos MULTISIG, LIGHTNING_HODL, WDK_USDT_EVM e SAFE_GUARD_EVM. A prontidão não é equivalente: o caminho WDK_USDT_EVM com custódia no servidor não está elegível para produção, e SAFE_GUARD_EVM exige prova ao vivo com RPC financiado e bundler. A evidência registrada de recuperação e reconciliação cobre cenários MULTISIG específicos, não todas as redes. A coordenação OpenSettlement precisa preservar essas diferenças, não reduzi-las a um único estado Liquidado.
 
-## Evidência antes das afirmações
+## Falha e evidência
 
-n
+Um provedor expira após transmitir uma operação. Repetir o efeito econômico sem reconciliação pode duplicá-lo; assumir falha pode deixar a negociação travada. A evidência de recuperação vale para a rede testada. Uma garantia entre redes exige recibos independentes, testes de reinício no HEAD exato e verificação do vínculo com o destino.
+
+## Próxima pergunta
+
+Qual rede demonstra finalidade, recuperação e vínculo com o destino diante de uma falha real do provedor?
 
 ## Fluxo conceitual
 
