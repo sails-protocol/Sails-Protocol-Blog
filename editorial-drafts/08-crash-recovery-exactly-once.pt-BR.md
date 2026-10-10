@@ -14,9 +14,9 @@ Imagine que um serviço registra a conclusão de uma negociação, aplica um efe
 
 Uma transação de banco de dados pode tornar atômicas mudanças relacionadas no estado local. Ela não faz automaticamente um banco, blockchain ou provedor externo participar da mesma transação. Efeitos externos exigem seu próprio modelo de reconciliação, idempotência e falhas. Não devemos confundir atomicidade local com finalidade universal de ponta a ponta.
 
-## Como abordamos o problema
+## A decisão de recuperação
 
-No Sails, cenários de falha e recuperação fazem parte das evidências de engenharia que buscamos para transições econômicas. Queremos testes que interrompam um processo em pontos importantes, reiniciem com estado durável e verifiquem se as invariáveis continuam válidas. Uma afirmação sobre exactly-once precisa identificar a operação, o limite de persistência e a evidência que a sustenta.
+O módulo comum de idempotência e o serviço de negociação examinados separam persistência durável de trabalho posterior à gravação. Essa estrutura é ponto de partida, não prova de exactly-once universal. Uma alegação de recuperação precisa identificar operação, fronteira transacional, janela de falha e teste no commit exato com reinício sobre estado persistido. Provedores externos exigem evidência própria de recibos e reconciliação.
 
 ## Persistência durável, resposta perdida e repetição
 
