@@ -14,9 +14,9 @@ Idempotency means that repeating the same intended operation does not create an 
 
 An API key or request identifier helps, but it is not the entire solution. Imagine that a service records a completed trade and crashes before returning success. On restart, a retry must find the prior outcome instead of applying settlement again. This requires durable state and a clear transactional boundary.
 
-## How we approach it
+## The engineering decision
 
-In the Sails P2P Trading SDK, we treat retry behavior as an economic correctness question. Our engineering reviews include database-backed scenarios, concurrent requests and crash-and-replay tests. The exact guarantees depend on the operation, adapter and evidence approved for a particular implementation. We will not call a workflow exactly-once merely because one unit test passes.
+The inspected SDK and service implement a scoped idempotency contract for trade creation. That source inspection is narrower than a production guarantee: database-backed concurrency, crash-and-replay, and client key persistence must each be evidenced at an exact tested revision. A passing unit test alone does not establish exactly-once economic behavior.
 
 ## A concrete contract in the Sails SDK
 
