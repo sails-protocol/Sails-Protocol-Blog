@@ -6,10 +6,10 @@ Status: **BLOCKED FOR PRODUCTION**. This is an evidence ledger, not a release ap
 | Gate | Evidence | State |
 | --- | --- | --- |
 | Build, TypeScript, route smoke checks | GitHub Actions Validate Blog #35, all steps successful | PASS for tested commit |
-| WebMCP catalogue, tool execution, registration and rollback | GitHub Actions #35, mocked registration tests | PASS for tested commit |
+| WebMCP catalogue, tool execution, registration and rollback | GitHub Actions #35, mocked registration tests; async cleanup fix pending CI | PASS on #35; RECHECK HEAD |
 | Browser-native WebMCP registration and agent discovery | No compatible-browser execution record | OPEN, BLOCKER |
 | WebMCP security and browser compatibility review | No end-to-end negative/compatibility report | OPEN, BLOCKER |
-| Dependency lockfile and reproducible npm ci | No committed lockfile | OPEN, BLOCKER |
+| Dependency lockfile and reproducible npm ci | Isolated feature-branch lockfile generation workflow added; lockfile not yet verified | OPEN, BLOCKER |
 | Visual QA, keyboard accessibility and responsive behavior | No verified browser review | OPEN, BLOCKER |
 | External links, CSP and deployment headers | No completed review | OPEN, BLOCKER |
 | Editorial claims and CTO review | Introductory article is a test fixture, not approved publication | OPEN, BLOCKER |
