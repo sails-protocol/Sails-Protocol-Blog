@@ -18,6 +18,18 @@ try {
       if (!(await navigation.count())) { failed = true; console.error(route, viewport.width, 'missing primary navigation'); }
       const main = page.locator('main');
       if (!(await main.count())) { failed = true; console.error(route, viewport.width, 'missing main landmark'); }
+      if (route === '/') {
+        const articlesLink = page.locator('a[href="/articles"], a[href="/articles/"]').first();
+        if (!(await articlesLink.count())) { failed = true; console.error(route, viewport.width, 'missing article navigation link'); }
+        else {
+          await articlesLink.click();
+          await page.waitForLoadState('networkidle');
+          if (!new URL(page.url()).pathname.startsWith('/articles')) {
+            failed = true; console.error(route, viewport.width, 'article navigation failed:', page.url());
+          }
+          await page.goto(new URL(route, base).href, {waitUntil: 'networkidle'});
+        }
+      }
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
       if (overflow) { failed = true; console.error(route, viewport.width, 'horizontal page overflow'); }
       const result = await new AxeBuilder({page}).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
