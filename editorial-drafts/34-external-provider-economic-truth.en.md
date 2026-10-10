@@ -14,4 +14,17 @@ An adapter translates external observations into a bounded contract. It should v
 
 A test suite should inject forged webhooks, stale status, conflicting confirmations and provider downtime. The expected result is safe rejection or an explicitly pending state, never fabricated settlement. Provider-specific guarantees require documented evidence.
 
-*Source verification and exact API references pending.*
+## Decision: bounded observation is not settlement authority
+
+The inspected `bounded-rpc.ts` distinguishes owned raw HTTP requests, where an AbortController bounds waiting, from ethers JSON-RPC calls using native request timeouts. Its retry helper is opt-in: a mutating broadcast must not be automatically retried merely because a response timed out. Dispatch may already have occurred, leaving an **UNKNOWN** result. The adapter must reconcile with independently checkable receipts and durable trade authority instead of inventing a failure or success.
+
+## Failure: timeout after dispatch
+
+A transaction reaches the provider, but its response is lost. A naive retry sends the same economic action again; a naive failure handler declares it absent. Both are unsafe without a rail-specific deduplication or reconciliation contract. The provider-substitution evidence supports selected semantics, not universal equivalence across providers.
+
+## Evidence and next question
+
+- [Bounded RPC and retry rules](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/bounded-rpc.ts)
+- [Provider-substitution evidence](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROVIDER_SUBSTITUTION_INVARIANCE_EVIDENCE.md)
+
+*Source-inspected only.* Which rails have exact-head timeout-after-dispatch reconciliation proof?
