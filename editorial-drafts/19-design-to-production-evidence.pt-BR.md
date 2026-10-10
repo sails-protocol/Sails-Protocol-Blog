@@ -28,3 +28,9 @@ flowchart TD
 Equivalente textual: o diagrama mostra os limites de responsabilidade descritos acima, não uma implantação verificada.
 
 *Referências, revisão técnica e aprovação do responsável pela publicação pendentes.*
+
+## Fronteira examinada, não certificação de produção
+
+Princípio arquitetural não é comprovação de implantação. **Falha:** confundir design documentado com comportamento implantado. Ainda são necessários testes de integração e execução no HEAD exato.
+
+- [PROTOCOL_INVARIANTS.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROTOCOL_INVARIANTS.md)
