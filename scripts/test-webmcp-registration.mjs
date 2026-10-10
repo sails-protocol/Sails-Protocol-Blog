@@ -24,7 +24,7 @@ const context = {
 };
 const cleanup = await registerArticleTools(context, 'https://example.org');
 assert.equal(registered.size, 2);
-assert.equal(JSON.parse((await registered.get('sails_list_articles').execute({})).content[0].text)[0].url, 'https://example.org/articles/what-is-sails-protocol');
+assert.equal(JSON.parse((await registered.get('sails_list_articles').execute({})).content[0].text)[0].url, 'https://example.org/articles/what-is-sails-protocol/');
 await assert.rejects(() => registerArticleTools(context, 'https://example.org'), /duplicate tool/);
 assert.equal(registered.size, 2, 'failed duplicate must preserve original registrations');
 await cleanup();
