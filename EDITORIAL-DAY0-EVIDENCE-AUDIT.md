@@ -76,3 +76,7 @@ Source-backed additions were made to canonical articles **13, 35, 39, 48** in EN
 ## Narrative integration pass (2026-10-10)
 
 Moved previously appended source-backed sections ahead of the reading transition in canonical articles **06, 07, 08** across EN/PT-BR/ES (**9 editions**). This resolves the specific ordering defect in those drafts; it is **not** a complete substantive G1 rewrite or independent quality acceptance. The other source-backed articles remain queued for structure, repetition and source-maturity review. No runtime tests or Browser Gate were executed in this pass.
+
+## Citation hygiene pass (2026-10-10)
+
+Canonical articles **09, 10, 12** EN/PT-BR/ES now use descriptive Markdown links to immutable Protocol source paths instead of raw URLs, with consistent spacing. Removed obsolete source-pending placeholders in seven files where evidence references were already present. **This is citation/format hygiene, not deep G1 acceptance.** Existing source-backed coverage remains 17 articles / 51 language editions; no new source verification or browser test was performed.
