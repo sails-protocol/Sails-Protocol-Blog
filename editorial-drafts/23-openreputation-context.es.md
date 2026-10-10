@@ -2,17 +2,17 @@
 
 *Borrador editorial. Temporada 4. Publicación no aprobada.*
 
-## La cuestión
+## La pregunta
 
-p
+¿Sirve una buena reputación de un mercado en otro? Solo con contexto.
 
-## Dirección de diseño
+## Decisión y límite
 
-p
+OpenReputation propone señales portables y atribuibles, no una puntuación universal. El modelo define participantes, pero no implementa puntuación entre mercados ni una política común. Cada aplicación decide qué acepta.
 
-## Evidencia antes de las afirmaciones
+## Fallo y evidencia
 
- 
+Una señal de operación exitosa sin red de pago, historial de disputas ni emisor puede engañar a otro mercado. Probar procedencia, consentimiento, revocación y política local antes de prometer portabilidad.
 
 ## Flujo conceptual
 
