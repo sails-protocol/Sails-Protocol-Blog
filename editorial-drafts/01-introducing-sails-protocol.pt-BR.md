@@ -24,10 +24,10 @@ Este blog seguirá o mesmo método que usamos no desenvolvimento: fazer pergunta
 
 No próximo artigo, vamos explorar por que mercados P2P precisam de coordenação e o que as plataformas existentes já fazem bem.
 
-*Revisão técnica pendente. Afirmações sobre implementação e maturidade precisam ser verificadas no repositório e nas evidências aprovadas pelo CTO antes da publicação.*
-
 ## Fronteira de evidência
 
 Visão do protocolo, obrigações de implementação e evidência executável têm maturidades distintas. **Falha:** confundir intenção documentada com comportamento verificado em produção. Evidência de execução no HEAD exato e aprovação pendentes.
 
 - [PROTOCOL_INVARIANTS.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROTOCOL_INVARIANTS.md)
+
+*Revisão técnica pendente. Afirmações sobre implementação e maturidade precisam ser verificadas no repositório e nas evidências aprovadas pelo CTO antes da publicação.*
