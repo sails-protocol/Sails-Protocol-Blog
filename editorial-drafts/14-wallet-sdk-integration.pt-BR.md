@@ -27,3 +27,11 @@ flowchart TD
 Equivalente textual: o diagrama mostra os limites de responsabilidade descritos acima, não uma implantação verificada.
 
 *Referências, revisão técnica e aprovação do responsável pela publicação pendentes.*
+
+## Fronteira comprovada no código e próximo teste
+
+O SDK examinado oferece criação de negociação com chave de idempotência opcional; custódia e assinatura da carteira exigem provas separadas.
+
+**Falha a evitar:** apresentar a fronteira examinada como garantia de ponta a ponta já implantada. **Próxima verificação:** comportamento no HEAD exato, testes de integração e evidência operacional. Somente inspeção de código; aprovação editorial e do CTO pendentes.
+
+- [openp2p.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/packages/sails-sdk/src/modules/openp2p.ts)
