@@ -2,17 +2,17 @@
 
 *Borrador editorial. Temporada 4. Publicación no aprobada.*
 
-## La cuestión
+## La pregunta
 
- 
+La identidad puede demostrar control de una clave, pero ¿quién puede actuar en una operación?
 
-## Dirección de diseño
+## Decisión y límite
 
-a
+El modelo distingue al participante principal de la billetera o agente delegado. Autenticarse con desafío y respuesta no autoriza operaciones; cada transición debe comprobar participante y rol.
 
-## Evidencia antes de las afirmaciones
+## Fallo y evidencia
 
-a
+Una firma válida del participante equivocado no debe liberar escrow. Probar el alcance delegado y la resistencia a replay en el HEAD exacto antes de afirmar portabilidad.
 
 ## Flujo conceptual
 
