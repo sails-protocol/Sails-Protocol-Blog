@@ -28,6 +28,18 @@ Equivalente textual: el diagrama muestra los límites de responsabilidad descrit
 
 *Referencias, revisión técnica y aprobación del responsable de publicación pendientes.*
 
+## Una respuesta perdida no convierte el reintento en una operación segura
+
+Imaginemos que el comprador pulsa **Crear operación**. El servicio registra la operación, pero la respuesta se pierde antes de que la billetera reciba su identificador. El comprador vuelve a intentarlo. Si la nueva solicitud usa otra clave de idempotencia, o ninguna, el servicio puede interpretarla como una segunda intención económica. Un botón de reintento puede terminar creando otra operación.
+
+La integración debe generar una clave estable por intención del usuario, conservarla entre reintentos de transporte y reconciliar las respuestas inciertas antes de permitir una nueva operación. Esa obligación pertenece a la aplicación. El argumento opcional observado en el SDK demuestra un mecanismo disponible, no que una billetera concreta lo utilice correctamente.
+
+Hay otro límite al solicitar la firma. El identificador de la operación, la autoridad del participante, el activo, la red, el importe, el destino y las condiciones de liquidación deben coincidir con lo que el usuario aprobó. Una firma criptográficamente válida sobre un contexto equivocado no autoriza la operación pretendida. El registro del coordinador tampoco sustituye el resultado de liquidación observado en la red externa.
+
+La decisión de integración es mantener las claves y las firmas bajo control de la billetera, y hacer explícitas la identidad de los reintentos y el contexto de aprobación. Esto añade trabajo a la experiencia de recuperación, pero evita convertir un reintento de red o una firma genérica en consentimiento económico.
+
+**Siguiente pregunta:** ¿puede una prueba de integración sobre el HEAD exacto simular una operación persistida cuya respuesta se perdió, recuperar la misma operación al reintentar y rechazar un contexto de firma distinto sin un segundo efecto económico? Hasta registrar esa evidencia, sigue siendo un requisito, no una garantía verificada.
+
 ## Límite respaldado por el código y próxima prueba
 
 El SDK inspeccionado expone creación de operaciones con clave de idempotencia opcional; custodia y firma requieren pruebas separadas.
