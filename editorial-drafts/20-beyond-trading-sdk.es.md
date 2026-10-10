@@ -2,17 +2,21 @@
 
 *Borrador editorial. Temporada 4. Publicación no aprobada.*
 
-## La cuestión
+## La pregunta
 
-t
+¿Qué viene después del primer SDK? Una familia de capacidades solo sirve si comparte reglas económicas explícitas.
 
-## Dirección de diseño
+## Decisión y límite
 
-a
+El primer foco es P2P Trading. Identidad, pruebas, reputación, liquidación, liquidez, agentes y finanzas son direcciones modulares distintas, no un producto ya desplegado. Cada módulo debe declarar quién tiene autoridad, qué efecto económico puede solicitar y qué invariante conserva. El documento de invariantes distingue arquitectura, obligaciones de implementación y evidencia ejecutable.
 
-## Evidencia antes de las afirmaciones
+## Fallo y evidencia
 
-a
+Una billetera puede integrar una función OpenFinance y asumir que el protocolo garantiza a su proveedor externo de préstamos. Eso trasladaría responsabilidad sin prueba. Cada proveedor necesita su propio modelo de autoridad, gestión de fallos y gate; ninguna función del roadmap hereda la madurez del Trading SDK.
+
+## Siguiente pregunta
+
+¿Qué módulo puede demostrar una integración real, acotada y con evidencia reproducible de forma independiente?
 
 ## Flujo conceptual
 
