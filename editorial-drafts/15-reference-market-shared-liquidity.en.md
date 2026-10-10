@@ -27,3 +27,9 @@ flowchart TD
 Text equivalent: the diagram shows the responsibility boundaries discussed above, not verified deployment.
 
 *Source references, technical review and owner publication approval pending.*
+
+## Evidence boundary and failure mode
+
+Selected provider-substitution properties do not establish universal shared liquidity or an operational market. **Failure:** interpreting this architectural or source-inspected statement as current production verification. Exact-head tests and approval are still required.
+
+- [PROVIDER_SUBSTITUTION_INVARIANCE_EVIDENCE.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROVIDER_SUBSTITUTION_INVARIANCE_EVIDENCE.md)
