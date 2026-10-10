@@ -65,3 +65,42 @@ html[data-theme='dark'] .menu__link { color: var(--ifm-menu-color); }
 html[data-theme='dark'] .docusaurus-mermaid-container {
   color-scheme: dark;
 }
+
+/* Theme audit: override Infima's effective surface variables and accessible controls. */
+html[data-theme='dark'] {
+  --ifm-navbar-background-color: #1c2835;
+  --ifm-toc-border-color: #455569;
+  --ifm-color-content: #e7edf3;
+  --ifm-color-content-secondary: #cbd6e1;
+}
+html[data-theme='dark'] body,
+html[data-theme='dark'] #__docusaurus,
+html[data-theme='dark'] .main-wrapper,
+html[data-theme='dark'] main,
+html[data-theme='dark'] .container,
+html[data-theme='dark'] .row,
+html[data-theme='dark'] .col {
+  background-color: #10161d;
+}
+html[data-theme='dark'] .table-of-contents,
+html[data-theme='dark'] .table-of-contents__link,
+html[data-theme='dark'] .table-of-contents__link:visited {
+  color: #e7edf3 !important;
+}
+html[data-theme='dark'] .navbar__toggle,
+html[data-theme='dark'] .navbar-sidebar__close,
+html[data-theme='dark'] [class*='colorModeToggle'] button,
+html[data-theme='dark'] [class*='toggleButton'] {
+  color: #e7edf3;
+}
+html[data-theme='dark'] .navbar__toggle svg,
+html[data-theme='dark'] [class*='colorModeToggle'] svg,
+html[data-theme='dark'] [class*='toggleButton'] svg {
+  color: #e7edf3;
+  fill: currentColor;
+  stroke: currentColor;
+}
+html[data-theme='dark'] .navbar__toggle,
+html[data-theme='dark'] [class*='colorModeToggle'] button {
+  background-color: #1c2835;
+}
