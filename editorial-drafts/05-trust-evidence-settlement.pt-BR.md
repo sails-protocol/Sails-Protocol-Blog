@@ -19,3 +19,11 @@ Uma negociação pode envolver transferência on-chain, carteira, provedor de pa
 As afirmações mais importantes sobre um fluxo financeiro precisam resistir a perguntas desconfortáveis. E se duas requisições de conclusão chegarem ao mesmo tempo? E se o serviço reiniciar entre registrar uma operação e aplicar seu efeito? E se um provedor ficar indisponível? Usamos esses cenários nas revisões para exigir evidências, em vez de confiar em diagramas otimistas. Quando um cenário não está resolvido, isso também precisa ficar claro na nossa comunicação pública.
 
 *Revisão técnica e factual pendente. Não publicar sem aprovação explícita.*
+
+## Fronteira comprovada no código e próximo teste
+
+Uma assinatura de evidência atribui bytes a uma chave registrada, não comprova pagamento bancário.
+
+**Falha a evitar:** apresentar a fronteira examinada como garantia de ponta a ponta já implantada. **Próxima verificação:** comportamento no HEAD exato, testes de integração e evidência operacional. Somente inspeção de código; aprovação editorial e do CTO pendentes.
+
+- [proof.service.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/proof.service.ts)
