@@ -4,15 +4,15 @@
 
 ## The question
 
-A
+Identity can prove control of a key, but who may act on a trade?
 
-## Design direction
+## Design decision and boundary
 
-U
+The participant model distinguishes the principal from a delegated wallet or agent. Challenge-response authentication is not trade authorization; each economic transition must check its participant and role.
 
-## Evidence before claims
+## Failure and evidence
 
-U
+A valid signature from the wrong participant must not release escrow. Prove delegated scope and replay resistance in exact-head tests before calling identity portable across applications.
 
 ## Conceptual flow
 
