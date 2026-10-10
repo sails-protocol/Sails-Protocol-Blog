@@ -54,3 +54,12 @@ Link these articles through a clear modular architecture diagram and reading pat
 - No CTO/owner gate is waived.
 
 **NO MATERIAL FINDING UNDER THE RUG.**
+
+## Editorial execution record (2026-10-10)
+
+Two substantive, trilingual deep-revision sets have been drafted **without overwriting the original article files**:
+
+- OpenIdentity / Season 4 article 21: `editorial-drafts/deep-revisions/21-openidentity-boundaries.{en,pt-BR,es}.md`. Covers identifier, resolution, proof of possession, participant binding and authorization, with a key-rotation/replay failure case.
+- Sails Node transport / Season 5 article 32: `editorial-drafts/deep-revisions/32-node-transport-boundaries.{en,pt-BR,es}.md`. Covers Pear, Iroh and Nostr as candidate transport interfaces, duplicate delivery and economic-state isolation.
+
+**Status:** six new companion drafts, not six new numbered articles, not production content, and not independently reviewed translations. No source-level verification or test execution in this writing pass. Next: inspect actual Sails Protocol contracts and CTO decisions; reconcile drafts into canonical article files only after review; develop OpenProof/OpenReputation cross-links and diagrams.
