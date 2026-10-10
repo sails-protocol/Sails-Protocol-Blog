@@ -124,3 +124,7 @@ Replaced visibly broken one-character placeholders (e.g. `A`, `U`, `m`, `n`) wit
 ## G1 placeholder remediation — article 20, 2026-10-10
 
 The next pass identified a remaining substantive Season 4 defect: article **20** still had one-character/empty body sections in EN/PT-BR/ES despite the prior first-pass 48/144 coverage. Replaced those sections with a coherent protocol-vs-module roadmap, authority boundary, failure scenario, evidence maturity and next question in **all three editions**. Spot-checked the ES editions of articles 20–27 for single-character section bodies (none remain). This does not prove catalog-wide editorial QA: an attempted full 144-file scan was interrupted by tool-call limits. G1/G2 and browser gates remain pending; no merge/publication.
+
+## G1 focused continuation — 2026-10-10
+
+Checked the nine article trios **14–19, 28, 30–31** for single-character section-body placeholders: **27 editions inspected, none found**. Deepened article **28** in EN/PT-BR/ES with concrete optional SDK idempotency-key acceptance/retry contract and test obligations, and article **31** in EN/PT-BR/ES with schema-vs-economic-semantic compatibility, negative-version tests and the bounded condition-algebra source. **6 substantive edition updates**. The broader 144-file scan remains incomplete due to tool-call limits; no G1/G2 PASS, browser PASS, merge or publication.
