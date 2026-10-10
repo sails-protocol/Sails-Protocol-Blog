@@ -28,6 +28,18 @@ Text equivalent: the diagram shows the responsibility boundaries discussed above
 
 *Source references, technical review and owner publication approval pending.*
 
+## A failed-response trade is not a harmless retry
+
+Consider a buyer tapping **Create trade** in a wallet. The coordination service persists the trade, but the response is lost before the wallet receives the identifier. The buyer taps again. If the second request uses a new idempotency key, or no key at all, the service may interpret it as a distinct economic intention. A wallet's familiar retry spinner can therefore create a second trade rather than recover the first.
+
+The integration should generate a stable key for one user intention, retain it across transport retries, and reconcile an uncertain response before offering a new attempt. That is an application-level obligation, not a property conferred merely by importing the SDK. The inspected optional argument shows an available mechanism, not proof that a particular wallet uses it correctly.
+
+A second boundary appears when the wallet is asked to sign. The trade identifier, participant authority, asset, network, amount, destination and settlement conditions must be checked against what the user actually approved. A valid signature over the wrong trade context is not valid authorization for the intended trade. Coordination records cannot substitute for the external network's settlement result.
+
+The practical choice is to keep the wallet's signing and key material outside the coordination SDK, while making retry identity and approval context explicit at the integration edge. This adds recovery and confirmation work to the wallet UX, but avoids silently treating a transport retry or generic signature as economic consent.
+
+**Next question:** can an exact-head integration test reproduce a persisted trade with a lost response, recover the same trade after retry, and show that mismatched signing context is rejected without a second economic effect? Until such a test is recorded, this remains an integration requirement rather than a verified guarantee.
+
 ## Source-backed boundary and next test
 
 The inspected SDK exposes trade creation with an optional idempotency key; wallet custody and signing guarantees need separate evidence.
