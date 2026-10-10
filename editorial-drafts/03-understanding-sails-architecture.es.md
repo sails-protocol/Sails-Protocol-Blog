@@ -32,5 +32,4 @@ El documento de invariantes distingue principios arquitectónicos, obligaciones 
 
 *Código inspeccionado en revisión fijada; no implica aprobación del CTO ni verificación de producción.*
 
-
 *Revisión técnica y factual pendiente. No publicar sin aprobación explícita.*
