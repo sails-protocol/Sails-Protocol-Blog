@@ -27,3 +27,11 @@ flowchart TD
 Equivalente textual: el diagrama muestra los límites de responsabilidad descritos arriba, no un despliegue verificado.
 
 *Referencias, revisión técnica y aprobación del responsable de publicación pendientes.*
+
+## Límite respaldado por el código y próxima prueba
+
+El SDK inspeccionado expone creación de operaciones con clave de idempotencia opcional; custodia y firma requieren pruebas separadas.
+
+**Fallo a evitar:** presentar el límite inspeccionado como garantía de extremo a extremo ya desplegada. **Próxima verificación:** comportamiento en el HEAD exacto, pruebas de integración y evidencia operativa. Solo inspección de código; revisión editorial y del CTO pendientes.
+
+- [openp2p.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/packages/sails-sdk/src/modules/openp2p.ts)
