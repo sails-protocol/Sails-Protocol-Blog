@@ -15,3 +15,9 @@ A node implementation may enforce authorization, transition validity, replay res
 A restart drill should interrupt a trade between durable commit and client acknowledgment, then prove that replay does not duplicate economic effects. Deployment requirements and supported node topology must be verified before this becomes an operator manual.
 
 *Source verification and exact API references pending.*
+
+## Source evidence and failure boundary
+
+Recorded recovery coverage is scoped to named MULTISIG scenarios, not every rail. The next gate is exact-head operational verification; this source citation does not grant release approval.
+
+- [RECOVERY_RECONCILIATION_CONFORMANCE_EVIDENCE.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/RECOVERY_RECONCILIATION_CONFORMANCE_EVIDENCE.md)
