@@ -72,3 +72,7 @@ Report **topics planned / first drafted / substantively reviewed / evidence-audi
 - The Sails editorial DNA remains: **Question -> Boundary -> Decision -> Failure -> Evidence -> Next Question**.
 - Source of truth: `EDITORIAL-DNA-AND-QUALITY-GATES.md`, `EDITORIAL-VOICE-GUIDE.md`, `EDITORIAL-VISUAL-STANDARDS.md`, `EDITORIAL-SEASONS-AND-READING-PATHS.md`.
 - **NO MATERIAL FINDING UNDER THE RUG.**
+
+## Owner-requested institutional editorial track: AI methodology and intellectual influences
+
+This is a **cross-cutting institutional track**, not an automatic eighth season or a silent change to the 48-article baseline. Planned public outputs: (a) a permanent, verifiable methodology page and (b) a curated authors/works/influences page, with optional links from relevant articles. The first English draft is `editorial-drafts/institutional-ai-engineering-methodology.en.md`. **Its source audit is blocked:** the canonical GitHub methodology and original inspiration list were not retrieved in the current pass. Do not guess names, imply endorsement, or publish until exact references are checked. Translate to PT-BR and ES only after factual source audit, then apply normal review gates. Track this separately from the 48 numbered topics so the progress dashboard remains honest.
