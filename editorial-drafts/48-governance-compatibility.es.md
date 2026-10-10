@@ -15,3 +15,17 @@ La gobernanza debe distinguir propuestas, política revisada, implementación, v
 Un cliente interpreta una nueva denominación de comisión como la anterior. Aunque ambos compilen, el resultado puede ser económicamente incorrecto. Publique contratos versionados y pruebas de migración antes de afirmar compatibilidad.
 
 *No se afirma implementación en producción ni aprobación de publicación.*
+
+## Gobernanza es jerarquía de afirmaciones, no sello de lanzamiento
+
+El documento de invariantes distingue leyes arquitectónicas, obligaciones concretas de implementación y evidencia ejecutable cuando procede. El registro de conformidad del álgebra de condiciones demuestra una propiedad delimitada, pero señala que el ruleset publicado no compone condiciones. La evidencia de sustitución de proveedores también respalda propiedades seleccionadas, no K3 completo ni interoperabilidad universal. Publicar una versión o superar un harness no certifica todo el protocolo.
+
+**Gate de compatibilidad:** indicar identidad exacta del ruleset, versión del protocolo/SDK, red, implementación independiente y vector falsable. Mantener una migración cuando cambie la semántica; no convertir un PASS específico en compatibilidad universal.
+
+### Source and maturity
+
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROTOCOL_INVARIANTS.md
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/CONDITION_ALGEBRA_CONFORMANCE_EVIDENCE.md
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROVIDER_SUBSTITUTION_INVARIANCE_EVIDENCE.md
+
+*Historical evidence/source inspection only; no latest-head test or publication approval.*
