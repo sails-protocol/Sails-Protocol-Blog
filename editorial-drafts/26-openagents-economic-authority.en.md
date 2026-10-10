@@ -4,15 +4,15 @@
 
 ## The question
 
-A
+Can an AI agent negotiate without becoming an independent owner of funds?
 
-## Design direction
+## Decision and boundary
 
-U
+The participant RFC treats agents as delegated, not independent economic principals. OpenAgents therefore needs explicit scope, revocation, limits and accountable authority; model output cannot itself authorize settlement.
 
-## Evidence before claims
+## Failure and evidence
 
-U
+An agent may propose a trade after its mandate expires. The node must reject before economic effects; prove authorization at an exact revision. No deployed autonomous-agent guarantee is established.
 
 ## Conceptual flow
 
