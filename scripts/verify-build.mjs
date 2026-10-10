@@ -1,5 +1,4 @@
 import {existsSync, readFileSync} from 'node:fs';
-import {join} from 'node:path';
 
 const expected = [
   ['Homepage', 'build/index.html'],
@@ -22,6 +21,22 @@ if (existsSync('build/index.html')) {
   const html = readFileSync('build/index.html', 'utf8');
   if (!html.includes('Building open P2P infrastructure')) {
     console.error('Homepage content missing');
+    failed = true;
+  }
+}
+if (existsSync('build/sitemap.xml')) {
+  const sitemap = readFileSync('build/sitemap.xml', 'utf8');
+  for (const route of ['/articles/', '/articles/what-is-sails-protocol']) {
+    if (!sitemap.includes(route)) {
+      console.error('Missing sitemap route:', route);
+      failed = true;
+    }
+  }
+}
+if (existsSync('build/articles/what-is-sails-protocol/index.html')) {
+  const article = readFileSync('build/articles/what-is-sails-protocol/index.html', 'utf8');
+  if (!article.includes('What is Sails Protocol?')) {
+    console.error('Article title missing');
     failed = true;
   }
 }
