@@ -35,3 +35,17 @@ flowchart TD
 The diagram is conceptual and does not establish implemented security guarantees.
 
 *Pending: immutable source references, threat model, verification evidence and CTO approval.*
+
+## Source-backed settlement boundary
+
+The escrow registry maps BTC to MULTISIG, LN_BTC to Arkade-based LIGHTNING_HODL, and USDT_ERC20 to the WDK EVM reference provider. These mappings describe implementation selection, not verified production finality. The WDK provider declares a single server-held seed and production-ineligible status; the Arkade provider documents testnet-only scope. Bitcoin multisig describes external funding observation and separate signature collection. The protocol must distinguish a request accepted by its database, a provider-reported transaction, chain confirmation and irreversible economic settlement.
+
+**Failure scenario:** a provider reports funding but a reorganization or incomplete receipt invalidates the assumed lock. The source documents funding/reorg mechanisms for specific rails, not a blanket guarantee. Require exact network, confirmations, receipts, restart tests and release authority before saying 'final'.
+
+### Primary source / maturity
+
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/wdk-settlement.provider.ts
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/lightning-hodl.provider.ts
+
+*Source inspection only; no new live test, CTO approval or publication authorization.*
