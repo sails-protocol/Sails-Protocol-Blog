@@ -72,3 +72,7 @@ Articles **36, 37, 40** now contain source-linked conformance caveats in EN/PT-B
 ## Wave A threat, resource and compatibility correction (2026-10-10)
 
 Source-backed additions were made to canonical articles **13, 35, 39, 48** in EN/PT-BR/ES (**12 more editions**). Cumulative coverage: **17 distinct articles / 51 canonical language editions** containing bounded technical corrections, not 51 completed G1/G2 acceptances. Sources include the threat model, durable truth residuals, provider-substitution conformance, condition-algebra conformance and dispute evidence-descriptor schema. A current-HEAD execution sweep is still required before claiming remediation of any historically recorded residual. No merge, site change or release authorization.
+
+## Narrative integration pass (2026-10-10)
+
+Moved previously appended source-backed sections ahead of the reading transition in canonical articles **06, 07, 08** across EN/PT-BR/ES (**9 editions**). This resolves the specific ordering defect in those drafts; it is **not** a complete substantive G1 rewrite or independent quality acceptance. The other source-backed articles remain queued for structure, repetition and source-maturity review. No runtime tests or Browser Gate were executed in this pass.
