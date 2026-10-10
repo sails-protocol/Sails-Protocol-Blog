@@ -4,15 +4,19 @@
 
 ## The question
 
-A
+Can one coordination workflow settle a Bitcoin multisig trade, a Lightning-like hold and an EVM token transfer with the same finality rules? No. The rails expose different external authorities and failure windows.
 
-## Design direction
+## The decision and boundary
 
-U
+The inspected escrow provider registry includes MULTISIG, LIGHTNING_HODL, WDK_USDT_EVM and SAFE_GUARD_EVM paths. Their readiness is not equivalent: the WDK_USDT_EVM server-custodial path is not production eligible, and SAFE_GUARD_EVM needs live funded RPC and bundler evidence. The recorded recovery/reconciliation conformance covers named MULTISIG scenarios, not all rails. OpenSettlement coordination must preserve those distinctions rather than flatten them into a generic Settled flag.
 
-## Evidence before claims
+## Failure and evidence
 
-U
+A provider times out after a broadcast. Retrying the same economic effect without reconciling can duplicate it; assuming failure can leave the trade stuck. The recovery evidence is bounded to its tested rail, while a cross-rail guarantee needs independent provider receipts, exact-head restart tests and destination-binding verification.
+
+## Next question
+
+Which rail can demonstrate finality, crash recovery and destination binding under real provider failure?
 
 ## Conceptual flow
 
