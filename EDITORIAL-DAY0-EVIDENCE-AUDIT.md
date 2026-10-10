@@ -80,3 +80,7 @@ Moved previously appended source-backed sections ahead of the reading transition
 ## Citation hygiene pass (2026-10-10)
 
 Canonical articles **09, 10, 12** EN/PT-BR/ES now use descriptive Markdown links to immutable Protocol source paths instead of raw URLs, with consistent spacing. Removed obsolete source-pending placeholders in seven files where evidence references were already present. **This is citation/format hygiene, not deep G1 acceptance.** Existing source-backed coverage remains 17 articles / 51 language editions; no new source verification or browser test was performed.
+
+## Deep narrative pass — article 09 (2026-10-10)
+
+Canonical article 09 EN/PT-BR/ES now contains an integrated three-boundary explanation (authentication, trade membership authorization, economic transition validity), an adversarial valid-signature/wrong-trade case and explicit delegated-agent evidence limits. Source references remain pinned. This is a substantive editorial improvement, **not** G1 or G2 acceptance. Browser Gate and CTO review remain open.
