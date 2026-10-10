@@ -18,4 +18,19 @@ The SDK is meant to let different applications integrate trading workflows witho
 
 The first SDK is a starting point for a wider modular family, not proof that the entire family exists today. As the implementation advances, we will publish concrete examples, supported interfaces, test evidence and known limitations. Until then, this article explains the product direction rather than declaring production readiness.
 
+## What the inspected integration actually exposes
+
+At the pinned source revision, the OpenP2P SDK client exposes `trade(offerId, amount, idempotencyKey?)`. The key is optional, but that choice has economic consequences: a caller that omits it can create a second trade after a lost response. The HTTP route validates the supplied key and forwards the authenticated participant context to the trade service. The service scopes the logical attempt to its action, participant and offer/amount payload. This is a concrete integration contract, not proof that every wallet preserves the key across offline retries.
+
+**Failure:** a mobile client regenerates the key whenever the user taps Retry. The server sees new attempts instead of a replay of the original acceptance. **Decision:** persist and reuse the key for the same logical acceptance; issue a new key only for a genuinely new acceptance.
+
+### Sources and maturity
+
+- [OpenP2P SDK client](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/packages/sails-sdk/src/modules/openp2p.ts)
+- [Trade HTTP route](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.routes.ts)
+- [Trade service](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts)
+
+*Pinned source inspection; no exact-head client/restart test or publication approval.*
+
+
 *Technical and factual review pending. Do not publish before explicit approval.*
