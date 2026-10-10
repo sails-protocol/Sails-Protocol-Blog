@@ -30,7 +30,6 @@ flowchart TD
 
 This diagram illustrates a design principle, not verified runtime behavior.
 
-*Technical references and approval pending.*
 
 ## Verified evidence boundary
 
