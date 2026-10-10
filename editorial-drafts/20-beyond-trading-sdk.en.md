@@ -4,15 +4,19 @@
 
 ## The question
 
-A
+What does a protocol become after its first SDK? A family of capabilities is useful only when its shared economic rules are explicit.
 
-## Design direction
+## Decision and boundary
 
-U
+The first focused integration is P2P Trading. Identity, proof, reputation, settlement, liquidity, agents and finance describe distinct modular directions, not one already deployed product. A new module must state which actor has authority, what economic effect it may request and which existing invariant it preserves. The protocol invariant document distinguishes architecture, implementation obligations and executable evidence.
 
-## Evidence before claims
+## Failure and evidence
 
-U
+A wallet might integrate an OpenFinance feature and assume that the protocol guarantees its external lending provider. That would transfer responsibility without proof. Each provider needs a separate authority model, failure handling and acceptance gate; no roadmap item inherits production readiness from the Trading SDK.
+
+## Next question
+
+Which module can demonstrate a real, bounded integration with independently reproducible evidence?
 
 ## Conceptual flow
 
