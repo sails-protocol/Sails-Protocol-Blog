@@ -35,3 +35,17 @@ flowchart TD
 El diagrama es conceptual y no demuestra garantías de seguridad implementadas.
 
 *Pendiente: fuentes inmutables, modelo de amenazas, evidencias de verificación y aprobación del CTO.*
+
+## Límite de liquidación respaldado por el código
+
+El registro de escrow asigna BTC a MULTISIG, LN_BTC a LIGHTNING_HODL basado en Arkade y USDT_ERC20 al proveedor WDK EVM de referencia. Esas asignaciones describen selección de implementación, no finalidad verificada en producción. WDK declara semilla única en el servidor y no aptitud para producción; Arkade documenta alcance de testnet. Multisig Bitcoin describe observación de depósitos externos y recolección independiente de firmas. Hay que distinguir aceptación en la base de datos, transacción reportada por el proveedor, confirmación en cadena y liquidación económica irreversible.
+
+**Escenario adversarial:** el proveedor informa un depósito, pero una reorganización o recibo incompleto invalida el bloqueo supuesto. Existen mecanismos específicos por red, no garantía universal. Antes de afirmar finalidad, exija red, confirmaciones, recibos, pruebas de reinicio y autoridad de liberación.
+
+### Primary source / maturity
+
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/wdk-settlement.provider.ts
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/lightning-hodl.provider.ts
+
+*Source inspection only; no new live test, CTO approval or publication authorization.*
