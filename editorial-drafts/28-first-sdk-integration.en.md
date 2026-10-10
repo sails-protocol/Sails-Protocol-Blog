@@ -15,3 +15,9 @@ The integration needs distinct responsibilities: the UI presents the trade; iden
 A useful first integration test should retry the same intent, race two competing actions, restart the process before acknowledgment and verify the durable result. Until exact API signatures, supported adapters and reproducible test results are checked against the repository, this is an integration design guide, not a copy-paste quickstart.
 
 *Source verification and exact API references pending.*
+
+## Source-backed scope
+
+The SDK exposes an optional trade idempotency key; callers must preserve it across retries. **Failure:** treating a source-level design or API as universal production readiness. Exact-head tests and approval remain outstanding.
+
+- [openp2p.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/packages/sails-sdk/src/modules/openp2p.ts)
