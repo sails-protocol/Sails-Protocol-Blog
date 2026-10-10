@@ -6,7 +6,8 @@ let failed = false;
 try {
   for (const viewport of [{width: 1280, height: 800}, {width: 390, height: 844}]) {
   for (const route of ['/', '/articles/', '/articles/what-is-sails-protocol']) {
-    const context = await browser.newContext({viewport});
+  for (const colorScheme of ['light', 'dark']) {
+    const context = await browser.newContext({viewport, colorScheme, reducedMotion: 'reduce'});
     const page = await context.newPage();
     try {
       const pageErrors = [];
@@ -38,14 +39,17 @@ try {
           await page.goto(new URL(route, base).href, {waitUntil: 'networkidle'});
         }
       }
+      await page.evaluate(mode => { document.documentElement.setAttribute('data-theme', mode); }, colorScheme);
+      await page.waitForTimeout(100);
       const result = await new AxeBuilder({page}).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
       if (result.violations.length) {
         failed = true;
         for (const violation of result.violations) {
-          console.error(route, viewport.width, violation.id, violation.impact, violation.nodes.map(n => n.target).join(', '));
+          console.error(route, viewport.width, colorScheme, violation.id, violation.impact, violation.nodes.map(n => n.target).join(', '));
         }
-      } else console.log(route, viewport.width, 'axe WCAG 2.1 AA: no detected violations');
+      } else console.log(route, viewport.width, colorScheme, 'axe WCAG 2.1 AA: no detected violations');
     } finally { await context.close(); }
+  }
   }
   }
   // Mermaid regression: a global prefers-reduced-motion transition override once
