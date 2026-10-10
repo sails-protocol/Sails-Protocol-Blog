@@ -27,3 +27,9 @@ flowchart TD
 Equivalente textual: el diagrama muestra los límites de responsabilidad descritos arriba, no un despliegue verificado.
 
 *Referencias, revisión técnica y aprobación del responsable de publicación pendientes.*
+
+## Límite examinado y fallo
+
+La visibilidad privada no impide colusión ni transiciones no autorizadas. **Fallo:** presentar diseño como despliegue verificado. La fuente fijada solo respalda este alcance; siguen pendientes los gates de ejecución y CTO.
+
+- [THREAT_MODEL.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md)
