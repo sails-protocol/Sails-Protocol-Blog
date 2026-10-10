@@ -18,12 +18,6 @@ Uma chave de API ou identificador de requisição ajuda, mas não resolve tudo. 
 
 No Sails P2P Trading SDK, tratamos novas tentativas como uma questão de correção econômica. Nossas revisões incluem cenários com banco de dados real, requisições concorrentes e testes de falha e recuperação. As garantias exatas dependem da operação, do adaptador e das evidências aprovadas para cada implementação. Não vamos chamar um fluxo de exactly-once só porque um teste unitário passou.
 
-## Leia a seguir
-
-En el próximo artigo vamos tratar de um problema relacionado, mas diferente: o que acontece quando duas requisições chegam ao mesmo tempo, antes que uma consiga observar o resultado da outra?
-
-*Fontes pendentes: referenciar commits imutáveis, decisões do CTO e testes antes da publicação.*
-
 ## Contrato concreto no SDK Sails
 
 O método `OpenP2P.trade(offerId, amount, idempotencyKey?)` do SDK examinado encaminha a chave opcional para `POST /v1/openp2p/trades`. A rota valida uma chave não vazia de até 200 caracteres e a envia, junto da identidade autenticada do participante, para `TradeService.createTrade()`. O serviço delimita a tentativa pelo escopo `openp2p.trade.create`, pelo participante e pelos dados da oferta e do valor. **Sem a chave, uma repetição pode criar outra negociação**; o próprio SDK orienta gerar uma chave por aceitação lógica e reutilizá-la nas tentativas da mesma aceitação. Uma nova aceitação intencional exige outra chave.
@@ -40,3 +34,9 @@ O método `OpenP2P.trade(offerId, amount, idempotencyKey?)` do SDK examinado enc
 - [Common idempotency mechanism](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/common/idempotency.ts)
 
 *Source-inspected only. No new runtime verification, CTO approval or publication authorization.*
+
+## Leia a seguir
+
+En el próximo artigo vamos tratar de um problema relacionado, mas diferente: o que acontece quando duas requisições chegam ao mesmo tempo, antes que uma consiga observar o resultado da outra?
+
+
