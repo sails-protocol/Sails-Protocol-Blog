@@ -15,3 +15,9 @@ WDK e BDK representam superfícies diferentes de integração e não devem ser t
 Um caso de falha realista é um adaptador retornar endereço de um caminho de derivação inesperado ou uma aplicação assinar transação fora do contexto autorizado. Compatibilidade exige vetores de teste e verificações reais de recuperação, não suposições sobre marcas.
 
 *Verificação de fontes e referências exatas de API pendentes.*
+
+## Fronteira examinada no código
+
+O roteamento de provedores não comprova isolamento da seed nem compatibilidade de derivação. Fronteira documentada não é prova de execução no HEAD atual; testar a falha contra estado durável antes de afirmar prontidão.
+
+- [escrow-providers.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts)
