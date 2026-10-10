@@ -2,7 +2,7 @@
 
 **Status:** Source and mocked lifecycle tests passed CI #76; real-browser validation remains outstanding. Day-0 release blocker.
 
-WebMCP is a browser-native API, not an HTTP MCP server. The blog registers tools through `document.modelContext.registerTool` on supported browsers. Browsers without WebMCP continue to serve normal HTML, RSS and sitemap.
+WebMCP is a browser-native API, not an HTTP MCP server. The blog registers tools through `document.modelContext.registerTool` only when safe `unregisterTool` cleanup is also available. If cleanup is unavailable, registration fails closed and the ordinary site remains available. This is a conservative application policy pending verification of the actual browser API. Browsers without WebMCP continue to serve normal HTML, RSS and sitemap.
 
 ## Read-only tools
 - `sails_list_articles`: list published article metadata and canonical URLs.
