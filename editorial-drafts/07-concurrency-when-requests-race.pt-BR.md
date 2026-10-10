@@ -18,12 +18,6 @@ Existem ferramentas diferentes para disputas de concorrência diferentes: restri
 
 Nosso trabalho no Sails inclui gates explícitos de concorrência e reinicialização para transições econômicas. Usamos testes com persistência real porque mocks podem esconder comportamentos de isolamento e ordem de execução que importam. Isso descreve nosso método de validação, não significa que todos os adaptadores já passaram por todos os cenários.
 
-## Leia a seguir
-
-O próximo artigo conecta esse tema à recuperação: se um processo cair no meio de um fluxo, o que precisa continuar verdadeiro quando ele voltar?
-
-*Fontes pendentes: referenciar commits imutáveis, decisões do CTO e testes antes da publicação.*
-
 ## Fronteira comprovada no código
 
 O serviço de negociação restringe alterações manuais de status com `MANUAL_TRADE_TRANSITIONS`: PENDING pode passar a ACTIVE ou CANCELLED, ACTIVE pode passar a CANCELLED e estados terminais não admitem reescrita manual arbitrária. O código descreve a falha anterior: uma negociação concluída ou disputada podia ser sobrescrita como CANCELLED mesmo depois da movimentação de fundos no escrow. A correção protege o histórico da negociação, mas não comprova liquidação serializável em toda corrida entre provedores.
@@ -35,3 +29,9 @@ O serviço de negociação restringe alterações manuais de status com `MANUAL_
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts
 
 *Source inspection only; no new live test, CTO approval or publication authorization.*
+
+## Leia a seguir
+
+O próximo artigo conecta esse tema à recuperação: se um processo cair no meio de um fluxo, o que precisa continuar verdadeiro quando ele voltar?
+
+
