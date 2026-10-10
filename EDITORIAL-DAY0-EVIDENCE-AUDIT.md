@@ -56,3 +56,7 @@ Read [EDITORIAL-AUDIT-CUSTODY-IDEMPOTENCY-MATRIX.md](./EDITORIAL-AUDIT-CUSTODY-I
 ## Wave A continued: SDK/route propagation and rail gates (2026-10-10)
 
 [EDITORIAL-AUDIT-WAVE-A-ROUTING-2026-10-10.md](./EDITORIAL-AUDIT-WAVE-A-ROUTING-2026-10-10.md) records source-backed findings A-05 through A-08: optional trade idempotency forwarded SDK → route → service; SAFE_GUARD_EVM as a fourth real provider with an explicit live-infrastructure verification limitation; asset-specific recommended escrow mappings; fee collection capable only for MULTISIG in the inspected registry; and dual-approval flag default false unless explicitly enabled. These are scoped code observations, not a deployment or end-to-end certification. G1/G2 remain open.
+
+## Canonical article corrections (2026-10-10)
+
+Source-grounded additions now exist in the **canonical numbered drafts**, not just companion documents: articles **06, 08, 43, 44 and 46**, each in EN/PT-BR/ES (**15 language files**). Their scope is source inspection against the pinned Sails Protocol commit, not full CTO acceptance or runtime verification. They distinguish optional idempotency keys, durable persistence from post-persist effects, custody by provider, fee-capable rails and asset-to-escrow mappings. No numbered article is marked G2 PASS on this basis alone; independent editorial and technical review remains required. Browser Gate status is separately recorded in [BROWSER-GATE-HANDOFF-2026-10-10.md](./BROWSER-GATE-HANDOFF-2026-10-10.md) and remains incomplete.
