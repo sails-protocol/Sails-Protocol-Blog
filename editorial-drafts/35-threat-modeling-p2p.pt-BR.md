@@ -6,6 +6,15 @@
 
 Comprador, vendedor, operador e provedor podem agir de forma diferente do fluxo ideal. A modelagem começa identificando quem pode mentir, desaparecer ou perder acesso.
 
+## Decisão: identificar atacante e ponto de enforcement
+
+Uma ameaça não está mitigada apenas porque aparece no catálogo. Para cada cenário, a revisão precisa indicar quem ataca, qual ativo está em risco, onde está a fronteira de confiança, que código aplica a proteção e o que permanece incerto. No WebSocket, um rate limit HTTP não controla automaticamente mensagens após o upgrade. O modelo de ameaças registra um limitador por participante como melhoria de instância única, não como garantia distribuída. Também documenta o risco de token de sessão com privilégios amplos na query string. São fronteiras diferentes e exigem provas diferentes.
+
+## Falha: segurança que existe só no desenho
+
+Se múltiplas conexões ou nós contornam um contador local, a alegação sobre limite precisa explicitar esse escopo. Se uma URL de sessão vai para logs, um token válido pode vazar apesar de assinaturas corretas em outros fluxos. O registro descreve achados históricos; verificar se persistem no HEAD atual exige nova revisão.
+
+
 ## Limites e escolhas
 
 Separe fundos, chaves de assinatura, alegações de pagamento, evidências e estado da negociação como ativos com autoridades diferentes. Avalie identidade falsa, comprovantes forjados, requisições duplicadas, nodes maliciosos e provedores indisponíveis. Uma mitigação só serve quando seu limite de aplicação é explícito.
