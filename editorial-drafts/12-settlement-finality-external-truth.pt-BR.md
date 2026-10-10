@@ -22,6 +22,16 @@ Nosso trabalho de engenharia no Sails trata da autoridade das contas de pagament
 
 A lição prática é manter a incerteza visível. Um pagamento pendente deve continuar pendente até que as condições necessárias sejam atendidas. Um sinal contestado não pode virar silenciosamente um estado final. E uma integração com falha precisa de um caminho de recuperação que não invente certezas.
 
+## Decisão: separar quatro tipos de verdade
+
+Um commit no banco registra o que o serviço de coordenação aceitou. Um callback informa o que um observador externo declarou. Uma confirmação em blockchain representa a visão de uma cadeia, sujeita às regras de finalização e reorganização daquela rede. Um pagamento bancário tem seus próprios mecanismos de contestação e reversão. Nenhuma dessas observações implica automaticamente as demais.
+
+Para uma integração de escrow, é preciso identificar a rede escolhida, quem controla as assinaturas, qual observação autoriza a próxima transição e como reagir quando ela for invalidada. O registro de provedores examinado encaminha BTC para MULTISIG, LN_BTC para LIGHTNING_HODL baseado em Arkade e USDT_ERC20 para WDK EVM. Isso descreve roteamento, **não** uma garantia uniforme de liquidação final.
+
+## Falha: um recibo de funding que não resiste
+
+O serviço recebe um aviso de funding e declara o resultado irreversível cedo demais. A cadeia sofre reorganização ou o provedor corrige o sinal. Sem reconciliação explícita, o estado local pode contradizer a posição real do ativo. Evidências de recuperação específicas de multisig não podem ser generalizadas aos demais adaptadores; o escopo de teste da Arkade e a custódia no servidor do WDK inelegível para produção precisam aparecer nas alegações públicas.
+
 ## Diagrama conceitual
 
 ```mermaid
