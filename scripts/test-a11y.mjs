@@ -14,6 +14,10 @@ try {
       const response = await page.goto(new URL(route, base).href, {waitUntil: 'networkidle'});
       if (!response?.ok()) throw new Error(route + ': HTTP ' + response?.status());
       if (pageErrors.length) { failed = true; console.error(route, viewport.width, 'browser JavaScript errors:', pageErrors); }
+      const navigation = page.locator('nav.navbar');
+      if (!(await navigation.count())) { failed = true; console.error(route, viewport.width, 'missing primary navigation'); }
+      const main = page.locator('main');
+      if (!(await main.count())) { failed = true; console.error(route, viewport.width, 'missing main landmark'); }
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
       if (overflow) { failed = true; console.error(route, viewport.width, 'horizontal page overflow'); }
       const result = await new AxeBuilder({page}).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
