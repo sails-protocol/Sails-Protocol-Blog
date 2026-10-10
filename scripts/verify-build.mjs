@@ -26,7 +26,7 @@ if (existsSync('build/index.html')) {
 }
 if (existsSync('build/sitemap.xml')) {
   const sitemap = readFileSync('build/sitemap.xml', 'utf8');
-  for (const route of ['/articles/', '/articles/what-is-sails-protocol']) {
+  for (const route of ['/articles/', '/articles/what-is-sails-protocol/']) {
     if (!sitemap.includes(route)) {
       console.error('Missing sitemap route:', route);
       failed = true;
