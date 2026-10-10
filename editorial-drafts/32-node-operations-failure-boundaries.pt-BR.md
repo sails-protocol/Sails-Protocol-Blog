@@ -15,3 +15,9 @@ Uma implementação de node pode aplicar autorização, validade de transições
 Um exercício de reinício deve interromper a negociação entre o commit persistente e a resposta ao cliente, depois comprovar que a repetição não duplica efeitos econômicos. Requisitos de implantação e topologia suportada precisam ser verificados antes de isto virar um manual operacional.
 
 *Verificação de fontes e referências exatas de API pendentes.*
+
+## Evidência de fonte e fronteira de falha
+
+A recuperação registrada cobre cenários MULTISIG específicos, não todas as redes. O próximo gate exige verificação operacional no HEAD exato; a fonte não autoriza lançamento.
+
+- [RECOVERY_RECONCILIATION_CONFORMANCE_EVIDENCE.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/RECOVERY_RECONCILIATION_CONFORMANCE_EVIDENCE.md)
