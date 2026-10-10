@@ -128,3 +128,7 @@ The next pass identified a remaining substantive Season 4 defect: article **20**
 ## G1 focused continuation — 2026-10-10
 
 Checked the nine article trios **14–19, 28, 30–31** for single-character section-body placeholders: **27 editions inspected, none found**. Deepened article **28** in EN/PT-BR/ES with concrete optional SDK idempotency-key acceptance/retry contract and test obligations, and article **31** in EN/PT-BR/ES with schema-vs-economic-semantic compatibility, negative-version tests and the bounded condition-algebra source. **6 substantive edition updates**. The broader 144-file scan remains incomplete due to tool-call limits; no G1/G2 PASS, browser PASS, merge or publication.
+
+## G1 deep narrative pass — article 14 (2026-10-10)
+
+Canonical article **14** EN/PT-BR/ES received substantive wallet-integration narrative: a persisted trade with lost response, optional idempotency-key reuse across transport retries, reconciliation before a new user intention, and approval-context mismatch at the signing boundary. This distinguishes application obligations from properties actually demonstrated by the historically inspected SDK interface. Commits: EN `f2882cbee187df08e57e336fab44fcdd8760f60b`, PT-BR `41898244ab006c70a828e372e36f03e365431866`, ES `be18b9aae66a79a063b8033e660686e12001e547`. No exact-head runtime test was executed. G1/G2 remain open; no publication authorization.
