@@ -27,3 +27,11 @@ flowchart TD
 Text equivalent: the diagram shows the responsibility boundaries discussed above, not verified deployment.
 
 *Source references, technical review and owner publication approval pending.*
+
+## Source-backed boundary and next test
+
+The inspected SDK exposes trade creation with an optional idempotency key; wallet custody and signing guarantees need separate evidence.
+
+**Failure to avoid:** presenting this inspected boundary as a deployed end-to-end guarantee. **Next verification:** exact-head behavior, integration tests and operational evidence. Source inspection only; editorial and CTO approval pending.
+
+- [openp2p.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/packages/sails-sdk/src/modules/openp2p.ts)
