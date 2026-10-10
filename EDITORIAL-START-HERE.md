@@ -7,7 +7,7 @@
 - Repository: `sails-protocol/Sails-Protocol-Blog`
 - Working branch: `feat/blog-foundation-02`
 - Draft PR: #1
-- Editorial drafts: `editorial-drafts/` (27 topics, 3 language editions each, 81 first drafts)
+- Editorial drafts: `editorial-drafts/` (34 topics, 3 language editions each, 102 first drafts)
 - Public blog routes are separate. Do not promote drafts into public routes without the gates below.
 
 ## Read these documents first, in order
@@ -33,8 +33,10 @@ This is an editorial method derived from the project's engineering approach, not
 - Season 2, articles 06-13: Engineering Economic Coordination.
 - Season 3, articles 14-19: Building on the Protocol.
 - Season 4, articles 20-27: Beyond the Trading SDK.
+- Season 5, articles 28-34: Developer Journey and Interoperability (first drafts complete).
+- Seasons 6 and 7, articles 35-48: proposed outlines only, no drafts yet.
 
-All 81 language files are drafts. EN is the reference edition; PT-BR and ES need natural adaptation and independent review. The newest drafts especially need deeper analysis, verifiable citations and topic-specific diagrams.
+All 102 language files are drafts. EN is the reference edition; PT-BR and ES need natural adaptation and independent review. The newest drafts especially need deeper analysis, verifiable citations and topic-specific diagrams.
 
 ## Navigation and deployment boundaries
 
@@ -64,3 +66,7 @@ For each work session, report concrete files modified, commit SHA, tests actuall
 ## Owner decision: Day 0 is a complete-library launch (2026-10-10)
 
 The goal is to launch **all editorially and technically approved articles simultaneously on Day 0**, with the largest high-quality corpus feasible. Do not stagger articles into an artificial weekly publishing calendar. Seasons are permanent navigation collections, not release batches. Once the owner explicitly authorizes launch and gates are satisfied, the public blog should expose every approved Day 0 article with language-aware navigation. Unapproved drafts remain private to publication. After launch, publish only when there is meaningful new substance. Full decision and caveats are in `EDITORIAL-DNA-AND-QUALITY-GATES.md`.
+
+## Latest editorial status (2026-10-10)
+
+Season 5 articles 28-34 have first drafts in EN, PT-BR and ES. The home and season index now include five seasons. Total: 34 articles / 102 draft language files. These drafts are deliberately not promoted to published routes. No source-level claim audit, build, accessibility or browser tests were performed during this writing pass. Season 5 drafts are short and need substantial technical expansion, precise source citations and topic-specific diagrams. Season 6 and 7 remain outlines. Do not treat these numbers as publication-ready content.
