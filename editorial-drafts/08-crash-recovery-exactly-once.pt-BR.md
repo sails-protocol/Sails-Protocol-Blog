@@ -18,12 +18,6 @@ Uma transação de banco de dados pode tornar atômicas mudanças relacionadas n
 
 No Sails, cenários de falha e recuperação fazem parte das evidências de engenharia que buscamos para transições econômicas. Queremos testes que interrompam um processo em pontos importantes, reiniciem com estado durável e verifiquem se as invariáveis continuam válidas. Uma afirmação sobre exactly-once precisa identificar a operação, o limite de persistência e a evidência que a sustenta.
 
-## Leia a seguir
-
-No próximo artigo vamos sair do comportamento dos processos e falar de pessoas e permissões: saber quem alguém é não significa saber o que ela pode fazer.
-
-*Fontes pendentes: referenciar commits imutáveis, decisões do CTO e testes antes da publicação.*
-
 ## Persistência durável, resposta perdida e repetição
 
 O módulo comum de idempotência examinado distingue a criação durável dos efeitos posteriores e documenta janelas de falha anteriores: a gravação no banco funciona, mas o registro da conclusão falha; duas tentativas disputam a recuperação de uma operação; ou uma exceção posterior à persistência é confundida com ausência de efeito. O serviço de negociação entrega funções separadas de persistência e pós-persistência ao `withIdempotency()`. Resultado UNKNOWN exige reconciliação, não repetição cega de efeitos externos.
@@ -40,3 +34,9 @@ O módulo comum de idempotência examinado distingue a criação durável dos ef
 - [Common idempotency mechanism](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/common/idempotency.ts)
 
 *Source-inspected only. No new runtime verification, CTO approval or publication authorization.*
+
+## Leia a seguir
+
+No próximo artigo vamos sair do comportamento dos processos e falar de pessoas e permissões: saber quem alguém é não significa saber o que ela pode fazer.
+
+
