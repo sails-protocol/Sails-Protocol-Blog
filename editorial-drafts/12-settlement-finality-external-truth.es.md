@@ -22,6 +22,16 @@ Nuestro trabajo de ingeniería en Sails aborda la autoridad de las cuentas de pa
 
 La lección práctica es mantener visible la incertidumbre. Un pago pendiente debe seguir pendiente hasta que se cumplan las condiciones correspondientes. Una señal discutida no puede convertirse silenciosamente en un estado final. Y una integración fallida necesita una ruta de recuperación que no invente certezas.
 
+## Decisión: separar cuatro clases de verdad
+
+Un commit local registra lo que aceptó el servicio de coordinación. Un callback comunica lo que afirma un observador externo. Una confirmación blockchain representa la visión de una cadena, sujeta a las reglas de finalidad y reorganización de esa red. Un pago bancario tiene sus propios mecanismos de disputa y reversión. Ninguna observación implica automáticamente las demás.
+
+En una integración de escrow hay que identificar la red, quién controla las firmas, qué observación permite avanzar y qué ocurre si luego se invalida. El registro de proveedores inspeccionado dirige BTC a MULTISIG, LN_BTC a LIGHTNING_HODL basado en Arkade y USDT_ERC20 a WDK EVM. Son hechos de selección, **no** una garantía de finalidad compartida.
+
+## Fallo: una constancia de financiación que deja de ser válida
+
+El servicio recibe una notificación de fondos y declara demasiado pronto que el resultado es irreversible. La cadena se reorganiza o el proveedor corrige la señal. Sin reconciliación explícita, el estado local puede contradecir la posición real del activo. La evidencia de recuperación específica de multisig no puede extenderse a todos los adaptadores; el alcance de pruebas de Arkade y la custodia en servidor de WDK no apta para producción deben permanecer visibles.
+
 ## Diagrama conceptual
 
 ```mermaid
