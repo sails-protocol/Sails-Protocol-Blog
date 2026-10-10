@@ -48,3 +48,7 @@ For each wave, create article-specific claim tables and evidence citations; revi
 ## First source-backed audit pass (2026-10-10)
 
 See [EDITORIAL-AUDIT-WAVE-A-2026-10-10.md](./EDITORIAL-AUDIT-WAVE-A-2026-10-10.md) for findings A-01 through A-04 with immutable Sails source commit and primary file links. The correct main repository is `sails-protocol/Sails-Protocol`, not the previous historical `alan-schramm/Sails-Protocol` path. Material editorial custody/rail discrepancy remains open. These are targeted documentary findings, not runtime test results, and G2 remains open.
+
+## Provider-level audit and editorial corrections (2026-10-10)
+
+Read [EDITORIAL-AUDIT-CUSTODY-IDEMPOTENCY-MATRIX.md](./EDITORIAL-AUDIT-CUSTODY-IDEMPOTENCY-MATRIX.md). Source-inspected WDK EVM reference custody, Bitcoin MULTISIG client signature collection, Arkade LIGHTNING_HODL testnet scope, and optional `createTrade` idempotency key. Prepared three source-backed editorial companion drafts at `editorial-drafts/deep-revisions/06-43-idempotency-escrow-source-audit.{en,pt-BR,es}.md`. They are **not** approved replacements for the canonical articles. Material custody language and deployment-status verification remain open; no tests executed.
