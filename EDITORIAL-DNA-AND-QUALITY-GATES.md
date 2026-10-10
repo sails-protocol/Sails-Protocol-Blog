@@ -60,3 +60,15 @@ Use design tokens and a restrained aesthetic. Prefer clear typography, whitespac
 ## What makes this Sails
 
 Our editorial identity is a **public engineering reasoning trail**. We do not sell certainty. We show how an economic invariant was identified, which boundaries matter, how it might fail, and what evidence would justify trust. Every article should make the reader better able to challenge the system, not merely admire it.
+
+## Day 0 publication strategy: complete library launch
+
+**Owner direction (2026-10-10):** Day 0 is a simultaneous launch of the largest technically sound, reviewed editorial library we can prepare, not a drip-feed content calendar. All articles that pass the editorial, technical, multilingual and publication gates should be live on Day 0, organized by seasons. Do not intentionally hold approved articles back for weekly posting or artificial engagement.
+
+- Build a substantial evergreen library before launch. Prioritize quality and factual traceability over arbitrary article count.
+- Make all approved Day 0 articles publicly navigable at launch, with full season indices and previous/next links in the reader's language.
+- A planned season is not a publication schedule; completed seasons can launch together.
+- The number of articles shown on Day 0 is determined by actual gate completion, not by the 81 existing draft files.
+- The existing draft/public route separation remains in place **until** explicit owner publication authorization. At the approved launch, promote all approved articles together, not in an artificial cadence.
+- After Day 0, publish on meaningful engineering discoveries, decisions, releases or verified evidence. No mandatory posting frequency.
+- Do not treat this strategy decision as authorization to merge `main`, deploy Netlify or waive the CTO, factual, translation, accessibility or WebMCP native gates.
