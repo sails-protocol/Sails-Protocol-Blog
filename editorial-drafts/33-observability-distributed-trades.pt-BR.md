@@ -15,3 +15,9 @@ Identificadores de correlação, erros estruturados, registros persistentes de e
 Um exercício eficaz acompanha uma negociação pelo cliente, SDK, node, banco e provedor, identificando o último estado confirmado e as incertezas. Até inspecionarmos os schemas de eventos e a instrumentação real, estes são critérios de desenho, não alegações de telemetria implantada.
 
 *Verificação de fontes e referências exatas de API pendentes.*
+
+## Evidência de fonte e fronteira de falha
+
+Rastros operacionais não são prova independente do vínculo entre resultado e destino. O próximo gate exige verificação operacional no HEAD exato; a fonte não autoriza lançamento.
+
+- [DURABLE_PROTOCOL_TRUTH_EVIDENCE.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/DURABLE_PROTOCOL_TRUTH_EVIDENCE.md)
