@@ -22,6 +22,16 @@ Para Sails Protocol, los escenarios de nodos adversarios y proveedores malicioso
 
 Una buena arquitectura debe permitir preguntas incómodas antes de que las haga un atacante. ¿Qué afirmaciones pueden falsificarse? ¿Qué pasa si desaparece un proveedor? ¿Puede un nodo ocultar un evento económicamente relevante? ¿Qué evidencia demostraría que una defensa funciona de verdad? Estas preguntas guiarán futuros informes técnicos a medida que haya evidencias de implementación.
 
+## Decisión: la respuesta del proveedor es una afirmación con procedencia
+
+Un timeout puede dejar el resultado desconocido; no demuestra que la operación falló. Recibos contradictorios muestran desacuerdo entre observadores, no que el callback más reciente siempre gane. Un proveedor malicioso puede informar un éxito plausible asociado al destino equivocado. La pregunta es si los participantes pueden verificar independientemente **Authority → Outcome → DestinationBinding**, sin confiar en la asociación interna del operador.
+
+La investigación histórica Durable Protocol Truth registra una brecha de verificación independiente, sobre todo entre Outcome y DestinationBinding. La evidencia de sustitución de proveedores respalda propiedades semánticas seleccionadas, no equivalencia económica de todos los proveedores y redes. Son hallazgos acotados, no prueba de un ataque explotado.
+
+## Fallo: éxito para el destino equivocado
+
+Un proveedor informa liquidación completada con identificador de transacción plausible, pero sin vínculo verificable al destino autorizado. Repetir una transmisión con efectos tras un timeout puede aumentar el riesgo. La integración debe mantener el estado desconocido, reconciliar con evidencia externa y no confundir una respuesta firmada con prueba del destino correcto. La prueba debe confrontar informes contradictorios con la autoridad duradera de la operación y datos de liquidación verificables.
+
 ## Diagrama conceptual
 
 ```mermaid
