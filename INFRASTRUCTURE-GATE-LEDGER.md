@@ -10,7 +10,7 @@ Status: **BLOCKED FOR PRODUCTION**. This is an evidence ledger, not a release ap
 | Browser-native WebMCP registration and agent discovery | No compatible-browser execution record | OPEN, BLOCKER |
 | WebMCP security and browser compatibility review | No end-to-end negative/compatibility report | OPEN, BLOCKER |
 | Dependency lockfile and reproducible npm ci | Committed package-lock.json and mandatory npm ci passed CI #48 | PASS for tested commit |
-| Visual QA, keyboard accessibility and responsive behavior | No verified browser review | OPEN, BLOCKER |
+| Visual QA, keyboard accessibility and responsive behavior | Chromium axe run #2 failed because test lacked browser.newContext(); fixed in commit 9639d92, rerun pending. Manual keyboard/mobile review still missing | OPEN, BLOCKER |
 | External links, CSP and deployment headers | Conservative headers added to netlify.toml; static check in CI; deployed response headers, CSP and links not browser-reviewed | OPEN, BLOCKER |
 | Editorial claims and CTO review | Introductory article is a test fixture, not approved publication | OPEN, BLOCKER |
 | Netlify preview and production | Deliberately deferred until infrastructure freeze | NOT STARTED |
