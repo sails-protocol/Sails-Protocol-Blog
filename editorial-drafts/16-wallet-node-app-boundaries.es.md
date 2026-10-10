@@ -28,3 +28,9 @@ flowchart LR
 Equivalente textual: el diagrama muestra los límites de responsabilidad descritos arriba, no un despliegue verificado.
 
 *Referencias, revisión técnica y aprobación del responsable de publicación pendientes.*
+
+## Límite de evidencia y fallo
+
+La separación de responsabilidades no demuestra despliegue productivo ni interoperabilidad de nodos independientes. **Fallo:** interpretar arquitectura o código inspeccionado como prueba de producción. Faltan pruebas del HEAD exacto y aprobación.
+
+- [PROTOCOL_INVARIANTS.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROTOCOL_INVARIANTS.md)
