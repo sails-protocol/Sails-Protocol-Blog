@@ -1,0 +1,41 @@
+name: Build isolated blog preview artifact
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preview-artifact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Verify article catalogue
+        run: npm run check:articles
+      - name: TypeScript
+        run: npm run typecheck
+      - name: Build isolated candidate
+        run: npm run build
+        env:
+          SITE_URL: https://sails-protocol-blog.netlify.app
+      - name: Save immutable candidate metadata
+        shell: bash
+        run: |
+          printf 'commit=%s\nworkflow_run=%s\nsite_url=%s\nstatus=ARTIFACT_ONLY_NOT_DEPLOYED\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" 'https://sails-protocol-blog.netlify.app' > build/PREVIEW-EVIDENCE.txt
+      - name: Upload preview build
+        uses: actions/upload-artifact@v4
+        with:
+          name: sails-blog-preview-${{ github.sha }}
+          path: build/
+          if-no-files-found: error
+          retention-days: 7
