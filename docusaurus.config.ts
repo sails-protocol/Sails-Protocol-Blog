@@ -2,7 +2,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
  title:'Sails Protocol Blog', tagline:'Engineering notes on open P2P infrastructure',
- url:process.env.SITE_URL || 'https://sails-protocol-blog.netlify.app', baseUrl:'/', favicon:'img/favicon.svg',
+ url:process.env.SITE_URL || 'https://sails-protocol-blog.netlify.app', baseUrl:'/', trailingSlash:true, favicon:'img/favicon.svg',
  organizationName:'sails-protocol',projectName:'Sails-Protocol-Blog',
  onBrokenLinks:'throw', markdown:{mermaid:true},themes:['@docusaurus/theme-mermaid'],
  i18n:{defaultLocale:'en',locales:['en']},
