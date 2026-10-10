@@ -18,12 +18,6 @@ There are different tools for different races: constraints, transactional update
 
 Our work on Sails includes explicit concurrency and restart gates for economic transitions. We use real persistence tests because mocks can hide the timing and isolation behavior that matters. This describes our validation method, not a blanket claim that every adapter has passed every race scenario.
 
-## Read next
-
-The next article connects this to recovery: if a process crashes halfway through a workflow, what must remain true when it starts again?
-
-*Sources pending: link immutable implementation commits, CTO decisions and verification runs before publication.*
-
 ## Verified implementation boundary
 
 The trade service constrains client-requested status changes with `MANUAL_TRADE_TRANSITIONS`: PENDING may become ACTIVE or CANCELLED, ACTIVE may become CANCELLED, and terminal states do not admit arbitrary manual rewrites. The code explains the prior failure: a completed or disputed trade could be overwritten as CANCELLED even though escrow had already moved funds. The fix protects the trade audit trail; it is not itself proof of serializable settlement under every concurrent provider response.
@@ -35,3 +29,9 @@ The trade service constrains client-requested status changes with `MANUAL_TRADE_
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts
 
 *Source inspection only; no new live test, CTO approval or publication authorization.*
+
+## Read next
+
+The next article connects this to recovery: if a process crashes halfway through a workflow, what must remain true when it starts again?
+
+
