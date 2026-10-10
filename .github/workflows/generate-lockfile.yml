@@ -1,48 +1,20 @@
-name: Generate dependency lockfile
+name: Generate dependency lockfile (manual bootstrap only)
 
 on:
-  push:
-    branches: [feat/blog-foundation-02]
   workflow_dispatch:
-    paths:
-      - 'package.json'
-      - '.github/workflows/generate-lockfile.yml'
 
 permissions:
-  contents: write
-
-concurrency:
-  group: blog-lockfile-generator
-  cancel-in-progress: false
+  contents: read
 
 jobs:
-  generate:
-    if: github.repository == 'sails-protocol/Sails-Protocol-Blog'
+  verify-bootstrap-state:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          persist-credentials: true
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - name: Confirm branch and existing lockfile
+      - name: Confirm reproducible dependency lockfile
         run: |
-          test "\${GITHUB_REF_NAME}" = 'feat/blog-foundation-02'
-          if [ -f package-lock.json ]; then
-            echo 'Lockfile already exists; workflow is for initial bootstrap only.'
+          test -f package-lock.json || {
+            echo 'Missing package-lock.json. Prepare it in a reviewed PR; this workflow never writes to the repository.'
             exit 1
-          fi
-      - name: Generate lockfile
-        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
-      - name: Commit only the lockfile to feature branch
-        run: |
-          if git ls-files --error-unmatch package-lock.json >/dev/null 2>&1; then
-            echo 'Lockfile already tracked; refusing automatic overwrite.'
-            exit 0
-          fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add package-lock.json
-          git commit -m 'build(blog): pin npm dependency tree for reproducible installs'
-          git push origin HEAD:feat/blog-foundation-02
+          }
+          echo 'Lockfile exists. Automatic bootstrap is retired; npm ci is validated by Validate Blog.'
