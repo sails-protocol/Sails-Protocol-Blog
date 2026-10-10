@@ -15,3 +15,17 @@ Governance should distinguish proposals, reviewed policy, implementation, verifi
 A client interprets a changed fee denomination as the old one. Even if both sides compile, the result can be economically wrong. Publish exact version contracts and migration tests before declaring backward compatibility.
 
 *No production implementation or publication approval is asserted.*
+
+## Governance is a claim hierarchy, not a release label
+
+The protocol's invariant document distinguishes architectural laws, concrete implementation obligations and executable evidence where testable. The condition-algebra conformance record explicitly proves a bounded algebra property while noting that the published ruleset does not itself compose conditions. Provider-substitution evidence likewise supports selected properties, not full K3 or universal interoperability. Publishing a version or passing one harness does not certify the whole protocol.
+
+**Compatibility gate:** name the exact ruleset identity, protocol/SDK version, rail, independent implementation and falsifiable test vector. Preserve a migration story when semantics change; do not turn a single conformance PASS into universal compatibility.
+
+### Source and maturity
+
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROTOCOL_INVARIANTS.md
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/CONDITION_ALGEBRA_CONFORMANCE_EVIDENCE.md
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROVIDER_SUBSTITUTION_INVARIANCE_EVIDENCE.md
+
+*Historical evidence/source inspection only; no latest-head test or publication approval.*
