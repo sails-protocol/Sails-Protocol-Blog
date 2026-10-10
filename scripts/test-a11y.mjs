@@ -9,11 +9,10 @@ try {
     const context = await browser.newContext({viewport});
     const page = await context.newPage();
     try {
-      const response = await page.goto(new URL(route, base).href, {waitUntil: 'networkidle'});
-      if (!response?.ok()) throw new Error(route + ': HTTP ' + response?.status());
       const pageErrors = [];
       page.on('pageerror', error => pageErrors.push(error.message));
-      await page.reload({waitUntil: 'networkidle'});
+      const response = await page.goto(new URL(route, base).href, {waitUntil: 'networkidle'});
+      if (!response?.ok()) throw new Error(route + ': HTTP ' + response?.status());
       if (pageErrors.length) { failed = true; console.error(route, viewport.width, 'browser JavaScript errors:', pageErrors); }
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
       if (overflow) { failed = true; console.error(route, viewport.width, 'horizontal page overflow'); }
