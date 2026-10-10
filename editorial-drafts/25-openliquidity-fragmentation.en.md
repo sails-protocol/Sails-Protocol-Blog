@@ -4,15 +4,15 @@
 
 ## The question
 
-T
+Does showing offers from multiple venues mean liquidity is shared? No.
 
-## Design direction
+## Decision and boundary
 
-D
+OpenLiquidity is a coordination direction. Discovery and routing must respect asset, network, price, availability and permissions. Provider-substitution evidence covers selected invariants, not an operational cross-market book.
 
-## Evidence before claims
+## Failure and evidence
 
-D
+A visible offer may be inaccessible to a wallet due to permissions or payment method. Do not advertise executable depth from visibility; require live counterparties and cross-client tests.
 
 ## Conceptual flow
 
