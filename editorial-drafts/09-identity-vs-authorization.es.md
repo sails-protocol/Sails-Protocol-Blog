@@ -18,6 +18,14 @@ Estamos explorando identificadores portátiles y mecanismos de desafío y respue
 
 La prueba útil no consiste solo en verificar una firma. Consiste en demostrar que un actor autenticado puede ejecutar exactamente las acciones permitidas por el estado económico actual, y ninguna otra. Este artículo describe el modelo de seguridad en desarrollo; la cobertura concreta necesitará evidencias de implementación antes de publicarse.
 
+## La decisión en el límite de confianza
+
+Autenticar demuestra control de una credencial. Autorizar exige además comprobar que el participante pertenece a la operación y puede ejecutar esa acción. Validar la transición económica requiere verificar el estado actual. Son tres preguntas distintas. El código inspeccionado separa la verificación de desafíos firmados en `requireAuth` de la comprobación de comprador o vendedor en `TradeService.assertParticipant()`.
+
+## Fallo: firma válida, operación ajena
+
+Una solicitud puede estar firmada correctamente y aun así intentar modificar una operación de otra persona. La firma no reemplaza la autorización. RFC-001 también distingue a un agente delegado de un Participant independiente; el alcance y la revocación de esa delegación necesitan evidencia propia. Estos hechos inspeccionados no prueban cobertura universal de todas las rutas.
+
 ## Diagrama conceptual
 
 ```mermaid
