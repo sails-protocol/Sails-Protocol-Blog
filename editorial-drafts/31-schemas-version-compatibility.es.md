@@ -21,3 +21,11 @@ Las afirmaciones de compatibilidad requieren pruebas con fixtures entre versione
 La conformidad acotada del álgebra no demuestra composición del ruleset ni compatibilidad universal. Un límite documentado no es prueba de ejecución del HEAD actual; hay que probar el fallo contra estado duradero antes de afirmar madurez.
 
 - [CONDITION_ALGEBRA_CONFORMANCE_EVIDENCE.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/CONDITION_ALGEBRA_CONFORMANCE_EVIDENCE.md)
+
+## Decisión de compatibilidad: significado económico antes del número de versión
+
+Un esquema puede aceptarse aunque cliente y nodo discrepen sobre lo que autoriza una operación. La conformidad registrada del álgebra de condiciones cubre propiedades acotadas; no demuestra composición del ruleset publicado ni compatibilidad retroactiva universal. Una migración debe definir compatibilidad estructural y semántica, incluido el rechazo de campos económicos desconocidos o modificados.
+
+**Fallo:** un cliente antiguo ignora una condición nueva, pero muestra la operación como ejecutable. **Evidencia necesaria:** pruebas con fixtures de cliente antiguo/nodo nuevo y cliente nuevo/nodo antiguo, casos negativos, versiones fijadas y política de migración aprobada. Compartir la versión del paquete no demuestra seguridad.
+
+- [Evidencia del álgebra de condiciones](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/CONDITION_ALGEBRA_CONFORMANCE_EVIDENCE.md)
