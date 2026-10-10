@@ -2,17 +2,17 @@
 
 *Editorial draft / rascunho editorial / borrador editorial. Season 4. Not approved for publication.*
 
-## La cuestión
+## La pregunta
 
-Un agente de IA puede sugerir una operación o preparar una instrucción. Eso no significa que deba tener autoridad ilimitada para mover fondos, aprobar disputas o cambiar estados económicos.
+¿Puede un agente de IA negociar sin convertirse en dueño independiente de los fondos?
 
-## Dirección de diseño
+## Decisión y límite
 
-OpenAgents explora cómo agentes de software podrían interactuar con flujos Sails bajo permisos delimitados, límites de gasto, aprobaciones humanas explícitas e historial auditable. El sistema debe distinguir recomendaciones de instrucciones firmadas y resultados ejecutados. Las salidas de herramientas y textos generados por modelos no prueban pagos.
+El RFC trata a los agentes como delegados, no como principales económicos independientes. OpenAgents necesita alcance, revocación, límites y autoridad responsable; la salida del modelo no autoriza liquidación.
 
-## Evidencia antes de las afirmaciones
+## Fallo y evidencia
 
-Esto es arquitectura exploratoria, no un anuncio de operaciones autónomas en producción. Antes de permitir actuar a un agente, necesitamos revocación, defensas contra repetición, pruebas adversariales y responsabilidad clara por los fallos.
+Un agente puede proponer una operación tras vencer su mandato. El nodo debe rechazarla antes de efectos económicos; probar autorización en la revisión exacta. No se afirma un agente autónomo desplegado.
 
 ## Flujo conceptual
 
