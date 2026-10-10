@@ -1,6 +1,6 @@
 # WebMCP Day-0 contract
 
-**Status:** Source and mocked lifecycle tests passed CI #48; real-browser validation remains outstanding. Day-0 release blocker.
+**Status:** Source and mocked lifecycle tests passed CI #76; real-browser validation remains outstanding. Day-0 release blocker.
 
 WebMCP is a browser-native API, not an HTTP MCP server. The blog registers tools through `document.modelContext.registerTool` on supported browsers. Browsers without WebMCP continue to serve normal HTML, RSS and sitemap.
 
@@ -21,6 +21,8 @@ The article catalogue is generated from top-level `articles/*.md(x)` frontmatter
 5. Verify that browsers without WebMCP still render the site normally.
 6. Check that there are no write/publish/delete tools.
 7. Confirm the article catalogue matches the published index.
+8. Verify real-browser registration/unregistration lifecycle across client navigation, reload and React development StrictMode where applicable. A mocked registration test cannot prove native API compatibility.
+9. If the browser lacks `unregisterTool`, record the actual API contract and ensure repeated mounting does not leak or duplicate tool registrations before approving Day 0.
 
 WebMCP is experimental and client/browser support is not universal. Do not advertise universal agent compatibility.
 
