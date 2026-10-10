@@ -34,7 +34,6 @@ flowchart TD
 
 The diagram is conceptual and does not establish implemented security guarantees.
 
-*Pending: immutable source references, threat model, verification evidence and CTO approval.*
 
 ## Source-backed settlement boundary
 
