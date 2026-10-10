@@ -23,7 +23,7 @@ for (const file of files) {
   const tags = /^\[.*\]$/.test(tagValue) ? tagValue.slice(1,-1).split(',').map(x => x.trim()).filter(Boolean) : [];
   if (/[<>]/.test(metadata.title + metadata.description)) throw new Error(file + ': HTML markup not allowed in metadata');
   if (articles.some(article => article.slug === metadata.slug)) throw new Error('Duplicate slug: ' + metadata.slug);
-  articles.push({...metadata, tags, path: '/articles/' + metadata.slug});
+  articles.push({...metadata, tags, path: '/articles/' + metadata.slug + '/'});
 }
 if (!articles.length) throw new Error('No articles found');
 mkdirSync('src/generated', {recursive: true});
