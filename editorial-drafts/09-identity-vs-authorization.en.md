@@ -18,6 +18,16 @@ We are exploring portable identifiers and challenge-response mechanisms alongsid
 
 The useful test is not merely whether a signature verifies. It is whether an authenticated actor can perform exactly the actions allowed by the current economic state, and no others. This article describes the security model we are working toward; concrete coverage must be linked to implementation evidence before publication.
 
+## The decision at the trust boundary
+
+Three checks must remain separate. **Authentication** asks whether the caller controls the credential presented for this request. **Trade authorization** asks whether that authenticated participant belongs to the specific trade and may invoke this operation. **Economic transition validity** asks whether the trade's current state permits the requested effect. Passing the first check cannot bypass the second or third.
+
+The inspected implementation makes part of this separation concrete: `requireAuth` verifies signed challenges with domain separation between registration and authentication, while `TradeService.assertParticipant()` checks buyer/seller membership. That is a narrower verified fact than claiming every route and delegated agent action has been exhaustively audited.
+
+## Failure: a valid signature on the wrong trade
+
+An attacker can sign a request with their own valid key while targeting someone else's trade identifier. The signature is authentic; the attempted operation is unauthorized. Rejecting it before state mutation preserves the economic boundary. An agent adds another dimension: RFC-001 treats an agent as acting **under delegation** from a Participant, not as an independent Participant by default. Delegation scope and revocation still require explicit implementation evidence.
+
 ## Conceptual diagram
 
 ```mermaid
