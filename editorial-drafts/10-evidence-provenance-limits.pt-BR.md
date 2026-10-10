@@ -31,3 +31,16 @@ flowchart TD
 Este diagrama ilustra um princípio de projeto, não um comportamento de execução verificado.
 
 *Referências técnicas e aprovação pendentes.*
+
+## Fronteira comprovada de evidências
+
+Em `ProofService.attachEvidence()`, o serviço verifica primeiro o acesso ao escopo econômico da Claim e depois valida uma assinatura Ed25519 contra a chave registrada do remetente, sobre o digest SHA-256 da mídia. Uma assinatura válida demonstra autoria e integridade dos bytes, **não** que um pagamento bancário ocorreu. O provedor armazena bytes e retorna metadados; metadados não comprovam validade da prova. O filesystem local é implementação de referência, enquanto há um provedor compatível com S3 para armazenamento orientado à produção. Não afirmar cotas Day 0 ou limites inline sem inspecionar os pontos atuais de enforcement.
+
+**Falha:** um usuário assina mídia legítima, mas tenta anexá-la à prova de outra pessoa. A assinatura não autoriza esse ato; a checagem de escopo precisa anteceder a gravação.
+
+### Source ledger
+
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/proof.service.ts
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/evidence-provider.ts
+
+*Source-inspected; external payment verification, live tests, CTO review and publication pending.*
