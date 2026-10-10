@@ -21,7 +21,7 @@ try {
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
       if (overflow) { failed = true; console.error(route, viewport.width, 'horizontal page overflow'); }
       if (route === '/') {
-        const articlesLink = page.locator('a[href="/articles"], a[href="/articles/"]').filter({visible: true}).first();
+        const articlesLink = page.locator('a.sails-primary-link[href="/articles"], a.sails-primary-link[href="/articles/"]').first();
         if (!(await articlesLink.count())) { failed = true; console.error(route, viewport.width, 'missing article navigation link'); }
         else {
           await articlesLink.click();
