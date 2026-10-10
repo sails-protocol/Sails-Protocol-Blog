@@ -6,6 +6,15 @@
 
 Un JSON aparentemente pequeño puede causar análisis, hashing o almacenamiento costosos. Un participante malicioso puede explotar la diferencia entre solicitudes aceptadas y trabajo acotado.
 
+## Decisión: rechazar antes del trabajo costoso
+
+Muchas solicitudes pequeñas pueden agotar recursos igual que una carga enorme. Los presupuestos deben abarcar bytes individuales, profundidad y complejidad, referencias por prueba, almacenamiento acumulado e intentos, atribuidos a identidades duraderas y no solo a contadores locales. El esquema de descriptores inspeccionado muestra `externalReference: true`, pero no demuestra por sí mismo esas cuotas. La exclusividad de punteros y el hash de medios OpenProof son controles distintos.
+
+## Fallo: un puntero externo presentado como medio verificado
+
+Un cliente envía una URI sin procesar como si fuera una referencia ligada a integridad. Aceptarla sin comprobar su tipo permite una afirmación falsa de procedencia. Otro fallo ocurre si se rechaza después de guardar bytes o emitir eventos. El gate editorial debe exigir aceptación en el límite, rechazo en +1 y cero efectos mediante la ruta real del servicio y el ledger duradero de cuotas.
+
+
 ## Límites y decisiones
 
 Limite tamaño, profundidad, complejidad, cuotas acumuladas e intentos en el límite del servicio antes del trabajo costoso. Atribuya uso a actores autenticados e identificadores persistentes de prueba, no solo a contadores de proceso.
