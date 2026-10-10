@@ -6,7 +6,7 @@ const catalogue = JSON.parse(readFileSync('src/generated/articles.json', 'utf8')
 assert.ok(catalogue.length > 0, 'article catalogue must not be empty');
 assert.equal(new Set(catalogue.map(a => a.slug)).size, catalogue.length, 'article slugs must be unique');
 for (const article of catalogue) {
-  assert.equal(article.path, '/articles/' + article.slug);
+  assert.equal(article.path, '/articles/' + article.slug + '/', 'WebMCP article URLs must match canonical trailing-slash routes');
   assert.ok(article.title && article.description);
   assert.ok(Array.isArray(article.tags));
 }
