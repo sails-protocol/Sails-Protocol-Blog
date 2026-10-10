@@ -15,3 +15,15 @@ Una prueba útil termina el proceso en puntos definidos cerca de la confirmació
 Un PASS solo con mocks es insuficiente. Documente base de datos, commit exacto, concurrencia, punto de interrupción y poscondiciones persistentes. La guía es propuesta hasta enlazar esas ejecuciones.
 
 *No verified implementation claim or permission to publish is implied by this draft.*
+
+## Evidencia de conformidad: la recuperación no es uniforme
+
+El registro de Recovery/Reconciliation Conformance informa que la automatización M9 (incluidos C4, C8, C13–14, C18 y barridos de reorganización) se limita a MULTISIG. Documenta expresamente la falta de recuperación automática equivalente para LIGHTNING_HODL, WDK_USDT_EVM y SAFE_GUARD_EVM como pendiente, no como capacidad resuelta. La decisión abierta es qué redes deben mantenerse y qué obligaciones de recuperación tendrá cada una.
+
+**Fallo:** el proceso cae durante una liberación fuera de MULTISIG. Un método funcional del proveedor no demuestra recuperación duradera tras reinicio. La afirmación editorial debe identificar la red y el alcance de la evidencia.
+
+### Evidence ledger
+
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/RECOVERY_RECONCILIATION_CONFORMANCE_EVIDENCE.md
+
+*Historical evidence record and source inspection; latest deployment, CTO review and publication remain unverified.*
