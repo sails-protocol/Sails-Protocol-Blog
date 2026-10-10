@@ -2,17 +2,17 @@
 
 *Rascunho editorial. Temporada 4. Publicação não aprovada.*
 
-## A questão
+## A pergunta
 
-n
+Identidade comprova controle de uma chave, mas quem pode agir numa negociação?
 
-## Direção de projeto
+## Decisão e fronteira
 
-m
+O modelo separa o participante principal da carteira ou agente delegado. Autenticação por desafio e resposta não autoriza uma negociação; cada transição econômica deve verificar participante e papel.
 
-## Evidência antes das afirmações
+## Falha e evidência
 
-n
+Assinatura válida de participante errado não pode liberar escrow. Testar escopo da delegação e resistência a replay no HEAD exato antes de afirmar portabilidade entre aplicações.
 
 ## Fluxo conceitual
 
