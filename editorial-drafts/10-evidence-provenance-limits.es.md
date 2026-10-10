@@ -30,7 +30,6 @@ flowchart TD
 
 Este diagrama ilustra un principio de diseño, no un comportamiento de ejecución verificado.
 
-*Referencias técnicas y aprobación pendientes.*
 
 ## Límite comprobado de evidencias
 
