@@ -12,7 +12,8 @@
     "pretypecheck": "node scripts/generate-article-index.mjs",
     "generate:articles": "node scripts/generate-article-index.mjs",
     "check:articles": "node scripts/generate-article-index.mjs --check",
-    "test:webmcp": "node scripts/verify-webmcp.mjs && node scripts/test-webmcp-execution.mjs && node scripts/test-webmcp-registration.mjs"
+    "test:webmcp": "node scripts/verify-webmcp.mjs && node scripts/test-webmcp-execution.mjs && node scripts/test-webmcp-registration.mjs",
+    "test:a11y": "node scripts/test-a11y.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "^3.8.1",
@@ -28,6 +29,8 @@
   "devDependencies": {
     "@docusaurus/tsconfig": "^3.8.1",
     "@docusaurus/types": "^3.8.1",
-    "typescript": "~5.6.3"
+    "typescript": "~5.6.3",
+    "@axe-core/playwright": "^4.10.2",
+    "playwright": "^1.56.1"
   }
 }
