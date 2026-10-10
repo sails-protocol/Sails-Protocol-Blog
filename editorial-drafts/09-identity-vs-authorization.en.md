@@ -29,7 +29,6 @@ flowchart TD
 
 This diagram illustrates a design principle, not verified runtime behavior.
 
-
 ## Verified distinction: proof of key control is not permission
 
 The authentication middleware documents a challenge-response flow, signed request authentication and separate domain prefixes for registration and authentication challenges. That establishes a specific key-control proof boundary; it does not grant the signer authority over every trade. The trade service separately checks whether the authenticated participant is the buyer or seller before party-scoped actions. RFC-001 also states that an agent acts by delegation from a Participant; an agent or wallet is not an independent peer Participant implementation merely by having keys.
@@ -38,8 +37,8 @@ The authentication middleware documents a challenge-response flow, signed reques
 
 ### Primary source / maturity
 
-- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/common/middleware/auth.ts
-- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts
-- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/rfcs/RFC-001-participant-model.md
+- [auth.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/common/middleware/auth.ts)
+- [trade.service.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts)
+- [RFC-001-participant-model.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/rfcs/RFC-001-participant-model.md)
 
 *Source inspection only; no new live test, CTO approval or publication authorization.*
