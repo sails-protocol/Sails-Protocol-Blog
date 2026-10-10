@@ -5,7 +5,7 @@ const browser = await chromium.launch({headless: true});
 let failed = false;
 try {
   for (const route of ['/', '/articles/', '/articles/what-is-sails-protocol']) {
-    const page = await browser.newPage();
+    const page = await browser.newPage({viewport: {width: 1280, height: 800}});
     try {
       const response = await page.goto(new URL(route, base).href, {waitUntil: 'networkidle'});
       if (!response?.ok()) throw new Error(route + ': HTTP ' + response?.status());
