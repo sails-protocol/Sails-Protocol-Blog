@@ -60,3 +60,7 @@ All 81 language files are drafts. EN is the reference edition; PT-BR and ES need
 For each work session, report concrete files modified, commit SHA, tests actually executed, unresolved material findings and whether any content was published. Do not claim tests passed if not run.
 
 **NO MATERIAL FINDING UNDER THE RUG.**
+
+## Owner decision: Day 0 is a complete-library launch (2026-10-10)
+
+The goal is to launch **all editorially and technically approved articles simultaneously on Day 0**, with the largest high-quality corpus feasible. Do not stagger articles into an artificial weekly publishing calendar. Seasons are permanent navigation collections, not release batches. Once the owner explicitly authorizes launch and gates are satisfied, the public blog should expose every approved Day 0 article with language-aware navigation. Unapproved drafts remain private to publication. After launch, publish only when there is meaningful new substance. Full decision and caveats are in `EDITORIAL-DNA-AND-QUALITY-GATES.md`.
