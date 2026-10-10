@@ -32,5 +32,4 @@ O documento de invariantes separa princípios arquiteturais, obrigações de imp
 
 *Código examinado em revisão fixada; não equivale a aprovação do CTO ou comprovação de produção.*
 
-
 *Revisão técnica e factual pendente. Não publicar sem aprovação explícita.*
