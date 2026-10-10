@@ -88,3 +88,7 @@ Canonical article 09 EN/PT-BR/ES now contains an integrated three-boundary expla
 ## Deep narrative pass — articles 10 and 12 (2026-10-10)
 
 Canonical article **10** EN/PT-BR/ES now explains signed-byte provenance versus independent payment truth, wrong-claim adversarial attachment, and the gap between resource policy and enforced bounds. Canonical article **12** EN/PT-BR/ES now separates database commits, provider reports, chain observations and off-chain payment finality, with a funding/reorg failure case and explicit per-rail limits. **6 editions** received substantive narrative additions. Prior coverage remains 17 articles / 51 source-backed language editions; these changes are not G1/G2 acceptance, exact-head runtime tests or CTO release authorization.
+
+## Deep narrative pass — articles 35, 39, 48 (2026-10-10)
+
+Substantive decision/failure narratives added to **9 canonical language editions** across articles **35** (threat enforcement versus catalog), **39** (resource exhaustion, provenance spoofing and zero-side-effect rejection) and **48** (property-scoped conformance versus universal compatibility). Historical security residuals are not asserted as current-HEAD failures. Pinned evidence scope preserved. This is editorial work, not G1/G2 acceptance, CI/browser execution or CTO publication authorization. Cumulative source-backed coverage remains **17 articles / 51 editions**.
