@@ -30,3 +30,17 @@ flowchart TD
 Este diagrama ilustra um princípio de projeto, não um comportamento de execução verificado.
 
 *Referências técnicas e aprovação pendentes.*
+
+## Distinção comprovada: provar a chave não concede autorização
+
+O middleware de autenticação documenta challenge-response, autenticação de requisições assinadas e prefixos de domínio distintos para desafios de registro e autenticação. Isso demonstra controle da chave em um contexto específico, mas não concede poder sobre todas as negociações. O serviço de negociação verifica separadamente se o participante autenticado é comprador ou vendedor nas ações restritas às partes. A RFC-001 também estabelece que agentes atuam por delegação de um Participant; carteira ou agente não vira automaticamente um Participant independente por possuir chaves.
+
+**Cenário adversarial:** uma requisição com assinatura válida tenta alterar a negociação de outra pessoa. A criptografia correta não substitui a checagem de participação. Limites e revogação de delegação exigem evidências próprias.
+
+### Primary source / maturity
+
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/common/middleware/auth.ts
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/rfcs/RFC-001-participant-model.md
+
+*Source inspection only; no new live test, CTO approval or publication authorization.*
