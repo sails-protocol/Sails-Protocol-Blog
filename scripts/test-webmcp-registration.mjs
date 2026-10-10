@@ -20,6 +20,9 @@ await assert.rejects(() => registerArticleTools({
   registerTool: () => { unsafeRegistrations++; },
 }, 'https://example.org'), /unregisterTool is required/);
 assert.equal(unsafeRegistrations, 0, 'no tool may register without safe cleanup');
+// A browser-like context that exposes registration but not cleanup must fail closed.
+const registrationOnlyContext = {registerTool: () => { throw new Error('unexpected registration'); }};
+await assert.rejects(() => registerArticleTools(registrationOnlyContext, 'https://example.org'), /unregisterTool is required/);
 const registered = new Map();
 const context = {
   registerTool: tool => {registered.set(tool.name, tool);},
