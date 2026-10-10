@@ -28,6 +28,12 @@ Text equivalent: the diagram shows the responsibility boundaries discussed above
 
 *Source references, technical review and owner publication approval pending.*
 
+## A stale offer is not executable liquidity
+
+Two applications can display the same offer while only one participant can accept its remaining capacity. If a wallet accepts first, Sails Market must not treat its stale screen as a reservation. Shared discovery is different from eligibility, acceptance and settlement. Payment method, counterparty permission, quote expiry and remaining capacity must be rechecked at the authoritative boundary. A private room controls access, not economic truth; external providers retain their own execution rules.
+
+The trade-off is an occasional rejected quote rather than an invented fill. The proposed shared-liquidity experience remains a design goal, not evidence of a deployed universal order book. **Next test:** race two clients for the last capacity, then verify that the loser is rejected or refreshed without duplicate economic commitment.
+
 ## Evidence boundary and failure mode
 
 Selected provider-substitution properties do not establish universal shared liquidity or an operational market. **Failure:** interpreting this architectural or source-inspected statement as current production verification. Exact-head tests and approval are still required.
