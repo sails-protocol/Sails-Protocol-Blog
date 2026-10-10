@@ -6,13 +6,7 @@ type WebMCPContext = {
 };
 type WebMCPDocument = Document & {modelContext?: WebMCPContext};
 
-const ARTICLES = [{
-  slug: 'what-is-sails-protocol',
-  title: 'What is Sails Protocol?',
-  description: 'A conceptual introduction to Sails Protocol and its place in the open P2P ecosystem.',
-  tags: ['protocol', 'architecture'],
-  path: '/articles/what-is-sails-protocol',
-}];
+import ARTICLES from '../generated/articles.json';
 
 const toolDefinitions = [
   {
