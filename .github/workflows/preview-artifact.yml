@@ -14,6 +14,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -31,11 +33,11 @@ jobs:
       - name: Save immutable candidate metadata
         shell: bash
         run: |
-          printf 'commit=%s\nworkflow_run=%s\nsite_url=%s\nstatus=ARTIFACT_ONLY_NOT_DEPLOYED\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" 'https://sails-protocol-blog.netlify.app' > build/PREVIEW-EVIDENCE.txt
+          printf 'commit=%s\nworkflow_run=%s\nsite_url=%s\nstatus=ARTIFACT_ONLY_NOT_DEPLOYED\n' "$(git rev-parse HEAD)" "$GITHUB_RUN_ID" 'https://sails-protocol-blog.netlify.app' > build/PREVIEW-EVIDENCE.txt
       - name: Upload preview build
         uses: actions/upload-artifact@v4
         with:
-          name: sails-blog-preview-${{ github.sha }}
+          name: sails-blog-preview-${{ github.event.pull_request.head.sha || github.sha }}
           path: build/
           if-no-files-found: error
           retention-days: 7
