@@ -27,3 +27,9 @@ flowchart TD
 Equivalente textual: o diagrama mostra os limites de responsabilidade descritos acima, não uma implantação verificada.
 
 *Referências, revisão técnica e aprovação do responsável pela publicação pendentes.*
+
+## Fronteira examinada e falha
+
+Visibilidade privada não impede conluio nem transições sem autorização. **Falha:** apresentar design como implantação comprovada. A fonte fixada sustenta apenas esse escopo; gates de execução e CTO seguem abertos.
+
+- [THREAT_MODEL.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md)
