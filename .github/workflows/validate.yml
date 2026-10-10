@@ -23,6 +23,8 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Verify article catalogue matches source
         run: npm run check:articles
+      - name: Verify WebMCP static contract
+        run: node scripts/verify-webmcp.mjs
       - name: Typecheck
         run: npm run typecheck
       - name: Build
