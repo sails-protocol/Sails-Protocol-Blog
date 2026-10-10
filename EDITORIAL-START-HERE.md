@@ -7,7 +7,7 @@
 - Repository: `sails-protocol/Sails-Protocol-Blog`
 - Working branch: `feat/blog-foundation-02`
 - Draft PR: #1
-- Editorial drafts: `editorial-drafts/` (41 topics, 3 language editions each, 123 first drafts)
+- Editorial drafts: `editorial-drafts/` (48 topics, 3 language editions each, 144 first drafts)
 - Public blog routes are separate. Do not promote drafts into public routes without the gates below.
 
 ## Read these documents first, in order
@@ -37,7 +37,7 @@ This is an editorial method derived from the project's engineering approach, not
 - Season 6, articles 35-41: Security, Verification and Production Readiness (first drafts complete).
 - Season 7, articles 42-48: proposed outlines only, no drafts yet.
 
-All 123 language files are drafts. EN is the reference edition; PT-BR and ES need natural adaptation and independent review. The newest drafts especially need deeper analysis, verifiable citations and topic-specific diagrams.
+All 144 language files are drafts. EN is the reference edition; PT-BR and ES need natural adaptation and independent review. The newest drafts especially need deeper analysis, verifiable citations and topic-specific diagrams.
 
 ## Navigation and deployment boundaries
 
@@ -78,4 +78,8 @@ Articles 35-41 now have first drafts in EN, PT-BR and ES. The home and season ou
 
 ## Editorial scope baseline and progress (2026-10-10)
 
-**Read [EDITORIAL-DAY0-MASTER-BACKLOG.md](./EDITORIAL-DAY0-MASTER-BACKLOG.md) before creating more topics.** It defines the proposed seven-season / 48-topic / 144-language-edition Day 0 scope and the G0-G7 review gates. Current verified planning count: 41 article topics have first drafts in EN/PT-BR/ES (123 files); Season 7's seven topics (21 files) remain to draft. No article has been approved for publication. The baseline is a proposed scope freeze, not an owner-approved release or a prohibition on resolving material gaps. Do not expand the article count without documenting and approving a distinct uncovered need.
+**Read [EDITORIAL-DAY0-MASTER-BACKLOG.md](./EDITORIAL-DAY0-MASTER-BACKLOG.md) before creating more topics.** It defines the proposed seven-season / 48-topic / 144-language-edition Day 0 scope and the G0-G7 review gates. Current planning count: 48 article topics have first drafts in EN/PT-BR/ES (144 files); Season 7's seven topics (21 files) have first drafts. No article has been approved for publication. The baseline is a proposed scope freeze, not an owner-approved release or a prohibition on resolving material gaps. Do not expand the article count without documenting and approving a distinct uncovered need.
+
+## Completion update (2026-10-10)
+
+All seven seasons have first drafts for 48 topics in EN/PT-BR/ES (144 draft files). This is G0 first-draft inventory completion only, not G1-G7 acceptance. Season 7 articles 42-48 were drafted with explicit maturity caveats. No publication, main merge, source-claim audit, build or browser tests were performed in this writing pass. Next: claim-to-source audit and substantive editorial revision, followed by technical/site gates.
