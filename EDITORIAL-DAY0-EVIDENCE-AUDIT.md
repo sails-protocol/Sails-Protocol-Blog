@@ -84,3 +84,7 @@ Canonical articles **09, 10, 12** EN/PT-BR/ES now use descriptive Markdown links
 ## Deep narrative pass — article 09 (2026-10-10)
 
 Canonical article 09 EN/PT-BR/ES now contains an integrated three-boundary explanation (authentication, trade membership authorization, economic transition validity), an adversarial valid-signature/wrong-trade case and explicit delegated-agent evidence limits. Source references remain pinned. This is a substantive editorial improvement, **not** G1 or G2 acceptance. Browser Gate and CTO review remain open.
+
+## Deep narrative pass — articles 10 and 12 (2026-10-10)
+
+Canonical article **10** EN/PT-BR/ES now explains signed-byte provenance versus independent payment truth, wrong-claim adversarial attachment, and the gap between resource policy and enforced bounds. Canonical article **12** EN/PT-BR/ES now separates database commits, provider reports, chain observations and off-chain payment finality, with a funding/reorg failure case and explicit per-rail limits. **6 editions** received substantive narrative additions. Prior coverage remains 17 articles / 51 source-backed language editions; these changes are not G1/G2 acceptance, exact-head runtime tests or CTO release authorization.
