@@ -15,3 +15,9 @@ Schemas são contratos executáveis apenas quando a validação acontece no limi
 Afirmações de compatibilidade exigem testes com fixtures entre versões e políticas de migração precisas. Nomes de pacotes, versões de schemas e matrizes de suporte devem ser conferidos no código antes de publicar uma tabela.
 
 *Verificação de fontes e referências exatas de API pendentes.*
+
+## Fronteira examinada no código
+
+Conformidade delimitada da álgebra não comprova composição do ruleset nem compatibilidade universal. Fronteira documentada não é prova de execução no HEAD atual; testar a falha contra estado durável antes de afirmar prontidão.
+
+- [CONDITION_ALGEBRA_CONFORMANCE_EVIDENCE.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/CONDITION_ALGEBRA_CONFORMANCE_EVIDENCE.md)
