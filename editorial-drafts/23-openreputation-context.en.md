@@ -4,15 +4,15 @@
 
 ## The question
 
-R
+Can a good reputation in one market be trusted in another? Only with context.
 
-## Design direction
+## Design decision and boundary
 
-R
+OpenReputation is a direction for portable, attributable signals, not a universal score. The participant model defines actors but does not implement cross-market scoring or a common trust policy. Each receiving application must choose what it accepts.
 
-## Evidence before claims
+## Failure and evidence
 
-L
+A successful trade signal stripped of payment rail, dispute history and issuer can mislead another market. Prove provenance, consent, revocation and receiving-market policy before making portability claims.
 
 ## Conceptual flow
 
