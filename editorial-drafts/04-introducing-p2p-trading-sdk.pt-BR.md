@@ -18,4 +18,19 @@ O SDK foi pensado para permitir que aplicações diferentes integrem fluxos de n
 
 O primeiro SDK é o ponto de partida de uma família modular maior, não uma prova de que toda essa família já existe hoje. Conforme a implementação avançar, vamos publicar exemplos concretos, interfaces suportadas, evidências de teste e limitações conhecidas. Até lá, este artigo apresenta a direção do produto sem declarar prontidão para produção.
 
+## O que a integração examinada realmente oferece
+
+Na revisão fixada do código, o cliente OpenP2P do SDK oferece `trade(offerId, amount, idempotencyKey?)`. A chave é opcional, mas isso tem consequência econômica: sem ela, uma resposta perdida pode levar à criação de outra negociação. A rota HTTP valida a chave recebida e encaminha o contexto do participante autenticado ao serviço, que delimita a tentativa pela ação, participante, oferta e valor. É um contrato concreto, não prova de que toda carteira preserva a chave em tentativas offline.
+
+**Falha:** o aplicativo gera outra chave a cada toque em Tentar novamente. O servidor interpreta novas tentativas, não a repetição da aceitação original. **Decisão:** persistir e reutilizar a chave da mesma aceitação lógica; criar outra apenas para uma aceitação realmente nova.
+
+### Fontes e nível de comprovação
+
+- [Cliente OpenP2P do SDK](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/packages/sails-sdk/src/modules/openp2p.ts)
+- [Rota HTTP de negociações](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.routes.ts)
+- [Serviço de negociação](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts)
+
+*Inspeção de código em revisão fixada; sem novo teste de cliente/reinício ou aprovação de publicação.*
+
+
 *Revisão técnica e factual pendente. Não publicar sem aprovação explícita.*
