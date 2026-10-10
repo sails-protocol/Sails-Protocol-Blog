@@ -6,6 +6,7 @@ const seasons = [
   {number: '01', title: 'Why Sails Exists', description: 'The P2P coordination problem, our motivation and the architecture behind Sails Protocol.', count: 5},
   {number: '02', title: 'Engineering Economic Coordination', description: 'Idempotency, concurrency, identity, evidence, settlement and adversarial conditions.', count: 8},
   {number: '03', title: 'Building on the Protocol', description: 'Wallet integrations, Sails Market, application boundaries and production evidence.', count: 6},
+  {number: '04', title: 'Beyond the Trading SDK', description: 'The modular vision: identity, proof, reputation, settlement, liquidity, agents and open finance.', count: 8},
 ];
 
 export default function Home(): React.JSX.Element {
