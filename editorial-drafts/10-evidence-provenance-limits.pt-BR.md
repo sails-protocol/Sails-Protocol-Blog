@@ -30,7 +30,6 @@ flowchart TD
 
 Este diagrama ilustra um princípio de projeto, não um comportamento de execução verificado.
 
-
 ## Fronteira comprovada de evidências
 
 Em `ProofService.attachEvidence()`, o serviço verifica primeiro o acesso ao escopo econômico da Claim e depois valida uma assinatura Ed25519 contra a chave registrada do remetente, sobre o digest SHA-256 da mídia. Uma assinatura válida demonstra autoria e integridade dos bytes, **não** que um pagamento bancário ocorreu. O provedor armazena bytes e retorna metadados; metadados não comprovam validade da prova. O filesystem local é implementação de referência, enquanto há um provedor compatível com S3 para armazenamento orientado à produção. Não afirmar cotas Day 0 ou limites inline sem inspecionar os pontos atuais de enforcement.
@@ -39,7 +38,7 @@ Em `ProofService.attachEvidence()`, o serviço verifica primeiro o acesso ao esc
 
 ### Source ledger
 
-- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/proof.service.ts
-- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/evidence-provider.ts
+- [proof.service.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/proof.service.ts)
+- [evidence-provider.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/evidence-provider.ts)
 
 *Source-inspected; external payment verification, live tests, CTO review and publication pending.*
