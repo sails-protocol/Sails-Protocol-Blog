@@ -18,12 +18,6 @@ An API key or request identifier helps, but it is not the entire solution. Imagi
 
 In the Sails P2P Trading SDK, we treat retry behavior as an economic correctness question. Our engineering reviews include database-backed scenarios, concurrent requests and crash-and-replay tests. The exact guarantees depend on the operation, adapter and evidence approved for a particular implementation. We will not call a workflow exactly-once merely because one unit test passes.
 
-## Read next
-
-Next we will look at a related but different problem: what happens when two requests arrive at the same time, before either can observe the other's result?
-
-*Sources pending: link immutable implementation commits, CTO decisions and verification runs before publication.*
-
 ## A concrete contract in the Sails SDK
 
 The inspected `OpenP2P.trade(offerId, amount, idempotencyKey?)` SDK method forwards the optional key to `POST /v1/openp2p/trades`. The route validates a nonempty key of up to 200 characters and passes it with the authenticated participant ID to `TradeService.createTrade()`. That service scopes the attempt to `openp2p.trade.create`, the participant, and the offer/amount payload. **Omitting the key permits a second trade on retry**; the SDK itself tells applications to generate one key per logical acceptance and reuse it for retries of that same acceptance. A fresh intentional acceptance needs a fresh key.
@@ -40,3 +34,9 @@ The inspected `OpenP2P.trade(offerId, amount, idempotencyKey?)` SDK method forwa
 - [Common idempotency mechanism](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/common/idempotency.ts)
 
 *Source-inspected only. No new runtime verification, CTO approval or publication authorization.*
+
+## Read next
+
+Next we will look at a related but different problem: what happens when two requests arrive at the same time, before either can observe the other's result?
+
+
