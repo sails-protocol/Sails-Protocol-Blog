@@ -103,3 +103,33 @@ html[data-theme='dark'] .navbar__toggle,
 html[data-theme='dark'] [class*='colorModeToggle'] button {
   background-color: #1c2835;
 }
+
+
+/* Editorial seasons: calm, responsive home navigation. */
+.sails-season-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.sails-season-card {
+  border: 1px solid var(--ifm-color-emphasis-400);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: var(--ifm-background-surface-color);
+}
+.sails-season-card small {
+  display: block;
+  color: var(--ifm-color-content-secondary);
+  font-weight: 650;
+  letter-spacing: .055em;
+}
+.sails-season-card h3 { margin: .9rem 0 .7rem; }
+.sails-season-card p { margin-bottom: 1.2rem; }
+.sails-season-status {
+  font-size: .85rem;
+  color: var(--ifm-color-content-secondary);
+}
+@media (max-width: 850px) {
+  .sails-season-grid { grid-template-columns: 1fr; }
+}
