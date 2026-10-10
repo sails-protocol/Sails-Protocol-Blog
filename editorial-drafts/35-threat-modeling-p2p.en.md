@@ -6,6 +6,15 @@
 
 A buyer, seller, operator and payment provider can each behave differently from the happy-path diagram. A threat model begins by identifying which of them may lie, disappear or lose access.
 
+## Decision: make the attacker and the enforcement point explicit
+
+A threat is not mitigated because a catalog names it. For each scenario, the review must identify the attacker, the asset at risk, the trust boundary, the implementation that enforces it and the remaining uncertainty. Consider a browser WebSocket: an HTTP rate limit does not automatically govern messages after upgrade. The threat model records a participant-scoped message limiter as a single-instance improvement, not a distributed guarantee. It also documents the risk of a full-privilege session token in a WebSocket query string. Those are separate boundaries and require separate evidence.
+
+## Failure: security that exists only in the diagram
+
+If multiple sockets or nodes can bypass a local counter, the rate-limit claim must state that scope. If a session URL is logged, a valid token can leak despite correct signature verification elsewhere. The source record describes historical findings; whether either residual is fixed in the current HEAD requires a new review, not an assumption.
+
+
 ## Boundaries and tradeoffs
 
 Separate funds, signing keys, payment claims, evidence and trade state into assets with different authorities. Evaluate spoofed identity, forged receipts, duplicate requests, malicious nodes and unavailable providers. A mitigation is useful only if its enforcement boundary is explicit.
