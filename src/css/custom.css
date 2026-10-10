@@ -1,4 +1,4 @@
-html:root{--ifm-color-primary:#9c4c08;--ifm-color-primary-dark:#8c4407;--ifm-color-primary-darker:#854106;--ifm-color-primary-darkest:#6d3505;--ifm-color-primary-light:#ac5409;--ifm-color-primary-lighter:#b35809;--ifm-color-primary-lightest:#cb640b;--ifm-background-color:#fafaf8;--ifm-font-color-base:#20242a;--ifm-font-family-base:Inter,ui-sans-serif,system-ui,sans-serif;--sails-line:#deded9;--sails-muted:#555a61}html[data-theme=dark]{--ifm-color-primary:#f7931a;--ifm-color-primary-dark:#f29832;--ifm-color-primary-darker:#ed8e24;--ifm-color-primary-darkest:#d67510;--ifm-color-primary-light:#f7b568;--ifm-color-primary-lighter:#f9be7a;--ifm-color-primary-lightest:#fbd5a7;--ifm-background-color:#10161d;--ifm-background-surface-color:#1c2835;--ifm-font-color-base:#e7edf3;--sails-line:#303d4b;--sails-muted:#b5c0cc}.navbar{border-bottom:1px solid var(--sails-line)}.footer{border-top:1px solid var(--sails-line);background:var(--ifm-background-color)}.sails-home{max-width:1100px;margin:auto;padding:0 1.5rem}.sails-hero{padding:6rem 0 5rem;border-bottom:1px solid var(--sails-line)}.sails-kicker{color:var(--ifm-color-primary);font-size:.78rem;letter-spacing:.12em;font-weight:750;text-transform:uppercase}.sails-hero h1{font-size:clamp(2.6rem,5vw,4.3rem);max-width:850px;line-height:1.1;letter-spacing:-.045em;font-weight:650;margin:1.5rem 0}.sails-lead{font-size:1.15rem;line-height:1.8;color:var(--sails-muted);max-width:700px}.sails-section{padding:3.5rem 0}.sails-section h2{font-size:1.8rem}.sails-list{border-top:1px solid var(--sails-line)}.sails-item{display:block;padding:1.5rem 0;border-bottom:1px solid var(--sails-line);color:var(--ifm-font-color-base)}.sails-item small{display:block;color:var(--ifm-color-primary);font-weight:650}.sails-item strong{display:block;font-size:1.2rem}.sails-item span{display:block;color:var(--sails-muted)}.markdown{line-height:1.8}.markdown h2{margin-top:2.6rem}a:focus-visible{outline:2px solid #477bc4;outline-offset:3px}@media(max-width:650px){.sails-hero{padding:3.5rem 0}.sails-home{padding:0 1.1rem}}
+html:root{--ifm-color-primary:#9c4c08;--ifm-color-primary-dark:#8c4407;--ifm-color-primary-darker:#854106;--ifm-color-primary-darkest:#6d3505;--ifm-color-primary-light:#ac5409;--ifm-color-primary-lighter:#b35809;--ifm-color-primary-lightest:#cb640b;--ifm-background-color:#fafaf8;--ifm-font-color-base:#20242a;--ifm-font-family-base:Inter,ui-sans-serif,system-ui,sans-serif;--sails-line:#deded9;--sails-muted:#555a61}html[data-theme=dark]:root{--ifm-color-primary:#f7931a;--ifm-color-primary-dark:#f29832;--ifm-color-primary-darker:#ed8e24;--ifm-color-primary-darkest:#d67510;--ifm-color-primary-light:#f7b568;--ifm-color-primary-lighter:#f9be7a;--ifm-color-primary-lightest:#fbd5a7;--ifm-background-color:#10161d;--ifm-background-surface-color:#1c2835;--ifm-font-color-base:#e7edf3;--sails-line:#303d4b;--sails-muted:#b5c0cc}.navbar{border-bottom:1px solid var(--sails-line)}.footer{border-top:1px solid var(--sails-line);background:var(--ifm-background-color)}.sails-home{max-width:1100px;margin:auto;padding:0 1.5rem}.sails-hero{padding:6rem 0 5rem;border-bottom:1px solid var(--sails-line)}.sails-kicker{color:var(--ifm-color-primary);font-size:.78rem;letter-spacing:.12em;font-weight:750;text-transform:uppercase}.sails-hero h1{font-size:clamp(2.6rem,5vw,4.3rem);max-width:850px;line-height:1.1;letter-spacing:-.045em;font-weight:650;margin:1.5rem 0}.sails-lead{font-size:1.15rem;line-height:1.8;color:var(--sails-muted);max-width:700px}.sails-section{padding:3.5rem 0}.sails-section h2{font-size:1.8rem}.sails-list{border-top:1px solid var(--sails-line)}.sails-item{display:block;padding:1.5rem 0;border-bottom:1px solid var(--sails-line);color:var(--ifm-font-color-base)}.sails-item small{display:block;color:var(--ifm-color-primary);font-weight:650}.sails-item strong{display:block;font-size:1.2rem}.sails-item span{display:block;color:var(--sails-muted)}.markdown{line-height:1.8}.markdown h2{margin-top:2.6rem}a:focus-visible{outline:2px solid #477bc4;outline-offset:3px}@media(max-width:650px){.sails-hero{padding:3.5rem 0}.sails-home{padding:0 1.1rem}}
 .sails-primary-link{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:.75rem 1.1rem;border:1px solid var(--ifm-color-primary);border-radius:.3rem;font-weight:700;text-decoration:none}.sails-primary-link:hover{background:var(--ifm-color-primary);color:var(--ifm-background-color);text-decoration:none}.sails-item{min-height:88px}.sails-item:hover strong{text-decoration:underline;text-underline-offset:.2em}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*:not(svg):not(svg *),*:not(svg):not(svg *)::before,*:not(svg):not(svg *)::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
 /* Accessibility: readable footer copyright and non-color-only article links. */
@@ -9,7 +9,7 @@ html:root{--ifm-color-primary:#9c4c08;--ifm-color-primary-dark:#8c4407;--ifm-col
 
 /* Dark mode: explicitly bind Infima navigation, table of contents and document
    surfaces to the active theme. Never inherit dark text onto dark navigation. */
-html[data-theme='dark'] {
+html[data-theme='dark']:root {
   --ifm-navbar-background-color: #1c2835;
   --ifm-navbar-link-color: #e7edf3;
   --ifm-navbar-link-hover-color: #f7b568;
@@ -58,8 +58,7 @@ html[data-theme='dark'] .menu__link { color: var(--ifm-menu-color); }
   padding-block: 1rem;
 }
 .markdown .docusaurus-mermaid-container svg {
-  max-width: none;
-  min-width: min(100%, 900px);
+  max-width: 100%;
   height: auto;
 }
 html[data-theme='dark'] .docusaurus-mermaid-container {
@@ -67,7 +66,7 @@ html[data-theme='dark'] .docusaurus-mermaid-container {
 }
 
 /* Theme audit: override Infima's effective surface variables and accessible controls. */
-html[data-theme='dark'] {
+html[data-theme='dark']:root {
   --ifm-navbar-background-color: #1c2835;
   --ifm-toc-border-color: #455569;
   --ifm-color-content: #e7edf3;
