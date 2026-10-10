@@ -30,7 +30,6 @@ flowchart TD
 
 This diagram illustrates a design principle, not verified runtime behavior.
 
-
 ## Verified evidence boundary
 
 In `ProofService.attachEvidence()`, the service first checks economic scope access to the Claim, then verifies an Ed25519 signature against the submitter's registered key over the SHA-256 digest of the media. A valid signature proves signer attribution and byte integrity, **not** that a bank payment occurred. The evidence provider stores bytes and returns storage metadata; storage metadata is not proof validity. Local filesystem is a reference-only default, while an S3-compatible provider is available for production-oriented storage. Do not assert Day-0 quotas or inline resource limits without inspecting their current enforcement paths.
@@ -39,7 +38,7 @@ In `ProofService.attachEvidence()`, the service first checks economic scope acce
 
 ### Source ledger
 
-- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/proof.service.ts
-- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/evidence-provider.ts
+- [proof.service.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/proof.service.ts)
+- [evidence-provider.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/evidence-provider.ts)
 
 *Source-inspected; external payment verification, live tests, CTO review and publication pending.*
