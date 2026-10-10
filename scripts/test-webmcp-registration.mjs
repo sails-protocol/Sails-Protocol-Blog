@@ -20,7 +20,7 @@ const context = {
 const cleanup = await registerArticleTools(context, 'https://example.org');
 assert.equal(registered.size, 2);
 assert.equal(JSON.parse((await registered.get('sails_list_articles').execute({})).content[0].text)[0].url, 'https://example.org/articles/what-is-sails-protocol');
-cleanup();
+await cleanup();
 assert.equal(registered.size, 0);
 const partial = new Map();
 await assert.rejects(() => registerArticleTools({
@@ -28,5 +28,12 @@ await assert.rejects(() => registerArticleTools({
   unregisterTool: name => {partial.delete(name);},
 }, 'https://example.org'));
 assert.equal(partial.size, 0, 'partial registration must roll back');
+const asynchronous = new Map();
+const cleanupAsync = await registerArticleTools({
+  registerTool: async tool => { asynchronous.set(tool.name, tool); },
+  unregisterTool: async name => { await Promise.resolve(); asynchronous.delete(name); },
+}, 'https://example.org');
+await cleanupAsync();
+assert.equal(asynchronous.size, 0, 'async cleanup must finish before resolving');
 delete globalThis.__testArticleTools;
 console.log('WebMCP registration, execution, cleanup and rollback checks passed');
