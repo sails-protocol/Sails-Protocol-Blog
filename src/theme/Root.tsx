@@ -1,36 +1,23 @@
 import React, {useEffect} from 'react';
-import {articleTools} from '../webmcp/article-tools';
+import {registerArticleTools, type WebMCPContext} from '../webmcp/register-tools';
 
-type WebMCPContext = {
-  registerTool: (tool: Record<string, unknown>) => Promise<unknown> | unknown;
-  unregisterTool?: (name: string) => Promise<unknown> | unknown;
-};
 type WebMCPDocument = Document & {modelContext?: WebMCPContext};
 
 export default function Root({children}: {children: React.ReactNode}): React.JSX.Element {
   useEffect(() => {
-    const ctx = (document as WebMCPDocument).modelContext;
-    if (!ctx?.registerTool) return;
-    let active = true;
-    void (async () => {
-      for (const tool of articleTools) {
-        if (!active) return;
-        try {
-          await ctx.registerTool({
-            ...tool,
-            execute: (input: {query?: string}) => tool.execute(input as never, window.location.origin),
-          });
-        } catch (error) {
-          console.warn('WebMCP tool registration failed:', tool.name, error);
-        }
-      }
-    })();
+    const context = (document as WebMCPDocument).modelContext;
+    if (!context?.registerTool) return;
+    let disposed = false;
+    let cleanup: (() => void) | undefined;
+    void registerArticleTools(context, window.location.origin)
+      .then(dispose => {
+        if (disposed) dispose();
+        else cleanup = dispose;
+      })
+      .catch(error => console.warn('WebMCP registration failed:', error));
     return () => {
-      active = false;
-      for (const tool of articleTools) {
-        try { void ctx.unregisterTool?.(tool.name); }
-        catch (error) { console.warn('WebMCP tool cleanup failed:', tool.name, error); }
-      }
+      disposed = true;
+      cleanup?.();
     };
   }, []);
   return <>{children}</>;
