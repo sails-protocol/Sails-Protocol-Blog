@@ -2,17 +2,21 @@
 
 *Rascunho editorial. Temporada 4. Publicação não aprovada.*
 
-## A questão
+## A pergunta
 
- 
+O que um protocolo se torna depois do primeiro SDK? Uma família de capacidades só tem valor se compartilhar regras econômicas explícitas.
 
-## Direção de projeto
+## Decisão e fronteira
 
-m
+O primeiro foco é o P2P Trading. Identidade, provas, reputação, liquidação, liquidez, agentes e finanças são direções modulares diferentes, não um único produto já implantado. Cada módulo precisa declarar quem tem autoridade, que efeito econômico pode solicitar e qual invariante preserva. O documento de invariantes separa arquitetura, obrigações de implementação e evidência executável.
 
-## Evidência antes das afirmações
+## Falha e evidência
 
-n
+Uma carteira pode integrar um recurso OpenFinance e supor que o protocolo garante seu provedor externo de crédito. Isso transferiria responsabilidade sem prova. Cada provedor precisa de modelo de autoridade, tratamento de falhas e gate próprios; nenhuma funcionalidade do roadmap herda prontidão do Trading SDK.
+
+## Próxima pergunta
+
+Qual módulo consegue demonstrar uma integração real, delimitada e com evidência reproduzível de forma independente?
 
 ## Fluxo conceitual
 
