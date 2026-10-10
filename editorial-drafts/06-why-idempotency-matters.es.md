@@ -18,12 +18,6 @@ Una clave de API o un identificador de solicitud ayuda, pero no lo resuelve todo
 
 En Sails P2P Trading SDK tratamos los reintentos como una cuestión de corrección económica. Nuestras revisiones incluyen escenarios con base de datos real, solicitudes concurrentes y pruebas de caída y recuperación. Las garantías exactas dependen de la operación, el adaptador y la evidencia aprobada para cada implementación. No llamaremos exactly-once a un flujo solo porque pasó una prueba unitaria.
 
-## Leer a continuación
-
-En el próximo artículo veremos un problema relacionado, pero distinto: ¿qué ocurre cuando dos solicitudes llegan al mismo tiempo, antes de que una pueda observar el resultado de la otra?
-
-*Fuentes pendientes: enlazar commits inmutables, decisiones del CTO y pruebas antes de publicar.*
-
 ## Contrato concreto en el SDK de Sails
 
 El método `OpenP2P.trade(offerId, amount, idempotencyKey?)` del SDK inspeccionado envía la clave opcional a `POST /v1/openp2p/trades`. La ruta valida una clave no vacía de hasta 200 caracteres y la pasa, junto con el participante autenticado, a `TradeService.createTrade()`. El servicio delimita el intento por el alcance `openp2p.trade.create`, el participante y los datos de oferta e importe. **Sin la clave, un reintento puede crear otra operación**; el propio SDK indica generar una clave por aceptación lógica y reutilizarla en los reintentos de esa aceptación. Una nueva aceptación deliberada requiere una clave nueva.
@@ -40,3 +34,9 @@ El método `OpenP2P.trade(offerId, amount, idempotencyKey?)` del SDK inspecciona
 - [Common idempotency mechanism](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/common/idempotency.ts)
 
 *Source-inspected only. No new runtime verification, CTO approval or publication authorization.*
+
+## Leer a continuación
+
+En el próximo artículo veremos un problema relacionado, pero distinto: ¿qué ocurre cuando dos solicitudes llegan al mismo tiempo, antes de que una pueda observar el resultado de la otra?
+
+
