@@ -28,6 +28,18 @@ Equivalente textual: o diagrama mostra os limites de responsabilidade descritos 
 
 *Referências, revisão técnica e aprovação do responsável pela publicação pendentes.*
 
+## Quando a resposta se perde, repetir não é necessariamente seguro
+
+Imagine o comprador tocando em **Criar negociação**. O serviço registra a negociação, mas a resposta se perde antes de a carteira receber seu identificador. O comprador tenta novamente. Se a nova chamada usar outra chave de idempotência, ou nenhuma, o serviço pode entender que existe uma segunda intenção econômica. Um simples botão de tentar novamente pode, portanto, criar outra negociação.
+
+A integração deve gerar uma chave estável para cada intenção do usuário, preservá-la nas tentativas de transporte e reconciliar respostas incertas antes de permitir uma nova operação. Essa responsabilidade é da aplicação. O argumento opcional encontrado no SDK demonstra um mecanismo disponível, não que uma carteira específica o utilize corretamente.
+
+Existe outra fronteira no momento da assinatura. Identificador da negociação, autoridade do participante, ativo, rede, valor, destino e condições de liquidação precisam corresponder ao que o usuário aprovou. Uma assinatura criptograficamente válida associada ao contexto errado não autoriza a negociação pretendida. O estado registrado pelo coordenador também não substitui o resultado observado na rede de liquidação.
+
+A decisão de integração é manter as chaves e a assinatura sob controle da carteira e tornar explícitos a identidade das tentativas e o contexto de aprovação. Isso exige mais cuidado na experiência de recuperação, mas evita transformar uma repetição de rede ou uma assinatura genérica em consentimento econômico.
+
+**Próxima pergunta:** um teste de integração no HEAD exato consegue simular uma negociação persistida com resposta perdida, recuperar a mesma negociação na repetição e rejeitar um contexto de assinatura divergente sem segundo efeito econômico? Até existir essa evidência, trata-se de um requisito, não de uma garantia verificada.
+
 ## Fronteira comprovada no código e próximo teste
 
 O SDK examinado oferece criação de negociação com chave de idempotência opcional; custódia e assinatura da carteira exigem provas separadas.
