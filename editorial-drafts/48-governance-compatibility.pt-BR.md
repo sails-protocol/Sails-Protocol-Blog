@@ -6,6 +6,15 @@
 
 Um protocolo evolui enquanto aplicações e nodes atualizam em ritmos diferentes. Uma mudança aparentemente pequena pode redefinir o significado econômico de um campo.
 
+## Decisão: compatibilidade precisa nomear a propriedade exata
+
+Número de versão não substitui contrato econômico. Um cliente pode decodificar a mensagem e ainda interpretar de outro modo uma tarifa, um resultado de liquidação ou uma condição de autorização. Uma alegação séria identifica schema ou ruleset, par de implementações, operação, rede e testes que falhariam se a semântica mudasse. A constituição de invariantes separa princípios arquiteturais, obrigações executáveis e evidência verificável.
+
+## Falha: conformidade da álgebra vira alegação universal
+
+O registro examinado demonstra uma propriedade delimitada do avaliador da álgebra de condições, mas afirma que o ruleset publicado **não** compõe condições. Chamar isso de conformidade integral da composição extrapola o teste. A evidência de substituição de provedores também sustenta propriedades selecionadas, não interoperabilidade universal. A governança deve publicar tanto o que passou quanto o que não foi testado, incluindo migração para mudanças de significado econômico.
+
+
 ## Limite e decisão
 
 A governança deve distinguir propostas, política revisada, implementação, verificação e implantação. Compatibilidade exige schemas versionados, regras de quebra, migrações e descontinuação transparente. Uma decisão congelada pelo CTO não equivale a consenso universal.
