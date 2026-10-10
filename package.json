@@ -11,7 +11,8 @@
     "prestart": "node scripts/generate-article-index.mjs",
     "pretypecheck": "node scripts/generate-article-index.mjs",
     "generate:articles": "node scripts/generate-article-index.mjs",
-    "check:articles": "node scripts/generate-article-index.mjs --check"
+    "check:articles": "node scripts/generate-article-index.mjs --check",
+    "test:webmcp": "node scripts/verify-webmcp.mjs && node scripts/test-webmcp-execution.mjs && node scripts/test-webmcp-registration.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "^3.8.1",
