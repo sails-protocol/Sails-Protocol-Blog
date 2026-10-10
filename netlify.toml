@@ -3,3 +3,15 @@ command = "npm run build"
 publish = "build"
 [build.environment]
 NODE_VERSION = "22"
+
+[[headers]]
+for = "/*"
+[headers.values]
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
+X-Frame-Options = "DENY"
+Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# CSP is deliberately not enabled until Docusaurus/React/Mermaid scripts,
+# styles and WebMCP browser execution are validated under a tested policy.
+# A guessed CSP would either break the site or provide false assurance.
