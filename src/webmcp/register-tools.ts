@@ -6,6 +6,9 @@ export type WebMCPContext = {
 };
 
 export async function registerArticleTools(context: WebMCPContext, origin: string): Promise<() => Promise<void>> {
+  if (typeof context.unregisterTool !== 'function') {
+    throw new Error('WebMCP unregisterTool is required for safe React lifecycle cleanup');
+  }
   const registered: string[] = [];
   try {
     for (const tool of articleTools) {
