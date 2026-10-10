@@ -12,6 +12,14 @@ const load = (path, substitutions = []) => {
 const {articleTools} = await load('src/webmcp/article-tools.ts', [[/^import ARTICLES from .*?;\s*/m, 'const ARTICLES = ' + JSON.stringify(catalogue) + ';\n']]);
 globalThis.__testArticleTools = articleTools;
 const {registerArticleTools} = await load('src/webmcp/register-tools.ts', [[/^import \{articleTools\} from .*?;\s*/m, 'const articleTools = globalThis.__testArticleTools;\n']]);
+await assert.rejects(() => registerArticleTools({
+  registerTool: () => { throw new Error('must not register without cleanup capability'); },
+}, 'https://example.org'), /unregisterTool is required/);
+let unsafeRegistrations = 0;
+await assert.rejects(() => registerArticleTools({
+  registerTool: () => { unsafeRegistrations++; },
+}, 'https://example.org'), /unregisterTool is required/);
+assert.equal(unsafeRegistrations, 0, 'no tool may register without safe cleanup');
 const registered = new Map();
 const context = {
   registerTool: tool => {registered.set(tool.name, tool);},
