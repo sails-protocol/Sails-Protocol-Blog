@@ -5,12 +5,12 @@ Status: **BLOCKED FOR PRODUCTION**. This is an evidence ledger, not a release ap
 
 | Gate | Evidence | State |
 | --- | --- | --- |
-| Build, TypeScript, route smoke checks | GitHub Actions Validate Blog #67, all steps successful | PASS for tested commit |
-| WebMCP catalogue, tool execution, registration and rollback | GitHub Actions #67, static, execution and mocked registration/rollback tests | PASS on #67; browser-native test separate |
+| Build, TypeScript, route smoke checks | GitHub Actions Validate Blog #82, all steps successful | PASS for tested commit |
+| WebMCP catalogue, tool execution, registration and rollback | GitHub Actions #82, static, execution, mocked registration/rollback/duplicate-remount and fail-closed cleanup tests | PASS on #82; browser-native test separate |
 | Browser-native WebMCP registration and agent discovery | No compatible-browser execution record | OPEN, BLOCKER |
 | WebMCP security and browser compatibility review | No end-to-end negative/compatibility report | OPEN, BLOCKER |
 | Dependency lockfile and reproducible npm ci | Committed package-lock.json and mandatory npm ci passed CI #48 | PASS for tested commit |
-| Visual QA, keyboard accessibility and responsive behavior | Chromium axe #9 PASS desktop/mobile and #11 PASS JS exception checks. Browser #15 FAIL: mobile test selected hidden desktop navbar link, not an application failure; corrected to visible home CTA in e088fe5. New Tab focus smoke test bf88ad1; exact-head rerun pending. Manual keyboard sequence and visual review missing | OPEN, BLOCKER |
+| Visual QA, keyboard accessibility and responsive behavior | Chromium #26 PASS: desktop/mobile WCAG 2.1 AA axe, route navigation, JS errors, landmarks, overflow and Tab-focus smoke checks. Manual keyboard sequence and visual review still missing | OPEN, BLOCKER |
 | External links, CSP and deployment headers | Conservative headers added to netlify.toml; static check in CI; deployed response headers, CSP and links not browser-reviewed | OPEN, BLOCKER |
 | Editorial claims and CTO review | Introductory article is a test fixture, not approved publication | OPEN, BLOCKER |
 | Netlify preview and production | Deliberately deferred until infrastructure freeze | NOT STARTED |
