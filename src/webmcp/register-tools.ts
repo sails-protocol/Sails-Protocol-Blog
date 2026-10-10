@@ -1,34 +1,21 @@
 import {articleTools} from './article-tools';
 
 export type WebMCPContext = {
-  registerTool: (tool: Record<string, unknown>) => Promise<unknown> | unknown;
-  unregisterTool?: (name: string) => Promise<unknown> | unknown;
+  registerTool: (tool: Record<string, unknown>, options?: {signal?: AbortSignal}) => Promise<unknown> | unknown;
 };
 
 export async function registerArticleTools(context: WebMCPContext, origin: string): Promise<() => Promise<void>> {
-  if (typeof context.unregisterTool !== 'function') {
-    throw new Error('WebMCP unregisterTool is required for safe React lifecycle cleanup');
-  }
-  const registered: string[] = [];
+  const controller = new AbortController();
   try {
     for (const tool of articleTools) {
       await context.registerTool({
         ...tool,
         execute: (input: {query?: string}) => tool.execute(input as never, origin),
-      });
-      registered.push(tool.name);
+      }, {signal: controller.signal});
     }
   } catch (error) {
-    for (const name of registered.reverse()) {
-      try { await context.unregisterTool?.(name); }
-      catch (cleanupError) { console.warn('WebMCP rollback failed:', name, cleanupError); }
-    }
+    controller.abort();
     throw error;
   }
-  return async () => {
-    for (const name of [...registered].reverse()) {
-      try { await context.unregisterTool?.(name); }
-      catch (error) { console.warn('WebMCP cleanup failed:', name, error); }
-    }
-  };
+  return async () => { controller.abort(); };
 }
