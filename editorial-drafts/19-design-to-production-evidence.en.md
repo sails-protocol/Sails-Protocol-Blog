@@ -28,3 +28,11 @@ flowchart TD
 Text equivalent: the diagram shows the responsibility boundaries discussed above, not verified deployment.
 
 *Source references, technical review and owner publication approval pending.*
+
+## Source-backed boundary and next test
+
+Protocol invariants distinguish architectural law, implementation obligation and executable evidence. A design decision does not prove deployment.
+
+**Failure to avoid:** presenting this inspected boundary as a deployed end-to-end guarantee. **Next verification:** exact-head behavior, integration tests and operational evidence. Source inspection only; editorial and CTO approval pending.
+
+- [PROTOCOL_INVARIANTS.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROTOCOL_INVARIANTS.md)
