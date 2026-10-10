@@ -147,3 +147,7 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Generated Docusaurus build and Netlify local state
+/build/
+.netlify/
