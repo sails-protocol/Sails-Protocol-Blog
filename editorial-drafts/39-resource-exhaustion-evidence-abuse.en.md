@@ -15,3 +15,16 @@ Bound payload size, nesting depth, complexity, cumulative quota and attempt rate
 Boundary tests should show exact-limit acceptance, one-unit-over rejection and zero downstream effects after rejection. Policy numbers must be checked against approved current decisions and implementation before publication.
 
 *No verified implementation claim or permission to publish is implied by this draft.*
+
+## Evidence descriptors are not uploaded evidence
+
+The dispute HTTP schema preserves `evidenceReferenceId` and the explicit `externalReference: true` marker. A raw URI is not silently upgraded to an integrity-bound OpenProof reference: the service checks mutually exclusive pointer forms and requires the external-reference declaration. The evidence provider interface deliberately separates stored bytes and metadata from proof authority. This is an input-trust boundary, not proof that all resource quotas, upload sizes, JSON depth or cumulative budgets are enforced in production.
+
+**Abuse test:** submit oversized nested descriptors, repeated evidence references, and external URIs pretending to be verified media. Demand exact enforcement code, rejection-with-zero-side-effects evidence and per-scope accounting before claiming comprehensive resource protection.
+
+### Source and verification status
+
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/evidence-descriptor-schema.ts
+- https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/evidence-provider.ts
+
+*Source inspection only. No new quota test, production execution, CTO approval or publication.*
