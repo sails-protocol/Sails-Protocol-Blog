@@ -54,5 +54,25 @@ const cleanupAsync = await registerArticleTools({
 }, 'https://example.org');
 await cleanupAsync();
 assert.equal(asynchronous.size, 0);
+// Unmount during async first registration must prevent the second tool.
+let resolveFirst;
+const firstRegistered = new Promise(resolve => { resolveFirst = resolve; });
+const lifecycle = new AbortController();
+const interrupted = new Map();
+const pending = registerArticleTools({
+  registerTool: async (tool, {signal}) => {
+    if (tool.name === 'sails_list_articles') {
+      resolveFirst();
+      await Promise.resolve();
+    }
+    if (signal.aborted) return;
+    interrupted.set(tool.name, tool);
+    signal.addEventListener('abort', () => interrupted.delete(tool.name), {once: true});
+  },
+}, 'https://example.org', lifecycle.signal);
+await firstRegistered;
+lifecycle.abort();
+await pending;
+assert.equal(interrupted.size, 0, 'unmount during async registration must leave no tools');
 delete globalThis.__testArticleTools;
 console.log('WebMCP AbortSignal registration, execution, cleanup, duplicate rejection and rollback passed');
