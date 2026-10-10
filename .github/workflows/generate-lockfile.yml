@@ -26,6 +26,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Confirm branch and existing lockfile
+        run: |
+          test "\${GITHUB_REF_NAME}" = 'feat/blog-foundation-02'
+          if [ -f package-lock.json ]; then
+            echo 'Lockfile already exists; workflow is for initial bootstrap only.'
+            exit 1
+          fi
       - name: Generate lockfile
         run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
       - name: Commit only the lockfile to feature branch
