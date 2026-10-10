@@ -15,3 +15,9 @@ Uma revisão deve separar sintomas observados, causa confirmada, fluxos afetados
 Não use a narrativa de um incidente como prova de segurança. Cite relatórios primários e evidência da mitigação; publique correções quando o entendimento mudar.
 
 *No verified implementation claim or permission to publish is implied by this draft.*
+
+## Fronteira de evidência
+
+Risco documentado não é incidente explorado nem correção implantada. **Falha:** confundir intenção documentada com comportamento verificado em produção. Evidência de execução no HEAD exato e aprovação pendentes.
+
+- [THREAT_MODEL.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md)
