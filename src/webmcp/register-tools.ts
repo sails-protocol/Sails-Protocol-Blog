@@ -5,7 +5,7 @@ export type WebMCPContext = {
   unregisterTool?: (name: string) => Promise<unknown> | unknown;
 };
 
-export async function registerArticleTools(context: WebMCPContext, origin: string): Promise<() => void> {
+export async function registerArticleTools(context: WebMCPContext, origin: string): Promise<() => Promise<void>> {
   const registered: string[] = [];
   try {
     for (const tool of articleTools) {
@@ -22,9 +22,9 @@ export async function registerArticleTools(context: WebMCPContext, origin: strin
     }
     throw error;
   }
-  return () => {
-    for (const name of registered) {
-      try { void context.unregisterTool?.(name); }
+  return async () => {
+    for (const name of [...registered].reverse()) {
+      try { await context.unregisterTool?.(name); }
       catch (error) { console.warn('WebMCP cleanup failed:', name, error); }
     }
   };
