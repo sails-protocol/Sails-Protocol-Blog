@@ -38,5 +38,3 @@ The inspected `OpenP2P.trade(offerId, amount, idempotencyKey?)` SDK method forwa
 ## Read next
 
 Next we will look at a related but different problem: what happens when two requests arrive at the same time, before either can observe the other's result?
-
-
