@@ -18,6 +18,16 @@ Estamos explorando identificadores portáveis e mecanismos de desafio e resposta
 
 O teste útil não é apenas verificar uma assinatura. É comprovar que um ator autenticado consegue executar exatamente as ações permitidas pelo estado econômico atual, e nenhuma outra. Este artigo descreve o modelo de segurança que estamos construindo; a cobertura concreta precisará de evidências de implementação antes da publicação.
 
+## A decisão na fronteira de confiança
+
+Três verificações precisam permanecer separadas. **Autenticação** pergunta se o solicitante controla a credencial apresentada. **Autorização da negociação** pergunta se aquele participante faz parte da negociação e pode executar a ação. **Validade da transição econômica** pergunta se o estado atual permite o efeito solicitado. Passar na primeira não autoriza ignorar as outras duas.
+
+O código examinado demonstra parte dessa separação: `requireAuth` verifica desafios assinados e distingue os domínios de registro e autenticação; `TradeService.assertParticipant()` verifica se o participante é comprador ou vendedor. Isso é mais específico do que afirmar que todas as rotas e ações delegadas foram auditadas integralmente.
+
+## Falha: assinatura válida na negociação errada
+
+Um atacante pode assinar corretamente com a própria chave e apontar a requisição para a negociação de outra pessoa. A assinatura é autêntica; a operação continua proibida. Rejeitá-la antes de alterar o estado protege a fronteira econômica. Para agentes há outra camada: a RFC-001 define atuação **por delegação** de um Participant, não como Participant independente por padrão. Escopo e revogação dessa delegação ainda exigem evidência própria.
+
 ## Diagrama conceitual
 
 ```mermaid
