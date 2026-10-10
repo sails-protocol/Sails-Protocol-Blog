@@ -92,3 +92,7 @@ Canonical article **10** EN/PT-BR/ES now explains signed-byte provenance versus 
 ## Deep narrative pass — articles 35, 39, 48 (2026-10-10)
 
 Substantive decision/failure narratives added to **9 canonical language editions** across articles **35** (threat enforcement versus catalog), **39** (resource exhaustion, provenance spoofing and zero-side-effect rejection) and **48** (property-scoped conformance versus universal compatibility). Historical security residuals are not asserted as current-HEAD failures. Pinned evidence scope preserved. This is editorial work, not G1/G2 acceptance, CI/browser execution or CTO publication authorization. Cumulative source-backed coverage remains **17 articles / 51 editions**.
+
+## Wave A closure of source-backed corrections — 2026-10-10
+
+Article **13** EN/PT-BR/ES received a substantive adversarial-provider authority/destination-binding narrative. Previously uncorrected Wave A articles **29** and **34** received pinned-source implementation boundaries, failure cases and test questions in all three languages (**6 new source-backed editions**). Cumulative source-backed correction coverage is now **19 distinct numbered articles / 57 canonical language editions** out of 48/144. This is *coverage of corrections*, not G1/G2 acceptance. The article 29 and 34 additions cite the historical pinned Protocol commit, not current-HEAD runtime proof. Browser Gate, CTO review and publication remain blocked; no merge.
