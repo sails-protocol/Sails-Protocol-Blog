@@ -23,8 +23,10 @@ const origin = 'https://example.org';
 const listed = parse(await list.execute({}, origin));
 assert.equal(listed.length, catalogue.length);
 assert.equal(listed[0].url, origin + catalogue[0].path);
+assert.ok(listed.every(a => a.url.endsWith('/')), 'all WebMCP list URLs must be canonical trailing-slash routes');
 const matched = parse(await search.execute({query: 'sails'}, origin));
 assert.ok(matched.some(a => a.slug === 'what-is-sails-protocol'));
+assert.ok(matched.every(a => a.url.endsWith('/')), 'all WebMCP search URLs must be canonical trailing-slash routes');
 assert.deepEqual(parse(await search.execute({query: 'no-such-article-zzzz'}, origin)), []);
 for (const query of ['', '   ', 'x'.repeat(201), null, 42]) {
   const result = await search.execute({query}, origin);
