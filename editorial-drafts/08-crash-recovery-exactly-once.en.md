@@ -14,9 +14,9 @@ Suppose a service claims a trade completion, records an effect and then loses po
 
 A database transaction can make related local state changes atomic. It cannot automatically make an external bank, blockchain or provider participate in that same transaction. External effects need their own reconciliation, idempotency and failure model. We should never describe local atomicity as universal end-to-end finality.
 
-## How we approach it
+## The recovery decision
 
-For Sails, crash-and-replay scenarios are part of the engineering evidence we seek for economic transitions. We want tests that stop a process at meaningful boundaries, restart it against durable state and check that the intended invariants still hold. A claim about exactly-once behavior must name the operation, its persistence boundary and the evidence that supports it.
+The inspected common idempotency module and trade service distinguish durable persistence from post-persist work. That code structure is a starting point, not a universal exactly-once result. A credible recovery claim must identify the operation, the durable transaction boundary, the crash window and an exact-revision test that restarts against persisted state. External providers require separate receipt and reconciliation evidence.
 
 ## Durable write, lost response, and replay
 
