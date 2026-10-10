@@ -1,0 +1,15 @@
+protocol:
+  label: Protocol
+  description: Protocol architecture and terminology
+architecture:
+  label: Architecture
+  description: Technical architecture and conceptual models
+engineering:
+  label: Engineering
+  description: Implementation decisions and development notes
+ecosystem:
+  label: Ecosystem
+  description: Integrations and ecosystem context
+announcements:
+  label: Announcements
+  description: Project updates
