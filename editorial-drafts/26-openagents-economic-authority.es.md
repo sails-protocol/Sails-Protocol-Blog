@@ -25,3 +25,9 @@ flowchart LR
 Equivalente textual: la intención de diseño pasa a una integración delimitada y a verificación independiente. No demuestra un despliegue.
 
 *Source verification, references, editorial review and owner approval pending.*
+
+## Límite examinado en el código
+
+Un agente delegado no adquiere autoridad económica independiente. Un límite documentado no es prueba de ejecución del HEAD actual; hay que probar el fallo contra estado duradero antes de afirmar madurez.
+
+- [RFC-001-participant-model.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/rfcs/RFC-001-participant-model.md)
