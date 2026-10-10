@@ -6,6 +6,15 @@
 
 A small-looking JSON payload can trigger expensive parsing, hashing or storage. A malicious participant can exploit the gap between accepted requests and bounded work.
 
+## Decision: reject before the expensive boundary
+
+An attacker can use many small requests as effectively as one oversized upload. A complete budget therefore needs limits on individual bytes, nesting/complexity, references per proof, cumulative storage and attempts, attributed to durable identities rather than a process-local counter. The inspected evidence-descriptor schema shows the explicit `externalReference: true` marker; it does not itself prove those budgets. Service-side pointer exclusivity and an OpenProof media hash are different checks again.
+
+## Failure: an external pointer masquerades as verified media
+
+A client submits a raw URI while presenting it as an integrity-bound evidence reference. Accepting the descriptor without checking its declared type would allow a false provenance claim. A second failure occurs if the system rejects a payload only after writing bytes or emitting events. The publication gate should demand exact-boundary acceptance, +1 rejection and zero side effects, using the actual service path and durable quota ledger.
+
+
 ## Boundaries and tradeoffs
 
 Bound payload size, nesting depth, complexity, cumulative quota and attempt rate at the service boundary before expensive work. Attribute usage to authenticated actors and durable proof identifiers, not merely transient process counters.
