@@ -22,6 +22,16 @@ For Sails Protocol, adversarial-node and malicious-provider scenarios belong in 
 
 A good architecture should make it possible to ask uncomfortable questions before an attacker does. Which claims can be forged? What happens if a provider disappears? Can one node hide an economically relevant event? What evidence would demonstrate that a defense actually works? These questions will guide future technical reports as implementation evidence becomes available.
 
+## Decision: treat every provider response as a claim with provenance
+
+A timeout means the outcome may be unknown, not necessarily that the operation failed. A contradictory receipt means two observers disagree, not that the most recent callback automatically wins. A malicious provider can return a plausible success while binding it to the wrong destination. The verification question is whether participants can independently check the chain from **Authority → Outcome → DestinationBinding**, rather than trust an operator's internal association.
+
+The historical Durable Protocol Truth investigation records a residual independent-verification gap, particularly at Outcome → DestinationBinding. The provider-substitution evidence supports selected semantic properties, not a proof that every provider or rail preserves the same economic meaning. These are scoped findings, not evidence that an attack was exploited.
+
+## Failure: success for the wrong destination
+
+Imagine a provider reports a completed settlement with a valid-looking transaction identifier, but the destination associated with the trade is not independently verifiable. Retrying a mutating broadcast after a timeout may compound the risk. A safe integration must preserve the unknown state, reconcile using external evidence, and avoid equating a signed response with proof of the authorized destination. The exact test should compare conflicting provider observations against durable trade authority and independently inspectable settlement data.
+
 ## Conceptual diagram
 
 ```mermaid
