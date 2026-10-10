@@ -2,7 +2,7 @@
 
 **Status:** Source and mocked lifecycle tests passed CI #76; real-browser validation remains outstanding. Day-0 release blocker.
 
-WebMCP is a browser-native API, not an HTTP MCP server. The blog registers tools through `document.modelContext.registerTool` only when safe `unregisterTool` cleanup is also available. If cleanup is unavailable, registration fails closed and the ordinary site remains available. This is a conservative application policy pending verification of the actual browser API. Browsers without WebMCP continue to serve normal HTML, RSS and sitemap.
+WebMCP is a browser-native API, not an HTTP MCP server. The blog registers tools through `document.modelContext.registerTool` using an `AbortController` signal passed as the second argument to `registerTool`, following the Chrome Imperative API documentation. Aborting that signal unregisters the tools. Browsers without the API retain the ordinary site. Browsers without WebMCP continue to serve normal HTML, RSS and sitemap.
 
 ## Read-only tools
 - `sails_list_articles`: list published article metadata and canonical URLs.
@@ -22,7 +22,7 @@ The article catalogue is generated from top-level `articles/*.md(x)` frontmatter
 6. Check that there are no write/publish/delete tools.
 7. Confirm the article catalogue matches the published index.
 8. Verify real-browser registration/unregistration lifecycle across client navigation, reload and React development StrictMode where applicable. A mocked registration test cannot prove native API compatibility.
-9. If the browser lacks `unregisterTool`, record the actual API contract and ensure repeated mounting does not leak or duplicate tool registrations before approving Day 0.
+9. Verify that `registerTool(tool, {signal})` unregisters on `controller.abort()`, including interrupted partial registration, before approving Day 0.
 
 WebMCP is experimental and client/browser support is not universal. Do not advertise universal agent compatibility.
 
