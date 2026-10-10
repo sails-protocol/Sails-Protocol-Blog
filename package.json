@@ -6,7 +6,10 @@
     "start": "docusaurus start",
     "build": "docusaurus build",
     "serve": "docusaurus serve",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prebuild": "node scripts/generate-article-index.mjs",
+    "prestart": "node scripts/generate-article-index.mjs",
+    "pretypecheck": "node scripts/generate-article-index.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "^3.8.1",
