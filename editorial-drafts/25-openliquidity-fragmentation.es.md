@@ -2,17 +2,17 @@
 
 *Borrador editorial. Temporada 4. Publicación no aprobada.*
 
-## La cuestión
+## La pregunta
 
-o
+¿Mostrar ofertas de varios mercados significa liquidez compartida? No.
 
-## Dirección de diseño
+## Decisión y límite
 
-a
+OpenLiquidity es una dirección de coordinación. Descubrimiento y enrutamiento deben respetar activo, red, precio, disponibilidad y permisos. La evidencia de sustitución cubre invariantes seleccionadas, no un libro operativo entre mercados.
 
-## Evidencia antes de las afirmaciones
+## Fallo y evidencia
 
-s
+Una oferta visible puede ser inaccesible por permisos o medio de pago. No anunciar profundidad ejecutable solo por visibilidad; hacen falta contrapartes reales y pruebas entre clientes.
 
 ## Flujo conceptual
 
