@@ -5,3 +5,63 @@ html:root{--ifm-color-primary:#9c4c08;--ifm-color-primary-dark:#8c4407;--ifm-col
 .footer__copyright{color:var(--ifm-font-color-base);opacity:1}
 .markdown p a:not(.sails-primary-link){text-decoration:underline;text-underline-offset:.14em;text-decoration-thickness:from-font}
 .markdown p a:not(.sails-primary-link):hover{text-decoration-thickness:2px}
+
+
+/* Dark mode: explicitly bind Infima navigation, table of contents and document
+   surfaces to the active theme. Never inherit dark text onto dark navigation. */
+html[data-theme='dark'] {
+  --ifm-navbar-background-color: #1c2835;
+  --ifm-navbar-link-color: #e7edf3;
+  --ifm-navbar-link-hover-color: #f7b568;
+  --ifm-toc-link-color: #cbd6e1;
+  --ifm-menu-color: #e7edf3;
+  --ifm-card-background-color: #1c2835;
+  --ifm-background-color: #10161d;
+  --ifm-background-surface-color: #1c2835;
+  --ifm-font-color-base: #e7edf3;
+}
+html[data-theme='dark'] body,
+html[data-theme='dark'] .main-wrapper,
+html[data-theme='dark'] article,
+html[data-theme='dark'] .theme-doc-markdown {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+html[data-theme='dark'] .navbar,
+html[data-theme='dark'] .navbar__inner {
+  background-color: var(--ifm-navbar-background-color);
+}
+html[data-theme='dark'] .navbar__link,
+html[data-theme='dark'] .navbar__title {
+  color: var(--ifm-navbar-link-color);
+}
+html[data-theme='dark'] .navbar__link:hover,
+html[data-theme='dark'] .navbar__link--active {
+  color: var(--ifm-navbar-link-hover-color);
+}
+html[data-theme='dark'] .table-of-contents__link,
+html[data-theme='dark'] .table-of-contents__link:visited {
+  color: var(--ifm-toc-link-color);
+}
+html[data-theme='dark'] .table-of-contents__link:hover,
+html[data-theme='dark'] .table-of-contents__link--active {
+  color: #f7b568;
+}
+html[data-theme='dark'] .menu__link { color: var(--ifm-menu-color); }
+
+/* Keep large Mermaid diagrams legible: allow horizontal inspection instead of
+   squeezing an extremely tall graph to the article column's width. */
+.markdown .docusaurus-mermaid-container {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 1rem;
+}
+.markdown .docusaurus-mermaid-container svg {
+  max-width: none;
+  min-width: min(100%, 900px);
+  height: auto;
+}
+html[data-theme='dark'] .docusaurus-mermaid-container {
+  color-scheme: dark;
+}
