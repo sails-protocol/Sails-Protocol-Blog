@@ -23,3 +23,20 @@ For Sails, crash-and-replay scenarios are part of the engineering evidence we se
 In the next article we turn from process behavior to people and permissions: knowing who someone is does not automatically tell us what they are allowed to do.
 
 *Sources pending: link immutable implementation commits, CTO decisions and verification runs before publication.*
+
+## Durable write, lost response, and replay
+
+The inspected common idempotency module distinguishes a durable create from post-persist work and documents historical failure windows: a database write succeeds but completion bookkeeping fails; two retries race to reclaim a failed attempt; or an exception after persistence is mistaken for no effect. The trade service passes persistence and post-persist functions separately into `withIdempotency()`. An UNKNOWN outcome is a reason to reconcile, not to blindly repeat external effects.
+
+**Failure scenario:** the trade exists but the event publication fails. Returning an error does not erase the trade. Replaying with the same key should follow the bounded idempotency protocol; replaying without a key can create a duplicate. Database atomicity also cannot guarantee that an external bank, chain, or provider executed exactly once.
+
+**Next question:** Which exact-head Postgres restart tests, event-outbox evidence, and external provider receipts demonstrate recovery for each operation?
+
+### Source ledger and maturity
+
+- [SDK method](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/packages/sails-sdk/src/modules/openp2p.ts)
+- [HTTP route](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.routes.ts)
+- [Trade service](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts)
+- [Common idempotency mechanism](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/common/idempotency.ts)
+
+*Source-inspected only. No new runtime verification, CTO approval or publication authorization.*
