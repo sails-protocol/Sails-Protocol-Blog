@@ -30,3 +30,11 @@ flowchart LR
 Este diagrama ilustra um princípio de projeto, não um comportamento de execução verificado.
 
 *Referências técnicas e aprovação pendentes.*
+
+## Fronteira comprovada no código e próximo teste
+
+O modelo de participantes descreve carteiras e agentes; não comprova portabilidade de reputação entre mercados.
+
+**Falha a evitar:** apresentar a fronteira examinada como garantia de ponta a ponta já implantada. **Próxima verificação:** comportamento no HEAD exato, testes de integração e evidência operacional. Somente inspeção de código; aprovação editorial e do CTO pendentes.
+
+- [RFC-001-participant-model.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/rfcs/RFC-001-participant-model.md)
