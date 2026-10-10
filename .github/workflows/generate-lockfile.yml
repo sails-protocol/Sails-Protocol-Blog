@@ -3,6 +3,7 @@ name: Generate dependency lockfile
 on:
   push:
     branches: [feat/blog-foundation-02]
+  workflow_dispatch:
     paths:
       - 'package.json'
       - '.github/workflows/generate-lockfile.yml'
