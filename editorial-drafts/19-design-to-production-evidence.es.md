@@ -28,3 +28,9 @@ flowchart TD
 Equivalente textual: el diagrama muestra los límites de responsabilidad descritos arriba, no un despliegue verificado.
 
 *Referencias, revisión técnica y aprobación del responsable de publicación pendientes.*
+
+## Límite examinado, no certificación de producción
+
+Un principio arquitectónico no prueba un despliegue. **Fallo:** confundir diseño documentado con comportamiento desplegado. Faltan pruebas de integración y ejecución del HEAD exacto.
+
+- [PROTOCOL_INVARIANTS.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROTOCOL_INVARIANTS.md)
