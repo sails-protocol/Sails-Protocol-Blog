@@ -15,3 +15,9 @@ A integração precisa de responsabilidades distintas: a interface apresenta a n
 Um primeiro teste útil deve repetir a mesma intenção, disputar duas ações concorrentes, reiniciar o processo antes da confirmação e verificar o resultado persistido. Até conferir assinaturas de API, adaptadores suportados e testes reproduzíveis no repositório, isto é um guia de desenho de integração, não um tutorial pronto para copiar e executar.
 
 *Verificação de fontes e referências exatas de API pendentes.*
+
+## Escopo fundamentado em fonte
+
+O SDK oferece chave opcional de idempotência; o cliente precisa preservá-la entre tentativas. **Falha:** tratar design ou API examinada como prontidão universal de produção. Testes no HEAD exato e aprovação seguem pendentes.
+
+- [openp2p.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/packages/sails-sdk/src/modules/openp2p.ts)
