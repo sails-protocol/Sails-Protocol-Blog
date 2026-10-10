@@ -27,3 +27,9 @@ flowchart TD
 Equivalente textual: o diagrama mostra os limites de responsabilidade descritos acima, não uma implantação verificada.
 
 *Referências, revisão técnica e aprovação do responsável pela publicação pendentes.*
+
+## Fronteira de evidência e falha
+
+Propriedades selecionadas de substituição de provedores não comprovam liquidez compartilhada universal nem mercado operacional. **Falha:** interpretar arquitetura ou código examinado como comprovação de produção. Ainda faltam testes no HEAD exato e aprovação.
+
+- [PROVIDER_SUBSTITUTION_INVARIANCE_EVIDENCE.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROVIDER_SUBSTITUTION_INVARIANCE_EVIDENCE.md)
