@@ -25,3 +25,9 @@ flowchart LR
 Text equivalent: design intent progresses to a bounded integration and independent verification. This is not proof of deployment.
 
 *Source verification, references, editorial review and owner approval pending.*
+
+## Source-backed scope
+
+OpenFinance is a proposed module, not a demonstrated production financial service. **Failure:** treating a source-level design or API as universal production readiness. Exact-head tests and approval remain outstanding.
+
+- [PROTOCOL_INVARIANTS.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROTOCOL_INVARIANTS.md)
