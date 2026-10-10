@@ -14,9 +14,9 @@ Imaginemos que un servicio registra la finalización de una operación, aplica u
 
 Una transacción de base de datos puede hacer atómicos cambios relacionados en el estado local. No incorpora automáticamente a un banco, una blockchain o un proveedor externo a la misma transacción. Los efectos externos necesitan su propio modelo de conciliación, idempotencia y fallos. No debemos confundir atomicidad local con finalidad universal de extremo a extremo.
 
-## Cómo abordamos el problema
+## La decisión de recuperación
 
-En Sails, los escenarios de caída y recuperación forman parte de las evidencias de ingeniería que buscamos para las transiciones económicas. Queremos pruebas que detengan un proceso en puntos importantes, lo reinicien con estado duradero y comprueben que los invariantes siguen siendo válidos. Una afirmación sobre exactly-once debe identificar la operación, el límite de persistencia y la evidencia que la respalda.
+El módulo común de idempotencia y el servicio de operaciones inspeccionados separan la persistencia duradera del trabajo posterior a la escritura. Esa estructura es un punto de partida, no una prueba universal de exactly-once. Una afirmación sobre recuperación debe identificar la operación, el límite transaccional, la ventana de fallo y una prueba de la revisión exacta con reinicio sobre estado persistido. Los proveedores externos requieren evidencia propia de recibos y reconciliación.
 
 ## Persistencia duradera, respuesta perdida y reintento
 
