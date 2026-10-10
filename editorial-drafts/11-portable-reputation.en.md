@@ -29,8 +29,6 @@ flowchart LR
 
 This diagram illustrates a design principle, not verified runtime behavior.
 
-*Technical references and approval pending.*
-
 ## Source-backed boundary and next test
 
 The participant model describes wallet and agent roles; it does not establish cross-market reputation portability.
@@ -38,3 +36,5 @@ The participant model describes wallet and agent roles; it does not establish cr
 **Failure to avoid:** presenting this inspected boundary as a deployed end-to-end guarantee. **Next verification:** exact-head behavior, integration tests and operational evidence. Source inspection only; editorial and CTO approval pending.
 
 - [RFC-001-participant-model.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/rfcs/RFC-001-participant-model.md)
+
+*Technical references and approval pending.*
