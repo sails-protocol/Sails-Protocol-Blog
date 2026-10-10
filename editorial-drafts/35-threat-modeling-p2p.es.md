@@ -6,6 +6,15 @@
 
 Comprador, vendedor, operador y proveedor pueden actuar de forma distinta al flujo ideal. El modelado comienza identificando quién puede mentir, desaparecer o perder acceso.
 
+## Decisión: identificar al atacante y el punto de control
+
+Una amenaza no está mitigada solo porque figure en el catálogo. Cada escenario requiere identificar atacante, activo en riesgo, límite de confianza, código que aplica la protección e incertidumbre residual. En WebSocket, un límite HTTP no controla automáticamente los mensajes tras el upgrade. El modelo de amenazas registra un limitador por participante como mejora de instancia única, no garantía distribuida. También documenta el riesgo de un token de sesión con privilegios amplios en la URL. Son límites distintos y requieren pruebas distintas.
+
+## Fallo: seguridad que solo existe en el diagrama
+
+Si varias conexiones o nodos pueden eludir un contador local, la afirmación sobre límites debe precisar ese alcance. Si una URL de sesión llega a registros, un token válido puede filtrarse pese a las firmas correctas en otros flujos. El documento recoge hallazgos históricos; comprobar su estado en el HEAD actual exige otra revisión.
+
+
 ## Límites y decisiones
 
 Separe fondos, claves de firma, afirmaciones de pago, evidencias y estado de la operación como activos con autoridades distintas. Evalúe identidad falsa, comprobantes falsificados, solicitudes duplicadas, nodos maliciosos y proveedores caídos. Una mitigación solo sirve cuando su límite de aplicación es explícito.
