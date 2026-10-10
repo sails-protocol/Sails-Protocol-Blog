@@ -4,6 +4,7 @@ The blog is editorial, not normative Sails Protocol documentation. No merge or p
 
 ## Technical gate
 - [x] Docusaurus build, TypeScript, generated routes and sitemap checked by CI #12 (2026-10-10)
+- [ ] WebMCP Day-0: real browser tool registration, discovery, execution and negative tests verified
 - [ ] Clean lockfile and reproducible `npm ci` installation
 - [ ] Preview build verified on Netlify
 - [ ] Desktop, mobile, dark and light mode visually reviewed
@@ -22,4 +23,4 @@ The blog is editorial, not normative Sails Protocol documentation. No merge or p
 - [ ] Verify Netlify deployment and live routes
 - [ ] Verify sitemap, RSS and canonical URLs on production
 
-WebMCP read-only discovery is a separate planned integration and is not part of this foundation release.
+WebMCP read-only article discovery is mandatory for Day 0. No release without browser-level evidence. RSS, sitemap and llms.txt are complementary, not substitutes.
