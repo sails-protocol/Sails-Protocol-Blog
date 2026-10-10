@@ -84,3 +84,7 @@ Added `editorial-drafts/research-identity-naming-transport.en.md` covering Space
 ## Modular placement decision: identity and transport (2026-10-10)
 
 Read [EDITORIAL-MODULAR-IDENTITY-TRANSPORT-MAP.md](./EDITORIAL-MODULAR-IDENTITY-TRANSPORT-MAP.md). Organize Spaces, Pubky and Nostr key/identity concerns under OpenIdentity; Pear, Iroh and Nostr message delivery under the cross-cutting Sails Node transport adapter layer; signed evidence under OpenProof; verified portable outcomes under OpenReputation; economic authority under OpenP2P/Trading SDK; external payment interpretation under OpenSettlement. OpenLiquidity/OpenAgents may consume these interfaces when developed. **This is a proposed editorial mapping, not confirmation of implementation or CTO approval.** Keep the seven-season baseline and enrich existing articles rather than create duplicate technology posts.
+
+## G0 writing milestone (2026-10-10)
+
+First drafts now exist for Season 7 articles 42-48 in EN, PT-BR and ES, completing the planned 48-topic / 144-edition draft baseline. This does **not** satisfy source verification, depth, localization review, implementation status or approval gates G1-G7. Existing historical baseline counts above describe the original snapshot and should not be interpreted as current status. The six OpenIdentity/transport deep-revision companions and institutional drafts are separate, not additional numbered articles. No merge, production publication, build or browser verification occurred in this writing pass.
