@@ -28,3 +28,9 @@ flowchart LR
 Equivalente textual: o diagrama mostra os limites de responsabilidade descritos acima, não uma implantação verificada.
 
 *Referências, revisão técnica e aprovação do responsável pela publicação pendentes.*
+
+## Fronteira de evidência e falha
+
+Divisão de responsabilidades não comprova implantação em produção nem interoperabilidade de nós independentes. **Falha:** interpretar arquitetura ou código examinado como comprovação de produção. Ainda faltam testes no HEAD exato e aprovação.
+
+- [PROTOCOL_INVARIANTS.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROTOCOL_INVARIANTS.md)
