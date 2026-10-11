@@ -220,3 +220,49 @@ html:not([data-theme='dark']) .sails-hero-editorial::before{opacity:.28}
   .markdown .docusaurus-mermaid-container{overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
   .markdown .docusaurus-mermaid-container svg{max-width:none;min-width:620px;height:auto}
 }
+
+
+/* Final editorial hero treatment: keep the actual text selectable and the
+   artwork decorative. The existing local SVG remains a temporary asset. */
+.sails-hero-editorial{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-height:clamp(470px,48vw,640px);
+  padding-block:clamp(4rem,8vw,7rem);
+  border-bottom:1px solid var(--sails-line);
+}
+.sails-hero-editorial::before{
+  inset:0 -2rem 0 22%;
+  background:
+    linear-gradient(90deg,var(--ifm-background-color) 0%,rgba(7,17,30,.94) 18%,rgba(7,17,30,.42) 54%,rgba(7,17,30,.05) 100%),
+    url('/img/editorial/earth-horizon.svg') center right/cover no-repeat;
+  opacity:1;
+}
+.sails-hero-editorial h1{
+  max-width:760px;
+  font-size:clamp(3.5rem,7vw,5.8rem);
+  line-height:1.04;
+  letter-spacing:-.055em;
+}
+.sails-hero-editorial .sails-home-subtitle,
+.sails-hero-editorial .sails-lead,
+.sails-hero-editorial .sails-hero-statement{
+  position:relative;
+  max-width:660px;
+}
+.sails-hero-editorial .sails-hero-actions{position:relative}
+.sails-editorial-card,.sails-latest-card{transition:border-color .18s ease,transform .18s ease}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .sails-editorial-card:hover,.sails-latest-card:hover{border-color:var(--ifm-color-primary);transform:translateY(-2px)}
+}
+@media(max-width:650px){
+  .sails-hero-editorial{min-height:480px;padding-block:4rem}
+  .sails-hero-editorial::before{
+    inset:0 -1rem;
+    background:linear-gradient(180deg,rgba(7,17,30,.70),rgba(7,17,30,.94) 76%),url('/img/editorial/earth-horizon.svg') 65% center/cover no-repeat;
+    opacity:.82;
+  }
+  .sails-hero-editorial h1{font-size:clamp(3rem,12vw,4rem)}
+}
+html:not([data-theme='dark']) .sails-hero-editorial::before{opacity:.19}
