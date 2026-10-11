@@ -45,3 +45,16 @@ Antes de chamar um mercado de compartilhado em produção, precisamos de uma mat
 ## Limite das evidências
 
 Estado econômico compartilhado é o objetivo de arquitetura, não uma comprovação de interoperabilidade entre aplicações em produção.
+
+## Uma oferta, múltiplas interfaces
+
+Duas aplicações podem exibir a mesma oferta, mas não podem confirmar duas execuções sobre a mesma quantidade disponível.
+
+```mermaid
+flowchart TD
+    A["Carteira A"] --> C["Estado autoritativo compartilhado"]
+    B["Carteira B"] --> C
+    C --> D{"Reservar quantidade atomicamente"}
+    D -->|Success| E["Execução confirmada"]
+    D -->|Conflict| F["Rejeitar ou tentar novamente"]
+```
