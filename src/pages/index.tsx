@@ -24,7 +24,7 @@ export default function Home(): React.JSX.Element {
               <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
               <span>Search articles</span>
             </label>
-            <input id="sails-article-search" type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="Search published articles..." autoComplete="off" aria-controls="sails-search-results" />
+            <input id="sails-article-search" type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="Search published articles..." autoComplete="off" />
             {query.trim() && <div id="sails-search-results" className="sails-search-results" aria-live="polite">
               <p>{results.length ? results.length + ' published articles found' : 'No published articles found.'}</p>
               <ul>{results.map(article => <li key={article.slug}><Link to={article.path}><strong>{article.title}</strong><span>{article.description}</span></Link></li>)}</ul>
