@@ -10,7 +10,7 @@ export default function Home(): React.JSX.Element {
           <p className="sails-kicker">SAILS / ENGINEERING JOURNAL</p>
           <h1>Sails Protocol</h1>
           <p className="sails-home-subtitle">Building open P2P infrastructure.</p>
-          <p className="sails-lead">Follow the questions, design decisions and engineering evidence behind Sails Protocol. Each season builds on the previous one.</p>
+          <p className="sails-lead">Explore the ideas, design decisions and evidence behind open P2P economic coordination.</p>
           <Link className="sails-primary-link" to="/articles">Explore published articles <span aria-hidden="true">→</span></Link>
         </header>
         <section className="sails-section" aria-labelledby="published-heading">
