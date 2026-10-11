@@ -157,3 +157,7 @@ html[data-theme='dark'] [class*='colorModeToggle'] button {
 .sails-search-results a{display:block;padding:.75rem 0;text-decoration:none}
 .sails-search-results a strong{display:block;color:var(--ifm-font-color-base)}
 .sails-search-results a span{display:block;color:var(--sails-muted);font-size:.9rem}
+
+/* The search label stays white on a dark surface in both themes. */
+.sails-search{background:#1c2835;padding:1rem;border-radius:10px}
+.sails-search-label,.sails-search-label span,.sails-search-label svg{color:#fff!important}
