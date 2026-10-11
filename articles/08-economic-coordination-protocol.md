@@ -51,3 +51,17 @@ Coordination describes an agreed intent; settlement establishes what actually ha
 ## Evidence boundary
 
 The coordination model described here still requires durable-state, replay and provider-level evidence before production claims.
+
+## Architecture at a glance
+
+This conceptual diagram separates interfaces, coordination and external settlement. It does not imply that every integration is live.
+
+```mermaid
+flowchart TD
+    A[Wallets and market applications] --> B[Sails P2P Trading SDK]
+    B --> C[Sails Node coordination]
+    C --> D{Authoritative settlement evidence?}
+    D -->|Yes| E[Record verified outcome]
+    D -->|No| F[Preserve pending or uncertain state]
+    G[External settlement rails] --> D
+```
