@@ -2,16 +2,6 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 
-const seasons = [
-  {number: '01', title: 'Why Sails Exists', description: 'The P2P coordination problem, our motivation and the architecture behind Sails Protocol.', count: 5},
-  {number: '02', title: 'Engineering Economic Coordination', description: 'Idempotency, concurrency, identity, evidence, settlement and adversarial conditions.', count: 8},
-  {number: '03', title: 'Building on the Protocol', description: 'Wallet integrations, Sails Market, application boundaries and production evidence.', count: 6},
-  {number: '04', title: 'Beyond the Trading SDK', description: 'The modular vision: identity, proof, reputation, settlement, liquidity, agents and open finance.', count: 8},
-  {number: '05', title: 'Developer Journey and Interoperability', description: 'SDK integration, wallet adapters, schemas, nodes, observability and provider boundaries.', count: 7},
-  {number: '06', title: 'Security, Verification and Production Readiness', description: 'Threat models, malicious nodes, restart safety, privacy, resource bounds and incident learning.', count: 7},
-  {number: '07', title: 'Real-World Economic Flows', description: 'PIX, DePix, escrow, incentives, private markets, cross-rail settlement and governance.', count: 7},
-];
-
 export default function Home(): React.JSX.Element {
   return (
     <Layout title="Engineering journal" description="A connected learning journey through Sails Protocol engineering">
@@ -20,29 +10,14 @@ export default function Home(): React.JSX.Element {
           <p className="sails-kicker">SAILS / ENGINEERING JOURNAL</p>
           <h1>Sails Protocol</h1>
           <p className="sails-home-subtitle">Building open P2P infrastructure.</p>
-          <p className="sails-lead">Follow the questions, design decisions and engineering evidence behind Sails Protocol. Each season builds on the previous one.</p>
+          <p className="sails-lead">Explore the ideas, design decisions and evidence behind open P2P economic coordination.</p>
           <Link className="sails-primary-link" to="/articles">Explore published articles <span aria-hidden="true">→</span></Link>
         </header>
-        <section className="sails-section" aria-labelledby="seasons-heading">
-          <p className="sails-kicker">GUIDED READING</p>
-          <h2 id="seasons-heading">Seasons</h2>
-          <p>Four connected reading paths. Articles are added only after technical and editorial approval.</p>
-          <div className="sails-season-grid">
-            {seasons.map((season) => (
-              <article className="sails-season-card" key={season.number}>
-                <small>SEASON {season.number} · {season.count} PLANNED ARTICLES</small>
-                <h3>{season.title}</h3>
-                <p>{season.description}</p>
-                <Link className="sails-season-status" to={"/seasons/#season-" + season.number}>View reading path <span aria-hidden="true">→</span></Link>
-              </article>
-            ))}
-          </div>
-        </section>
         <section className="sails-section" aria-labelledby="published-heading">
           <p className="sails-kicker">PUBLISHED CONTENT</p>
           <h2 id="published-heading">Articles</h2>
-          <p>Browse articles that have passed the publication gate. Editorial drafts are not listed here.</p>
-          <Link className="sails-primary-link" to="/articles">Browse articles <span aria-hidden="true">→</span></Link>
+          <p>Read published perspectives on open P2P markets, custody, regulation and economic coordination.</p>
+          <p><Link to="/seasons">Explore reading collections <span aria-hidden="true">→</span></Link></p>
         </section>
       </main>
     </Layout>
