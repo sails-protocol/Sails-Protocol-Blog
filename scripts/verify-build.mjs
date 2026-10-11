@@ -95,7 +95,7 @@ visit('build');
 for (const file of publicFiles) {
   const contents = readFileSync(file, 'utf8');
   for (const slug of draftSlugs) {
-    if (file.includes(slug) || contents.includes('/' + slug + '/')) {
+    if (file.includes('/' + slug + '/') || contents.includes('/' + slug + '/') || contents.includes('/' + slug + '\"') || contents.includes('/' + slug + '?')) {
       console.error('DRAFT LEAK:', slug, file);
       failed = true;
     }
