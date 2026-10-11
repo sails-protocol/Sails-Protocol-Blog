@@ -2,24 +2,44 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 
-const seasons = [
-  {id:'01',title:'Why Sails Exists',description:'From the coordination problem to the first trading SDK and the boundaries of trust.',articles:['Introducing Sails Protocol','Why P2P Markets Need Better Coordination','Understanding the Sails Architecture','Introducing the Sails P2P Trading SDK','Trust, Evidence and Settlement in P2P Markets']},
-  {id:'02',title:'Engineering Economic Coordination',description:'What can fail, how authority is defined, and what evidence we need.',articles:['Why Idempotency Matters in P2P Trading','Concurrency: When Two Requests Race','Crash Recovery and the Meaning of Exactly Once','Identity and Authorization Are Different Questions','Evidence, Provenance and Resource Limits','Reputation: What Can Travel Between Applications?','Settlement, Finality and External Payment Truth','Designing for Adversarial Nodes and Untrusted Providers']},
-  {id:'03',title:'Building on the Protocol',description:'Integrations, application boundaries and the path to verified production behavior.',articles:['Integrating a P2P Trading SDK into a Wallet','Why a Reference Market Should Not Own Its Own Liquidity','Wallets, Nodes and Application Boundaries','Private Trading Rooms and Open Markets','Modular Integrations: What Is Protocol and What Is External','From Design Decisions to Production Evidence']},
-  {id:'04',title:'Beyond the Trading SDK',description:'The modular roadmap beyond the first trading SDK.',articles:['Beyond P2P Trading: The Sails Protocol Vision','OpenIdentity: Identity Without Platform Lock-in','OpenProof: Verifiable Evidence for P2P Systems','OpenReputation: Trust Across Applications','OpenSettlement: Coordinating Different Payment Rails','OpenLiquidity: Connecting Fragmented P2P Markets','OpenAgents: Economic Coordination for AI Agents','OpenFinance and the Future of P2P Applications']},
-  {id:'05',title:'Developer Journey and Interoperability',description:'Practical integration boundaries, contracts and operational failure modes.',articles:['First Integration: From SDK Installation to a Safe P2P Trade','State Machines and Economic Invariants in Practice','Adapters and Wallet Boundaries: WDK, BDK and External Signing','Protocol Contracts, Schemas and Version Compatibility','Operating a Sails Node: Responsibilities and Failure Boundaries','Observability, Error Semantics and Debugging Distributed Trades','Integrating External Providers Without Delegating Economic Truth']},
-  {id:'06',title:'Security, Verification and Production Readiness',description:'Threat models, failure recovery, privacy, resource limits and the limits of CI evidence.',articles:['Threat Modeling a P2P Economic Protocol','Byzantine and Malicious Nodes: What Must Be Assumed','Restart, Replay and Recovery: A Verification Playbook','Privacy, Metadata and Identity Linkability','Resource Exhaustion, Rate Limits and Evidence Abuse','From CI to Production: What a Passing Test Does Not Prove','Incident Reviews, Operational Transparency and Change Control']},
-  {id:'07',title:'Real-World Economic Flows',description:'Payment truth, disputes, fees, private markets, cross-rail coordination and protocol governance.',articles:['PIX and DePix: Distinguishing Payment Proof From Payment Truth','Non-Custodial Escrow and Dispute Authority','Fees, Incentives and Economic Sustainability','Private Rooms, Public Offers and Market Abuse','Cross-Rail Settlement and Liquidity Routing Tradeoffs','Satsails Wallet and Sails Market: Two Applications, One Protocol','Open Protocol Governance and Compatibility Over Time']},
-]; 
-export default function Seasons():React.JSX.Element {
- return <Layout title="Reading seasons" description="Four connected learning paths through the Sails Protocol engineering journal">
-  <main className="sails-home" id="main-content">
-   <header className="sails-hero"><p className="sails-kicker">GUIDED READING</p><h1>Seasons</h1><p className="sails-lead">Follow the ideas in order. The season outlines below are editorial plans, not published articles. Approved writing, including the first published articles on regulation, custody and open P2P markets, appears in the <Link to="/articles">article archive</Link>.</p></header>
-   {seasons.map(s=><section className="sails-section" id={'season-'+s.id} key={s.id} aria-labelledby={'season-heading-'+s.id}>
-    <p className="sails-kicker">SEASON {s.id} · {s.articles.length} PLANNED ARTICLES</p><h2 id={'season-heading-'+s.id}>{s.title}</h2><p>{s.description}</p>
-    <ol className="sails-season-outline">{s.articles.map((title,i)=><li key={title}><span>{title}</span><small>In editorial review</small></li>)}</ol>
-    <p><Link to="/articles">See approved articles <span aria-hidden="true">→</span></Link></p>
-   </section>)}
-  </main>
- </Layout>
+// Public reading paths list published articles only. Unpublished outlines live in
+// EDITORIAL-SEASONS-AND-READING-PATHS.md and must not be exposed as live content.
+const publishedArticles = [
+  {title: "Why Sails Arrives Now", slug: 'season-2-01-why-sails-arrives-now'},
+  {title: "Software Is Not Custody", slug: 'season-2-02-software-is-not-custody'},
+  {title: "The Tornado Cash Turning Point", slug: 'season-2-03-tornado-cash-turning-point'},
+  {title: "The Hidden Cost of Gatekeepers", slug: 'season-2-04-hidden-cost-gatekeepers'},
+  {title: "The Non-Custodial Business Model", slug: 'season-2-05-noncustodial-business-model'},
+  {title: "Stablecoins and Open Marketplaces", slug: 'season-2-06-stablecoins-open-marketplaces'},
+  {title: "One Market, Many Interfaces", slug: 'season-2-07-one-market-many-interfaces'},
+  {title: "An Economic Coordination Protocol", slug: 'season-2-08-economic-coordination-protocol'},
+  {title: "Decripto and Brazil's Market Shift", slug: 'season-2-09-decripto-brazil-market-shift'},
+];
+
+export default function Seasons(): React.JSX.Element {
+  return (
+    <Layout title="Reading collections" description="Published reading paths through Sails Protocol ideas and engineering">
+      <main className="sails-home" id="main-content">
+        <header className="sails-hero">
+          <p className="sails-kicker">GUIDED READING</p>
+          <h1>Reading collections</h1>
+          <p className="sails-lead">Explore published work on the architecture, economic boundaries and open-market context of Sails Protocol. Future editorial plans are not listed as published articles.</p>
+          <Link className="sails-primary-link" to="/articles">Explore published articles <span aria-hidden="true">→</span></Link>
+        </header>
+        <section className="sails-section" id="season-02" aria-labelledby="season-02-heading">
+          <p className="sails-kicker">SEASON 02 · 9 PUBLISHED ARTICLES</p>
+          <h2 id="season-02-heading">Custody, Regulation and Open P2P Markets</h2>
+          <p>Why open economic coordination matters, how software and custody differ, and what changing market structures mean for P2P infrastructure.</p>
+          <ol className="sails-season-outline">
+            {publishedArticles.map(article => (
+              <li key={article.slug}>
+                <Link to={'/articles/' + article.slug + '/'}>{article.title}</Link>
+                <small>Published</small>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </main>
+    </Layout>
+  );
 }
