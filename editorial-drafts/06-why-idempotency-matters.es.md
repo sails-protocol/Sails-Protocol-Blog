@@ -1,0 +1,40 @@
+# Por qué importa la idempotencia en las operaciones P2P
+
+*Borrador editorial. Publicación no aprobada.*
+
+## La pregunta
+
+Una persona pulsa Confirmar y la conexión falla. ¿La solicitud falló o el servidor completó la acción sin devolver la respuesta? Reintentar parece natural. En un flujo financiero, tratar cada intento como una acción nueva puede ser peligroso.
+
+## Qué puede salir mal
+
+La idempotencia significa que repetir la misma operación prevista no produce un efecto económico adicional. No consiste simplemente en ignorar solicitudes parecidas. El sistema debe identificar qué acción se repite, quién está autorizado y qué resultado registrado tiene autoridad.
+
+## Dónde debe existir la garantía
+
+Una clave de API o un identificador de solicitud ayuda, pero no lo resuelve todo. Imaginemos que un servicio registra una operación completada y cae antes de responder. Tras reiniciar, un reintento debe encontrar el resultado anterior y no aplicar la liquidación de nuevo. Eso exige estado duradero y un límite transaccional claro.
+
+## La decisión de ingeniería
+
+El SDK y el servicio inspeccionados implementan un contrato de idempotencia delimitado para crear operaciones. Inspeccionar ese código no equivale a garantizar su comportamiento en producción: la concurrencia con base de datos real, la recuperación tras caídas y la persistencia de claves en el cliente requieren evidencia de la revisión exacta probada. Una prueba unitaria aislada no demuestra efectos económicos exactly-once.
+
+## Contrato concreto en el SDK de Sails
+
+El método `OpenP2P.trade(offerId, amount, idempotencyKey?)` del SDK inspeccionado envía la clave opcional a `POST /v1/openp2p/trades`. La ruta valida una clave no vacía de hasta 200 caracteres y la pasa, junto con el participante autenticado, a `TradeService.createTrade()`. El servicio delimita el intento por el alcance `openp2p.trade.create`, el participante y los datos de oferta e importe. **Sin la clave, un reintento puede crear otra operación**; el propio SDK indica generar una clave por aceptación lógica y reutilizarla en los reintentos de esa aceptación. Una nueva aceptación deliberada requiere una clave nueva.
+
+**Escenario adversarial:** la operación se persiste, pero la respuesta caduca. La interfaz genera otra clave para cada reintento. Bajo este contrato, el servidor no puede reconocerlos como el mismo intento. **Límite:** se inspeccionó el código, pero no se certificó el comportamiento de todas las aplicaciones ni las pruebas de reinicio con Postgres.
+
+**Siguiente pregunta:** ¿qué aplicaciones conservan la clave del intento lógico tras reinicios y trabajo sin conexión?
+
+### Fuentes y nivel de verificación
+
+- [Método del SDK](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/packages/sails-sdk/src/modules/openp2p.ts)
+- [Ruta HTTP](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.routes.ts)
+- [Servicio de operaciones](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts)
+- [Mecanismo común de idempotencia](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/common/idempotency.ts)
+
+*Solo inspección de código. Sin nueva verificación en ejecución, aprobación del CTO ni autorización de publicación.*
+
+## Leer a continuación
+
+En el próximo artículo veremos un problema relacionado, pero distinto: ¿qué ocurre cuando dos solicitudes llegan al mismo tiempo, antes de que una pueda observar el resultado de la otra?

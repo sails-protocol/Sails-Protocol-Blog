@@ -1,0 +1,20 @@
+name: Generate dependency lockfile (manual bootstrap only)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-bootstrap-state:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Confirm reproducible dependency lockfile
+        run: |
+          test -f package-lock.json || {
+            echo 'Missing package-lock.json. Prepare it in a reviewed PR; this workflow never writes to the repository.'
+            exit 1
+          }
+          echo 'Lockfile exists. Automatic bootstrap is retired; npm ci is validated by Validate Blog.'

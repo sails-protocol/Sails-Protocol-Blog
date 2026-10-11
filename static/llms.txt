@@ -1,0 +1,19 @@
+# Sails Protocol Blog
+
+> Editorial articles about open peer-to-peer economic coordination. This is not normative protocol documentation or a statement of production readiness.
+
+- [Articles](https://sails-protocol-blog.netlify.app/articles/): Technical and editorial writing
+- [Introduction](https://sails-protocol-blog.netlify.app/articles/what-is-sails-protocol/): Conceptual introduction
+- [Why Sails Protocol Arrives at the Right Moment](https://sails-protocol-blog.netlify.app/articles/season-2-01-why-sails-arrives-now/): A market can become more regulated and less accessible at the same time. (also in /pt-BR/ and /es/)
+- [Software Is Not Custody](https://sails-protocol-blog.netlify.app/articles/season-2-02-software-is-not-custody/): FinCEN stated in FIN-2014-R002 that producing and distributing software, without more, does not itself constitute money transmission. (also in /pt-BR/ and /es/)
+- [The Tornado Cash Turning Point](https://sails-protocol-blog.netlify.app/articles/season-2-03-tornado-cash-turning-point/): The Tornado Cash litigation changed an important part of the discussion about immutable smart contracts. (also in /pt-BR/ and /es/)
+- [The Hidden Cost of Financial Gatekeepers](https://sails-protocol-blog.netlify.app/articles/season-2-04-hidden-cost-gatekeepers/): Regulatory compliance is not inherently an enemy of innovation. Safeguards against fraud, misuse and insolvency matter. (also in /pt-BR/ and /es/)
+- [The Noncustodial Business Model](https://sails-protocol-blog.netlify.app/articles/season-2-05-noncustodial-business-model/): For years, wallet business models often relied on custody, spreads or privileged access to order flow. (also in /pt-BR/ and /es/)
+- [Stablecoins Need Open Marketplaces](https://sails-protocol-blog.netlify.app/articles/season-2-06-stablecoins-open-marketplaces/): Stablecoins made digital value easier to denominate and transfer, but did not eliminate dependence on issuers, networks or distribution channels. (also in /pt-BR/ and /es/)
+- [One Market, Many Interfaces](https://sails-protocol-blog.netlify.app/articles/season-2-07-one-market-many-interfaces/): A wallet, a web terminal and a third-party application should not each have to manufacture their own isolated market. (also in /pt-BR/ and /es/)
+- [The Economic Coordination Protocol](https://sails-protocol-blog.netlify.app/articles/season-2-08-economic-coordination-protocol/): Sails is not being designed as another exchange. Its thesis is an Economic Coordination Protocol for Building Interoperable P2P Financial Marketplaces. (also in /pt-BR/ and /es/)
+- [The DeCripto Effect: Brazil’s Changing Crypto Brokerage Market](https://sails-protocol-blog.netlify.app/articles/season-2-09-decripto-brazil-market-shift/): For years, the debate about regulating crypto in Brazil focused on a hypothetical choice between innovation and consumer protection. (also in /pt-BR/ and /es/)
+- [Protocol source of truth](https://github.com/sails-protocol/Sails-Protocol): Repository with implementation and technical decisions
+- [Editorial policy](https://github.com/sails-protocol/Sails-Protocol-Blog/blob/287503b93637a77ba8160ceffb67dd4fca8b0bbc/EDITORIAL-POLICY.md): Publication rules
+
+For claims about security, escrow, settlement, custody or readiness, verify the underlying implementation and CTO-approved evidence.

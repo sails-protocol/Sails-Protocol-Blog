@@ -1,0 +1,41 @@
+# Por que um mercado de referência não deve isolar sua liquidez
+
+*Rascunho editorial. Publicação não aprovada.*
+
+## O problema
+
+Imagine uma carteira e um mercado web mostrando oportunidades diferentes apesar de participarem do mesmo ecossistema. Se cada interface cria sua própria liquidez isolada, os participantes enfrentam fragmentação em vez de um mercado compartilhado.
+
+## O limite
+
+Nossa direção para o Sails Market é uma aplicação web de referência que consome as mesmas oportunidades econômicas disponíveis a carteiras integradas e terceiros. O mercado pode apresentar ofertas, organizar salas privadas e conectar serviços externos sem fingir que todos esses serviços são módulos nativos do Sails Protocol.
+
+## O que ainda precisa ser comprovado
+
+Visibilidade compartilhada não garante execução nem profundidade de mercado. A liquidez depende de contrapartes, roteamento, disponibilidade, preços e permissões. Uma aplicação de referência deve mostrar essas limitações com clareza, inclusive quando uma oportunidade não está disponível para determinado usuário ou meio de pagamento.
+
+## Diagrama conceitual
+
+```mermaid
+flowchart TD
+ A[Oportunidades econômicas compartilhadas] --> B[Sails Market]
+ A --> C[Carteira integrada]
+ A --> D[Aplicação de terceiros]
+ B --> E[Experiência e políticas]
+```
+
+Equivalente textual: o diagrama mostra os limites de responsabilidade descritos acima, não uma implantação verificada.
+
+*Referências, revisão técnica e aprovação do responsável pela publicação pendentes.*
+
+## Uma oferta desatualizada não é liquidez executável
+
+Duas aplicações podem exibir a mesma oferta, embora apenas uma pessoa consiga aceitar sua capacidade restante. Se a carteira aceitar primeiro, o Sails Market não pode tratar a tela desatualizada como reserva. Descoberta compartilhada é diferente de elegibilidade, aceite e liquidação. Meio de pagamento, permissão da contraparte, validade da cotação e capacidade restante precisam ser conferidos novamente na fonte autoritativa. Uma sala privada controla acesso, não a realidade econômica; provedores externos mantêm suas próprias regras de execução.
+
+A consequência é rejeitar uma cotação vencida em vez de inventar uma execução. A experiência de liquidez compartilhada ainda é uma direção de produto, não evidência de um livro universal de ofertas em produção. **Próximo teste:** colocar dois clientes disputando a última capacidade e verificar rejeição ou atualização do perdedor, sem compromisso econômico duplicado.
+
+## Fronteira de evidência e falha
+
+Propriedades selecionadas de substituição de provedores não comprovam liquidez compartilhada universal nem mercado operacional. **Falha:** interpretar arquitetura ou código examinado como comprovação de produção. Ainda faltam testes no HEAD exato e aprovação.
+
+- [PROVIDER_SUBSTITUTION_INVARIANCE_EVIDENCE.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROVIDER_SUBSTITUTION_INVARIANCE_EVIDENCE.md)
