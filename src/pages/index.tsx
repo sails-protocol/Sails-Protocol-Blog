@@ -31,7 +31,7 @@ export default function Home(): React.JSX.Element {
         </section>
         <section className="sails-section sails-latest-section" aria-labelledby="latest-heading">
           <p className="sails-kicker">PUBLISHED CONTENT</p>
-          <div className="sails-section-heading"><div><h2 id="latest-heading">Latest articles</h2><p>Published perspectives on open P2P markets, custody, regulation and economic coordination.</p></div><Link to="/articles">View all articles →</Link></div>
+          <div className="sails-section-heading"><div><h2 id="latest-heading">Featured articles</h2><p>Published perspectives on open P2P markets, custody, regulation and economic coordination.</p></div><Link to="/articles">View all articles →</Link></div>
           <div className="sails-latest-grid">{articles.slice(0, 6).map((article, index) => <article className="sails-latest-card" key={article.slug}><div className={'sails-latest-art sails-latest-art-'+(index%3)} aria-hidden="true"/><div className="sails-latest-body"><small>SAILS / JOURNAL</small><h3><Link to={article.path}>{article.title}</Link></h3><p>{article.description}</p><Link className="sails-read-link" to={article.path}>Read article →</Link></div></article>)}</div>
         </section>
         <section className="sails-section sails-search-section" aria-labelledby="search-heading">
