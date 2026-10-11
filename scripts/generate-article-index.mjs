@@ -10,6 +10,8 @@ for (const file of files) {
   const frontmatter = content.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
   if (!frontmatter) throw new Error(file + ': missing front matter');
   const source = frontmatter[1];
+  // Match Docusaurus blog draft semantics: drafts must not enter the public catalogue.
+  if (/^draft:\s*(?:true|True|TRUE)\s*$/m.test(source)) continue;
   const readScalar = key => {
     const match = source.match(new RegExp('^' + key + ':\\s*(.+)$', 'm'));
     return match?.[1]?.trim().replace(/^['"]|['"]$/g, '') || '';
