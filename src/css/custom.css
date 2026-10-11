@@ -213,3 +213,10 @@ html[data-theme='dark'] [class*='colorModeToggle'] button {
 .sails-latest-art-2{background:url('/img/editorial/protocol-waves.svg') center/cover no-repeat}
 html:not([data-theme='dark']) .sails-hero-editorial::before{opacity:.28}
 @media(max-width:650px){.sails-hero-editorial::before{inset:0 -1rem 0 0;background-position:center;opacity:.22}.sails-editorial-card{grid-template-columns:110px minmax(0,1fr)}}
+
+/* Diagrams remain readable on narrow screens: preserve intrinsic graph width
+   and allow touch scrolling rather than shrinking every label to fit. */
+@media(max-width:650px){
+  .markdown .docusaurus-mermaid-container{overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+  .markdown .docusaurus-mermaid-container svg{max-width:none;min-width:620px;height:auto}
+}
