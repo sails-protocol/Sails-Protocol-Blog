@@ -5,7 +5,7 @@ const config: Config = {
  url:process.env.SITE_URL || 'https://sails-protocol-blog.netlify.app', baseUrl:'/', trailingSlash:true, favicon:'img/favicon.svg',
  organizationName:'sails-protocol',projectName:'Sails-Protocol-Blog',
  onBrokenLinks:'throw', markdown:{mermaid:true},themes:['@docusaurus/theme-mermaid'],
- i18n:{defaultLocale:'en',locales:['en']},
+ i18n:{defaultLocale:'en',locales:['en','pt-BR','es']},
  presets:[['classic',{docs:false,blog:{path:'./articles',routeBasePath:'articles',showReadingTime:true,blogTitle:'Articles',blogDescription:'Engineering notes on open P2P infrastructure',postsPerPage:10,feedOptions:{type:['rss','atom'],title:'Sails Protocol Blog',description:'Engineering notes on open P2P infrastructure'}},theme:{customCss:'./src/css/custom.css'},sitemap:{changefreq:'weekly',priority:0.5}} satisfies Preset.Options]],
  themeConfig:{navbar:{title:'Sails / Blog',items:[{to:'/articles',label:'Articles',position:'left'},{href:'https://github.com/sails-protocol/Sails-Protocol',label:'Protocol',position:'right'},{href:'https://github.com/sails-protocol/Sails-Protocol-Blog',label:'GitHub',position:'right'}]},colorMode:{defaultMode:'dark',respectPrefersColorScheme:true},footer:{style:'dark',copyright:'© Sails Protocol. Original editorial content CC BY 4.0. Not normative documentation.'}} satisfies Preset.ThemeConfig
 };
