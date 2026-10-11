@@ -45,3 +45,16 @@ Before describing a market as shared in production, the team should publish a re
 ## Evidence boundary
 
 Shared economic state is the design goal, not a verified claim of cross-application production interoperability.
+
+## Shared offer state, multiple interfaces
+
+The same offer cannot be independently filled twice merely because two applications display it.
+
+```mermaid
+flowchart TD
+    A["Wallet A"] --> C["Shared authoritative offer state"]
+    B["Wallet B"] --> C
+    C --> D{"Reserve remaining quantity atomically"}
+    D -->|Success| E["Confirmed fill"]
+    D -->|Conflict| F["Reject or retry"]
+```
