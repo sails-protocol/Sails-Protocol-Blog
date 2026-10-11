@@ -161,3 +161,55 @@ html[data-theme='dark'] [class*='colorModeToggle'] button {
 /* The search label stays white on a dark surface in both themes. */
 .sails-search{background:#1c2835;padding:1rem;border-radius:10px}
 .sails-search-label,.sails-search-label span,.sails-search-label svg{color:#fff!important}
+
+/* Editorial home composition, designed around the approved visual direction. */
+.sails-home{max-width:1200px}
+.sails-hero-editorial{position:relative;isolation:isolate;overflow:hidden;padding:5.5rem 0 4rem;min-height:440px}
+.sails-hero-editorial::before{content:"";position:absolute;z-index:-1;inset:0 -3rem 0 36%;background:radial-gradient(ellipse at 83% 48%,rgba(247,147,26,.33),transparent 18%),radial-gradient(ellipse at 77% 94%,rgba(73,125,172,.33),transparent 33%),linear-gradient(158deg,transparent 30%,rgba(80,127,159,.22) 73%,transparent 74%);pointer-events:none}
+.sails-hero-editorial h1{margin:.8rem 0;font-size:clamp(3rem,6vw,4.8rem)}
+.sails-home-subtitle{font-size:clamp(1.35rem,2.4vw,2rem);line-height:1.35;max-width:700px;color:var(--sails-muted);margin:0 0 1rem}
+.sails-hero-statement{font-size:1.06rem;font-weight:600}
+.sails-hero-editorial .sails-lead{max-width:640px;font-size:1rem;line-height:1.65}
+.sails-hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}
+.sails-hero-actions .sails-primary-link{background:#f7931a;color:#10161d}
+.sails-secondary-link{display:inline-flex;align-items:center;min-height:44px;border:1px solid #718093;padding:.75rem 1.1rem;border-radius:6px;color:var(--ifm-font-color-base);font-weight:650}
+.sails-section-heading{display:flex;justify-content:space-between;gap:2rem;align-items:end;margin-bottom:1.2rem}
+.sails-section-heading h2{margin:0 0 .5rem;font-size:2rem}
+.sails-section-heading p{color:var(--sails-muted);margin:0;max-width:680px}
+.sails-section-heading>a{white-space:nowrap;font-weight:650}
+.sails-editorial-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.sails-editorial-card{display:grid;grid-template-columns:31% 1fr;gap:1.2rem;border:1px solid var(--sails-line);border-radius:10px;padding:1rem;min-height:218px}
+.sails-editorial-card small,.sails-latest-card small{color:var(--sails-muted);font-weight:700;letter-spacing:.08em;font-size:.7rem}
+.sails-editorial-card h3{font-size:1.2rem;line-height:1.35;margin:.8rem 0}
+.sails-editorial-card p,.sails-latest-card p{color:var(--sails-muted);font-size:.9rem;line-height:1.6}
+.sails-editorial-card-footer{display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap;font-size:.83rem;margin-top:1rem}
+.sails-editorial-card-footer>a,.sails-read-link{font-weight:700}
+.sails-editorial-art,.sails-latest-art{border-radius:8px;min-height:155px;background:#121b26}
+.sails-art-orbit{background:radial-gradient(ellipse at 45% 70%,transparent 32%,rgba(168,203,235,.65) 33%,transparent 34%),radial-gradient(ellipse at 48% 83%,#192b3e 15%,#03070e 61%)}
+.sails-art-columns{background:repeating-linear-gradient(90deg,transparent 0 15px,rgba(173,186,200,.25) 16px 28px,transparent 29px 38px),linear-gradient(135deg,#243449,#070b12)}
+.sails-latest-section{border-top:1px solid var(--sails-line)}
+.sails-latest-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.sails-latest-card{border:1px solid var(--sails-line);border-radius:9px;overflow:hidden;display:flex;flex-direction:column}
+.sails-latest-art{min-height:130px;border-radius:0}
+.sails-latest-art-0{background:linear-gradient(145deg,transparent,rgba(242,155,64,.25)),repeating-linear-gradient(90deg,#192433 0 18px,#374455 19px 24px,#101821 25px 45px)}
+.sails-latest-art-1{background:radial-gradient(circle at 30% 50%,#344252 0 12%,transparent 13%),radial-gradient(circle at 65% 40%,#1b2d42 0 23%,transparent 24%),#080d13}
+.sails-latest-art-2{background:repeating-linear-gradient(90deg,#101823 0 12px,#243348 13px 18px),linear-gradient(#f7931a,#080e15)}
+.sails-latest-body{padding:1rem;display:flex;flex-direction:column;flex:1}
+.sails-latest-body h3{font-size:1.12rem;line-height:1.4;margin:.5rem 0}
+.sails-latest-body h3 a{color:var(--ifm-font-color-base)}
+.sails-read-link{margin-top:auto;padding-top:.5rem;align-self:flex-end}
+.sails-search-section{border-top:1px solid var(--sails-line)}
+@media(max-width:850px){.sails-editorial-grid{grid-template-columns:1fr}.sails-latest-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.sails-hero-editorial{padding:3rem 0}.sails-hero-editorial::before{opacity:.45}.sails-editorial-card{grid-template-columns:100px 1fr}.sails-latest-grid{grid-template-columns:1fr}.sails-section-heading{align-items:start;flex-direction:column;gap:.7rem}.sails-editorial-card h3{font-size:1.05rem}}
+
+/* Real, locally hosted artwork. Text and controls remain accessible DOM elements. */
+.sails-hero-editorial::before{inset:0 -4rem 0 25%;background:linear-gradient(90deg,var(--ifm-background-color) 0%,rgba(7,17,30,.78) 20%,rgba(7,17,30,.08) 65%),url('/img/editorial/earth-horizon.svg') center right/cover no-repeat;opacity:.94}
+.sails-art-orbit{background:url('/img/editorial/earth-horizon.svg') center/cover no-repeat}
+.sails-art-columns{background:url('/img/editorial/institutional-columns.svg') center/cover no-repeat}
+.sails-art-cubes{background:url('/img/editorial/coordination-cubes.svg') center/cover no-repeat}
+.sails-art-waves{background:url('/img/editorial/protocol-waves.svg') center/cover no-repeat}
+.sails-latest-art-0{background:url('/img/editorial/institutional-columns.svg') center/cover no-repeat}
+.sails-latest-art-1{background:url('/img/editorial/coordination-cubes.svg') center/cover no-repeat}
+.sails-latest-art-2{background:url('/img/editorial/protocol-waves.svg') center/cover no-repeat}
+html:not([data-theme='dark']) .sails-hero-editorial::before{opacity:.28}
+@media(max-width:650px){.sails-hero-editorial::before{inset:0 -1rem 0 0;background-position:center;opacity:.22}.sails-editorial-card{grid-template-columns:110px minmax(0,1fr)}}
