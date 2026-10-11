@@ -10,6 +10,7 @@ export default function Root({children}: {children: React.ReactNode}): React.JSX
     const markDiagrams = () => {
       document.querySelectorAll<HTMLElement>('.docusaurus-mermaid-container').forEach(node => {
         if (!node.hasAttribute('tabindex')) node.setAttribute('tabindex', '0');
+        if (!node.hasAttribute('role')) node.setAttribute('role', 'region');
         if (!node.hasAttribute('aria-label')) node.setAttribute('aria-label', 'Scrollable diagram');
       });
     };
