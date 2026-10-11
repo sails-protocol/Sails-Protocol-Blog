@@ -51,3 +51,17 @@ La coordinación describe una intención acordada; la liquidación establece qu�
 ## Límite de la evidencia
 
 El modelo de coordinación descrito aquí aún requiere pruebas de estado duradero, reintentos y proveedores antes de afirmar capacidad en producción.
+
+## Arquitectura de un vistazo
+
+Este diagrama conceptual separa interfaces, coordinación y liquidación externa. No implica que todas las integraciones estén disponibles.
+
+```mermaid
+flowchart TD
+    A[Wallets and market applications] --> B[Sails P2P Trading SDK]
+    B --> C[Sails Node coordination]
+    C --> D{Authoritative settlement evidence?}
+    D -->|Yes| E[Record verified outcome]
+    D -->|No| F[Preserve pending or uncertain state]
+    G[External settlement rails] --> D
+```
