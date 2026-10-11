@@ -40,6 +40,26 @@ if (existsSync('build/articles/what-is-sails-protocol/index.html')) {
     failed = true;
   }
 }
+// Every published article must exist in all three locales (EN, PT-BR, ES),
+// be indexed in that locale's sitemap and carry a canonical URL.
+if (existsSync('src/generated/articles.json')) {
+  const catalogue = JSON.parse(readFileSync('src/generated/articles.json', 'utf8'));
+  for (const [prefix, sitemapFile] of [['', 'build/sitemap.xml'], ['pt-BR/', 'build/pt-BR/sitemap.xml'], ['es/', 'build/es/sitemap.xml']]) {
+    const sitemap = existsSync(sitemapFile) ? readFileSync(sitemapFile, 'utf8') : '';
+    if (!sitemap) { console.error('MISSING sitemap:', sitemapFile); failed = true; }
+    for (const article of catalogue.filter(a => a.slug.startsWith('season-2-'))) {
+      const file = 'build/' + prefix + 'articles/' + article.slug + '/index.html';
+      if (!existsSync(file)) { console.error('MISSING article route:', file); failed = true; continue; }
+      const html = readFileSync(file, 'utf8');
+      if (!html.includes('rel="canonical" href="https://sails-protocol-blog.netlify.app/' + prefix + 'articles/' + article.slug + '/"')) {
+        console.error('Canonical mismatch:', file); failed = true;
+      }
+      if (sitemap && !sitemap.includes('/' + prefix + 'articles/' + article.slug + '/')) {
+        console.error('Not in sitemap:', file); failed = true;
+      }
+    }
+  }
+}
 // RSS and Atom must carry the explicit editorial description, not the
 // Docusaurus fallback \"Sails Protocol Blog Blog\".
 const feedDescription = 'Engineering notes on open P2P infrastructure';
@@ -63,7 +83,7 @@ console.log('Build smoke checks passed.');
 // JSON, or text index. Recursively scan source files in every locale.
 import {readdirSync, statSync} from 'node:fs';
 import {join} from 'node:path';
-const draftRoots = ['articles', 'i18n/pt-BR/docusaurus-plugin-content-blog/default', 'i18n/es/docusaurus-plugin-content-blog/default'];
+const draftRoots = ['articles', 'i18n/pt-BR/docusaurus-plugin-content-blog', 'i18n/es/docusaurus-plugin-content-blog'];
 const draftSlugs = new Set();
 function scanDrafts(directory) {
   if (!existsSync(directory)) return;

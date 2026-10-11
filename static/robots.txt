@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
 Sitemap: https://sails-protocol-blog.netlify.app/sitemap.xml
+Sitemap: https://sails-protocol-blog.netlify.app/pt-BR/sitemap.xml
+Sitemap: https://sails-protocol-blog.netlify.app/es/sitemap.xml
