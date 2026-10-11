@@ -60,25 +60,28 @@ console.log('Build smoke checks passed.');
 
  
 // Fail closed if a draft slug leaks into any generated public HTML, XML,
-// JSON, or text index. This scans all locale builds, not only the default one.
+// JSON, or text index. Recursively scan source files in every locale.
 import {readdirSync, statSync} from 'node:fs';
 import {join} from 'node:path';
 const draftRoots = ['articles', 'i18n/pt-BR/docusaurus-plugin-content-blog/default', 'i18n/es/docusaurus-plugin-content-blog/default'];
 const draftSlugs = new Set();
-for (const root of draftRoots) {
-  if (!existsSync(root)) continue;
-  for (const file of readdirSync(root)) {
-    if (!/\.mdx?$/.test(file)) continue;
-    const source = readFileSync(join(root, file), 'utf8');
+function scanDrafts(directory) {
+  if (!existsSync(directory)) return;
+  for (const name of readdirSync(directory)) {
+    const file = join(directory, name);
+    if (statSync(file).isDirectory()) { scanDrafts(file); continue; }
+    if (!/\.mdx?$/.test(name)) continue;
+    const source = readFileSync(file, 'utf8');
     const fm = source.match(/^---\r?\n([\s\S]*?)\r?\n---/);
     if (!fm || !/^draft:[ \t]*true(?:[ \t]+#.*)?[ \t]*$/im.test(fm[1])) continue;
     const slug = fm[1].match(/^slug:[ \t]*['"]?([a-z0-9-]+)['"]?[ \t]*$/m)?.[1];
     if (!slug) {
-      console.error('Draft missing valid slug:', join(root, file));
+      console.error('Draft missing valid slug:', file);
       failed = true;
     } else draftSlugs.add(slug);
   }
 }
+for (const root of draftRoots) scanDrafts(root);
 const publicFiles = [];
 function visit(directory) {
   if (!existsSync(directory)) return;
