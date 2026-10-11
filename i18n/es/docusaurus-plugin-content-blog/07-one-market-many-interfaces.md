@@ -45,3 +45,16 @@ Antes de llamar compartido a un mercado en producción, hace falta una matriz re
 ## Límite de la evidencia
 
 El estado económico compartido es el objetivo de diseño, no una prueba de interoperabilidad entre aplicaciones en producción.
+
+## Una oferta, múltiples interfaces
+
+Dos aplicaciones pueden mostrar la misma oferta, pero no confirmar dos ejecuciones sobre la misma cantidad disponible.
+
+```mermaid
+flowchart TD
+    A["Billetera A"] --> C["Estado autoritativo compartido"]
+    B["Billetera B"] --> C
+    C --> D{"Reservar cantidad de forma atómica"}
+    D -->|Success| E["Ejecución confirmada"]
+    D -->|Conflict| F["Rechazar o reintentar"]
+```
