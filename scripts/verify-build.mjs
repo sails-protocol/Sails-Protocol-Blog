@@ -42,7 +42,11 @@ if (existsSync('build/articles/what-is-sails-protocol/index.html')) {
 }
 // Every published article must exist in all three locales (EN, PT-BR, ES),
 // be indexed in that locale's sitemap and carry a canonical URL.
-if (existsSync('src/generated/articles.json')) {
+// Only meaningful after a full multi-locale build; a single-locale build
+// (npm run build -- --locale xx) emits just that locale into build/.
+const fullMultiLocaleBuild = existsSync('build/pt-BR/sitemap.xml') && existsSync('build/es/sitemap.xml');
+if (!fullMultiLocaleBuild) console.log('Skipping cross-locale article checks: single-locale build output.');
+if (fullMultiLocaleBuild && existsSync('src/generated/articles.json')) {
   const catalogue = JSON.parse(readFileSync('src/generated/articles.json', 'utf8'));
   for (const [prefix, sitemapFile] of [['', 'build/sitemap.xml'], ['pt-BR/', 'build/pt-BR/sitemap.xml'], ['es/', 'build/es/sitemap.xml']]) {
     const sitemap = existsSync(sitemapFile) ? readFileSync(sitemapFile, 'utf8') : '';
