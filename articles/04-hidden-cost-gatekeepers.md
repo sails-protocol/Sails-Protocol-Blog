@@ -3,12 +3,14 @@ slug: season-2-04-hidden-cost-gatekeepers
 title: "The Hidden Cost of Financial Gatekeepers"
 description: "Regulatory compliance is not inherently an enemy of innovation. Safeguards against fraud, misuse and insolvency matter."
 tags: [protocol, editorial]
-draft: true
+draft: false
 ---
 
 ## The shift
 
 Regulatory compliance is not inherently an enemy of innovation. Safeguards against fraud, misuse and insolvency matter. Yet fixed costs of licensing, legal review, risk management and reporting may be easier to absorb at scale. This can make the market more concentrated without proving that regulation is the sole cause. Case-by-case evidence is necessary before attributing an exchange closure or a foreign exit to a particular rule.
+
+<!-- truncate -->
 
 ## The design response
 

@@ -3,12 +3,14 @@ slug: season-2-01-why-sails-arrives-now
 title: "Why Sails Protocol Arrives at the Right Moment"
 description: "A market can become more regulated and less accessible at the same time."
 tags: [protocol, editorial]
-draft: true
+draft: false
 ---
 
 ## The shift
 
 A market can become more regulated and less accessible at the same time. Brazil has created a specific authorization framework for virtual-asset service providers; Europe has imposed MiCA requirements on service providers and certain stablecoins. These frameworks pursue consumer protection and market integrity, but they also force businesses to revisit capital, governance, distribution and operating costs. That does not prove that every closure was caused by regulation. It does change the economics of entry.
+
+<!-- truncate -->
 
 ## The design response
 

@@ -3,12 +3,14 @@ slug: season-2-03-tornado-cash-turning-point
 title: "The Tornado Cash Turning Point"
 description: "The Tornado Cash litigation changed an important part of the discussion about immutable smart contracts."
 tags: [protocol, editorial]
-draft: true
+draft: false
 ---
 
 ## The shift
 
 The Tornado Cash litigation changed an important part of the discussion about immutable smart contracts. In Van Loon v. Treasury, the Fifth Circuit considered whether the particular immutable contracts could be treated as blockable property under the sanctions authority at issue. That is not the same as declaring that every developer, interface or service built around smart contracts is exempt from law. A careful reading separates the immutable code from the people and services operating around it.
+
+<!-- truncate -->
 
 ## What the precedent does not say
 

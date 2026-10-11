@@ -1,5 +1,95 @@
 [
   {
+    "slug": "season-2-01-why-sails-arrives-now",
+    "title": "Why Sails Protocol Arrives at the Right Moment",
+    "description": "A market can become more regulated and less accessible at the same time.",
+    "tags": [
+      "protocol",
+      "editorial"
+    ],
+    "path": "/articles/season-2-01-why-sails-arrives-now/"
+  },
+  {
+    "slug": "season-2-02-software-is-not-custody",
+    "title": "Software Is Not Custody",
+    "description": "FinCEN stated in FIN-2014-R002 that producing and distributing software, without more, does not itself constitute money transmission.",
+    "tags": [
+      "protocol",
+      "editorial"
+    ],
+    "path": "/articles/season-2-02-software-is-not-custody/"
+  },
+  {
+    "slug": "season-2-03-tornado-cash-turning-point",
+    "title": "The Tornado Cash Turning Point",
+    "description": "The Tornado Cash litigation changed an important part of the discussion about immutable smart contracts.",
+    "tags": [
+      "protocol",
+      "editorial"
+    ],
+    "path": "/articles/season-2-03-tornado-cash-turning-point/"
+  },
+  {
+    "slug": "season-2-04-hidden-cost-gatekeepers",
+    "title": "The Hidden Cost of Financial Gatekeepers",
+    "description": "Regulatory compliance is not inherently an enemy of innovation. Safeguards against fraud, misuse and insolvency matter.",
+    "tags": [
+      "protocol",
+      "editorial"
+    ],
+    "path": "/articles/season-2-04-hidden-cost-gatekeepers/"
+  },
+  {
+    "slug": "season-2-05-noncustodial-business-model",
+    "title": "The Noncustodial Business Model",
+    "description": "For years, wallet business models often relied on custody, spreads or privileged access to order flow.",
+    "tags": [
+      "protocol",
+      "editorial"
+    ],
+    "path": "/articles/season-2-05-noncustodial-business-model/"
+  },
+  {
+    "slug": "season-2-06-stablecoins-open-marketplaces",
+    "title": "Stablecoins Need Open Marketplaces",
+    "description": "Stablecoins made digital value easier to denominate and transfer, but did not eliminate dependence on issuers, networks or distribution channels.",
+    "tags": [
+      "protocol",
+      "editorial"
+    ],
+    "path": "/articles/season-2-06-stablecoins-open-marketplaces/"
+  },
+  {
+    "slug": "season-2-07-one-market-many-interfaces",
+    "title": "One Market, Many Interfaces",
+    "description": "A wallet, a web terminal and a third-party application should not each have to manufacture their own isolated market.",
+    "tags": [
+      "protocol",
+      "editorial"
+    ],
+    "path": "/articles/season-2-07-one-market-many-interfaces/"
+  },
+  {
+    "slug": "season-2-08-economic-coordination-protocol",
+    "title": "The Economic Coordination Protocol",
+    "description": "Sails is not being designed as another exchange. Its thesis is an Economic Coordination Protocol for Building Interoperable P2P Financial Marketplaces.",
+    "tags": [
+      "protocol",
+      "editorial"
+    ],
+    "path": "/articles/season-2-08-economic-coordination-protocol/"
+  },
+  {
+    "slug": "season-2-09-decripto-brazil-market-shift",
+    "title": "The DeCripto Effect: Brazil’s Changing Crypto Brokerage Market",
+    "description": "For years, the debate about regulating crypto in Brazil focused on a hypothetical choice between innovation and consumer protection.",
+    "tags": [
+      "protocol",
+      "editorial"
+    ],
+    "path": "/articles/season-2-09-decripto-brazil-market-shift/"
+  },
+  {
     "slug": "what-is-sails-protocol",
     "title": "What is Sails Protocol?",
     "description": "A conceptual introduction to Sails Protocol and its place in the open P2P ecosystem.",

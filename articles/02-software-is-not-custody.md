@@ -3,12 +3,14 @@ slug: season-2-02-software-is-not-custody
 title: "Software Is Not Custody"
 description: "FinCEN stated in FIN-2014-R002 that producing and distributing software, without more, does not itself constitute money transmission."
 tags: [protocol, editorial]
-draft: true
+draft: false
 ---
 
 ## The design response
 
 FinCEN stated in FIN-2014-R002 that producing and distributing software, without more, does not itself constitute money transmission. That distinction matters, but it is not a blanket exemption for a business that uses software to accept, control or transmit value. For Sails, the relevant test is operational: who can sign, redirect, settle or reverse a transfer, and what does each operator actually do?
+
+<!-- truncate -->
 
 ## A decision tree, not a slogan
 

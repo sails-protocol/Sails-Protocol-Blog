@@ -14,7 +14,7 @@ const seasons = [
 export default function Seasons():React.JSX.Element {
  return <Layout title="Reading seasons" description="Four connected learning paths through the Sails Protocol engineering journal">
   <main className="sails-home" id="main-content">
-   <header className="sails-hero"><p className="sails-kicker">GUIDED READING</p><h1>Seasons</h1><p className="sails-lead">Follow the ideas in order. These are editorial outlines, not published articles. Only approved writing appears in the <Link to="/articles">article archive</Link>.</p></header>
+   <header className="sails-hero"><p className="sails-kicker">GUIDED READING</p><h1>Seasons</h1><p className="sails-lead">Follow the ideas in order. The season outlines below are editorial plans, not published articles. Approved writing, including the first published articles on regulation, custody and open P2P markets, appears in the <Link to="/articles">article archive</Link>.</p></header>
    {seasons.map(s=><section className="sails-section" id={'season-'+s.id} key={s.id} aria-labelledby={'season-heading-'+s.id}>
     <p className="sails-kicker">SEASON {s.id} · {s.articles.length} PLANNED ARTICLES</p><h2 id={'season-heading-'+s.id}>{s.title}</h2><p>{s.description}</p>
     <ol className="sails-season-outline">{s.articles.map((title,i)=><li key={title}><span>{title}</span><small>In editorial review</small></li>)}</ol>

@@ -13,3 +13,6 @@ ecosystem:
 announcements:
   label: Announcements
   description: Project updates
+editorial:
+  label: Editorial
+  description: Editorial analysis of regulation, market structure and design boundaries
