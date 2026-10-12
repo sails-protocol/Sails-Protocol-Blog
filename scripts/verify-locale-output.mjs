@@ -41,8 +41,8 @@ for (const article of catalogue.filter(item => item.slug.startsWith('season-2-')
     failed = true;
   } else {
     const html = readFileSync(path, 'utf8');
-    if (!html.includes('rel="canonical"')) {
-      console.error('Missing canonical link:', locale, path);
+    if (!html.includes('rel="canonical"') || !html.includes('/' + locale + route)) {
+      console.error('Missing canonical link or locale URL:', locale, path);
       failed = true;
     }
     if (!html.includes('hreflang=')) {
