@@ -51,7 +51,7 @@ for (const article of catalogue) {
     const html = readFileSync(path, 'utf8');
     const expectedCanonical = 'https://sails-protocol-blog.netlify.app/' + locale + route;
     if (!hasCanonicalUrl(html, expectedCanonical)) {
-      console.error('Localized article canonical mismatch:', locale, path, expectedCanonical);
+      console.error('Localized article canonical mismatch:', locale, path, expectedCanonical, 'actual:', [...html.matchAll(/<link\b[^>]*rel="canonical"[^>]*>/g)].map(m => m[0]));
       failed = true;
     }
     if (!html.includes('hreflang=')) {
@@ -129,7 +129,7 @@ for (const page of ['build/index.html', 'build/seasons/index.html']) {
   const route = page === 'build/index.html' ? '/' : '/seasons/';
   const canonical = 'https://sails-protocol-blog.netlify.app/' + locale + route;
   if (!hasCanonicalUrl(html, canonical)) {
-    console.error('Missing or incorrect custom page canonical:', locale, page, canonical);
+    console.error('Missing or incorrect custom page canonical:', locale, page, canonical, 'actual:', [...html.matchAll(/<link\b[^>]*rel="canonical"[^>]*>/g)].map(m => m[0]));
     failed = true;
   }
   if (!html.includes('hreflang=')) {
