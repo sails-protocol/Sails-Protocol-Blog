@@ -1,6 +1,6 @@
 # Editorial continuity: start here
 
-**Status:** institutional handoff for editorial work on the Sails Protocol Blog. This is not permission to merge or publish.
+> **Operational update (2026-10-11):** This document preserves the original editorial handoff and historical planning context. Some branch names, PR numbers, counts and homepage descriptions below are **historical**, not current instructions. For any new AI/CTO session, read [AGENTS.md](./AGENTS.md) and [BLOG-CURRENT-STATE.md](./BLOG-CURRENT-STATE.md) first, then verify GitHub and Netlify live. In particular, PR #13 was merged and PR #14 was open at the latest documented snapshot. Do not assume a merged PR is deployed until verified.\n\n**Status:** institutional handoff for editorial work on the Sails Protocol Blog. This is not permission to merge or publish.
 
 ## Where to work
 
