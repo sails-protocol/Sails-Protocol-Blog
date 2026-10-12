@@ -41,8 +41,9 @@ for (const article of catalogue) {
     failed = true;
   } else {
     const html = readFileSync(path, 'utf8');
-    if (!html.includes('rel="canonical"')) {
-      console.error('Missing canonical link:', locale, path);
+    const expectedCanonical = 'rel="canonical" href="https://sails-protocol-blog.netlify.app/' + locale + route.slice(1) + '"';
+    if (!html.includes(expectedCanonical)) {
+      console.error('Localized article canonical mismatch:', locale, path, expectedCanonical);
       failed = true;
     }
     if (!html.includes('hreflang=')) {
@@ -117,9 +118,11 @@ if (existsSync(intro)) {
 for (const page of ['build/index.html', 'build/seasons/index.html']) {
   if (!existsSync(page)) continue; // Already reported by the required-page checks.
   const html = readFileSync(page, 'utf8');
-  for (const marker of ['rel="canonical"', 'hreflang=']) {
+  const route = page === 'build/index.html' ? '/' : '/seasons/';
+  const canonical = 'rel="canonical" href="https://sails-protocol-blog.netlify.app/' + locale + route + '"';
+  for (const marker of [canonical, 'hreflang=']) {
     if (!html.includes(marker)) {
-      console.error('Missing custom page SEO marker:', locale, page, marker);
+      console.error('Missing or incorrect custom page SEO marker:', locale, page, marker);
       failed = true;
     }
   }
