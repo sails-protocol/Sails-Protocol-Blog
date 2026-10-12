@@ -2,7 +2,7 @@ import Translate, {translate} from '@docusaurus/Translate';
 import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
-import articles from '../../generated/articles.json';
+import {getLocalizedArticles} from '../../utils/localizedArticles';
 
 // Public reading paths list published articles only. Unpublished outlines live in
 // EDITORIAL-SEASONS-AND-READING-PATHS.md and must not be exposed as live content.
@@ -18,13 +18,14 @@ const season02Slugs = [
   'season-2-09-decripto-brazil-market-shift',
 ] as const;
 
-const publishedArticles = season02Slugs.map(slug => {
+const publishedArticles = (articles: ReturnType<typeof getLocalizedArticles>) => season02Slugs.map(slug => {
   const article = articles.find(item => item.slug === slug);
   if (!article) throw new Error(`Published Season 02 article missing from catalogue: ${slug}`);
   return article;
 });
 
 export default function Seasons(): React.JSX.Element {
+  const published = publishedArticles(getLocalizedArticles());
   return (
     <Layout title={translate({id: 'seasons.title', message: 'Reading collections'})} description={translate({id: 'seasons.description', message: 'Published reading paths through Sails Protocol ideas and engineering'})}>
       <main className="sails-home" id="main-content">
@@ -39,7 +40,7 @@ export default function Seasons(): React.JSX.Element {
           <h2 id="season-02-heading"><Translate id="journal.custody">Custody, Regulation and Open P2P Markets</Translate></h2>
           <p><Translate id="seasons.lead02">Why open economic coordination matters, how software and custody differ, and what changing market structures mean for P2P infrastructure.</Translate></p>
           <ol className="sails-season-outline">
-            {publishedArticles.map(article => (
+            {published.map(article => (
               <li key={article.slug}>
                 <Link to={article.path}>{article.title}</Link>
                 <small><Translate id="seasons.published">Published</Translate></small>
