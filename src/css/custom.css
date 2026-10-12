@@ -288,3 +288,12 @@ html[data-theme='dark'] .docusaurus-mermaid-container .edgeLabel p {
 html[data-theme='dark'] .docusaurus-mermaid-container .labelBkg {
   background-color: #f4f6f8;
 }
+
+/* Mermaid edge labels use a high-contrast light chip on dark backgrounds.
+   Set the actual Mermaid label background, not only the wrapper. */
+html[data-theme='dark'] .docusaurus-mermaid-container .edgeLabel,
+html[data-theme='dark'] .docusaurus-mermaid-container .edgeLabel .labelBkg,
+html[data-theme='dark'] .docusaurus-mermaid-container .edgeLabel p {
+  background-color: #f4f6f8 !important;
+  color: #10161d !important;
+}
