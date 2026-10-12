@@ -50,3 +50,11 @@ A rigorous, human, multilingual engineering journal that connects real Sails Pro
 Always provide a concise north star and a percentage **with a named denominator** (e.g. 3 of 4 release gates); do not turn an estimate into verified completion. Report exact SHAs, test status, remaining blockers, and whether `main` and Netlify changed.
 
 **NO MATERIAL FINDING UNDER THE RUG.**
+
+## Concurrent institutional handoff PRs and taxonomy caveat
+
+- PRs #15, #16, #17 and #18 are overlapping documentation proposals. The intended canonical integration is a reviewed consolidation on #15; the others must not be merged as duplicate sources of authority. Verify their live states before closure.
+- The *published* Season 02 (nine articles) and the *planned* seven-season/48-topic editorial taxonomy are different naming systems. Do not equate their Season numbers or expose draft links.
+- Owner editorial direction favors simultaneous publication of the largest fully approved Day 0 library rather than artificial drip-feed. This strategy never waives technical, editorial, localization, accessibility or owner publication gates.
+- WebMCP discovery must remain read-only and native browser behavior must be checked in a real browser, not inferred from mocks.
+- Every release report must separate prepared, CI-validated, merged, deployed and live-QA-verified states.
