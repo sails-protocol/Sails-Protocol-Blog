@@ -45,9 +45,13 @@ jobs:
         run: npm run build -- --locale pt-BR
         env:
           SITE_URL: https://sails-protocol-blog.netlify.app
+      - name: Verify Portuguese locale output
+        run: node scripts/verify-locale-output.mjs pt-BR
       - name: Build Spanish locale
         run: npm run build -- --locale es
         env:
           SITE_URL: https://sails-protocol-blog.netlify.app
+      - name: Verify Spanish locale output
+        run: node scripts/verify-locale-output.mjs es
       - name: Verify draft isolation after all locale builds
         run: node scripts/verify-build.mjs
