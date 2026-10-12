@@ -186,5 +186,9 @@
   "journal.latestKicker": {
     "message": "SAILS / DIÁRIO",
     "description": "SAILS / JOURNAL"
+  },
+  "journal.noResults": {
+    "message": "Nenhum artigo publicado encontrado.",
+    "description": "No published articles found."
   }
 }
