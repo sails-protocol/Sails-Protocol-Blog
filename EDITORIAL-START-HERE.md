@@ -1,5 +1,41 @@
 # Editorial continuity: start here
 
+> **Current entry point (2026-10-12):** Read [AGENTS.md](./AGENTS.md) for mandatory rules and [BLOG-CURRENT-STATE.md](./BLOG-CURRENT-STATE.md) for the last verified operational snapshot. **Always verify live GitHub PRs, exact SHAs, CI and Netlify before acting.** This document retains historical editorial handoff notes below; their older branch/PR counts and publication statements are archival, not current instructions.
+
+## Quick start for a new CTO or AI agent
+
+1. Read `AGENTS.md` and `BLOG-CURRENT-STATE.md`.
+2. Inspect `main`, open PRs, current exact-head CI and production deployment; record what was actually verified.
+3. Read the permanent editorial policies and quality gates linked below.
+4. Work in an isolated branch, coordinate with other agents and preserve publication/owner gates.
+5. Report changed files, exact SHA, tests, evidence, unresolved findings and deployed/published status.
+
+**Current integration direction:** PR #13 (visual assets) merged; PR #14 (canonical Season 02 catalogue) was open at the snapshot. Never rely on this sentence instead of checking GitHub.
+
+## Permanent editorial reference map
+
+- [Editorial DNA and quality gates](./EDITORIAL-DNA-AND-QUALITY-GATES.md)
+- [Editorial voice guide](./EDITORIAL-VOICE-GUIDE.md)
+- [Editorial policy](./EDITORIAL-POLICY.md)
+- [Seasons and reading paths](./EDITORIAL-SEASONS-AND-READING-PATHS.md)
+- [Visual standards](./EDITORIAL-VISUAL-STANDARDS.md)
+- [Day 0 master backlog](./EDITORIAL-DAY0-MASTER-BACKLOG.md)
+- [Day 0 evidence audit](./EDITORIAL-DAY0-EVIDENCE-AUDIT.md)
+- [Editorial CTO residuals](./EDITORIAL-CTO-MATERIAL-RESIDUALS-2026-10-10.md)
+
+---
+
+
+## Institutional consolidation note (2026-10-12)
+
+This onboarding update consolidates the institutional handoff proposals in PRs #15–#18 into one canonical document set. `AGENTS.md` is the permanent operating contract; `BLOG-CURRENT-STATE.md` is a dated, non-live snapshot; this document preserves the original editorial handoff and historical decisions below. The public Season 02 and the planned seven-season editorial backlog use different taxonomies. Check current GitHub and Netlify before acting. No document grants merge or publication permission.
+
+## Archived editorial handoff (retained for provenance)
+
+The following material is preserved verbatim from the earlier handoff. It describes earlier working branches, PRs and drafting stages. **Do not treat it as a current operational status.**
+
+# Editorial continuity: start here
+
 **Status:** institutional handoff for editorial work on the Sails Protocol Blog. This is not permission to merge or publish.
 
 ## Where to work
