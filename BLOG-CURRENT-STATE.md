@@ -99,3 +99,11 @@ This is the latest checkpoint in this document and supersedes earlier operationa
 - **Current-release readiness:** conservative **16%** according to the 25-gate weighted acceptance contract: I2 4% plus G1–G4 12%. Historical I3 production PASS does not apply to current-main production acceptance. CI and merged code improve preparedness but do not independently satisfy production, native visual, or editorial signoff gates.
 - **Editorial Day 0:** 48 planned topics / 144 language editions remain a distinct backlog from the 10 published articles. Do not infer native-language approval or production publication from CI.
 - **Next gate:** continue isolated GitHub checks and source-backed editorial review while deploys are paused. After credit renewal, verify the exact deployed `main` SHA, live EN/PT-BR/ES routes, browser/responsive/a11y matrix and editorial signoffs before promoting any acceptance gate.
+
+## Operational checkpoint after PR #67 | 2026-10-12 UTC
+
+- PR #65 merged at `d9fa6ad9007bf96d80473436dee4ed613144f034`: operational state checkpoint; exact-head 3/3 PASS.
+- PR #66 merged at `f42ce1d37a18c1b2463582497fc5dd11eb77f49b`: additional PT-BR/ES homepage, Seasons, article browser accessibility matrix; exact-head 3/3 PASS.
+- PR #67 merged at `f546b9a4cbb5076f8e1cf7bd47e038f3c92f116a`: exact canonical URL assertions for *isolated locale builds*; exact-head `912386ba4a4e9c3dff0e27ac37bb7449abb77fa1` had 3/3 PASS. CI builds PT-BR and ES separately at root `/`, and their canonical URLs accordingly omit locale prefixes. **This does not verify canonical URLs of the combined multilingual production deployment.** The initial tests incorrectly assumed prefixed URLs in isolated builds; real HTML was inspected before correction.
+- Netlify remains in operational-credit pause by owner decision. Do not trigger deployment, upgrade, or migration. Last observed production SHA `03f56ca704fb2db9e753ca87029a84fa4b7bd15c` is stale relative to main.
+- Strict Day 0 release readiness remains **16%**. No production or native-language/editorial gate is newly accepted by these merges. Issues #29 and #33 remain subject to live verification/signoff.
