@@ -274,3 +274,17 @@ html:not([data-theme='dark']) .sails-hero-editorial::before{opacity:.28}
   .sails-hero-editorial h1{font-size:clamp(3rem,12vw,4rem)}
 }
 html:not([data-theme='dark']) .sails-hero-editorial::before{opacity:.19}
+
+/* Accessibility: source lists need non-color-only link affordances. */
+.markdown li > a:not(.sails-primary-link) {
+  text-decoration: underline;
+  text-underline-offset: .14em;
+  text-decoration-thickness: from-font;
+}
+/* Mermaid edge labels must remain readable against dark diagram surfaces. */
+html[data-theme='dark'] .docusaurus-mermaid-container .edgeLabel p {
+  color: #10161d;
+}
+html[data-theme='dark'] .docusaurus-mermaid-container .labelBkg {
+  background-color: #f4f6f8;
+}
