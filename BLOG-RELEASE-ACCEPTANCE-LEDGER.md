@@ -26,10 +26,14 @@
 | E5 Day 0 scope reconciled | NOT VERIFIED | Season 02 vs Day 0 48-topic taxonomy |
 | G1 AGENTS.md | PASS | PR #15 merged squash 033ccbea3f1d297f99529fcc0e4077c985163338, canonical file on main |
 | G2 EDITORIAL-START-HERE.md | PASS | PR #15 merged squash 033ccbea3f1d297f99529fcc0e4077c985163338 |
-| G3 BLOG-CURRENT-STATE.md | NOT VERIFIED | Historical ledger includes stale #14 status; refresh current state |
-| G4 evidence ledger/scorecard | NOT VERIFIED | Scorecard on main, this ledger PR pending merge |
+| G3 BLOG-CURRENT-STATE.md | NOT VERIFIED | Current-state refresh prepared in this PR; PASS only after reviewed merge |
+| G4 evidence ledger/scorecard | PASS | PR #27 merged as 03f56ca704fb2db9e753ca87029a84fa4b7bd15c; BLOG-GLOBAL-AUDIT-SCORECARD.md and this ledger present on main |
 | G5 material findings triaged | NOT VERIFIED | Remaining F-001/003/004/005/006 and visual acceptance residual |
 
-**Initial verified score: 3/25 PASS, weighted 20%*(1/5)+15%*(2/5) = 10%.** This is a deliberately conservative evidence baseline, not an assertion that the blog is only 10% built. Recompute after every verified gate. Do not credit manual or editorial acceptance without evidence.
+**Updated verified score: 4/25 PASS, weighted 20%*(1/5)+15%*(3/5) = 13%.** This is a deliberately conservative evidence baseline, not an assertion that the blog is only 10% built. Recompute after every verified gate. Do not credit manual or editorial acceptance without evidence.
 
 **Day 0:** 0/144 approved editions according to historical audit ledger, pending fresh independent verification. Source-backed correction coverage 51/144 (35.4%) is separate.
+
+## Reconciliation checkpoint | 2026-10-12 UTC
+
+G4 promoted to PASS based on PR #27 merged and both canonical audit documents on main. I3 remains NOT VERIFIED for current main after #27 despite historical ready production deploy #26. G3 remains NOT VERIFIED until the current-state update in this PR is merged and reviewed. Historical 10% baseline is superseded by 13% conservative evidence score, not by an assertion that only 13% of functionality exists.
