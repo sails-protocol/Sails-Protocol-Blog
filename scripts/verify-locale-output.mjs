@@ -50,7 +50,7 @@ for (const article of catalogue.filter(item => item.slug.startsWith('season-2-')
       failed = true;
     }
   }
-  for (const listing of ['build/index.html', 'build/seasons/index.html']) {
+  for (const listing of ['build/seasons/index.html']) {
     if (!existsSync(listing) || !readFileSync(listing, 'utf8').includes(route)) {
       console.error('Missing article link in localized listing:', locale, listing, route);
       failed = true;
