@@ -54,6 +54,37 @@ try {
   }
   }
   }
+  // Localized smoke matrix: check rendered PT-BR/ES core pages in both themes
+  // at mobile and desktop sizes. Keep the existing full English article matrix
+  // separate to avoid tripling the already expensive browser CI.
+  for (const locale of ['pt-BR', 'es']) {
+    for (const route of ['/', '/seasons/', '/articles/what-is-sails-protocol/']) {
+      for (const viewport of [{width: 1280, height: 800}, {width: 390, height: 844}]) {
+        for (const colorScheme of ['light', 'dark']) {
+          const context = await browser.newContext({viewport, colorScheme, reducedMotion: 'reduce'});
+          const page = await context.newPage();
+          const path = '/' + locale + route;
+          try {
+            const pageErrors = [];
+            page.on('pageerror', error => pageErrors.push(error.message));
+            const response = await page.goto(new URL(path, base).href, {waitUntil: 'networkidle'});
+            if (!response?.ok()) throw new Error(path + ': HTTP ' + response?.status());
+            if (pageErrors.length) { failed = true; console.error(path, viewport.width, colorScheme, 'browser JavaScript errors:', pageErrors); }
+            if (!(await page.locator('main').count())) { failed = true; console.error(path, viewport.width, 'missing main landmark'); }
+            const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
+            if (overflow) { failed = true; console.error(path, viewport.width, colorScheme, 'horizontal page overflow'); }
+            await page.evaluate(mode => { document.documentElement.setAttribute('data-theme', mode); }, colorScheme);
+            await page.waitForTimeout(100);
+            const result = await new AxeBuilder({page}).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
+            if (result.violations.length) {
+              failed = true;
+              for (const violation of result.violations) console.error(path, viewport.width, colorScheme, violation.id, violation.impact, violation.nodes.map(n => n.target).join(', '));
+            } else console.log(path, viewport.width, colorScheme, 'axe WCAG 2.1 AA: no detected violations');
+          } finally { await context.close(); }
+        }
+      }
+    }
+  }
   // Mermaid regression: a global prefers-reduced-motion transition override once
   // distorted Mermaid layout (nodes ~2000px apart, viewBox clipping the graph),
   // making diagram text unreadable only for users who request reduced motion.
