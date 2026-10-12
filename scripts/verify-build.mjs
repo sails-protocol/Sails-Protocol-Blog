@@ -114,11 +114,11 @@ if (fullMultiLocaleBuild) {
       const html = readFileSync(file, 'utf8');
       const canonical = 'https://sails-protocol-blog.netlify.app/' + prefix + route;
       const links = [...html.matchAll(/<link\b[^>]*>/g)];
-      const matches = links.some(([tag]) => {
-        const attrs = Object.fromEntries([...tag.matchAll(/([\w-]+)="([^"]*)"/g)].map(([, key, value]) => [key, value]));
-        return attrs.rel === 'canonical' && attrs.href === canonical;
-      });
-      if (!matches) { console.error('Custom page canonical mismatch:', file, canonical); failed = true; }
+      const canonicals = links.map(([tag]) => Object.fromEntries([...tag.matchAll(/([\w-]+)="([^"]*)"/g)].map(([, key, value]) => [key, value]))).filter(attrs => attrs.rel === 'canonical');
+      if (canonicals.length !== 1 || canonicals[0].href !== canonical) {
+        console.error('Custom page canonical mismatch or duplicate:', file, canonical, canonicals);
+        failed = true;
+      }
     }
   }
 }
