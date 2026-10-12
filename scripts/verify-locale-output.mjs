@@ -71,11 +71,12 @@ for (const article of catalogue) {
     console.error('Missing localized article description translation:', locale, descriptionKey);
     failed = true;
   }
-  // The introduction card is always on the homepage. Verify that the translated
-  // description is actually rendered, not merely present in the locale catalogue.
-  if (article.slug === 'what-is-sails-protocol' && existsSync('build/index.html') &&
+  // The homepage renders descriptions for its first six featured articles.
+  // The introduction has a separate curated card with journal.whatLead copy.
+  if (catalogue.slice(0, 6).some(featured => featured.slug === article.slug) &&
+      existsSync('build/index.html') &&
       !readFileSync('build/index.html', 'utf8').includes(description)) {
-    console.error('Localized introduction description not rendered:', locale, descriptionKey);
+    console.error('Localized featured description not rendered:', locale, descriptionKey);
     failed = true;
   }
   const key = 'article.' + article.slug + '.title';
