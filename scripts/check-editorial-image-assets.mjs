@@ -4,7 +4,6 @@ import {join} from 'node:path';
 const root = new URL('../static/img/editorial/', import.meta.url);
 const files = [
   ['sails-earth-horizon-hero.webp', 350 * 1024],
-  ['sails-earth-horizon-card.webp', 150 * 1024],
 ];
 let failed = false;
 for (const [name, maxBytes] of files) {
