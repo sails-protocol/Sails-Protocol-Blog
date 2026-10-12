@@ -230,11 +230,18 @@ html:not([data-theme='dark']) .sails-hero-editorial::before{opacity:.28}
   padding-block:clamp(4rem,8vw,7rem);
   border-bottom:1px solid var(--sails-line);
 }
+/* Full-bleed hero artwork: the image spans the whole viewport width and the
+   whole hero height (background-size: cover); the left scrim only keeps the
+   HTML text readable. Horizontal clipping happens on .main-wrapper. */
+.main-wrapper{overflow-x:clip}
+.sails-hero-editorial{overflow:visible}
 .sails-hero-editorial::before{
-  inset:0 -2rem 0 22%;
+  inset:0 auto 0 50%;
+  width:100vw;
+  transform:translateX(-50%);
   background:
-    linear-gradient(90deg,var(--ifm-background-color) 0%,rgba(7,17,30,.94) 18%,rgba(7,17,30,.42) 54%,rgba(7,17,30,.05) 100%),
-    url('/img/editorial/sails-earth-horizon-hero.webp') center right/cover no-repeat;
+    linear-gradient(90deg,rgba(7,17,30,.88) 0%,rgba(7,17,30,.62) 34%,rgba(7,17,30,.12) 70%,rgba(7,17,30,0) 100%),
+    url('/img/editorial/sails-earth-horizon-hero.webp') center 38%/cover no-repeat;
   opacity:1;
 }
 .sails-hero-editorial h1{
@@ -257,9 +264,11 @@ html:not([data-theme='dark']) .sails-hero-editorial::before{opacity:.28}
 @media(max-width:650px){
   .sails-hero-editorial{min-height:480px;padding-block:4rem}
   .sails-hero-editorial::before{
-    inset:0 -1rem;
-    background:linear-gradient(180deg,rgba(7,17,30,.70),rgba(7,17,30,.94) 76%),url('/img/editorial/sails-earth-horizon-hero.webp') 65% center/cover no-repeat;
-    opacity:.82;
+    inset:0 auto 0 50%;
+    width:100vw;
+    transform:translateX(-50%);
+    background:linear-gradient(180deg,rgba(7,17,30,.62),rgba(7,17,30,.86) 78%),url('/img/editorial/sails-earth-horizon-hero.webp') 68% center/cover no-repeat;
+    opacity:1;
   }
   .sails-hero-editorial h1{font-size:clamp(3rem,12vw,4rem)}
 }
