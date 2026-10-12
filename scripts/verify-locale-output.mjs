@@ -61,6 +61,23 @@ for (const article of catalogue) {
     failed = true;
   }
 }
+// Assert every published article's localized title is present in its reading listing.
+// Translation keys are immutable slug-based identifiers, not catalogue indices.
+const translations = JSON.parse(readFileSync('i18n/' + locale + '/code.json', 'utf8'));
+for (const article of catalogue) {
+  const key = 'article.' + article.slug + '.title';
+  const title = translations[key]?.message;
+  if (typeof title !== 'string' || !title.trim()) {
+    console.error('Missing localized article title translation:', locale, key);
+    failed = true;
+    continue;
+  }
+  const listing = article.slug.startsWith('season-2-') ? 'build/seasons/index.html' : 'build/index.html';
+  if (existsSync(listing) && !readFileSync(listing, 'utf8').includes(title)) {
+    console.error('Localized article title not rendered:', locale, listing, key);
+    failed = true;
+  }
+}
 // The published introduction is outside Season 02 and needs the same SEO protections.
 const intro = 'build/articles/what-is-sails-protocol/index.html';
 if (existsSync(intro)) {
