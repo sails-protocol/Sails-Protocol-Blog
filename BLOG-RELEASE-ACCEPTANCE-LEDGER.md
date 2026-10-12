@@ -43,3 +43,13 @@ I3 promotion evidence: Netlify deployment ID 6acc5631104cd90008479406, productio
 ## Post-PR28 checkpoint | 2026-10-12 UTC
 
 G3 now PASS based on merged PR #28 (8446a2efd1928eb5a54e8bea9e5c0cff59c3f84e), with 3/3 exact-head workflows success. **Operational evidence score 20% (6/25).** Netlify API still returned deploy 6acc5631104cd90008479406 at PR #27 SHA 03f56ca704fb2db9e753ca87029a84fa4b7bd15c after PR #28 merged; issue #29 tracks missing proof of current-main deployment and public locale/SEO audit. I3 PASS records historic exact SHA deploy; it does NOT assert that current main is deployed. If contract requires I3 to be current main at each checkpoint, reassess its status before any release declaration. This PR is documentation only and requires its own CI.
+
+## Post-PR35 checkpoint | 2026-10-12 UTC
+
+- PR #32 merged as `db711ce449b7207694d30d3bd4a66535d64bfd0a`, 3/3 exact-head workflows PASS. Custom homepage and Seasons UI localization EN/PT-BR/ES.
+- PR #34 merged as `656c11decb314900d694f64682f4267645559d6d`, 3/3 exact-head workflows PASS. Locale-specific built HTML smoke checks.
+- PR #35 merged as `7e61625aba2f7d8c39d5c0536cc9ea929ac766c9`, 3/3 exact-head workflows PASS. Correct Seasons anchor and localized empty-search state.
+- Netlify production API **still reports** ready deploy `6acc5631104cd90008479406` on SHA `03f56ca704fb2db9e753ca87029a84fa4b7bd15c`. This is **not current main**. The historic I3 PASS does not constitute a current-main production acceptance; I3 must be reassessed as NOT VERIFIED for current release readiness until the published SHA equals main.
+- Issue #33 tracks English-only article catalog titles/descriptions in localized custom pages. L5 remains NOT VERIFIED.
+- No fresh production browser/locale/editorial acceptance. Do not count PR checks as live-site QA.
+- Historical ledger remains **20% evidence baseline** (6/25) for continuity; strict **current-release** interpretation would downgrade I3, yielding **16%** (5/25 gates weighted: I2 4% + G1–G4 12%). Use **16%** as the conservative current-release score until Netlify catches up and exact-main production is verified.
