@@ -21,6 +21,8 @@ jobs:
           node-version: '22'
       - name: Install dependencies from lockfile
         run: npm ci --no-audit --no-fund
+      - name: Verify editorial WebP assets exist and fit budgets
+        run: node scripts/check-editorial-image-assets.mjs
       - name: Verify article catalogue matches source
         run: npm run check:articles
       - name: Verify WebMCP static contract

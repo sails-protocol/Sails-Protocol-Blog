@@ -3,6 +3,15 @@ import articles from '../generated/articles.json';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 
+const articleArtwork: Record<string, string> = {
+  'season-2-01-why-sails-arrives-now': 'market-crossroads',
+  'season-2-02-software-is-not-custody': 'software-boundary',
+  'season-2-03-tornado-cash-turning-point': 'immutable-contract',
+  'season-2-04-hidden-cost-gatekeepers': 'financial-gates',
+  'season-2-05-noncustodial-business-model': 'noncustodial-keys',
+  'season-2-06-stablecoins-open-marketplaces': 'stablecoin-rails',
+};
+
 export default function Home(): React.JSX.Element {
   const [query, setQuery] = useState('');
   const results = useMemo(() => {
@@ -32,7 +41,7 @@ export default function Home(): React.JSX.Element {
         <section className="sails-section sails-latest-section" aria-labelledby="latest-heading">
           <p className="sails-kicker">PUBLISHED CONTENT</p>
           <div className="sails-section-heading"><div><h2 id="latest-heading">Featured articles</h2><p>Published perspectives on open P2P markets, custody, regulation and economic coordination.</p></div><Link to="/articles">View all articles →</Link></div>
-          <div className="sails-latest-grid">{articles.slice(0, 6).map((article, index) => <article className="sails-latest-card" key={article.slug}><div className={'sails-latest-art sails-latest-art-'+(index%3)} aria-hidden="true"/><div className="sails-latest-body"><small>SAILS / JOURNAL</small><h3><Link to={article.path}>{article.title}</Link></h3><p>{article.description}</p><Link className="sails-read-link" to={article.path}>Read article →</Link></div></article>)}</div>
+          <div className="sails-latest-grid">{articles.slice(0, 6).map(article => <article className="sails-latest-card" key={article.slug}><div className="sails-latest-art" style={{backgroundImage: `url(/img/editorial/${articleArtwork[article.slug] ?? 'protocol-waves'}.svg)`}} aria-hidden="true"/><div className="sails-latest-body"><small>SAILS / JOURNAL</small><h3><Link to={article.path}>{article.title}</Link></h3><p>{article.description}</p><Link className="sails-read-link" to={article.path}>Read article →</Link></div></article>)}</div>
         </section>
         <section className="sails-section sails-search-section" aria-labelledby="search-heading">
           <h2 id="search-heading">Find an article</h2>

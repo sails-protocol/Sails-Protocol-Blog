@@ -203,14 +203,12 @@ html[data-theme='dark'] [class*='colorModeToggle'] button {
 @media(max-width:650px){.sails-hero-editorial{padding:3rem 0}.sails-hero-editorial::before{opacity:.45}.sails-editorial-card{grid-template-columns:100px 1fr}.sails-latest-grid{grid-template-columns:1fr}.sails-section-heading{align-items:start;flex-direction:column;gap:.7rem}.sails-editorial-card h3{font-size:1.05rem}}
 
 /* Real, locally hosted artwork. Text and controls remain accessible DOM elements. */
-.sails-hero-editorial::before{inset:0 -4rem 0 25%;background:linear-gradient(90deg,var(--ifm-background-color) 0%,rgba(7,17,30,.78) 20%,rgba(7,17,30,.08) 65%),url('/img/editorial/earth-horizon.svg') center right/cover no-repeat;opacity:.94}
+.sails-hero-editorial::before{inset:0 -4rem 0 25%;background:linear-gradient(90deg,var(--ifm-background-color) 0%,rgba(7,17,30,.78) 20%,rgba(7,17,30,.08) 65%),url('/img/editorial/sails-earth-horizon-hero.webp') center right/cover no-repeat;opacity:.94}
 .sails-art-orbit{background:url('/img/editorial/earth-horizon.svg') center/cover no-repeat}
 .sails-art-columns{background:url('/img/editorial/institutional-columns.svg') center/cover no-repeat}
 .sails-art-cubes{background:url('/img/editorial/coordination-cubes.svg') center/cover no-repeat}
 .sails-art-waves{background:url('/img/editorial/protocol-waves.svg') center/cover no-repeat}
-.sails-latest-art-0{background:url('/img/editorial/institutional-columns.svg') center/cover no-repeat}
-.sails-latest-art-1{background:url('/img/editorial/coordination-cubes.svg') center/cover no-repeat}
-.sails-latest-art-2{background:url('/img/editorial/protocol-waves.svg') center/cover no-repeat}
+.sails-latest-art{background-position:center;background-size:cover;background-repeat:no-repeat}
 html:not([data-theme='dark']) .sails-hero-editorial::before{opacity:.28}
 @media(max-width:650px){.sails-hero-editorial::before{inset:0 -1rem 0 0;background-position:center;opacity:.22}.sails-editorial-card{grid-template-columns:110px minmax(0,1fr)}}
 
@@ -236,7 +234,7 @@ html:not([data-theme='dark']) .sails-hero-editorial::before{opacity:.28}
   inset:0 -2rem 0 22%;
   background:
     linear-gradient(90deg,var(--ifm-background-color) 0%,rgba(7,17,30,.94) 18%,rgba(7,17,30,.42) 54%,rgba(7,17,30,.05) 100%),
-    url('/img/editorial/earth-horizon.svg') center right/cover no-repeat;
+    url('/img/editorial/sails-earth-horizon-hero.webp') center right/cover no-repeat;
   opacity:1;
 }
 .sails-hero-editorial h1{
@@ -260,7 +258,7 @@ html:not([data-theme='dark']) .sails-hero-editorial::before{opacity:.28}
   .sails-hero-editorial{min-height:480px;padding-block:4rem}
   .sails-hero-editorial::before{
     inset:0 -1rem;
-    background:linear-gradient(180deg,rgba(7,17,30,.70),rgba(7,17,30,.94) 76%),url('/img/editorial/earth-horizon.svg') 65% center/cover no-repeat;
+    background:linear-gradient(180deg,rgba(7,17,30,.70),rgba(7,17,30,.94) 76%),url('/img/editorial/sails-earth-horizon-hero.webp') 65% center/cover no-repeat;
     opacity:.82;
   }
   .sails-hero-editorial h1{font-size:clamp(3rem,12vw,4rem)}
