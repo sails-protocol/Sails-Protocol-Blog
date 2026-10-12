@@ -61,6 +61,19 @@ for (const article of catalogue) {
     failed = true;
   }
 }
+// Ensure every published catalogue entry has translated display metadata.
+// Localized article cards and search results consume these slug-keyed values.
+const localeMessages = JSON.parse(readFileSync('i18n/' + locale + '/code.json', 'utf8'));
+for (const article of catalogue) {
+  for (const field of ['title', 'description']) {
+    const key = 'article.' + article.slug + '.' + field;
+    const message = localeMessages[key]?.message;
+    if (typeof message !== 'string' || !message.trim()) {
+      console.error('Missing localized article metadata:', locale, key);
+      failed = true;
+    }
+  }
+}
 // The published introduction is outside Season 02 and needs the same SEO protections.
 const intro = 'build/articles/what-is-sails-protocol/index.html';
 if (existsSync(intro)) {
