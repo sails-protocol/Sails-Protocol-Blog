@@ -4,7 +4,7 @@ const base = process.env.A11Y_BASE_URL || 'http://127.0.0.1:3000';
 const browser = await chromium.launch({headless: true});
 let failed = false;
 try {
-  for (const viewport of [{width: 1280, height: 800}, {width: 390, height: 844}]) {
+  for (const viewport of [{width: 1280, height: 800}, {width: 768, height: 1024}, {width: 390, height: 844}]) {
   for (const route of ['/', '/seasons/', '/articles/', '/articles/what-is-sails-protocol']) {
   for (const colorScheme of ['light', 'dark']) {
     const context = await browser.newContext({viewport, colorScheme, reducedMotion: 'reduce'});
@@ -56,7 +56,7 @@ try {
   // distorted Mermaid layout (nodes ~2000px apart, viewBox clipping the graph),
   // making diagram text unreadable only for users who request reduced motion.
   for (const reducedMotion of ['no-preference', 'reduce']) {
-    for (const viewport of [{width: 1280, height: 800}, {width: 390, height: 844}]) {
+    for (const viewport of [{width: 1280, height: 800}, {width: 768, height: 1024}, {width: 390, height: 844}]) {
       const context = await browser.newContext({viewport, reducedMotion});
       const page = await context.newPage();
       try {
