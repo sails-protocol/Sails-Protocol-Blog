@@ -1,3 +1,4 @@
+import Translate, {translate} from '@docusaurus/Translate';
 import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -25,23 +26,23 @@ const publishedArticles = season02Slugs.map(slug => {
 
 export default function Seasons(): React.JSX.Element {
   return (
-    <Layout title="Reading collections" description="Published reading paths through Sails Protocol ideas and engineering">
+    <Layout title={translate({id: 'seasons.title', message: 'Reading collections'})} description={translate({id: 'seasons.description', message: 'Published reading paths through Sails Protocol ideas and engineering'})}>
       <main className="sails-home" id="main-content">
         <header className="sails-hero">
-          <p className="sails-kicker">GUIDED READING</p>
-          <h1>Reading collections</h1>
-          <p className="sails-lead">Explore published work on the architecture, economic boundaries and open-market context of Sails Protocol. Future editorial plans are not listed as published articles.</p>
-          <Link className="sails-primary-link" to="/articles">Explore published articles <span aria-hidden="true">→</span></Link>
+          <p className="sails-kicker"><Translate id="seasons.kicker">GUIDED READING</Translate></p>
+          <h1><Translate id="seasons.title">Reading collections</Translate></h1>
+          <p className="sails-lead"><Translate id="seasons.lead">Explore published work on the architecture, economic boundaries and open-market context of Sails Protocol. Future editorial plans are not listed as published articles.</Translate></p>
+          <Link className="sails-primary-link" to="/articles"><Translate id="seasons.explore">Explore published articles</Translate> <span aria-hidden="true">→</span></Link>
         </header>
         <section className="sails-section" id="season-02" aria-labelledby="season-02-heading">
-          <p className="sails-kicker">SEASON 02 · 9 PUBLISHED ARTICLES</p>
-          <h2 id="season-02-heading">Custody, Regulation and Open P2P Markets</h2>
-          <p>Why open economic coordination matters, how software and custody differ, and what changing market structures mean for P2P infrastructure.</p>
+          <p className="sails-kicker"><Translate id="seasons.count">SEASON 02 · 9 PUBLISHED ARTICLES</Translate></p>
+          <h2 id="season-02-heading"><Translate id="journal.custody">Custody, Regulation and Open P2P Markets</Translate></h2>
+          <p><Translate id="seasons.lead02">Why open economic coordination matters, how software and custody differ, and what changing market structures mean for P2P infrastructure.</Translate></p>
           <ol className="sails-season-outline">
             {publishedArticles.map(article => (
               <li key={article.slug}>
                 <Link to={article.path}>{article.title}</Link>
-                <small>Published</small>
+                <small><Translate id="seasons.published">Published</Translate></small>
               </li>
             ))}
           </ol>
