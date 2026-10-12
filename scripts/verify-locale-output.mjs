@@ -49,7 +49,9 @@ for (const article of catalogue) {
     failed = true;
   } else {
     const html = readFileSync(path, 'utf8');
-    const expectedCanonical = 'https://sails-protocol-blog.netlify.app/' + locale + route;
+    // A single-locale Docusaurus build is mounted at /, not /<locale>/.
+    // The full multi-locale production build owns locale-prefixed canonicals.
+    const expectedCanonical = 'https://sails-protocol-blog.netlify.app' + route;
     if (!hasCanonicalUrl(html, expectedCanonical)) {
       console.error('Localized article canonical mismatch:', locale, path, expectedCanonical, 'actual:', [...html.matchAll(/<link\b[^>]*rel="canonical"[^>]*>/g)].map(m => m[0]));
       failed = true;
@@ -127,7 +129,7 @@ for (const page of ['build/index.html', 'build/seasons/index.html']) {
   if (!existsSync(page)) continue; // Already reported by the required-page checks.
   const html = readFileSync(page, 'utf8');
   const route = page === 'build/index.html' ? '/' : '/seasons/';
-  const canonical = 'https://sails-protocol-blog.netlify.app/' + locale + route;
+  const canonical = 'https://sails-protocol-blog.netlify.app' + route;
   if (!hasCanonicalUrl(html, canonical)) {
     console.error('Missing or incorrect custom page canonical:', locale, page, canonical, 'actual:', [...html.matchAll(/<link\b[^>]*rel="canonical"[^>]*>/g)].map(m => m[0]));
     failed = true;
