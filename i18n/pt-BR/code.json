@@ -182,5 +182,9 @@
   "journal.seasonsHeading": {
     "message": "Temporadas",
     "description": "Seasons"
+  },
+  "journal.latestKicker": {
+    "message": "SAILS / DIÁRIO",
+    "description": "SAILS / JOURNAL"
   }
 }
