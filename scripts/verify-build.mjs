@@ -104,6 +104,24 @@ if (fullMultiLocaleBuild && existsSync('src/generated/articles.json')) {
     }
   }
 }
+// Combined builds must also expose exact canonical URLs on localized custom pages.
+// Article routes are checked above; homepage and Seasons are separate routes.
+if (fullMultiLocaleBuild) {
+  for (const prefix of ['', 'pt-BR/', 'es/']) {
+    for (const route of ['', 'seasons/']) {
+      const file = 'build/' + prefix + route + 'index.html';
+      if (!existsSync(file)) { console.error('MISSING custom canonical route:', file); failed = true; continue; }
+      const html = readFileSync(file, 'utf8');
+      const canonical = 'https://sails-protocol-blog.netlify.app/' + prefix + route;
+      const links = [...html.matchAll(/<link\\b[^>]*>/g)];
+      const matches = links.some(([tag]) => {
+        const attrs = Object.fromEntries([...tag.matchAll(/([\\w-]+)="([^"]*)"/g)].map(([, key, value]) => [key, value]));
+        return attrs.rel === 'canonical' && attrs.href === canonical;
+      });
+      if (!matches) { console.error('Custom page canonical mismatch:', file, canonical); failed = true; }
+    }
+  }
+}
 // RSS and Atom must carry the explicit editorial description, not the
 // Docusaurus fallback \"Sails Protocol Blog Blog\".
 const feedDescription = 'Engineering notes on open P2P infrastructure';
