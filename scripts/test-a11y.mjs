@@ -5,7 +5,7 @@ const browser = await chromium.launch({headless: true});
 let failed = false;
 try {
   for (const viewport of [{width: 1280, height: 800}, {width: 390, height: 844}]) {
-  for (const route of ['/', '/articles/', '/articles/what-is-sails-protocol']) {
+  for (const route of ['/', '/seasons/', '/articles/', '/articles/what-is-sails-protocol']) {
   for (const colorScheme of ['light', 'dark']) {
     const context = await browser.newContext({viewport, colorScheme, reducedMotion: 'reduce'});
     const page = await context.newPage();
