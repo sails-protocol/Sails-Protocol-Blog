@@ -72,3 +72,18 @@ This checkpoint supersedes the **historical** PR ledger above for operational de
 - PR #23 merged `6a2d3c882ff72f7b52466dada080539897c39066`; PR #26 merged `42d92b66d05ee838941273254b53adb4da88cea3`, deployed ready at Netlify deploy `6acc54db16099a000844d1f0`.
 - PR #27 merged `03f56ca704fb2db9e753ca87029a84fa4b7bd15c`: owner-approved 25-gate weighted readiness contract and conservative evidence ledger. Production subsequently independently verified ready at Netlify deploy `6acc5631104cd90008479406`, published `2026-10-12T03:38:51.494Z` at that exact SHA.
 - **Current north:** independently verify exact main production SHA; audit EN/PT-BR/ES routes, SEO, browser/device accessibility and editorial claims; record PASS only with direct evidence. Keep Day 0 144-edition acceptance separate from operational readiness. No material finding under the rug.
+
+## Current integration checkpoint | 2026-10-12 UTC (post PR #37)
+
+This section supersedes older operational snapshots above without deleting history.
+
+- Latest verified merged main SHA: `e469cc4fdac49fa939133fce6af441a6e0ffc193` (PR #37). PR #37 exact-head `429e10bd9d5a789dff34bc791acf37844f7bbe0b` had 3/3 GitHub workflows PASS before squash merge.
+- PR #32 merged `db711ce449b7207694d30d3bd4a66535d64bfd0a`: homepage and Seasons static UI EN/PT-BR/ES localization.
+- PR #34 merged `656c11decb314900d694f64682f4267645559d6d`: CI assertions for localized custom-page HTML.
+- PR #35 merged `7e61625aba2f7d8c39d5c0536cc9ea929ac766c9`: fixed Seasons fragment and localized search empty state.
+- PR #36 merged `53ced5b367e443cb440abed276da17037b9aa201`: release ledger distinguishes historical deploy from current-main readiness.
+- PR #37 merged `e469cc4fdac49fa939133fce6af441a6e0ffc193`: slug-keyed article metadata translations for ten published articles in PT-BR/ES across homepage cards, Seasons and search. Native editorial language review is not automatically satisfied by passing CI.
+- **Netlify production remains behind**: last independently observed production deploy `6acc5631104cd90008479406`, state ready, commit `03f56ca704fb2db9e753ca87029a84fa4b7bd15c`. This is not current main. Issue #29 is still the deployment/live QA blocker. The available Netlify connector exposes deploy reads but no deploy-trigger action; do not invent a production update.
+- Issue #33 source implementation is in PR #37, but closure requires native-language/editorial signoff and a deployed verification pass. Avoid declaring L5 PASS from code-only checks.
+- **Current-release evidence score: 16% conservative**, based on I2 and G1–G4, versus 20% historical evidence including stale I3. Do not claim 100% or grant other gates without new production/editorial evidence.
+- Immediate next steps: resolve Netlify build/deploy integration, verify published exact SHA and EN/PT-BR/ES browser/SEO route matrix, obtain native-language signoff, then recompute the 25-gate weighted release score.
