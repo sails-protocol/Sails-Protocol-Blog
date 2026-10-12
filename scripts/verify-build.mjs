@@ -91,7 +91,7 @@ if (fullMultiLocaleBuild && existsSync('src/generated/articles.json')) {
   for (const [prefix, sitemapFile] of [['', 'build/sitemap.xml'], ['pt-BR/', 'build/pt-BR/sitemap.xml'], ['es/', 'build/es/sitemap.xml']]) {
     const sitemap = existsSync(sitemapFile) ? readFileSync(sitemapFile, 'utf8') : '';
     if (!sitemap) { console.error('MISSING sitemap:', sitemapFile); failed = true; }
-    for (const article of catalogue.filter(a => a.slug.startsWith('season-2-'))) {
+    for (const article of catalogue) {
       const file = 'build/' + prefix + 'articles/' + article.slug + '/index.html';
       if (!existsSync(file)) { console.error('MISSING article route:', file); failed = true; continue; }
       const html = readFileSync(file, 'utf8');
