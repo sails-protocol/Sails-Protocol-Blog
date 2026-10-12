@@ -42,6 +42,22 @@ for (const {prefix, home, seasons} of localeChecks) {
     }
   }
 }
+// Locale-specific article metadata must render in both the featured list and
+// Season 02 outline, not only in article pages.
+for (const [locale, title] of [
+  ['pt-BR', 'Por que o Sails Protocol chega no momento certo'],
+  ['es', 'Por qué Sails Protocol llega en el momento adecuado'],
+]) {
+  const home = 'build/' + locale + '/index.html';
+  const seasons = 'build/' + locale + '/seasons/index.html';
+  if (!existsSync(home) && !existsSync(seasons)) continue;
+  for (const file of [home, seasons]) {
+    if (!existsSync(file) || !readFileSync(file, 'utf8').includes(title)) {
+      console.error('Localized article metadata missing:', file, title);
+      failed = true;
+    }
+  }
+}
 if (existsSync('build/sitemap.xml')) {
   const sitemap = readFileSync('build/sitemap.xml', 'utf8');
   for (const route of ['/articles/', '/articles/what-is-sails-protocol/']) {
