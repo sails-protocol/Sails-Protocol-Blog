@@ -11,10 +11,10 @@ if (!Object.hasOwn(expected, locale)) {
 }
 let failed = false;
 for (const [path, snippets] of [
-  [`build/${locale}/index.html`, [expected[locale].headline, expected[locale].title]],
-  [`build/${locale}/seasons/index.html`, [expected[locale].season, expected[locale].title]],
-  [`build/${locale}/articles/season-2-01-why-sails-arrives-now/index.html`, []],
-  [`build/${locale}/sitemap.xml`, ['/articles/season-2-01-why-sails-arrives-now/']],
+  [`build/index.html`, [expected[locale].headline, expected[locale].title]],
+  [`build/seasons/index.html`, [expected[locale].season, expected[locale].title]],
+  [`build/articles/season-2-01-why-sails-arrives-now/index.html`, []],
+  [`build/sitemap.xml`, ['/articles/season-2-01-why-sails-arrives-now/']],
 ]) {
   if (!existsSync(path)) {
     console.error('Missing locale output:', path);
