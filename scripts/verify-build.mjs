@@ -113,9 +113,9 @@ if (fullMultiLocaleBuild) {
       if (!existsSync(file)) { console.error('MISSING custom canonical route:', file); failed = true; continue; }
       const html = readFileSync(file, 'utf8');
       const canonical = 'https://sails-protocol-blog.netlify.app/' + prefix + route;
-      const links = [...html.matchAll(/<link\\b[^>]*>/g)];
+      const links = [...html.matchAll(/<link\b[^>]*>/g)];
       const matches = links.some(([tag]) => {
-        const attrs = Object.fromEntries([...tag.matchAll(/([\\w-]+)="([^"]*)"/g)].map(([, key, value]) => [key, value]));
+        const attrs = Object.fromEntries([...tag.matchAll(/([\w-]+)="([^"]*)"/g)].map(([, key, value]) => [key, value]));
         return attrs.rel === 'canonical' && attrs.href === canonical;
       });
       if (!matches) { console.error('Custom page canonical mismatch:', file, canonical); failed = true; }
