@@ -61,5 +61,16 @@ for (const article of catalogue.filter(item => item.slug.startsWith('season-2-')
     failed = true;
   }
 }
+// The published introduction is outside Season 02 and needs the same SEO protections.
+const intro = 'build/articles/what-is-sails-protocol/index.html';
+if (existsSync(intro)) {
+  const html = readFileSync(intro, 'utf8');
+  for (const marker of ['rel="canonical"', 'hreflang=']) {
+    if (!html.includes(marker)) {
+      console.error('Missing introduction SEO marker:', locale, marker);
+      failed = true;
+    }
+  }
+}
 if (failed) process.exit(1);
 console.log(`Locale ${locale} output checks passed.`);
