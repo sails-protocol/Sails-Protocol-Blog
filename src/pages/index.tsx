@@ -1,6 +1,6 @@
 import Translate, {translate} from '@docusaurus/Translate';
 import React, {useMemo, useState} from 'react';
-import articles from '../generated/articles.json';
+import {getLocalizedArticles} from '../utils/localizedArticles';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 
@@ -15,6 +15,7 @@ const articleArtwork: Record<string, string> = {
 
 export default function Home(): React.JSX.Element {
   const [query, setQuery] = useState('');
+  const articles = getLocalizedArticles();
   const results = useMemo(() => {
     const needle = query.trim().toLowerCase();
     if (!needle) return [];
