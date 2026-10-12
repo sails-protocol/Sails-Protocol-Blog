@@ -32,7 +32,7 @@ export default function Seasons(): React.JSX.Element {
           <p className="sails-kicker"><Translate id="seasons.kicker">GUIDED READING</Translate></p>
           <h1><Translate id="seasons.title">Reading collections</Translate></h1>
           <p className="sails-lead"><Translate id="seasons.lead">Explore published work on the architecture, economic boundaries and open-market context of Sails Protocol. Future editorial plans are not listed as published articles.</Translate></p>
-          <Link className="sails-primary-link" to="/articles">Explore published articles <span aria-hidden="true">→</span></Link>
+          <Link className="sails-primary-link" to="/articles"><Translate id="seasons.explore">Explore published articles</Translate> <span aria-hidden="true">→</span></Link>
         </header>
         <section className="sails-section" id="season-02" aria-labelledby="season-02-heading">
           <p className="sails-kicker"><Translate id="seasons.count">SEASON 02 · 9 PUBLISHED ARTICLES</Translate></p>
