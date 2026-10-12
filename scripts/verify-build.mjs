@@ -95,8 +95,13 @@ if (fullMultiLocaleBuild && existsSync('src/generated/articles.json')) {
       const file = 'build/' + prefix + 'articles/' + article.slug + '/index.html';
       if (!existsSync(file)) { console.error('MISSING article route:', file); failed = true; continue; }
       const html = readFileSync(file, 'utf8');
-      if (!html.includes('rel="canonical" href="https://sails-protocol-blog.netlify.app/' + prefix + 'articles/' + article.slug + '/"')) {
-        console.error('Canonical mismatch:', file); failed = true;
+      const expectedCanonical = 'https://sails-protocol-blog.netlify.app/' + prefix + 'articles/' + article.slug + '/';
+      const canonicalTags = [...html.matchAll(/<link\b[^>]*>/g)]
+        .map(([tag]) => Object.fromEntries([...tag.matchAll(/([\w-]+)="([^"]*)"/g)].map(([, key, value]) => [key, value])))
+        .filter(attrs => attrs.rel === 'canonical');
+      if (canonicalTags.length !== 1 || canonicalTags[0].href !== expectedCanonical) {
+        console.error('Article canonical mismatch or duplicate:', file, expectedCanonical, canonicalTags);
+        failed = true;
       }
       if (sitemap && !sitemap.includes('/' + prefix + 'articles/' + article.slug + '/')) {
         console.error('Not in sitemap:', file); failed = true;
