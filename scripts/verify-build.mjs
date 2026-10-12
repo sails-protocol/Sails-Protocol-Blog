@@ -19,7 +19,7 @@ for (const [name, file] of expected) {
 }
 if (existsSync('build/index.html')) {
   const html = readFileSync('build/index.html', 'utf8');
-  if (!html.includes('Building open P2P infrastructure')) {
+  if (!html.includes('Building open P2P infrastructure') && !html.includes('Construyendo infraestructura P2P abierta') && !html.includes('Construindo infraestrutura P2P aberta')) {
     console.error('Homepage content missing');
     failed = true;
   }
