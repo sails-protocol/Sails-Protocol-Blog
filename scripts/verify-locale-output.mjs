@@ -41,7 +41,7 @@ for (const article of catalogue) {
     failed = true;
   } else {
     const html = readFileSync(path, 'utf8');
-    const expectedCanonical = 'rel="canonical" href="https://sails-protocol-blog.netlify.app/' + locale + route.slice(1) + '"';
+    const expectedCanonical = 'rel="canonical" href="https://sails-protocol-blog.netlify.app/' + locale + route + '"';
     if (!html.includes(expectedCanonical)) {
       console.error('Localized article canonical mismatch:', locale, path, expectedCanonical);
       failed = true;
