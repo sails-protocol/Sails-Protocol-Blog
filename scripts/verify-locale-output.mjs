@@ -29,11 +29,11 @@ for (const [path, snippets] of [
     }
   }
 }
-// Verify every published Season 02 route, not only the first one.
+// Verify every published article route, including the introduction.
 // The catalogue is the authoritative list of published slugs.
 const catalogue = JSON.parse(readFileSync('src/generated/articles.json', 'utf8'));
 const sitemap = existsSync('build/sitemap.xml') ? readFileSync('build/sitemap.xml', 'utf8') : '';
-for (const article of catalogue.filter(item => item.slug.startsWith('season-2-'))) {
+for (const article of catalogue) {
   const route = '/articles/' + article.slug + '/';
   const path = 'build' + route + 'index.html';
   if (!existsSync(path)) {
@@ -50,7 +50,7 @@ for (const article of catalogue.filter(item => item.slug.startsWith('season-2-')
       failed = true;
     }
   }
-  for (const listing of ['build/seasons/index.html']) {
+  for (const listing of article.slug.startsWith('season-2-') ? ['build/seasons/index.html'] : ['build/index.html']) {
     if (!existsSync(listing) || !readFileSync(listing, 'utf8').includes(route)) {
       console.error('Missing article link in localized listing:', locale, listing, route);
       failed = true;
