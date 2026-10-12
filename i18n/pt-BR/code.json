@@ -1,0 +1,182 @@
+{
+  "journal.title": {
+    "message": "Diário de engenharia",
+    "description": "Engineering journal"
+  },
+  "journal.description": {
+    "message": "Uma jornada de aprendizado pela engenharia do Sails Protocol",
+    "description": "A connected learning journey through Sails Protocol engineering"
+  },
+  "journal.kicker": {
+    "message": "SAILS / DIÁRIO DE ENGENHARIA",
+    "description": "SAILS / ENGINEERING JOURNAL"
+  },
+  "journal.subtitle": {
+    "message": "Protocolo de coordenação econômica para construir mercados financeiros P2P interoperáveis.",
+    "description": "Economic Coordination Protocol for building interoperable P2P financial marketplaces."
+  },
+  "journal.statement": {
+    "message": "Construindo infraestrutura P2P aberta.",
+    "description": "Building open P2P infrastructure."
+  },
+  "journal.lead": {
+    "message": "Explore as ideias, decisões de projeto e evidências por trás da coordenação econômica P2P aberta.",
+    "description": "Explore the ideas, design decisions and evidence behind open P2P economic coordination."
+  },
+  "journal.explore": {
+    "message": "Explorar artigos",
+    "description": "Explore articles"
+  },
+  "journal.seasons": {
+    "message": "Ver temporadas",
+    "description": "View seasons"
+  },
+  "journal.collections": {
+    "message": "COLEÇÕES DE LEITURA",
+    "description": "READING COLLECTIONS"
+  },
+  "journal.collectionsLead": {
+    "message": "Uma experiência de leitura estruturada. Explore os temas do Sails Protocol em artigos selecionados.",
+    "description": "A structured reading experience. Explore the themes behind Sails Protocol through curated articles."
+  },
+  "journal.allSeasons": {
+    "message": "Ver todas as temporadas →",
+    "description": "View all seasons →"
+  },
+  "journal.intro": {
+    "message": "INTRODUÇÃO",
+    "description": "INTRODUCTION"
+  },
+  "journal.what": {
+    "message": "O que é o Sails Protocol?",
+    "description": "What is Sails Protocol?"
+  },
+  "journal.whatLead": {
+    "message": "Comece pelo propósito, arquitetura e visão de mercados financeiros P2P interoperáveis.",
+    "description": "Start with the purpose, architecture and vision for interoperable P2P financial marketplaces."
+  },
+  "journal.publishedIntro": {
+    "message": "Introdução publicada",
+    "description": "Published introduction"
+  },
+  "journal.read": {
+    "message": "Ler artigo →",
+    "description": "Read article →"
+  },
+  "journal.season02": {
+    "message": "TEMPORADA 02 · PUBLICADA",
+    "description": "SEASON 02 · PUBLISHED"
+  },
+  "journal.custody": {
+    "message": "Custódia, regulação e mercados P2P abertos",
+    "description": "Custody, Regulation and Open P2P Markets"
+  },
+  "journal.custodyLead": {
+    "message": "Regulação, custódia, infraestrutura de mercado e a transição para mercados financeiros abertos.",
+    "description": "Regulation, custody, market infrastructure and the shift toward open financial marketplaces."
+  },
+  "journal.nine": {
+    "message": "9 artigos",
+    "description": "9 articles"
+  },
+  "journal.readSeason": {
+    "message": "Ler temporada →",
+    "description": "Read season →"
+  },
+  "journal.curated": {
+    "message": "LEITURA SELECIONADA · PUBLICADA",
+    "description": "CURATED READING · PUBLISHED"
+  },
+  "journal.software": {
+    "message": "Software, custódia e responsabilidade",
+    "description": "Software, Custody and Responsibility"
+  },
+  "journal.softwareLead": {
+    "message": "Explore os limites entre desenvolver software financeiro, controlar ativos e operar mercados abertos.",
+    "description": "Explore the boundaries between building financial software, controlling assets and operating open markets."
+  },
+  "journal.published": {
+    "message": "Artigo publicado",
+    "description": "Published article"
+  },
+  "journal.stablecoins": {
+    "message": "Stablecoins e mercados abertos",
+    "description": "Stablecoins and Open Marketplaces"
+  },
+  "journal.stablecoinsLead": {
+    "message": "Entenda como stablecoins, meios de pagamento e interfaces interoperáveis moldam a infraestrutura dos mercados P2P.",
+    "description": "Understand how stablecoins, payment rails and interoperable interfaces shape P2P market infrastructure."
+  },
+  "journal.content": {
+    "message": "CONTEÚDO PUBLICADO",
+    "description": "PUBLISHED CONTENT"
+  },
+  "journal.featured": {
+    "message": "Artigos em destaque",
+    "description": "Featured articles"
+  },
+  "journal.featuredLead": {
+    "message": "Perspectivas publicadas sobre mercados P2P abertos, custódia, regulação e coordenação econômica.",
+    "description": "Published perspectives on open P2P markets, custody, regulation and economic coordination."
+  },
+  "journal.allArticles": {
+    "message": "Ver todos os artigos →",
+    "description": "View all articles →"
+  },
+  "journal.find": {
+    "message": "Encontre um artigo",
+    "description": "Find an article"
+  },
+  "journal.search": {
+    "message": "Buscar artigos",
+    "description": "Search articles"
+  },
+  "journal.searchLabel": {
+    "message": "Buscar artigos publicados",
+    "description": "Search published articles"
+  },
+  "journal.searchPlaceholder": {
+    "message": "Buscar artigos publicados...",
+    "description": "Search published articles..."
+  },
+  "journal.found": {
+    "message": "artigos publicados encontrados",
+    "description": "published articles found"
+  },
+  "journal.none": {
+    "message": "Nenhum artigo publicado encontrado.",
+    "description": "No published articles found."
+  },
+  "seasons.title": {
+    "message": "Coleções de leitura",
+    "description": "Reading collections"
+  },
+  "seasons.description": {
+    "message": "Percursos de leitura publicados sobre as ideias e a engenharia do Sails Protocol",
+    "description": "Published reading paths through Sails Protocol ideas and engineering"
+  },
+  "seasons.kicker": {
+    "message": "LEITURA GUIADA",
+    "description": "GUIDED READING"
+  },
+  "seasons.lead": {
+    "message": "Explore textos publicados sobre a arquitetura, os limites econômicos e o contexto dos mercados abertos do Sails Protocol. Planos editoriais futuros não aparecem como artigos publicados.",
+    "description": "Explore published work on the architecture, economic boundaries and open-market context of Sails Protocol. Future editorial plans are not listed as published articles."
+  },
+  "seasons.explore": {
+    "message": "Explorar artigos publicados",
+    "description": "Explore published articles"
+  },
+  "seasons.count": {
+    "message": "TEMPORADA 02 · 9 ARTIGOS PUBLICADOS",
+    "description": "SEASON 02 · 9 PUBLISHED ARTICLES"
+  },
+  "seasons.lead02": {
+    "message": "Por que a coordenação econômica aberta importa, como software e custódia se diferenciam e o que as mudanças no mercado significam para a infraestrutura P2P.",
+    "description": "Why open economic coordination matters, how software and custody differ, and what changing market structures mean for P2P infrastructure."
+  },
+  "seasons.published": {
+    "message": "Publicado",
+    "description": "Published"
+  }
+}
