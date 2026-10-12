@@ -90,9 +90,8 @@ for (const article of catalogue) {
   // This catches accidental loss of localized navigation while preserving the existing title check.
   if (article.slug.startsWith('season-2-') && existsSync('build/seasons/index.html')) {
     const html = readFileSync('build/seasons/index.html', 'utf8');
-    const escapedTitle = title.replace(/[.*+?^${}()|[\]\\]/g, '\\  const listing = article.slug.startsWith('season-2-') ? 'build/seasons/index.html' : 'build/index.html';');
-    const escapedRoute = ('/articles/' + article.slug + '/').replace(/[.*+?^${}()|[\]\\]/g, '\\  const listing = article.slug.startsWith('season-2-') ? 'build/seasons/index.html' : 'build/index.html';');
-    if (!new RegExp('<a\\b[^>]*href="' + escapedRoute + '"[^>]*>\\s*' + escapedTitle + '\\s*</a>').test(html)) {
+    const articleLink = '<a href="/articles/' + article.slug + '/">' + title + '</a>';
+    if (!html.includes(articleLink)) {
       console.error('Localized Season 02 title missing from article link:', locale, article.slug);
       failed = true;
     }
