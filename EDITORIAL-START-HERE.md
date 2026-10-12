@@ -1,5 +1,20 @@
 # Editorial continuity: start here
 
+> **CURRENT ONBOARDING NOTICE (2026-10-12):** This document preserves the editorial project's historical decisions and drafting log. Some sections below refer to old branches, PR #1, previous homepage structures or draft counts and must **not** be treated as live operational state. New AI sessions and contributors must first read [AGENTS.md](./AGENTS.md) for permanent operating rules and [BLOG-CURRENT-STATE.md](./BLOG-CURRENT-STATE.md) for the latest documented snapshot, then verify GitHub/CI/Netlify directly. Neither document grants publication or merge authority.
+
+## Start a new CTO / AI session here
+
+1. Read [AGENTS.md](./AGENTS.md) and [BLOG-CURRENT-STATE.md](./BLOG-CURRENT-STATE.md).
+2. Read the editorial DNA, voice, policy, reading paths, visual standards, backlog and evidence audits linked below.
+3. Inspect live `main`, PRs, exact-head workflows and production before acting. The current-state snapshot may already be stale.
+4. Separate **published content**, **unapproved draft inventory** and **future capabilities**.
+5. Work in an isolated branch; report concrete commits, gates and material findings. Do not merge or publish without authorization.
+
+**Historical log follows.** Its older branch and progress statements are retained for provenance, not as current instructions.
+
+---
+
+
 **Status:** institutional handoff for editorial work on the Sails Protocol Blog. This is not permission to merge or publish.
 
 ## Where to work
