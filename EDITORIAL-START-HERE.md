@@ -25,6 +25,11 @@
 
 ---
 
+
+## Institutional consolidation note (2026-10-12)
+
+This onboarding update consolidates the institutional handoff proposals in PRs #15–#18 into one canonical document set. `AGENTS.md` is the permanent operating contract; `BLOG-CURRENT-STATE.md` is a dated, non-live snapshot; this document preserves the original editorial handoff and historical decisions below. The public Season 02 and the planned seven-season editorial backlog use different taxonomies. Check current GitHub and Netlify before acting. No document grants merge or publication permission.
+
 ## Archived editorial handoff (retained for provenance)
 
 The following material is preserved verbatim from the earlier handoff. It describes earlier working branches, PRs and drafting stages. **Do not treat it as a current operational status.**
