@@ -190,5 +190,65 @@
   "journal.noResults": {
     "message": "Nenhum artigo publicado encontrado.",
     "description": "No published articles found."
+  },
+  "article.season-2-01-why-sails-arrives-now.title": {
+    "message": "Por que o Sails Protocol chega no momento certo"
+  },
+  "article.season-2-01-why-sails-arrives-now.description": {
+    "message": "Um mercado pode se tornar mais regulado e menos acessível ao mesmo tempo."
+  },
+  "article.season-2-02-software-is-not-custody.title": {
+    "message": "Software não é custódia"
+  },
+  "article.season-2-02-software-is-not-custody.description": {
+    "message": "A FinCEN afirmou na FIN-2014-R002 que produzir e distribuir software, por si só, não constitui transmissão de dinheiro."
+  },
+  "article.season-2-03-tornado-cash-turning-point.title": {
+    "message": "O ponto de virada do Tornado Cash"
+  },
+  "article.season-2-03-tornado-cash-turning-point.description": {
+    "message": "O litígio envolvendo o Tornado Cash mudou uma parte importante do debate sobre contratos inteligentes imutáveis."
+  },
+  "article.season-2-04-hidden-cost-gatekeepers.title": {
+    "message": "O custo oculto dos intermediários financeiros"
+  },
+  "article.season-2-04-hidden-cost-gatekeepers.description": {
+    "message": "A conformidade regulatória não é necessariamente inimiga da inovação. Proteções contra fraude, uso indevido e insolvência importam."
+  },
+  "article.season-2-05-noncustodial-business-model.title": {
+    "message": "O modelo de negócios não custodial"
+  },
+  "article.season-2-05-noncustodial-business-model.description": {
+    "message": "Durante anos, os modelos de negócios de carteiras dependeram frequentemente de custódia, spreads ou acesso privilegiado ao fluxo de ordens."
+  },
+  "article.season-2-06-stablecoins-open-marketplaces.title": {
+    "message": "Stablecoins precisam de mercados abertos"
+  },
+  "article.season-2-06-stablecoins-open-marketplaces.description": {
+    "message": "As stablecoins facilitaram a denominação e a transferência de valor digital, mas não eliminaram a dependência de emissores, redes ou canais de distribuição."
+  },
+  "article.season-2-07-one-market-many-interfaces.title": {
+    "message": "Um mercado, muitas interfaces"
+  },
+  "article.season-2-07-one-market-many-interfaces.description": {
+    "message": "Uma carteira, um terminal web e um aplicativo de terceiros não deveriam precisar criar seus próprios mercados isolados."
+  },
+  "article.season-2-08-economic-coordination-protocol.title": {
+    "message": "O protocolo de coordenação econômica"
+  },
+  "article.season-2-08-economic-coordination-protocol.description": {
+    "message": "O Sails não está sendo projetado como outra exchange. Sua proposta é um protocolo de coordenação econômica para construir mercados financeiros P2P interoperáveis."
+  },
+  "article.season-2-09-decripto-brazil-market-shift.title": {
+    "message": "O efeito DeCripto: as mudanças no mercado brasileiro de corretoras de criptoativos"
+  },
+  "article.season-2-09-decripto-brazil-market-shift.description": {
+    "message": "Durante anos, o debate sobre a regulação de criptoativos no Brasil se concentrou numa suposta escolha entre inovação e proteção do consumidor."
+  },
+  "article.what-is-sails-protocol.title": {
+    "message": "O que é o Sails Protocol?"
+  },
+  "article.what-is-sails-protocol.description": {
+    "message": "Uma introdução conceitual ao Sails Protocol e ao seu lugar no ecossistema P2P aberto."
   }
 }
