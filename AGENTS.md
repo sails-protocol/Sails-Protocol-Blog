@@ -53,3 +53,11 @@ Evidence labels must distinguish concept, proposal, approved policy, implementat
 - [Seasons and reading paths](./EDITORIAL-SEASONS-AND-READING-PATHS.md)
 - [Visual standards](./EDITORIAL-VISUAL-STANDARDS.md)
 - [Day 0 master backlog](./EDITORIAL-DAY0-MASTER-BACKLOG.md)
+
+## Canonical product taxonomy and browser evidence
+
+- Sails Protocol is the protocol; Sails P2P Trading SDK is an SDK product; Sails Core is the semantic core; Sails Node is a node implementation; Sails Market is an application. Satsails Wallet and external integrations are separate products/services. Never present an integration as native protocol functionality without evidence.
+- WebMCP article discovery is read-only. Native browser API behavior requires real browser verification; mocked checks do not prove browser support.
+- Keep RSS/Atom, canonical/hreflang, localized navigation, search, contrast, keyboard access, Mermaid and responsive behavior covered by applicable checks.
+- Before editing, read `README-IMPLEMENTATION.md`, `CONTRIBUTING.md`, relevant CI workflows, `EDITORIAL-DAY0-EVIDENCE-AUDIT.md` and material residuals when the task touches those areas.
+- Concurrent documentation PRs #16, #17 and #18 were reviewed as alternatives to #15. Consolidate useful requirements into one canonical PR; do not merge competing copies.
