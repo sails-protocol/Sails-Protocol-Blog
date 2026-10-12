@@ -32,3 +32,12 @@ A global completion percentage is **NOT DETERMINED** until the owner/CTO approve
 5. Recompute the scorecard after every merge, deploy, editorial approval or scope change. Historical evidence stays immutable.
 
 **NO MATERIAL FINDING UNDER THE RUG.**
+
+## Verified checkpoint | 2026-10-12 UTC (supersedes stale status above, does not erase history)
+
+- **F-002 RESOLVED:** PR #22 replaced stale PR #14 on current main; its exact HEAD `7a353406c3b245ad5b1299472a05d18029c9bbb4` passed Validate Blog, isolated preview artifact, and browser accessibility audit. Nine Season 02 slugs verified present in the generated catalogue; PR #22 merged as `d2d655c5f408ae931b2739c124e6cfeddd4f23d8`. PR #14 closed without merge. This does not prove every localized production route.
+- **F-003 PARTIAL:** Netlify production deploy `6acc4a3d7ca32e00089ce3f5` confirmed ready at `940793b0b1b5e81477f6a3e40124bbf4dc406b0a` (four Seasons cards). A subsequent production deploy `6acc4a755ecf2200084ed982` confirmed ready at `f315850154eda0db3ca8b2825284b83d4f895ecd` (scorecard). Production for PR #22's merge SHA and multilingual/browser matrix remains NOT VERIFIED at this checkpoint.
+- **F-007 OPEN | Artwork provenance conflict:** `src/pages/index.tsx` currently uses `sails-earth-horizon-hero.webp` in the Introduction Seasons card although `static/img/editorial/SOURCES.md` reserves that asset for the homepage hero. Resolve with a separate approved introduction illustration, preserving four cards, before marking visual governance PASS.
+- **F-001 PARTIAL:** `BLOG-CURRENT-STATE.md` contains a dated historic snapshot and a post-merge checkpoint, but its integration ledger still describes PR #14 as open. Refresh the current ledger through review without deleting historic evidence.
+
+**Global percentage remains NOT DETERMINED.** These findings do not constitute acceptance of Day 0 editorial editions, real-browser WebMCP, or all locale/responsive gates.
