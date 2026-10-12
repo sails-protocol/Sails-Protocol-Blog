@@ -65,6 +65,12 @@ for (const article of catalogue) {
 // Translation keys are immutable slug-based identifiers, not catalogue indices.
 const translations = JSON.parse(readFileSync('i18n/' + locale + '/code.json', 'utf8'));
 for (const article of catalogue) {
+  const descriptionKey = 'article.' + article.slug + '.description';
+  const description = translations[descriptionKey]?.message;
+  if (typeof description !== 'string' || !description.trim()) {
+    console.error('Missing localized article description translation:', locale, descriptionKey);
+    failed = true;
+  }
   const key = 'article.' + article.slug + '.title';
   const title = translations[key]?.message;
   if (typeof title !== 'string' || !title.trim()) {
