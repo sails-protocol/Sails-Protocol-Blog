@@ -39,6 +39,16 @@ for (const article of catalogue.filter(item => item.slug.startsWith('season-2-')
   if (!existsSync(path)) {
     console.error('Missing published article:', locale, path);
     failed = true;
+  } else {
+    const html = readFileSync(path, 'utf8');
+    if (!html.includes('rel="canonical"')) {
+      console.error('Missing canonical link:', locale, path);
+      failed = true;
+    }
+    if (!html.includes('hreflang=')) {
+      console.error('Missing hreflang alternate:', locale, path);
+      failed = true;
+    }
   }
   if (!sitemap.includes(route)) {
     console.error('Missing published sitemap route:', locale, route);
