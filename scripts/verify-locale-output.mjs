@@ -13,8 +13,8 @@ let failed = false;
 // Parse the canonical link independently of attribute order, as Docusaurus
 // may serialize href before rel in generated HTML.
 function hasCanonicalUrl(html, url) {
-  return /<link\\b[^>]*>/g.test(html) && [...html.matchAll(/<link\\b[^>]*>/g)].some(([tag]) => {
-    const attrs = Object.fromEntries([...tag.matchAll(/([\\w-]+)="([^"]*)"/g)].map(([, key, value]) => [key, value]));
+  return /<link\b[^>]*>/g.test(html) && [...html.matchAll(/<link\b[^>]*>/g)].some(([tag]) => {
+    const attrs = Object.fromEntries([...tag.matchAll(/([\w-]+)="([^"]*)"/g)].map(([, key, value]) => [key, value]));
     return attrs.rel === 'canonical' && attrs.href === url;
   });
 }
