@@ -178,5 +178,9 @@
   "seasons.published": {
     "message": "Publicado",
     "description": "Published"
+  },
+  "journal.seasonsHeading": {
+    "message": "Temporadas",
+    "description": "Seasons"
   }
 }
