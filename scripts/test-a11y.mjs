@@ -1,11 +1,13 @@
 import {chromium} from 'playwright';
 import AxeBuilder from '@axe-core/playwright';
+import {readFileSync} from 'node:fs';
 const base = process.env.A11Y_BASE_URL || 'http://127.0.0.1:3000';
+const publishedRoutes = JSON.parse(readFileSync('src/generated/articles.json', 'utf8')).map(article => '/articles/' + article.slug + '/');
 const browser = await chromium.launch({headless: true});
 let failed = false;
 try {
   for (const viewport of [{width: 1280, height: 800}, {width: 768, height: 1024}, {width: 390, height: 844}]) {
-  for (const route of ['/', '/seasons/', '/articles/', '/articles/what-is-sails-protocol', '/articles/season-2-01-why-sails-arrives-now/']) {
+  for (const route of ['/', '/seasons/', '/articles/', ...publishedRoutes]) {
   for (const colorScheme of ['light', 'dark']) {
     const context = await browser.newContext({viewport, colorScheme, reducedMotion: 'reduce'});
     const page = await context.newPage();
