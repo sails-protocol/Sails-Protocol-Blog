@@ -6,7 +6,7 @@ Issue: https://github.com/sails-protocol/Sails-Protocol-Blog/issues/12
 
 - `sails-earth-horizon-hero.webp` (1600 × 900, approximately 216 KiB)
 
-The hero image was generated specifically for the Sails Protocol Blog using OpenAI image generation, then resized and encoded as WebP. It is **illustrative, not authentic NASA photographs**. Do not label them as NASA photography or imply they are a factual satellite capture.
+The hero image was generated specifically for the Sails Protocol Blog using OpenAI image generation, then resized and encoded as WebP. It is **illustrative, not an authentic NASA photograph**. Do not label it as NASA photography or imply it is a factual satellite capture.
 
 ## Required release sequence
 
