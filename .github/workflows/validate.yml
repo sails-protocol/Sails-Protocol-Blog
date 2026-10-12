@@ -41,6 +41,12 @@ jobs:
           SITE_URL: https://sails-protocol-blog.netlify.app
       - name: Verify generated routes and assets
         run: node scripts/verify-build.mjs
+      - name: Build all locales together
+        run: npm run build
+        env:
+          SITE_URL: https://sails-protocol-blog.netlify.app
+      - name: Verify combined locale routes and canonical URLs
+        run: node scripts/verify-build.mjs --require-all-locales
       - name: Build Portuguese locale
         run: npm run build -- --locale pt-BR
         env:
