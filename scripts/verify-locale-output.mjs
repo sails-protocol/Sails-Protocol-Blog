@@ -71,6 +71,13 @@ for (const article of catalogue) {
     console.error('Missing localized article description translation:', locale, descriptionKey);
     failed = true;
   }
+  // The introduction card is always on the homepage. Verify that the translated
+  // description is actually rendered, not merely present in the locale catalogue.
+  if (article.slug === 'what-is-sails-protocol' && existsSync('build/index.html') &&
+      !readFileSync('build/index.html', 'utf8').includes(description)) {
+    console.error('Localized introduction description not rendered:', locale, descriptionKey);
+    failed = true;
+  }
   const key = 'article.' + article.slug + '.title';
   const title = translations[key]?.message;
   if (typeof title !== 'string' || !title.trim()) {
