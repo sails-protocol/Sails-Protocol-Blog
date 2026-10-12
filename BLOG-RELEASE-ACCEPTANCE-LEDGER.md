@@ -53,3 +53,12 @@ G3 now PASS based on merged PR #28 (8446a2efd1928eb5a54e8bea9e5c0cff59c3f84e), w
 - Issue #33 tracks English-only article catalog titles/descriptions in localized custom pages. L5 remains NOT VERIFIED.
 - No fresh production browser/locale/editorial acceptance. Do not count PR checks as live-site QA.
 - Historical ledger remains **20% evidence baseline** (6/25) for continuity; strict **current-release** interpretation would downgrade I3, yielding **16%** (5/25 gates weighted: I2 4% + G1–G4 12%). Use **16%** as the conservative current-release score until Netlify catches up and exact-main production is verified.
+
+## Production credit pause | 2026-10-12 UTC
+
+- Netlify team UI reported: "Sails Protocol is now running on operational credits". Published sites remain live, but production deploys and Agent Runners are paused. Operational credits cannot fund new deploys. This is a billing restriction, not evidence of broken code or Git integration.
+- User decision: wait for the next billing cycle without paid upgrade. Exact renewal date not established; inspect Netlify team billing to determine it.
+- GitHub main after PR #39: 531fb6604408646d68ce835f247f74b5bca0a6db, PR exact-head CI 3/3 PASS. Last observed Netlify ready production deploy 6acc5631104cd90008479406 at older commit 03f56ca704fb2db9e753ca87029a84fa4b7bd15c.
+- Continue GitHub PRs, exact-head CI, editorial fixes, tests, and review during the deploy freeze. Do not claim production publication or trigger paid plan changes.
+- On credit renewal: deploy latest main, verify published SHA, production route HTTP, browser/assets, accessibility, EN/PT-BR/ES metadata and SEO, and editorial signoff. Issue #29 tracks release gate.
+- Strict current-release acceptance remains 16% (I2 and G1-G4). Historical 20% does not represent current release readiness.
