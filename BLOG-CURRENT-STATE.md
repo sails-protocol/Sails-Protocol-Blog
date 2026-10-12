@@ -87,3 +87,15 @@ This section supersedes older operational snapshots above without deleting histo
 - Issue #33 source implementation is in PR #37, but closure requires native-language/editorial signoff and a deployed verification pass. Avoid declaring L5 PASS from code-only checks.
 - **Current-release evidence score: 16% conservative**, based on I2 and G1–G4, versus 20% historical evidence including stale I3. Do not claim 100% or grant other gates without new production/editorial evidence.
 - Immediate next steps: resolve Netlify build/deploy integration, verify published exact SHA and EN/PT-BR/ES browser/SEO route matrix, obtain native-language signoff, then recompute the 25-gate weighted release score.
+
+## Operational checkpoint after PR #64 | 2026-10-12 UTC
+
+This is the latest checkpoint in this document and supersedes earlier operational PR states above without deleting historical evidence.
+
+- **Merged on `main`:** PR #61 (all 10 published article routes included in browser axe audit, plus Mermaid dark-mode contrast and reference-link affordance), squash `b1f29cfb73cf66ba4c710f258edc97d162bf71e1`, exact-head CI 3/3 PASS.
+- **Merged on `main`:** PR #63 (PT-BR/ES rendered descriptions of six featured homepage articles verified in isolated builds), squash `85c31d981949266905cfcbc29e16e3ae47b2717d`, exact-head CI 3/3 PASS. Initial assertion about introduction description was invalid and replaced before merge; it uses separate editorial copy.
+- **Merged on `main`:** PR #64 (PT-BR/ES Season 02 article titles asserted inside their respective nine article links), squash `6545398a8dcc90edcc4883cb80a6d16bfbf009c9`, exact-head CI 3/3 PASS. Initial malformed test code failed CI and was corrected before merge.
+- **Netlify production:** Team reported operational-credit mode, which keeps the existing site online but pauses production deploys and Agent Runners. Owner chose to **wait for the next billing cycle**, without paid upgrade or hosting migration. Do not attempt deploys or claim that recent `main` commits are live. Last independently observed ready production deploy: `6acc5631104cd90008479406` at SHA `03f56ca704fb2db9e753ca87029a84fa4b7bd15c`, **not** current `main`.
+- **Current-release readiness:** conservative **16%** according to the 25-gate weighted acceptance contract: I2 4% plus G1–G4 12%. Historical I3 production PASS does not apply to current-main production acceptance. CI and merged code improve preparedness but do not independently satisfy production, native visual, or editorial signoff gates.
+- **Editorial Day 0:** 48 planned topics / 144 language editions remain a distinct backlog from the 10 published articles. Do not infer native-language approval or production publication from CI.
+- **Next gate:** continue isolated GitHub checks and source-backed editorial review while deploys are paused. After credit renewal, verify the exact deployed `main` SHA, live EN/PT-BR/ES routes, browser/responsive/a11y matrix and editorial signoffs before promoting any acceptance gate.
