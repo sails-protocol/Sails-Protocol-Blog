@@ -24,7 +24,7 @@ if (existsSync('build/index.html')) {
     failed = true;
   }
 }
-// Verify localized custom-page copy, not just locale routes. This catches
+// A normal npm run build must produce every configured locale; a targeted\n// Docusaurus --locale build may intentionally omit the others.\nconst fullBuildExpected = !process.argv.includes('--single-locale');\n// Verify localized custom-page copy, not just locale routes. This catches
 // regressions where PT-BR/ES pages render untranslated English literals.
 const localeChecks = [
   {prefix: 'pt-BR/', home: 'Construindo infraestrutura P2P aberta.', seasons: 'Coleções de leitura'},
@@ -34,7 +34,7 @@ for (const {prefix, home, seasons} of localeChecks) {
   const homepage = 'build/' + prefix + 'index.html';
   const seasonPage = 'build/' + prefix + 'seasons/index.html';
   // The CI invokes this script after the full multi-locale build.
-  if (!existsSync(homepage) && !existsSync(seasonPage)) continue;
+  if (!existsSync(homepage) && !existsSync(seasonPage) && !fullBuildExpected) continue;
   for (const [file, phrase] of [[homepage, home], [seasonPage, seasons]]) {
     if (!existsSync(file) || !readFileSync(file, 'utf8').includes(phrase)) {
       console.error('Localized custom-page copy missing:', file, phrase);
@@ -50,7 +50,7 @@ for (const [locale, title] of [
 ]) {
   const home = 'build/' + locale + '/index.html';
   const seasons = 'build/' + locale + '/seasons/index.html';
-  if (!existsSync(home) && !existsSync(seasons)) continue;
+  if (!existsSync(home) && !existsSync(seasons) && !fullBuildExpected) continue;
   for (const file of [home, seasons]) {
     if (!existsSync(file) || !readFileSync(file, 'utf8').includes(title)) {
       console.error('Localized article metadata missing:', file, title);
@@ -79,7 +79,7 @@ if (existsSync('build/articles/what-is-sails-protocol/index.html')) {
 // Only meaningful after a full multi-locale build; a single-locale build
 // (npm run build -- --locale xx) emits just that locale into build/.
 const fullMultiLocaleBuild = existsSync('build/pt-BR/sitemap.xml') && existsSync('build/es/sitemap.xml');
-if (!fullMultiLocaleBuild) console.log('Skipping cross-locale article checks: single-locale build output.');
+if (!fullMultiLocaleBuild) {\n  if (fullBuildExpected) { console.error('MISSING full multi-locale build output'); failed = true; }\n  else console.log('Skipping cross-locale article checks: single-locale build output.');\n}
 if (fullMultiLocaleBuild && existsSync('src/generated/articles.json')) {
   const catalogue = JSON.parse(readFileSync('src/generated/articles.json', 'utf8'));
   for (const [prefix, sitemapFile] of [['', 'build/sitemap.xml'], ['pt-BR/', 'build/pt-BR/sitemap.xml'], ['es/', 'build/es/sitemap.xml']]) {
