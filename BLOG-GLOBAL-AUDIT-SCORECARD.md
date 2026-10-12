@@ -41,3 +41,11 @@ A global completion percentage is **NOT DETERMINED** until the owner/CTO approve
 - **F-001 PARTIAL:** `BLOG-CURRENT-STATE.md` contains a dated historic snapshot and a post-merge checkpoint, but its integration ledger still describes PR #14 as open. Refresh the current ledger through review without deleting historic evidence.
 
 **Global percentage remains NOT DETERMINED.** These findings do not constitute acceptance of Day 0 editorial editions, real-browser WebMCP, or all locale/responsive gates.
+
+## Production verification checkpoint | 2026-10-12 UTC
+
+- **F-007 implementation/deploy RESOLVED, visual acceptance OPEN:** PR #25 superseded closed-unmerged #24, exact HEAD `4e8629653494cdd65bf95654783a32a45c2572ef` passed all three required GitHub workflows (Validate Blog, isolated preview artifact, browser accessibility audit), was squash-merged as `f7d1955e38ff933639c7beba145a2cb1bec73d06`. Netlify production deploy `6acc520182271500089828b2` independently reported `ready`, `context: production`, `commit_ref: f7d1955e38ff933639c7beba145a2cb1bec73d06`, published `2026-10-12T03:20:59.386Z`, `error_message: null`. The Introduction card now references the existing `protocol-waves.svg`; Earth Horizon is reserved for hero. Manual production screenshots across desktop/tablet/mobile and light/dark/keyboard remain NOT VERIFIED.
+- **F-003 PARTIAL:** Exact production commit is verified for PR #25. Full locale route matrix, sitemap/feed/canonical/hreflang, native WebMCP in supported real browser, and manual visual checks remain NOT VERIFIED; do not equate deploy success with those gates.
+- **Historical F-007 OPEN label above remains as the original observation**, superseded for implementation and deploy by this checkpoint; no historical evidence deleted.
+
+**Global percentage remains NOT DETERMINED** pending owner-approved denominator and release gates. Separate the completed technical/deployment subtask from outstanding global UX/editorial acceptance.
