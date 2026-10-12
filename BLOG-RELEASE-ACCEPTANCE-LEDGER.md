@@ -26,16 +26,20 @@
 | E5 Day 0 scope reconciled | NOT VERIFIED | Season 02 vs Day 0 48-topic taxonomy |
 | G1 AGENTS.md | PASS | PR #15 merged squash 033ccbea3f1d297f99529fcc0e4077c985163338, canonical file on main |
 | G2 EDITORIAL-START-HERE.md | PASS | PR #15 merged squash 033ccbea3f1d297f99529fcc0e4077c985163338 |
-| G3 BLOG-CURRENT-STATE.md | NOT VERIFIED | Current-state refresh prepared in this PR; PASS only after reviewed merge |
+| G3 BLOG-CURRENT-STATE.md | PASS | PR #28 merged after three exact-head workflows passed, squash commit 8446a2efd1928eb5a54e8bea9e5c0cff59c3f84e; operational continuation checkpoint on main |
 | G4 evidence ledger/scorecard | PASS | PR #27 merged as 03f56ca704fb2db9e753ca87029a84fa4b7bd15c; BLOG-GLOBAL-AUDIT-SCORECARD.md and this ledger present on main |
 | G5 material findings triaged | NOT VERIFIED | Remaining F-001/003/004/005/006 and visual acceptance residual |
 
-**Updated verified score: 5/25 PASS, weighted 20%*(2/5)+15%*(3/5) = 17%.** This is a deliberately conservative evidence baseline, not an assertion that the blog is only 10% built. Recompute after every verified gate. Do not credit manual or editorial acceptance without evidence.
+**Updated verified score: 6/25 PASS, weighted 20%*(2/5)+15%*(4/5) = 20%.** This is a deliberately conservative evidence baseline, not an assertion that the blog is only 10% built. Recompute after every verified gate. Do not credit manual or editorial acceptance without evidence.
 
 **Day 0:** 0/144 approved editions according to historical audit ledger, pending fresh independent verification. Source-backed correction coverage 51/144 (35.4%) is separate.
 
 ## Reconciliation checkpoint | 2026-10-12 UTC
 
-G4 promoted to PASS based on PR #27 merged and both canonical audit documents on main. I3 now PASS after independent exact-main Netlify deployment verification for PR #27. G3 remains NOT VERIFIED until the current-state update in this PR is merged and reviewed. Historical 10% baseline is superseded by 13% conservative evidence score, not by an assertion that only 13% of functionality exists.
+G4 promoted to PASS based on PR #27 merged and both canonical audit documents on main. I3 now PASS after independent exact-main Netlify deployment verification for PR #27. G3 was subsequently verified after PR #28 merged with all three exact-head checks passing. Historical 10% baseline is superseded by 13% conservative evidence score, not by an assertion that only 13% of functionality exists.
 
-I3 promotion evidence: Netlify deployment ID 6acc5631104cd90008479406, production ready, commit_ref 03f56ca704fb2db9e753ca87029a84fa4b7bd15c, published 2026-10-12T03:38:51.494Z. Current 17% is an evidence-gate score; this documentation PR has not yet merged.
+I3 promotion evidence: Netlify deployment ID 6acc5631104cd90008479406, production ready, commit_ref 03f56ca704fb2db9e753ca87029a84fa4b7bd15c, published 2026-10-12T03:38:51.494Z. Historical 17% was the previous evidence-gate score; PR #28 has since merged.
+
+## Post-PR28 checkpoint | 2026-10-12 UTC
+
+G3 now PASS based on merged PR #28 (8446a2efd1928eb5a54e8bea9e5c0cff59c3f84e), with 3/3 exact-head workflows success. **Operational evidence score 20% (6/25).** Netlify API still returned deploy 6acc5631104cd90008479406 at PR #27 SHA 03f56ca704fb2db9e753ca87029a84fa4b7bd15c after PR #28 merged; issue #29 tracks missing proof of current-main deployment and public locale/SEO audit. I3 PASS records historic exact SHA deploy; it does NOT assert that current main is deployed. If contract requires I3 to be current main at each checkpoint, reassess its status before any release declaration. This PR is documentation only and requires its own CI.
