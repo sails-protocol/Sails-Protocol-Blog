@@ -24,6 +24,24 @@ if (existsSync('build/index.html')) {
     failed = true;
   }
 }
+// Verify localized custom-page copy, not just locale routes. This catches
+// regressions where PT-BR/ES pages render untranslated English literals.
+const localeChecks = [
+  {prefix: 'pt-BR/', home: 'Construindo infraestrutura P2P aberta.', seasons: 'Coleções de leitura'},
+  {prefix: 'es/', home: 'Construyendo infraestructura P2P abierta.', seasons: 'Colecciones de lectura'},
+];
+for (const {prefix, home, seasons} of localeChecks) {
+  const homepage = 'build/' + prefix + 'index.html';
+  const seasonPage = 'build/' + prefix + 'seasons/index.html';
+  // The CI invokes this script after the full multi-locale build.
+  if (!existsSync(homepage) && !existsSync(seasonPage)) continue;
+  for (const [file, phrase] of [[homepage, home], [seasonPage, seasons]]) {
+    if (!existsSync(file) || !readFileSync(file, 'utf8').includes(phrase)) {
+      console.error('Localized custom-page copy missing:', file, phrase);
+      failed = true;
+    }
+  }
+}
 if (existsSync('build/sitemap.xml')) {
   const sitemap = readFileSync('build/sitemap.xml', 'utf8');
   for (const route of ['/articles/', '/articles/what-is-sails-protocol/']) {
