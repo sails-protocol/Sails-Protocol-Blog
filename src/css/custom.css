@@ -185,6 +185,7 @@ html[data-theme='dark'] [class*='colorModeToggle'] button {
 .sails-editorial-card-footer{display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap;font-size:.83rem;margin-top:1rem}
 .sails-editorial-card-footer>a,.sails-read-link{font-weight:700}
 .sails-editorial-art,.sails-latest-art{border-radius:8px;min-height:155px;background:#121b26}
+.sails-art-approved{background-position:center;background-size:cover;background-repeat:no-repeat}
 .sails-art-orbit{background:radial-gradient(ellipse at 45% 70%,transparent 32%,rgba(168,203,235,.65) 33%,transparent 34%),radial-gradient(ellipse at 48% 83%,#192b3e 15%,#03070e 61%)}
 .sails-art-columns{background:repeating-linear-gradient(90deg,transparent 0 15px,rgba(173,186,200,.25) 16px 28px,transparent 29px 38px),linear-gradient(135deg,#243449,#070b12)}
 .sails-latest-section{border-top:1px solid var(--sails-line)}
