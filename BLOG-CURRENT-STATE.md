@@ -62,3 +62,13 @@ Always provide a concise north star and a percentage **with a named denominator*
 ## Post-merge verification checkpoint (2026-10-11 audit session)
 
 The earlier snapshot above is retained for provenance and must not be mistaken for live status. Institutional PR #15 was squash-merged into `main` at `033ccbea3f1d297f99529fcc0e4077c985163338`, after three exact-head workflow successes at `449cf0282fc3403cb60fd62baf56f3cdb0aa7f2f`; overlapping PRs #16, #17 and #18 were closed without merging. PR #14 remained open and two commits behind `main` at this checkpoint; historical CI successes are not current-base revalidation. Netlify PR #15 preview succeeded, but the production deploy SHA and final responsive/localized browser QA were not verified. The independent audit ledger is `BLOG-GLOBAL-AUDIT-SCORECARD.md`. Global completion remains **NOT DETERMINED** until the owner approves denominators and gates. Do not turn the editorial 17/48 source-backed correction coverage into final approval.
+
+## Live continuation checkpoint | 2026-10-12 UTC
+
+This checkpoint supersedes the **historical** PR ledger above for operational decisions. Preserve that ledger for traceability.
+
+- PR #14 closed unmerged, superseded by PR #22, merged as `d2d655c5f408ae931b2739c124e6cfeddd4f23d8`, with all three exact-head workflows PASS and Netlify production deploy `6acc4ed49008ec0008c31022` ready at that SHA.
+- PR #21 merged as `940793b0b1b5e81477f6a3e40124bbf4dc406b0a`: four Seasons cards. PR #25 corrected Introduction artwork provenance, merged as `f7d1955e38ff933639c7beba145a2cb1bec73d06`, deployed ready to production at Netlify deploy `6acc520182271500089828b2`.
+- PR #23 merged `6a2d3c882ff72f7b52466dada080539897c39066`; PR #26 merged `42d92b66d05ee838941273254b53adb4da88cea3`, deployed ready at Netlify deploy `6acc54db16099a000844d1f0`.
+- PR #27 merged `03f56ca704fb2db9e753ca87029a84fa4b7bd15c`: owner-approved 25-gate weighted readiness contract and conservative evidence ledger. **Its production deploy was NOT VERIFIED at the time of this checkpoint.**
+- **Current north:** independently verify exact main production SHA; audit EN/PT-BR/ES routes, SEO, browser/device accessibility and editorial claims; record PASS only with direct evidence. Keep Day 0 144-edition acceptance separate from operational readiness. No material finding under the rug.
