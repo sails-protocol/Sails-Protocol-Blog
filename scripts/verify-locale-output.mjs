@@ -10,6 +10,14 @@ if (!Object.hasOwn(expected, locale)) {
   process.exit(1);
 }
 let failed = false;
+// Parse the canonical link independently of attribute order, as Docusaurus
+// may serialize href before rel in generated HTML.
+function hasCanonicalUrl(html, url) {
+  return /<link\b[^>]*>/g.test(html) && [...html.matchAll(/<link\b[^>]*>/g)].some(([tag]) => {
+    const attrs = Object.fromEntries([...tag.matchAll(/([\w-]+)="([^"]*)"/g)].map(([, key, value]) => [key, value]));
+    return attrs.rel === 'canonical' && attrs.href === url;
+  });
+}
 for (const [path, snippets] of [
   [`build/index.html`, [expected[locale].headline, expected[locale].title]],
   [`build/seasons/index.html`, [expected[locale].season, expected[locale].title]],
@@ -41,8 +49,11 @@ for (const article of catalogue) {
     failed = true;
   } else {
     const html = readFileSync(path, 'utf8');
-    if (!html.includes('rel="canonical"')) {
-      console.error('Missing canonical link:', locale, path);
+    // A single-locale Docusaurus build is mounted at /, not /<locale>/.
+    // The full multi-locale production build owns locale-prefixed canonicals.
+    const expectedCanonical = 'https://sails-protocol-blog.netlify.app' + route;
+    if (!hasCanonicalUrl(html, expectedCanonical)) {
+      console.error('Localized article canonical mismatch:', locale, path, expectedCanonical, 'actual:', [...html.matchAll(/<link\b[^>]*rel="canonical"[^>]*>/g)].map(m => m[0]));
       failed = true;
     }
     if (!html.includes('hreflang=')) {
@@ -117,11 +128,15 @@ if (existsSync(intro)) {
 for (const page of ['build/index.html', 'build/seasons/index.html']) {
   if (!existsSync(page)) continue; // Already reported by the required-page checks.
   const html = readFileSync(page, 'utf8');
-  for (const marker of ['rel="canonical"', 'hreflang=']) {
-    if (!html.includes(marker)) {
-      console.error('Missing custom page SEO marker:', locale, page, marker);
-      failed = true;
-    }
+  const route = page === 'build/index.html' ? '/' : '/seasons/';
+  const canonical = 'https://sails-protocol-blog.netlify.app' + route;
+  if (!hasCanonicalUrl(html, canonical)) {
+    console.error('Missing or incorrect custom page canonical:', locale, page, canonical, 'actual:', [...html.matchAll(/<link\b[^>]*rel="canonical"[^>]*>/g)].map(m => m[0]));
+    failed = true;
+  }
+  if (!html.includes('hreflang=')) {
+    console.error('Missing custom page hreflang:', locale, page);
+    failed = true;
   }
 }
 if (failed) process.exit(1);
