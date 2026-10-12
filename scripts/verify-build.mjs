@@ -24,7 +24,10 @@ if (existsSync('build/index.html')) {
     failed = true;
   }
 }
-// A normal npm run build must produce every configured locale; a targeted\n// Docusaurus --locale build may intentionally omit the others.\nconst fullBuildExpected = !process.argv.includes('--single-locale');\n// Verify localized custom-page copy, not just locale routes. This catches
+// Strict multi-locale mode is opt-in because CI also builds each locale separately.
+// Use --require-all-locales only after a combined full-locale build.
+const fullBuildExpected = process.argv.includes('--require-all-locales');
+// Verify localized custom-page copy, not just locale routes. This catches
 // regressions where PT-BR/ES pages render untranslated English literals.
 const localeChecks = [
   {prefix: 'pt-BR/', home: 'Construindo infraestrutura P2P aberta.', seasons: 'Coleções de leitura'},
