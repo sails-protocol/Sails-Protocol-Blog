@@ -1,5 +1,7 @@
 # Editorial continuity: start here
 
+> **CURRENT AGENT HANDOFF (2026-10-11):** Begin with [AGENTS.md](./AGENTS.md) for permanent rules and [BLOG-CURRENT-STATE.md](./BLOG-CURRENT-STATE.md) for the dated operational snapshot. Recheck live GitHub PRs, exact HEADs and Netlify before acting. This file contains historical editorial handoffs, including superseded branch/PR references and draft-count milestones. Preserve them as history, not as current operational instructions. In particular, the old `feat/blog-foundation-02` / PR #1 work location below is superseded; the public Season 02 and the proposed seven-season draft taxonomy are distinct. Neither this document nor a green CI run authorizes merge or publication.
+
 **Status:** institutional handoff for editorial work on the Sails Protocol Blog. This is not permission to merge or publish.
 
 ## Where to work
