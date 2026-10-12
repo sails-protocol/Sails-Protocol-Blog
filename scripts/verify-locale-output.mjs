@@ -10,6 +10,14 @@ if (!Object.hasOwn(expected, locale)) {
   process.exit(1);
 }
 let failed = false;
+// Parse the canonical link independently of attribute order, as Docusaurus
+// may serialize href before rel in generated HTML.
+function hasCanonicalUrl(html, url) {
+  return /<link\\b[^>]*>/g.test(html) && [...html.matchAll(/<link\\b[^>]*>/g)].some(([tag]) => {
+    const attrs = Object.fromEntries([...tag.matchAll(/([\\w-]+)="([^"]*)"/g)].map(([, key, value]) => [key, value]));
+    return attrs.rel === 'canonical' && attrs.href === url;
+  });
+}
 for (const [path, snippets] of [
   [`build/index.html`, [expected[locale].headline, expected[locale].title]],
   [`build/seasons/index.html`, [expected[locale].season, expected[locale].title]],
@@ -41,8 +49,8 @@ for (const article of catalogue) {
     failed = true;
   } else {
     const html = readFileSync(path, 'utf8');
-    const expectedCanonical = 'rel="canonical" href="https://sails-protocol-blog.netlify.app/' + locale + route + '"';
-    if (!html.includes(expectedCanonical)) {
+    const expectedCanonical = 'https://sails-protocol-blog.netlify.app/' + locale + route;
+    if (!hasCanonicalUrl(html, expectedCanonical)) {
       console.error('Localized article canonical mismatch:', locale, path, expectedCanonical);
       failed = true;
     }
@@ -119,12 +127,14 @@ for (const page of ['build/index.html', 'build/seasons/index.html']) {
   if (!existsSync(page)) continue; // Already reported by the required-page checks.
   const html = readFileSync(page, 'utf8');
   const route = page === 'build/index.html' ? '/' : '/seasons/';
-  const canonical = 'rel="canonical" href="https://sails-protocol-blog.netlify.app/' + locale + route + '"';
-  for (const marker of [canonical, 'hreflang=']) {
-    if (!html.includes(marker)) {
-      console.error('Missing or incorrect custom page SEO marker:', locale, page, marker);
-      failed = true;
-    }
+  const canonical = 'https://sails-protocol-blog.netlify.app/' + locale + route;
+  if (!hasCanonicalUrl(html, canonical)) {
+    console.error('Missing or incorrect custom page canonical:', locale, page, canonical);
+    failed = true;
+  }
+  if (!html.includes('hreflang=')) {
+    console.error('Missing custom page hreflang:', locale, page);
+    failed = true;
   }
 }
 if (failed) process.exit(1);
