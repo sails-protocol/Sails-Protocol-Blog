@@ -18,6 +18,11 @@ function hasCanonicalUrl(html, url) {
     .filter(attrs => attrs.rel === 'canonical');
   return canonicals.length === 1 && canonicals[0].href === url;
 }
+function hasLocaleAlternate(html, locale) {
+  return [...html.matchAll(/<link\b[^>]*>/g)]
+    .map(([tag]) => Object.fromEntries([...tag.matchAll(/([\w-]+)="([^"]*)"/g)].map(([, key, value]) => [key, value])))
+    .some(attrs => attrs.rel === 'alternate' && attrs.hreflang === locale && typeof attrs.href === 'string' && attrs.href.startsWith('https://sails-protocol-blog.netlify.app/'));
+}
 for (const [path, snippets] of [
   [`build/index.html`, [expected[locale].headline, expected[locale].title]],
   [`build/seasons/index.html`, [expected[locale].season, expected[locale].title]],
@@ -56,7 +61,7 @@ for (const article of catalogue) {
       console.error('Localized article canonical mismatch:', locale, path, expectedCanonical, 'actual:', [...html.matchAll(/<link\b[^>]*rel="canonical"[^>]*>/g)].map(m => m[0]));
       failed = true;
     }
-    if (!html.includes('hreflang=')) {
+    if (!hasLocaleAlternate(html, locale)) {
       console.error('Missing hreflang alternate:', locale, path);
       failed = true;
     }
@@ -154,7 +159,7 @@ for (const page of ['build/index.html', 'build/seasons/index.html']) {
     console.error('Missing or incorrect custom page canonical:', locale, page, canonical, 'actual:', [...html.matchAll(/<link\b[^>]*rel="canonical"[^>]*>/g)].map(m => m[0]));
     failed = true;
   }
-  if (!html.includes('hreflang=')) {
+  if (!hasLocaleAlternate(html, locale)) {
     console.error('Missing custom page hreflang:', locale, page);
     failed = true;
   }
