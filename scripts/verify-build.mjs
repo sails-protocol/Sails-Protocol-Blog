@@ -86,6 +86,10 @@ if (!fullMultiLocaleBuild) {
   if (fullBuildExpected) { console.error('MISSING full multi-locale build output'); failed = true; }
   else console.log('Skipping cross-locale article checks: single-locale build output.');
 }
+if (fullMultiLocaleBuild && !existsSync('src/generated/articles.json')) {
+  console.error('MISSING generated article catalogue: src/generated/articles.json');
+  failed = true;
+}
 if (fullMultiLocaleBuild && existsSync('src/generated/articles.json')) {
   const catalogue = JSON.parse(readFileSync('src/generated/articles.json', 'utf8'));
   for (const [prefix, sitemapFile] of [['', 'build/sitemap.xml'], ['pt-BR/', 'build/pt-BR/sitemap.xml'], ['es/', 'build/es/sitemap.xml']]) {
