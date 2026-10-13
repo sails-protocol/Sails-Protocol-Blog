@@ -91,6 +91,17 @@ if (fullMultiLocaleBuild && !existsSync('src/generated/articles.json')) {
   failed = true;
 }
 // A present but empty catalogue must not make the strict article gates vacuous.
+// Duplicate or malformed catalogue slugs can hide missing published articles.
+if (fullMultiLocaleBuild && existsSync('src/generated/articles.json')) {
+  const catalogue = JSON.parse(readFileSync('src/generated/articles.json', 'utf8'));
+  if (Array.isArray(catalogue)) {
+    const slugs = catalogue.map(article => article?.slug);
+    if (slugs.some(slug => typeof slug !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) || new Set(slugs).size !== slugs.length) {
+      console.error('INVALID generated article catalogue: malformed or duplicate slugs');
+      failed = true;
+    }
+  }
+}
 if (fullMultiLocaleBuild && existsSync('src/generated/articles.json')) {
   const catalogue = JSON.parse(readFileSync('src/generated/articles.json', 'utf8'));
   if (!Array.isArray(catalogue) || catalogue.length === 0) {
