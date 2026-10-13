@@ -130,3 +130,14 @@ The following work was merged after all three pull-request workflows passed on e
 - PR #78, merge `f173b370a5fc1fe65cf78c7446ed7bbf436f56a7`: reject foreign-locale homepage and Seasons URLs in each locale sitemap.
 
 All checks above operate on the generated GitHub build, **not** a verified current-main Netlify production deploy. The strict current-release acceptance remains **16%** until immutable evidence satisfies another named release gate. In particular, the available GitHub connector's commit-workflow-run query only returns pull-request-triggered runs, so an empty result for a squash-merge SHA does **not** prove the push-to-main CI failed or never ran. Do not promote I1 without independent exact-main CI evidence. Continue the no-Netlify-deploy credit pause until the owner authorizes renewal.
+
+## Generated article catalogue fail-closed checkpoint (2026-10-13)
+
+Merged after three exact-head PR workflows succeeded for each change:
+
+- PR #80, merge `c4679267ed3001e368f808fbe7cf288a079343b5`: a missing `src/generated/articles.json` fails combined-build verification instead of skipping article checks.
+- PR #81, merge `45295643ad337af444a95dab9ce1524bbf7a5971`: a present but empty article catalogue fails verification.
+- PR #82, merge `6fe489ea48483f023e52ce6567464597ee1a8d90`: malformed or duplicate article slugs fail verification.
+- PR #83, merge `dbebc441c0b4cfd1e5f8baededd23066d5bb69aa`: catalogue public paths must match `/articles/{slug}/`.
+
+These are build-time safeguards, not production QA or a new formal release acceptance gate. Strict readiness remains **16%**, and Netlify deploys remain paused due to the owner's credit-cycle decision. The exact-main push CI evidence and live production verification remain outstanding.
