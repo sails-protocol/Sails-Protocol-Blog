@@ -26,7 +26,7 @@ flowchart TD
 
 Equivalente textual: o diagrama mostra os limites de responsabilidade descritos acima, não uma implantação verificada.
 
-*Referências, revisão técnica e aprovação do responsável pela publicação pendentes.*
+*Há uma referência imutável ao SDK abaixo. A verificação completa das afirmações contra as fontes, a revisão técnica e a aprovação para publicação continuam pendentes.*
 
 ## Quando a resposta se perde, repetir não é necessariamente seguro
 
