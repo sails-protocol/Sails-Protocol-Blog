@@ -119,3 +119,14 @@ This checkpoint supersedes older PR-status references above for the specific PRs
 - PR #73 merged as `48b954689f9dbbd96c7615cacf4e689d94a3ecdd`: removed the duplicate default full-locale build while retaining strict checks. Exact-head workflows 3/3 success.
 
 **Release boundary:** GitHub validation is not a production deploy, native editorial approval, or live-browser QA. Netlify deploys remain intentionally paused for the team's credit/billing cycle; do not trigger deploys or paid upgrades without a new owner decision. The formal Day 0 release acceptance remains **16%** (weighted 25-gate contract) until individually evidenced gates change. The 48-topic × 3-locale editorial inventory remains planned work, not 144 approved live articles. After Netlify credits renew, compare deployed SHA with current `main`, then perform deployment and multilingual live QA before updating acceptance.
+
+## Exact sitemap acceptance checkpoint (2026-10-12)
+
+The following work was merged after all three pull-request workflows passed on each exact PR head:
+
+- PR #75, merge `bbc13f0749539d2cdf3424f6747d3ce8b492e58d`: exact unique absolute sitemap `<loc>` for each of 10 published article routes in EN/PT-BR/ES.
+- PR #76, merge `79924cdd6d42c45def108c3612c7021e454671d4`: exact unique absolute sitemap `<loc>` for homepage and Seasons in each locale.
+- PR #77, merge `a2cc410606acee9b0a07fc2223260686a5c4eb1a`: reject foreign-locale published article URLs in each locale sitemap.
+- PR #78, merge `f173b370a5fc1fe65cf78c7446ed7bbf436f56a7`: reject foreign-locale homepage and Seasons URLs in each locale sitemap.
+
+All checks above operate on the generated GitHub build, **not** a verified current-main Netlify production deploy. The strict current-release acceptance remains **16%** until immutable evidence satisfies another named release gate. In particular, the available GitHub connector's commit-workflow-run query only returns pull-request-triggered runs, so an empty result for a squash-merge SHA does **not** prove the push-to-main CI failed or never ran. Do not promote I1 without independent exact-main CI evidence. Continue the no-Netlify-deploy credit pause until the owner authorizes renewal.
