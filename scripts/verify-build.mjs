@@ -103,8 +103,11 @@ if (fullMultiLocaleBuild && existsSync('src/generated/articles.json')) {
         console.error('Article canonical mismatch or duplicate:', file, expectedCanonical, canonicalTags);
         failed = true;
       }
-      if (sitemap && !sitemap.includes('/' + prefix + 'articles/' + article.slug + '/')) {
-        console.error('Not in sitemap:', file); failed = true;
+      const expectedSitemapUrl = 'https://sails-protocol-blog.netlify.app/' + prefix + 'articles/' + article.slug + '/';
+      const sitemapLocations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url);
+      if (sitemap && sitemapLocations.filter(url => url === expectedSitemapUrl).length !== 1) {
+        console.error('Sitemap URL missing, duplicated, or not exact:', file, expectedSitemapUrl);
+        failed = true;
       }
     }
   }
