@@ -130,6 +130,20 @@ if (fullMultiLocaleBuild) {
     }
   }
 }
+// Each localized custom page must also have one exact absolute sitemap entry.
+if (fullMultiLocaleBuild) {
+  for (const [prefix, sitemapFile] of [['', 'build/sitemap.xml'], ['pt-BR/', 'build/pt-BR/sitemap.xml'], ['es/', 'build/es/sitemap.xml']]) {
+    const sitemap = existsSync(sitemapFile) ? readFileSync(sitemapFile, 'utf8') : '';
+    const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url);
+    for (const route of ['', 'seasons/']) {
+      const expected = 'https://sails-protocol-blog.netlify.app/' + prefix + route;
+      if (locations.filter(url => url === expected).length !== 1) {
+        console.error('Custom page sitemap URL missing, duplicated, or incorrect:', sitemapFile, expected);
+        failed = true;
+      }
+    }
+  }
+}
 // RSS and Atom must carry the explicit editorial description, not the
 // Docusaurus fallback \"Sails Protocol Blog Blog\".
 const feedDescription = 'Engineering notes on open P2P infrastructure';
