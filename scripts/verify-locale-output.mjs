@@ -161,7 +161,7 @@ for (const page of ['build/index.html', 'build/seasons/index.html']) {
     console.error('Missing or incorrect custom page canonical:', locale, page, canonical, 'actual:', [...html.matchAll(/<link\b[^>]*rel="canonical"[^>]*>/g)].map(m => m[0]));
     failed = true;
   }
-  if (!hasLocaleAlternate(html, locale)) {
+  if (!hasLocaleAlternate(html, locale, route)) {
     console.error('Missing custom page hreflang:', locale, page);
     failed = true;
   }
