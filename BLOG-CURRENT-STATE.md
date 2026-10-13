@@ -107,3 +107,15 @@ This is the latest checkpoint in this document and supersedes earlier operationa
 - PR #67 merged at `f546b9a4cbb5076f8e1cf7bd47e038f3c92f116a`: exact canonical URL assertions for *isolated locale builds*; exact-head `912386ba4a4e9c3dff0e27ac37bb7449abb77fa1` had 3/3 PASS. CI builds PT-BR and ES separately at root `/`, and their canonical URLs accordingly omit locale prefixes. **This does not verify canonical URLs of the combined multilingual production deployment.** The initial tests incorrectly assumed prefixed URLs in isolated builds; real HTML was inspected before correction.
 - Netlify remains in operational-credit pause by owner decision. Do not trigger deployment, upgrade, or migration. Last observed production SHA `03f56ca704fb2db9e753ca87029a84fa4b7bd15c` is stale relative to main.
 - Strict Day 0 release readiness remains **16%**. No production or native-language/editorial gate is newly accepted by these merges. Issues #29 and #33 remain subject to live verification/signoff.
+
+## GitHub-only multilingual SEO and CI checkpoint (2026-10-12)
+
+This checkpoint supersedes older PR-status references above for the specific PRs below; it does not assert that `main` is deployed.
+
+- PR #69 merged as `bdee7052f608938aff3e20910eac51cac1d89ca3`: the default Docusaurus combined EN/PT-BR/ES build is verified with `scripts/verify-build.mjs --require-all-locales`. Exact-head workflows 3/3 success.
+- PR #70 merged as `76ad49bd56fce93a2329892174b33fdd680d72ca`: combined-build canonical checks cover homepage and Seasons for EN/PT-BR/ES. Exact-head workflows 3/3 success.
+- PR #71 merged as `d61baccd37062da1b9f718db262f17f899267d35`: those six custom pages require exactly one correct canonical link. Exact-head workflows 3/3 success.
+- PR #72 merged as `9df1ab1eaf2bec8567a8aa6ff29ca79c78aefe4a`: the 10 published articles in each of three locales require exactly one correct canonical link. Exact-head workflows 3/3 success.
+- PR #73 merged as `48b954689f9dbbd96c7615cacf4e689d94a3ecdd`: removed the duplicate default full-locale build while retaining strict checks. Exact-head workflows 3/3 success.
+
+**Release boundary:** GitHub validation is not a production deploy, native editorial approval, or live-browser QA. Netlify deploys remain intentionally paused for the team's credit/billing cycle; do not trigger deploys or paid upgrades without a new owner decision. The formal Day 0 release acceptance remains **16%** (weighted 25-gate contract) until individually evidenced gates change. The 48-topic × 3-locale editorial inventory remains planned work, not 144 approved live articles. After Netlify credits renew, compare deployed SHA with current `main`, then perform deployment and multilingual live QA before updating acceptance.
