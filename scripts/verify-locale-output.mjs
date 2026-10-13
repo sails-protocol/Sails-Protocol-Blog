@@ -18,8 +18,9 @@ function hasCanonicalUrl(html, url) {
     .filter(attrs => attrs.rel === 'canonical');
   return canonicals.length === 1 && canonicals[0].href === url;
 }
+// Isolated builds mount at /; their locale alternate uses the root-mounted route.
 function hasLocaleAlternate(html, locale, route) {
-  const expectedUrl = 'https://sails-protocol-blog.netlify.app/' + locale + route;
+  const expectedUrl = 'https://sails-protocol-blog.netlify.app' + route;
   const alternates = [...html.matchAll(/<link\b[^>]*>/g)]
     .map(([tag]) => Object.fromEntries([...tag.matchAll(/([\w-]+)="([^"]*)"/g)].map(([, key, value]) => [key, value])))
     .filter(attrs => attrs.rel === 'alternate' && attrs.hreflang === locale);
