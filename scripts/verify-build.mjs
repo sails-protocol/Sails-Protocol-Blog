@@ -135,6 +135,19 @@ if (fullMultiLocaleBuild && existsSync('src/generated/articles.json')) {
     }
   }
 }
+// The generated catalogue's public path must agree with its slug.
+// Otherwise a route can be validated under one URL while linked under another.
+if (fullMultiLocaleBuild && existsSync('src/generated/articles.json')) {
+  const catalogue = JSON.parse(readFileSync('src/generated/articles.json', 'utf8'));
+  if (Array.isArray(catalogue)) {
+    for (const article of catalogue) {
+      if (typeof article?.slug === 'string' && article.path !== '/articles/' + article.slug + '/') {
+        console.error('INVALID article catalogue path:', article.slug, article.path);
+        failed = true;
+      }
+    }
+  }
+}
 // Combined builds must also expose exact canonical URLs on localized custom pages.
 // Article routes are checked above; homepage and Seasons are separate routes.
 if (fullMultiLocaleBuild) {
