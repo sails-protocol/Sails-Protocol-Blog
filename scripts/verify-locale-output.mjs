@@ -67,8 +67,11 @@ for (const article of catalogue) {
       failed = true;
     }
   }
-  if (!sitemap.includes(route)) {
-    console.error('Missing published sitemap route:', locale, route);
+  // Isolated locale builds mount at /, so require one exact absolute URL.
+  const expectedSitemapUrl = 'https://sails-protocol-blog.netlify.app' + route;
+  const sitemapLocations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url);
+  if (sitemapLocations.filter(url => url === expectedSitemapUrl).length !== 1) {
+    console.error('Published sitemap URL missing, duplicated, or incorrect:', locale, expectedSitemapUrl);
     failed = true;
   }
 }
