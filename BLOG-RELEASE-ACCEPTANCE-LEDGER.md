@@ -62,3 +62,16 @@ G3 now PASS based on merged PR #28 (8446a2efd1928eb5a54e8bea9e5c0cff59c3f84e), w
 - Continue GitHub PRs, exact-head CI, editorial fixes, tests, and review during the deploy freeze. Do not claim production publication or trigger paid plan changes.
 - On credit renewal: deploy latest main, verify published SHA, production route HTTP, browser/assets, accessibility, EN/PT-BR/ES metadata and SEO, and editorial signoff. Issue #29 tracks release gate.
 - Strict current-release acceptance remains 16% (I2 and G1-G4). Historical 20% does not represent current release readiness.
+
+## Current release authority | 2026-10-13 UTC | post-PR93
+
+**Authoritative current-release score: 16% (5 of 25 mandatory gates: I2 and G1–G4).** The historical 20% heading and I3 PASS row above describe an older production SHA and are **not** valid current-release acceptance. For this release, I3 is **NOT VERIFIED** until Netlify publishes the exact reviewed current `main` commit. Do not add historical and current scores.
+
+- GitHub `main` after squash PR #93: `d36fe241a8cf37d3e3636edc3456d98d22745c6a`. PR #92 exact-head `a80252acb3ff5d45ad666c4fac1cf7d8f4d76692` and PR #93 exact-head `af408ad4302445977587d59a59b1366a7254718f` each passed Validate Blog, Browser accessibility audit, and Build isolated blog preview artifact (3/3), before squash merge.
+- Netlify project `sails-protocol-blog` independently checked 2026-10-13: current production deploy `6acc5631104cd90008479406`, `ready`, published 2026-10-12T03:38:51.494Z, source commit `03f56ca704fb2db9e753ca87029a84fa4b7bd15c`. **It is not the current main commit.** No new deploy was triggered.
+- I1 **NOT VERIFIED**: the available GitHub commit workflow-run connector exposes PR-triggered runs, not main push runs. Combined commit status API returned an empty status array for `d36fe241a8cf37d3e3636edc3456d98d22745c6a`; this is not proof that main CI failed or passed. Issue #85 tracks immutable main push-run evidence. Potential score if independently verified: 20%.
+- I2/G1–G4 remain PASS on their previously documented evidence. I3–I5, U1–U5, L1–L5, E1–E5, G5 require their respective current-release evidence. Green PR CI is not a production or editorial signoff.
+- Owner decision: finish GitHub and editorial preparation first, then deploy on Netlify once ready and permitted by team billing/credits, then conduct live production/browser/SEO and native editorial acceptance. Do not spend credits or bypass the paused deploy policy prematurely.
+- **Day 0 editorial acceptance remains separately unverified**; 48 planned topics × 3 locales is a planning denominator, not a claim of 144 published or approved editions.
+
+**NO MATERIAL FINDING UNDER THE RUG.**
