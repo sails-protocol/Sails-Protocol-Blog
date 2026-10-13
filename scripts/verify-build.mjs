@@ -171,7 +171,7 @@ if (fullMultiLocaleBuild) {
 if (fullMultiLocaleBuild) {
   for (const [prefix, sitemapFile] of [['', 'build/sitemap.xml'], ['pt-BR/', 'build/pt-BR/sitemap.xml'], ['es/', 'build/es/sitemap.xml']]) {
     const sitemap = existsSync(sitemapFile) ? readFileSync(sitemapFile, 'utf8') : '';
-    const locations = [...sitemap.matchAll(/<loc>([^<]+)<\\/loc>/g)].map(([, url]) => url);
+    const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url);
     const expected = 'https://sails-protocol-blog.netlify.app/' + prefix + 'articles/';
     if (locations.filter(url => url === expected).length !== 1) {
       console.error('Article index sitemap URL missing, duplicated, or incorrect:', sitemapFile, expected);
