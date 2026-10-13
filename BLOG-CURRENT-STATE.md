@@ -141,3 +141,16 @@ Merged after three exact-head PR workflows succeeded for each change:
 - PR #83, merge `dbebc441c0b4cfd1e5f8baededd23066d5bb69aa`: catalogue public paths must match `/articles/{slug}/`.
 
 These are build-time safeguards, not production QA or a new formal release acceptance gate. Strict readiness remains **16%**, and Netlify deploys remain paused due to the owner's credit-cycle decision. The exact-main push CI evidence and live production verification remain outstanding.
+
+## Operational handoff after PR #94 | 2026-10-13 UTC
+
+**Current reviewed GitHub main:** `0aaa04f2c52f62d877d012000ebba39fa32224bc` (PR #94 squash). This is a snapshot; recheck SHA before acting.
+
+- PR #86 through #93 were integrated after 3/3 exact-head GitHub Actions success for each. They harden article catalogue/sitemap and isolated locale canonical/hreflang assertions. PR #92 initially failed on incorrect locale-prefixed URLs in isolated root-mounted builds; corrected at HEAD `a80252acb3ff5d45ad666c4fac1cf7d8f4d76692` with 3/3 PASS, then merged as `7a005df6ab7caf3e03ce3b1680e64a20d2dbe164`. PR #93 passed 3/3 at `af408ad4302445977587d59a59b1366a7254718f`, then merged as `d36fe241a8cf37d3e3636edc3456d98d22745c6a`.
+- PR #94 recorded the independently checked Netlify deployment and the authoritative release baseline in `BLOG-RELEASE-ACCEPTANCE-LEDGER.md`; 3/3 exact-head CI PASS at `61d1ba079b7eaf97aefe661b004dee5c810df3e9`; squash merged as `0aaa04f2c52f62d877d012000ebba39fa32224bc`.
+- Netlify project ID `210c0bc7-2380-4fa9-bbd3-55d225f7d789`; published ready production deploy `6acc5631104cd90008479406` at `03f56ca704fb2db9e753ca87029a84fa4b7bd15c`, **not current main**. No deploy requested; owner wants final deployment only after pre-deploy work is ready and billing/credits permit.
+- **Release score 16%** (I2 and G1–G4). **Editorial acceptance separately NOT VERIFIED** (48 topics × 3 locales planned, not 144 approved articles). No new release gate is credited by CI-only PRs.
+- **Next gate I1**: issue #85. Need an immutable successful `push` workflow run whose `head_sha` equals current `main` and a reviewer/date recorded in the ledger. GitHub connector only exposes PR runs via commit-workflow query; empty push-run results and empty combined-status are inconclusive. Do not manufacture a 20% score.
+- **Remaining predeploy work**: focused claim/source/provenance review, Day 0 editorial scope reconciliation, material finding triage. **Postdeploy**: exact SHA production verification, real HTTP and assets/browser, responsive light/dark/keyboard/accessibility, multilingual routes/SEO/feeds, editorial native signoff. Track #29, #33, #12. Do not conflate code readiness with editorial or production acceptance.
+
+**NO MATERIAL FINDING UNDER THE RUG.**
