@@ -26,7 +26,7 @@ flowchart TD
 
 Equivalente textual: el diagrama muestra los límites de responsabilidad descritos arriba, no un despliegue verificado.
 
-*Referencias, revisión técnica y aprobación del responsable de publicación pendientes.*
+*Se incluye más abajo una referencia inmutable al SDK. Siguen pendientes la verificación completa de las afirmaciones frente a las fuentes, la revisión técnica y la aprobación de publicación.*
 
 ## Una respuesta perdida no convierte el reintento en una operación segura
 
