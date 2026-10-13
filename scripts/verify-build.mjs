@@ -90,6 +90,14 @@ if (fullMultiLocaleBuild && !existsSync('src/generated/articles.json')) {
   console.error('MISSING generated article catalogue: src/generated/articles.json');
   failed = true;
 }
+// A present but empty catalogue must not make the strict article gates vacuous.
+if (fullMultiLocaleBuild && existsSync('src/generated/articles.json')) {
+  const catalogue = JSON.parse(readFileSync('src/generated/articles.json', 'utf8'));
+  if (!Array.isArray(catalogue) || catalogue.length === 0) {
+    console.error('INVALID generated article catalogue: expected a nonempty array');
+    failed = true;
+  }
+}
 if (fullMultiLocaleBuild && existsSync('src/generated/articles.json')) {
   const catalogue = JSON.parse(readFileSync('src/generated/articles.json', 'utf8'));
   for (const [prefix, sitemapFile] of [['', 'build/sitemap.xml'], ['pt-BR/', 'build/pt-BR/sitemap.xml'], ['es/', 'build/es/sitemap.xml']]) {
