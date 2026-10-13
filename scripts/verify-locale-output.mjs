@@ -83,6 +83,15 @@ if (articleIndexLocations.filter(url => url === articleIndexSitemapUrl).length !
   console.error('Article index sitemap URL missing, duplicated, or incorrect:', locale, articleIndexSitemapUrl);
   failed = true;
 }
+// Isolated builds must expose homepage and Seasons as exact, unique sitemap URLs.
+const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url);
+for (const route of ['/', '/seasons/']) {
+  const expectedUrl = 'https://sails-protocol-blog.netlify.app' + route;
+  if (sitemapUrls.filter(url => url === expectedUrl).length !== 1) {
+    console.error('Custom page sitemap URL missing, duplicated, or incorrect:', locale, expectedUrl);
+    failed = true;
+  }
+}
 // Assert every published article's localized title is present in its reading listing.
 // Translation keys are immutable slug-based identifiers, not catalogue indices.
 const translations = JSON.parse(readFileSync('i18n/' + locale + '/code.json', 'utf8'));
