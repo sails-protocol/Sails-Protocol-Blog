@@ -141,6 +141,24 @@ for (const article of catalogue) {
     failed = true;
   }
 }
+// The article listing is a public localized route, not just a sitemap entry.
+const articleIndex = 'build/articles/index.html';
+if (!existsSync(articleIndex)) {
+  console.error('Missing localized article index:', locale, articleIndex);
+  failed = true;
+} else {
+  const html = readFileSync(articleIndex, 'utf8');
+  const route = '/articles/';
+  const canonical = 'https://sails-protocol-blog.netlify.app' + route;
+  if (!hasCanonicalUrl(html, canonical)) {
+    console.error('Missing or incorrect article index canonical:', locale, articleIndex, canonical);
+    failed = true;
+  }
+  if (!hasLocaleAlternate(html, locale, route)) {
+    console.error('Missing or incorrect article index hreflang:', locale, articleIndex);
+    failed = true;
+  }
+}
 // The published introduction is outside Season 02 and needs the same SEO protections.
 const intro = 'build/articles/what-is-sails-protocol/index.html';
 if (existsSync(intro)) {
