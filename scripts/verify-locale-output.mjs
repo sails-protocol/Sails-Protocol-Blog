@@ -75,6 +75,14 @@ for (const article of catalogue) {
     failed = true;
   }
 }
+// The localized article index must also have one exact sitemap entry.
+// An isolated locale build mounts at / rather than /pt-BR/ or /es/.
+const articleIndexSitemapUrl = 'https://sails-protocol-blog.netlify.app/articles/';
+const articleIndexLocations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url);
+if (articleIndexLocations.filter(url => url === articleIndexSitemapUrl).length !== 1) {
+  console.error('Article index sitemap URL missing, duplicated, or incorrect:', locale, articleIndexSitemapUrl);
+  failed = true;
+}
 // Assert every published article's localized title is present in its reading listing.
 // Translation keys are immutable slug-based identifiers, not catalogue indices.
 const translations = JSON.parse(readFileSync('i18n/' + locale + '/code.json', 'utf8'));
