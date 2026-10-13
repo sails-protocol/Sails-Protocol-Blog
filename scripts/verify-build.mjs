@@ -144,6 +144,24 @@ if (fullMultiLocaleBuild) {
     }
   }
 }
+// Locale sitemaps must not leak published article routes from another locale.
+if (fullMultiLocaleBuild && existsSync('src/generated/articles.json')) {
+  const catalogue = JSON.parse(readFileSync('src/generated/articles.json', 'utf8'));
+  for (const [prefix, sitemapFile] of [['', 'build/sitemap.xml'], ['pt-BR/', 'build/pt-BR/sitemap.xml'], ['es/', 'build/es/sitemap.xml']]) {
+    const sitemap = existsSync(sitemapFile) ? readFileSync(sitemapFile, 'utf8') : '';
+    const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url);
+    for (const article of catalogue) {
+      for (const otherPrefix of ['', 'pt-BR/', 'es/']) {
+        if (otherPrefix === prefix) continue;
+        const foreignUrl = 'https://sails-protocol-blog.netlify.app/' + otherPrefix + 'articles/' + article.slug + '/';
+        if (locations.includes(foreignUrl)) {
+          console.error('Foreign-locale article URL leaked into sitemap:', sitemapFile, foreignUrl);
+          failed = true;
+        }
+      }
+    }
+  }
+}
 // RSS and Atom must carry the explicit editorial description, not the
 // Docusaurus fallback \"Sails Protocol Blog Blog\".
 const feedDescription = 'Engineering notes on open P2P infrastructure';
