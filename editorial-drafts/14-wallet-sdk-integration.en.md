@@ -26,7 +26,7 @@ flowchart TD
 
 Text equivalent: the diagram shows the responsibility boundaries discussed above, not verified deployment.
 
-*Source references, technical review and owner publication approval pending.*
+*One immutable SDK source reference is included below. Full source-to-claim verification, technical review and owner publication approval remain pending.*
 
 ## A failed-response trade is not a harmless retry
 
