@@ -20,6 +20,8 @@ The Sails threat catalog names Sybil attacks, fake liquidity and credential expo
 
 **Failure:** a logged WebSocket URL exposes a reusable session credential. Treat the risk as a documented residual and demand current-head remediation evidence before asserting secure credential scoping.
 
+**Source-status precision:** the threat-model ledger marks the original absence of a `SEND_MESSAGE` limiter **resolved on 2026-08-15** by a per-participant, process-local fixed-window counter (documented default 20 messages/10 seconds). That does not establish cross-instance enforcement. The full-session-token WebSocket query-string exposure is separately documented as a residual, with a WS-scoped short-lived token still a proposal in that ledger. Neither observation alone verifies today's deployed configuration.
+
 ## Next question
 
 What exact-head evidence shows whether WebSocket credentials are scoped and message limits remain effective across workers and reconnects, without confusing an architectural proposal with a deployed control?
