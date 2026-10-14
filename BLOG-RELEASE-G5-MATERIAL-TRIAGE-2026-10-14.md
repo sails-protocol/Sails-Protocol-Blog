@@ -130,3 +130,18 @@ Read the **full source files** of the published articles 02, 03 and 09 on GitHub
 | 09 DeCripto Brazil Market Shift | Both preserve the distinction among Coinext/Bity brokerage closures, Bitso direct-retail transition and Bybit local-entity migration; official notices and the BCB reference remain cited; no bankruptcy or proven concentration conclusion asserted | Effective dates/notice updates require refresh at release, especially near October/November 2026 deadlines |
 
 **New finding F-006-L10N-META:** localized article 03 frontmatter descriptions visibly truncated with ellipses. This is a narrow actionable editorial defect, not evidence that the article bodies are inaccurate. Remediate in isolated content PR with exact-head CI; do not silently edit published `main`. F-006 remains PARTIAL, E4/G4 NOT VERIFIED, score 16%, Day 0 approvals 0/144.
+
+## Remaining published Season 02 localization inventory | 2026-10-14
+
+Inspected the PT-BR and ES Markdown sources on `main` for articles **01, 04, 05, 06, 07 and 08** (12 files), complementing the earlier nine-edition 02/03/09 review. **Coverage: 27/27 published Season 02 language files located and inspected for frontmatter, citation presence and conspicuous maturity/authority boundaries.** This is not 27/27 native editorial approvals, detailed translation QA or browser route verification.
+
+| Article | PT-BR / ES source-presence finding | Residual |
+| --- | --- | --- |
+| 01 Why Sails Arrives Now | Both retain eleven linked references and explicit warning against interpreting sources as production audit or legal opinion | Freshness of cross-jurisdiction sources and localized prose parity pending |
+| 04 Hidden Cost of Gatekeepers | Both retain Coinext, Bity and BCB links, with no demonstrated statistical concentration inference | Localized economic/legal wording requires editor review |
+| 05 Noncustodial Business Model | Both frame incentives as **proposed**, not verified Sails Market capability; no external URLs | Evidence path for business claims, per-integration authority proof pending |
+| 06 Stablecoins Need Open Marketplaces | Both link ESMA guidance and explicitly reject interpreting it as liquidity/routing/deployment verification | Check MiCA chronology and issuer/network conditions |
+| 07 One Market, Many Interfaces | Both frame shared market state as architectural target, not production interoperability; diagram source present | Concurrency evidence and native diagram labels review pending |
+| 08 Economic Coordination Protocol | Both preserve architectural/production uncertainty boundaries. **Concrete i18n finding:** PT-BR and ES Mermaid diagrams retain English labels such as `Authoritative settlement evidence?`, `Record verified outcome`, `Preserve pending or uncertain state`, `External settlement rails` | Translate diagram labels without changing state-machine semantics; isolated reviewed content PR |
+
+**Tracked remediation:** F-006-L10N-META localized Tornado Cash description fix is proposed in **DRAFT PR #108**, HEAD `42e63ee27ad5de894daaa4f8e4c734e9e474f116`, pending exact-head CI/reviewer signoff; do not mark as merged. **New finding F-006-L10N-DIAGRAM:** untranslated article 08 Mermaid diagram labels in PT-BR/ES. No merge, deployment, gate closure or readiness-score increase: **16%; 0/144 Day 0 approvals**.
