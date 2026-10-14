@@ -55,3 +55,7 @@ The registry comments at `src/modules/open-settlement/escrow-providers.ts` lines
 **Residual CTO question, not a confirmed vulnerability:** whether defense in depth should add WDK to the dispatch deny-set (and how to treat pre-existing persisted WDK escrows and dev/test use), or whether the existing startup gate plus empty-seed refusal is the approved production policy. Require explicit ownership and exact-head negative tests before changing runtime behavior. The blog editorial verdict remains “WDK reference is server-custodial and not authorized for production,” without claiming a universally enforced per-dispatch ban.
 
 **Source:** https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts#L455-L553
+
+## Protocol Gatekeeper handoff (2026-10-14)
+
+Opened [Protocol issue #474](https://github.com/sails-protocol/Sails-Protocol/issues/474) for exact-HEAD negative tests and CTO classification under the existing [production surface audit #220](https://github.com/sails-protocol/Sails-Protocol/issues/220). This is a request for evidence and an explicit defense-in-depth decision, **not a confirmed security defect or a test pass**. Keep the editorial publication gate blocked until the appropriate review and approvals.
