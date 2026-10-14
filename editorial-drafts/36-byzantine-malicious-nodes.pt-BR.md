@@ -1,6 +1,6 @@
 # Nodes bizantinos e maliciosos: quais premissas adotar
 
-*Season 6 / Temporada 6. Somente rascunho editorial. Auditoria de fontes e aprovação pendentes.*
+*Temporada 6. Rascunho editorial. Auditoria das fontes e aprovação pendentes.*
 
 ## Pergunta
 
