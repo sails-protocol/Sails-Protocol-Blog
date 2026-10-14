@@ -24,6 +24,8 @@ O schema HTTP de disputa preserva `evidenceReferenceId` e o marcador explícito 
 
 **Teste de abuso:** enviar descritores enormes ou aninhados, referências repetidas e URIs externas fingindo ser mídia verificada. Exigir enforcement exato, rejeição sem efeitos e contabilização por escopo antes de alegar proteção abrangente.
 
+**Limite específico das fontes:** o schema Zod compartilhado preserva os campos, mas a exclusividade entre `uri` e `evidenceReferenceId` é aplicada posteriormente no serviço de disputas, não pelo próprio schema. O contrato `store()`/`retrieve()` do provedor cobre armazenamento e hash da mídia, não a autoridade da assinatura da prova. Nenhuma dessas fontes, isoladamente, certifica a aplicação das cotas de upload.
+
 ## Próxima pergunta
 
 Quais escopos de ator e de prova respondem pela cota persistente quando requisições simultâneas chegam a workers diferentes? Que testes no commit exato demonstram que uma requisição rejeitada não deixa evidência armazenada nem débito no registro autoritativo de cotas?
