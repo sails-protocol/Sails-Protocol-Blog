@@ -24,7 +24,7 @@ Um artigo técnico precisa identificar operação, provedor, titular das chaves,
 
 Quais provedores, configurações e evidências end-to-end estão autorizados para o Day 0? Essa resposta depende do CTO e do gate de lançamento, não deste artigo.
 
-## Source ledger
+## Registro de fontes
 
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/common/idempotency.ts
@@ -32,4 +32,4 @@ Quais provedores, configurações e evidências end-to-end estão autorizados pa
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/multisig.provider.ts
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/lightning-hodl.provider.ts
 
-**Maturity:** source-inspected, runtime verification pending. CTO review pending.
+**Maturidade:** código-fonte examinado; verificação em execução pendente. Revisão do CTO pendente.
