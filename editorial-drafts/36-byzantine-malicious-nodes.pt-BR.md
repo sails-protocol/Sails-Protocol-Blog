@@ -14,8 +14,6 @@ Distinga participante malicioso, operador comprometido e nós em conluio. Pergun
 
 Este tema pertence à preparação adversarial. Qualquer alegação de resiliência bizantina exige modelo de falhas, topologia de teste e evidência além de diagramas.
 
-*Este rascunho não comprova uma implementação nem autoriza publicação.*
-
 ## Verificabilidade independente ainda é propriedade em aberto
 
 A investigação Durable Protocol Truth identifica uma propriedade material ausente: um verificador independente ainda não consegue demonstrar toda a ligação Authority assinada → Outcome → DestinationBinding sem confiar nas associações guardadas pelo operador. O relatório situa a maior lacuna entre Outcome e DestinationBinding, inclusive para MULTISIG, e registra ausência de exportação dos fatos pelos participantes. É lacuna documentada de projeto e evidência, não prova de ataque explorado.
@@ -27,3 +25,5 @@ A investigação Durable Protocol Truth identifica uma propriedade material ause
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/DURABLE_PROTOCOL_TRUTH_EVIDENCE.md
 
 *Registro histórico de evidências e inspeção do código. Implantação atual, revisão do CTO e publicação ainda não verificadas.*
+
+*Este rascunho não comprova uma implementação nem autoriza publicação.*
