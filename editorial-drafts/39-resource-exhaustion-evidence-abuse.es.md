@@ -14,10 +14,6 @@ Muchas solicitudes pequeñas pueden agotar recursos igual que una carga enorme. 
 
 Un cliente envía una URI sin procesar como si fuera una referencia ligada a integridad. Aceptarla sin comprobar su tipo permite una afirmación falsa de procedencia. Otro fallo ocurre si se rechaza después de guardar bytes o emitir eventos. El gate editorial debe exigir aceptación en el límite, rechazo en +1 y cero efectos mediante la ruta real del servicio y el ledger duradero de cuotas.
 
-## Límites y decisiones
-
-Limite tamaño, profundidad, complejidad, cuotas acumuladas e intentos en el límite del servicio antes del trabajo costoso. Atribuya uso a actores autenticados e identificadores persistentes de prueba, no solo a contadores de proceso.
-
 ## Fallo y verificación
 
 Las pruebas de límite deben mostrar aceptación en el valor exacto, rechazo una unidad por encima y cero efectos tras el rechazo. Los valores deben comprobarse con decisiones e implementación actuales antes de publicar.
@@ -27,6 +23,10 @@ Las pruebas de límite deben mostrar aceptación en el valor exacto, rechazo una
 El esquema HTTP de disputas conserva `evidenceReferenceId` y el marcador explícito `externalReference: true`. Una URI sin procesar no se convierte automáticamente en referencia OpenProof vinculada a integridad: el servicio verifica formas excluyentes y exige declarar la referencia externa. La interfaz del proveedor separa bytes y metadatos de la autoridad de la prueba. Es un límite de confianza de entrada, no prueba de que todas las cuotas, tamaños, profundidades JSON o presupuestos acumulados se apliquen en producción.
 
 **Prueba de abuso:** enviar descriptores enormes o anidados, referencias repetidas y URI externas que simulan ser medios verificados. Exigir enforcement exacto, rechazo sin efectos y contabilidad por alcance antes de afirmar protección completa.
+
+## Siguiente pregunta
+
+¿Qué ámbitos de actor y de prueba responden por la cuota persistente cuando llegan solicitudes simultáneas a distintos procesos? ¿Qué pruebas en el commit exacto demuestran que una solicitud rechazada no deja evidencia almacenada ni cargos en el registro autoritativo de cuotas?
 
 ### Fuentes y estado de verificación
 
