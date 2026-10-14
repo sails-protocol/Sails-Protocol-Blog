@@ -24,6 +24,8 @@ The dispute HTTP schema preserves `evidenceReferenceId` and the explicit `extern
 
 **Abuse test:** submit oversized nested descriptors, repeated evidence references, and external URIs pretending to be verified media. Demand exact enforcement code, rejection-with-zero-side-effects evidence and per-scope accounting before claiming comprehensive resource protection.
 
+**Source-specific limitation:** the shared Zod descriptor schema preserves fields, while mutual exclusivity between a raw `uri` and `evidenceReferenceId` is explicitly enforced later in the dispute service, not by the schema itself. The provider's `store()`/`retrieve()` contract covers media storage and hashing, not the authority of the proof signature. Neither source alone certifies upload quota enforcement.
+
 ## Next question
 
 Which actor and proof scopes own the durable budget when concurrent requests arrive on different workers, and what exact-head tests demonstrate that a rejected request leaves neither stored evidence nor an authoritative quota debit?
