@@ -1,7 +1,7 @@
 ---
 slug: season-2-03-tornado-cash-turning-point
 title: "El punto de inflexión de Tornado Cash"
-description: "En Van Loon v. Treasury, el Tribunal Federal de Apelaciones del Quinto Circuito concluyó en 2024 que los contratos inteligentes inmutables examinados no…"
+description: "En Van Loon v. Treasury, el Quinto Circuito examinó los límites de las sanciones de OFAC sobre contratos inteligentes inmutables concretos, sin crear una exención jurídica general."
 tags: [protocol, editorial]
 draft: false
 ---
