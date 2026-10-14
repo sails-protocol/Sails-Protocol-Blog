@@ -59,3 +59,21 @@ The consolidated [PR #103](https://github.com/sails-protocol/Sails-Protocol-Blog
 | Reuse | Potential background references after individual review | Claim-ledger citations only when source and maturity match | Review article-by-article |
 
 **F-006 disposition: PARTIALLY RECONCILED, NOT CLOSED.** Structural/denominator collision is resolved as a documentary rule. A nine-row slug/title/source-to-topic crosswalk and review of public EN/PT-BR/ES routes remain unverified here; do not invent it from topic similarity. Owner/CTO must confirm whether any individual published article should be linked as contextual reading, without changing the frozen 48-topic scope. The release contract's E5 and G5 remain NOT VERIFIED; readiness remains 16%.
+
+## F-006 canonical nine-slug crosswalk | verified from current GitHub main, 2026-10-14
+
+**Evidence:** `src/pages/seasons/index.tsx` defines the exact nine published Season 02 slugs; `src/generated/articles.json` supplies their canonical English titles/descriptions; `EDITORIAL-SEASONS-AND-READING-PATHS.md` defines the separate numbered Day 0 topics. This table is a **semantic candidate map for editorial reuse only**, not a claim of article equivalence, approved source coverage or verified live production routes.
+
+| Published Season 02 article (canonical slug suffix) | Candidate Day 0 contextual reading | Mapping status |
+| --- | --- | --- |
+| 01 `why-sails-arrives-now` | 01–02 motivation/coordination | Context only; not equivalent |
+| 02 `software-is-not-custody` | 09 identity/authority; 16 wallet/node boundaries; 43 escrow custody | Context only; legal/software scope differs |
+| 03 `tornado-cash-turning-point` | 18 external-vs-protocol boundaries; 48 governance | Context only; legal developments are not Protocol conformance |
+| 04 `hidden-cost-gatekeepers` | 02 coordination problem; 25 fragmented liquidity | Context only; market framing differs |
+| 05 `noncustodial-business-model` | 15 reference-market liquidity; 44 fees/incentives | Context only; business argument differs from implementation |
+| 06 `stablecoins-open-marketplaces` | 24 settlement rails; 46 cross-rail routing | Context only; no production compatibility implied |
+| 07 `one-market-many-interfaces` | 15 reference market; 18 external integrations; 47 wallet/market | Context only; no deployed interoperability implied |
+| 08 `economic-coordination-protocol` | 01 introduction; 03 architecture; 20 modular vision | Context only; maturity claims require independent audit |
+| 09 `decripto-brazil-market-shift` | 02 motivation; 45 market abuse; 48 governance | Context only; jurisdiction-specific reporting differs |
+
+**Introduction is separate:** `what-is-sails-protocol` is the public introduction, not a tenth Season 02 article and not Day 0 article 01 by identity. **No double-counting:** nine published slugs + one introduction are separate from the 48 planned Day 0 topics/144 editions. **No automated linking or publication:** suggested related-reading links require claim review, locale-specific live-route verification and approval. This closes the *missing nine-row documentary crosswalk* subtask, but F-006 remains **PARTIAL / NOT VERIFIED** for full article content, source currency, locale/browser checks and CTO acceptance; E5 and G5 stay NOT VERIFIED, score 16%.
