@@ -1,6 +1,6 @@
 # Modelagem de ameaças em um protocolo econômico P2P
 
-*Season 6 / Temporada 6. Somente rascunho editorial. Auditoria de fontes e aprovação pendentes.*
+*Temporada 6. Rascunho editorial. Auditoria das fontes e aprovação pendentes.*
 
 ## Pergunta
 
@@ -14,16 +14,13 @@ Uma ameaça não está mitigada apenas porque aparece no catálogo. Para cada ce
 
 Se múltiplas conexões ou nós contornam um contador local, a alegação sobre limite precisa explicitar esse escopo. Se uma URL de sessão vai para logs, um token válido pode vazar apesar de assinaturas corretas em outros fluxos. O registro descreve achados históricos; verificar se persistem no HEAD atual exige nova revisão.
 
-
 ## Limites e escolhas
 
-Separe fundos, chaves de assinatura, alegações de pagamento, evidências e estado da negociação como ativos com autoridades diferentes. Avalie identidade falsa, comprovantes forjados, requisições duplicadas, nodes maliciosos e provedores indisponíveis. Uma mitigação só serve quando seu limite de aplicação é explícito.
+Separe fundos, chaves de assinatura, alegações de pagamento, evidências e estado da negociação como ativos com autoridades diferentes. Avalie identidade falsa, comprovantes forjados, requisições duplicadas, nós maliciosos e provedores indisponíveis. Uma mitigação só serve quando seu limite de aplicação é explícito.
 
 ## Falha e verificação
 
 Isto é um roteiro de modelagem, não uma auditoria concluída. Antes de publicar garantias, relacione cada ameaça ao código exato, testes adversariais, risco residual e revisão técnica datada.
-
-*No verified implementation claim or permission to publish is implied by this draft.*
 
 ## Catálogo de ameaças versus mitigação demonstrada
 
@@ -31,8 +28,10 @@ O catálogo do Sails cita ataques Sybil, liquidez falsa e exposição de credenc
 
 **Falha:** uma URL de WebSocket registrada em log expõe uma credencial reutilizável. Tratar como risco documentado e exigir evidência de correção no HEAD atual antes de afirmar escopo seguro de credenciais.
 
-### Source and maturity
+### Fonte e maturidade da evidência
 
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md
 
-*Historical evidence/source inspection only; no latest-head test or publication approval.*
+*Somente registro histórico de evidências e inspeção de fontes; sem testes no HEAD atual ou aprovação para publicação.*
+
+*Este rascunho não comprova uma implementação verificada nem autoriza sua publicação.*
