@@ -14,10 +14,6 @@ An attacker can use many small requests as effectively as one oversized upload. 
 
 A client submits a raw URI while presenting it as an integrity-bound evidence reference. Accepting the descriptor without checking its declared type would allow a false provenance claim. A second failure occurs if the system rejects a payload only after writing bytes or emitting events. The publication gate should demand exact-boundary acceptance, +1 rejection and zero side effects, using the actual service path and durable quota ledger.
 
-## Boundaries and tradeoffs
-
-Bound payload size, nesting depth, complexity, cumulative quota and attempt rate at the service boundary before expensive work. Attribute usage to authenticated actors and durable proof identifiers, not merely transient process counters.
-
 ## Failure and verification
 
 Boundary tests should show exact-limit acceptance, one-unit-over rejection and zero downstream effects after rejection. Policy numbers must be checked against approved current decisions and implementation before publication.
@@ -27,6 +23,10 @@ Boundary tests should show exact-limit acceptance, one-unit-over rejection and z
 The dispute HTTP schema preserves `evidenceReferenceId` and the explicit `externalReference: true` marker. A raw URI is not silently upgraded to an integrity-bound OpenProof reference: the service checks mutually exclusive pointer forms and requires the external-reference declaration. The evidence provider interface deliberately separates stored bytes and metadata from proof authority. This is an input-trust boundary, not proof that all resource quotas, upload sizes, JSON depth or cumulative budgets are enforced in production.
 
 **Abuse test:** submit oversized nested descriptors, repeated evidence references, and external URIs pretending to be verified media. Demand exact enforcement code, rejection-with-zero-side-effects evidence and per-scope accounting before claiming comprehensive resource protection.
+
+## Next question
+
+Which actor and proof scopes own the durable budget when concurrent requests arrive on different workers, and what exact-head tests demonstrate that a rejected request leaves neither stored evidence nor an authoritative quota debit?
 
 ### Source and verification status
 
