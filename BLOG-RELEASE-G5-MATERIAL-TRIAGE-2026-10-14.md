@@ -77,3 +77,21 @@ The consolidated [PR #103](https://github.com/sails-protocol/Sails-Protocol-Blog
 | 09 `decripto-brazil-market-shift` | 02 motivation; 45 market abuse; 48 governance | Context only; jurisdiction-specific reporting differs |
 
 **Introduction is separate:** `what-is-sails-protocol` is the public introduction, not a tenth Season 02 article and not Day 0 article 01 by identity. **No double-counting:** nine published slugs + one introduction are separate from the 48 planned Day 0 topics/144 editions. **No automated linking or publication:** suggested related-reading links require claim review, locale-specific live-route verification and approval. This closes the *missing nine-row documentary crosswalk* subtask, but F-006 remains **PARTIAL / NOT VERIFIED** for full article content, source currency, locale/browser checks and CTO acceptance; E5 and G5 stay NOT VERIFIED, score 16%.
+
+## Published Season 02 primary-file inspection | 2026-10-14
+
+Inspected **all nine English published Markdown files** on GitHub `main` under `articles/01-why-sails-arrives-now.md` through `articles/09-decripto-brazil-market-shift.md`, and their canonical slugs from `src/generated/articles.json`. This is an editorial **source-presence and scope inspection**, not a live-link crawl, fresh legal research, PT-BR/ES review, or signoff.
+
+| Article | Documentary finding | Next verification |
+| --- | --- | --- |
+| 01 Why Sails Arrives Now | Links to BCB, FinCEN, CFTC, ESMA, Fifth Circuit and company notices; distinguishes roadmap from production | Revalidate dated regulatory/company claims against primary originals |
+| 02 Software Is Not Custody | FinCEN FIN-2014-R002 and CFTC Phantom 2026 are cited; explicitly rejects blanket software exemption | Verify precise legal scope and conditional CFTC language |
+| 03 Tornado Cash Turning Point | Cites Fifth Circuit Van Loon PDF; expressly limits holding to sanctions/property question | Check ruling/current procedural status before republishing |
+| 04 Hidden Cost of Gatekeepers | Coinext, Bity and BCB cited; acknowledges compliance benefits and rejects automatic market-concentration proof | Verify notices, dates and any market-level inference |
+| 05 Noncustodial Business Model | No external URL detected in the inspected file's source section; architectural/business analysis | Add primary provenance where claims require it; avoid implied production custody guarantee |
+| 06 Stablecoins Need Open Marketplaces | ESMA guidance cited; acknowledges issuer/network dependencies and roadmap scope | Recheck MiCA/ESMA chronology and exact regulated activity |
+| 07 One Market, Many Interfaces | No external URL detected in inspected file's source section; explicitly calls cross-app interoperability a design target | Anchor economic state/replay claims to immutable Protocol source and tests |
+| 08 Economic Coordination Protocol | No external URL detected in inspected file's source section; design and production maturity separated | Add source-to-claim ledger for modules, authority and actual implemented scope |
+| 09 DeCripto Effect | Links official Coinext, Bity, Bitso, Bybit and BCB material; distinguishes closure, migration, retail transition and insolvency | Revalidate current notices, effective dates and regulatory causal claims |
+
+**Methodological limit:** URL presence/absence above was inspected in Markdown; external target reachability, source fidelity and current accuracy have **not** been independently verified. The English-only review cannot close localized editorial E2/E3/E4 or production L1–L5. The documentary crosswalk and primary-file inventory are complete, but F-006/E5 still require reviewer acceptance and no automatic content reuse is authorized. **No release score change: 16%; Day 0 approvals: 0/144.**
