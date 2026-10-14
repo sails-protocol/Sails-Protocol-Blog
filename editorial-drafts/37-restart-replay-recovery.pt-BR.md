@@ -14,8 +14,6 @@ Um teste útil encerra o processo em pontos definidos perto do commit, dos efeit
 
 Um PASS só com mocks é insuficiente. Documente banco de dados, commit exato, concorrência, ponto de interrupção e pós-condições persistentes. O roteiro é proposto até que as execuções sejam referenciadas.
 
-*Este rascunho não comprova uma implementação nem autoriza publicação.*
-
 ## Evidência de conformidade: recuperação não é uniforme
 
 O registro de Recovery/Reconciliation Conformance informa que a automação M9 (incluindo C4, C8, C13–14, C18 e varreduras de reorganização) está delimitada a MULTISIG. O documento registra explicitamente a falta de recuperação automática equivalente para LIGHTNING_HODL, WDK_USDT_EVM e SAFE_GUARD_EVM como pendência, não como capacidade concluída. A decisão em aberto é quais redes devem permanecer e quais obrigações de recuperação cada uma terá.
@@ -27,3 +25,5 @@ O registro de Recovery/Reconciliation Conformance informa que a automação M9 (
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/RECOVERY_RECONCILIATION_CONFORMANCE_EVIDENCE.md
 
 *Registro histórico de evidências e inspeção do código. Implantação atual, revisão do CTO e publicação ainda não verificadas.*
+
+*Este rascunho não comprova uma implementação nem autoriza publicação.*
