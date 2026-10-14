@@ -20,6 +20,8 @@ O catálogo do Sails cita ataques Sybil, liquidez falsa e exposição de credenc
 
 **Falha:** uma URL de WebSocket registrada em log expõe uma credencial reutilizável. Tratar como risco documentado e exigir evidência de correção no HEAD atual antes de afirmar escopo seguro de credenciais.
 
+**Precisão do estado das fontes:** o registro de ameaças marca a ausência original de limite em `SEND_MESSAGE` como **resolvida em 15/08/2026** com contador de janela fixa por participante, local ao processo (padrão documentado de 20 mensagens/10 segundos). Isso não comprova enforcement entre instâncias. A exposição de token de sessão completo na query string do WebSocket é um risco residual separado; o token curto e restrito ao WS permanece proposta naquele registro. Nenhuma dessas observações verifica, por si só, a configuração hoje implantada.
+
 ## Próxima pergunta
 
 Quais evidências no commit exato mostram se as credenciais WebSocket têm escopo restrito e se os limites de mensagens funcionam entre workers e reconexões, sem confundir proposta arquitetural com controle implantado?
