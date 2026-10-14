@@ -58,10 +58,10 @@ Este diagrama conceitual separa interfaces, coordenação e liquidação externa
 
 ```mermaid
 flowchart TD
-    A[Wallets and market applications] --> B[Sails P2P Trading SDK]
-    B --> C[Sails Node coordination]
-    C --> D{Authoritative settlement evidence?}
-    D -->|Yes| E[Record verified outcome]
-    D -->|No| F[Preserve pending or uncertain state]
-    G[External settlement rails] --> D
+    A[Carteiras e aplicações de mercado] --> B[Sails P2P Trading SDK]
+    B --> C[Coordenação pelo Sails Node]
+    C --> D{Evidência autoritativa de liquidação?}
+    D -->|Sim| E[Registrar resultado verificado]
+    D -->|Não| F[Preservar estado pendente ou incerto]
+    G[Redes externas de liquidação] --> D
 ```
