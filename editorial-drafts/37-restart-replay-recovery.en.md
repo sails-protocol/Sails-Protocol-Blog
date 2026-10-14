@@ -20,6 +20,9 @@ The protocol's Recovery/Reconciliation Conformance evidence reports that the aut
 
 **Failure:** a process crashes during a non-MULTISIG release. A working provider method alone does not establish a durable restart/reconciliation path. The editorial claim must name the rail and the evidence scope.
 
+
+**Additional boundary:** detecting divergence between recorded state and external outcomes does not itself reconstruct or complete an interrupted operation. Correspondence checking and post-crash recovery are separate obligations requiring rail-specific evidence.
+
 ### Evidence ledger
 
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/RECOVERY_RECONCILIATION_CONFORMANCE_EVIDENCE.md
