@@ -24,6 +24,8 @@ El esquema HTTP de disputas conserva `evidenceReferenceId` y el marcador explíc
 
 **Prueba de abuso:** enviar descriptores enormes o anidados, referencias repetidas y URI externas que simulan ser medios verificados. Exigir enforcement exacto, rechazo sin efectos y contabilidad por alcance antes de afirmar protección completa.
 
+**Límite específico de las fuentes:** el esquema Zod compartido conserva los campos, pero la exclusividad entre `uri` y `evidenceReferenceId` se aplica después en el servicio de disputas, no en el propio esquema. El contrato `store()`/`retrieve()` del proveedor cubre almacenamiento y hash del medio, no la autoridad de la firma de la prueba. Ninguna de esas fuentes, por sí sola, certifica la aplicación de cuotas de carga.
+
 ## Siguiente pregunta
 
 ¿Qué ámbitos de actor y de prueba responden por la cuota persistente cuando llegan solicitudes simultáneas a distintos procesos? ¿Qué pruebas en el commit exacto demuestran que una solicitud rechazada no deja evidencia almacenada ni cargos en el registro autoritativo de cuotas?
