@@ -47,3 +47,11 @@ At the pinned Protocol revision, `src/config/index.ts` lines 55-77 recognize `de
 **Required Gatekeeper test matrix:** (1) production + `MOCK_ESCROW=false` + nonempty seed must refuse boot; (2) production + `MOCK_ESCROW=false` + empty seed must not construct a WDK wallet; (3) typo `NODE_ENV=prod` must refuse boot; (4) unset `NODE_ENV` defaults to development, explicitly verify deployment tooling never relies on this permissive default for real-value services; (5) alternate runtime entrypoints cannot dispatch WDK outside the startup checks. Mark each test pending until exact-HEAD execution is recorded. No production-incident claim.
 
 **Source:** https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/config/index.ts#L43-L77
+
+## Registry semantics and residual defense-in-depth question (2026-10-14)
+
+The registry comments at `src/modules/open-settlement/escrow-providers.ts` lines 455-467 and 507-553 explicitly scope `PRODUCTION_INELIGIBLE_TYPES` to providers classified by **that registry**; only MOCK is currently listed because it fabricates settlement success. `getSettlementProvider()` calls `assertDeploymentEligible(type)` before provider selection. The separate WDK prohibition is encoded at configuration startup and its wallet-construction precondition. Thus the phrase “single enforcement point” in the registry refers to **its own set-based policy**, not all production eligibility decisions. **Do not interpret the missing WDK entry as proof of a defect in this registry's declared MOCK-only contract.**
+
+**Residual CTO question, not a confirmed vulnerability:** whether defense in depth should add WDK to the dispatch deny-set (and how to treat pre-existing persisted WDK escrows and dev/test use), or whether the existing startup gate plus empty-seed refusal is the approved production policy. Require explicit ownership and exact-head negative tests before changing runtime behavior. The blog editorial verdict remains “WDK reference is server-custodial and not authorized for production,” without claiming a universally enforced per-dispatch ban.
+
+**Source:** https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts#L455-L553
