@@ -40,6 +40,8 @@ A decisão de integração é manter as chaves e a assinatura sob controle da ca
 
 **Próxima pergunta:** um teste de integração no HEAD exato consegue simular uma negociação persistida com resposta perdida, recuperar a mesma negociação na repetição e rejeitar um contexto de assinatura divergente sem segundo efeito econômico? Até existir essa evidência, trata-se de um requisito, não de uma garantia verificada.
 
+**Precisão do contrato do SDK:** o método inspecionado `SailsOpenP2PModule.trade(offerId, amount, idempotencyKey?)` encaminha a chave opcional para `/v1/openp2p/trades`. O comentário do código descreve no servidor no máximo uma negociação para a mesma chave reutilizada, mas alerta que omiti-la permite duplicação após uma resposta perdida. É um *contrato delimitado da API*, não prova de integração com a Wallet, de liquidação exatamente uma vez ou de segurança ao trocar a chave entre tentativas.
+
 ## Fronteira comprovada no código e próximo teste
 
 O SDK examinado oferece criação de negociação com chave de idempotência opcional; custódia e assinatura da carteira exigem provas separadas.
