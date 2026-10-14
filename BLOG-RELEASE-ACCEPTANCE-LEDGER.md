@@ -1,5 +1,15 @@
 # Sails Protocol Blog | Release acceptance ledger
 
+> **CURRENT RELEASE AUTHORITY | 2026-10-14 | 16% weighted, 5/25 gates.** The historical table below contains an I3 PASS for an older Netlify production commit. For the current release, **I3 = NOT VERIFIED** because production is not at the reviewed main SHA. Current PASS gates are **I2, G1, G2, G3, G4** only. The historical **20%** score is retained for audit history, not as current readiness. The Day 0 editorial acceptance denominator (144 language editions) is separate and has no formal signoffs recorded. PR CI success and editorial draft improvements do not automatically promote a release gate. See the 2026-10-13 authority checkpoint below.
+
+## Next evidence gates, in execution order
+
+1. **I1, possible +4 weighted points:** Obtain a successful `push` Validate Blog workflow run for the **exact current main SHA**, with run URL, event, date and reviewer. PR checks are insufficient. Tracked in issue #85.
+2. **G5, possible +3 weighted points:** Triage all material findings and open editorial/visual release residuals with dispositions and reviewer evidence. Do not count a list of PRs as completed triage.
+3. **Predeploy editorial E2/E3/E5:** Reconcile claims, provenance and Day 0 scope against exact source evidence. These gates require recorded independent review, not simply new draft text.
+4. **Production-dependent I3–I5, U1–U5, L1–L5, E1/E4:** Remain NOT VERIFIED until owner-authorized Netlify deployment of reviewed main and production/browser/native-language evidence. Issue #29. Do not trigger deploy during the credit pause.
+
+
 **Baseline:** 2026-10-12 UTC. Source: BLOG-RELEASE-ACCEPTANCE-CONTRACT.md. Evidence owner: CTO review. PASS means this specific gate has been independently evidenced, not that neighboring gates pass.
 
 | Gate | State | Evidence / residual |
