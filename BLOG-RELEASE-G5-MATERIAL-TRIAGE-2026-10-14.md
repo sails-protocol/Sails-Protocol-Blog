@@ -31,3 +31,18 @@ These are **editorial claim restrictions**, not new allegations about current Pr
 A reviewer must explicitly acknowledge each row, identify any additional material findings from current code/PRs, assign owner/next action and record review date and immutable evidence. **Do not promote G5 to PASS** while material findings are merely enumerated or blocked. G5 is a triage gate, not a license to hide unresolved work. Netlify remains paused; no merge or deploy is authorized by this file.
 
 **NO MATERIAL FINDING UNDER THE RUG.**
+
+## 2026-10-14 follow-up | source-bounded editorial triage, not gate closure
+
+The consolidated [PR #103](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/103) now tracks source inspections and individual 3/3 green exact-head CI for [#96](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/96), [#97](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/97), [#98](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/98), [#99](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/99), and [#100](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/100). This **reduces unreviewed claim ambiguity** in five priority topics, but **does not close** F-004/E2–E4 or grant any G1–G7 article signoff.
+
+| Material editorial boundary | Owner/next reviewer | Current disposition and closure evidence |
+| --- | --- | --- |
+| SDK idempotency vs Wallet guarantees (14) | Protocol CTO + Wallet integration owner | Draft qualified; require exact-head lost-response/retry and signing-context integration evidence |
+| WebSocket local limiter vs distributed controls and session URL exposure (35) | Protocol security owner / Gatekeeper | Draft qualified; require actual deployment token-scope and multi-worker evidence |
+| Authority → Outcome → DestinationBinding (36) | Protocol CTO / OpenProof owner | Draft preserves unresolved independent proof; require participant-verifiable export/cryptographic evidence |
+| MULTISIG recovery vs other rails and divergence detection (37) | Settlement owner / Gatekeeper | Draft qualified; require per-rail restart/reconciliation conformance or explicit rail exclusion |
+| Evidence descriptor vs durable quota enforcement (39) | OpenProof owner / Gatekeeper | Draft qualified; require bounds, concurrent quota accounting, zero-side-effect rejection tests |
+| WDK isolation and NODE_ENV boundary (related custody claims) | Protocol Gatekeeper | [Protocol #474](https://github.com/sails-protocol/Sails-Protocol/issues/474) and [Blog #106](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/106); test and deployment boundary unresolved, no exploit asserted |
+
+**Operational owners in this matrix are proposed functional roles, not verified assignees.** The G5 reviewer must confirm responsibility, disposition, dates, and evidence, including the non-editorial rows above. No automatic release-gate promotion. Netlify remains paused. **NO MATERIAL FINDING UNDER THE RUG.**
