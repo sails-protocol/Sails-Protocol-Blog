@@ -31,3 +31,11 @@ The existing companion `editorial-drafts/deep-revisions/06-43-idempotency-escrow
 **Release impact:** keep WDK production-eligibility claims blocked and escalate to the Protocol CTO/Gatekeeper. Require an explicit decision on intended deny-set policy, full effective config/startup/dispatch enforcement and negative production tests at exact HEAD. The Blog must not present a comment as a runtime-enforced invariant. No code change to the Protocol or Day 0 approval is authorized by this editorial finding.
 
 **Source:** https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts
+
+## Follow-up resolution of the initial guard discrepancy (2026-10-14)
+
+**Material correction to the finding above:** inspection of `src/config/index.ts` at the **same pinned Protocol commit** found a distinct fail-closed **boot-time** guard at lines 825-857. When `config.isProduction && !config.features.mockEscrow && config.wdk.seedPhrase !== ''`, configuration throws a fatal error before startup, explicitly citing the WDK production-ineligible policy. The WDK provider's `getWallet()` also refuses an empty seed. Therefore the earlier observation that `PRODUCTION_INELIGIBLE_TYPES` only contains `MOCK` **must not be reported as an unmitigated production-enforcement bypass**. The enforcement is split across startup configuration and provider registry, rather than expressed in one deny-set.
+
+**Remaining verification:** confirm configuration initialization precedes every settlement provider dispatch; run exact-HEAD negative boot tests for `NODE_ENV=production`, `MOCK_ESCROW=false`, non-empty `WDK_SEED_PHRASE`, plus tests showing an empty seed cannot construct the WDK wallet. Check unusual entrypoints and environment handling. Until then this is **source-backed guard presence, not independently executed fail-closed verification**. The earlier registry discrepancy remains an architectural/documentation observation; its original severity is reduced in light of this additional guard. No evidence of an actual production exploit was found.
+
+**Primary source:** https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/config/index.ts#L825-L857
