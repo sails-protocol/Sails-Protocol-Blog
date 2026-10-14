@@ -23,3 +23,11 @@ The existing companion `editorial-drafts/deep-revisions/06-43-idempotency-escrow
 4. Require independent technical/editorial approvals before release.
 
 **NO MATERIAL FINDING UNDER THE RUG.**
+
+## Material finding: provider production guard does not match descriptive eligibility
+
+**2026-10-14, source inspection only, requires CTO/security triage.** At the same pinned Protocol commit `be6d3bc2ddfc384cfafa4276e01b8aacc096d421` (confirmed identical to `main` at inspection), `src/modules/open-settlement/escrow-providers.ts` declares `PRODUCTION_INELIGIBLE_TYPES: ReadonlySet<string> = new Set(['MOCK'])`. Its comment describes enforcement at escrow creation and settlement dispatch, but **only MOCK is in the production-deny set**. `WDK_USDT_EVM` is **not** in that set even though `wdk-settlement.provider.ts` explicitly declares it `PRODUCTION-INELIGIBLE` and `server-custodial-reference-implementation`. The registry also notes no reorg-sweep equivalent for LIGHTNING_HODL / SAFE_GUARD_EVM. This is a **material policy/enforcement discrepancy**, not evidence of an actual production deployment or exploit. Do not infer other startup/configuration guards are absent without examining them.
+
+**Release impact:** keep WDK production-eligibility claims blocked and escalate to the Protocol CTO/Gatekeeper. Require an explicit decision on intended deny-set policy, full effective config/startup/dispatch enforcement and negative production tests at exact HEAD. The Blog must not present a comment as a runtime-enforced invariant. No code change to the Protocol or Day 0 approval is authorized by this editorial finding.
+
+**Source:** https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts
