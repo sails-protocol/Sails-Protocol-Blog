@@ -40,6 +40,8 @@ La decisión de integración es mantener las claves y las firmas bajo control de
 
 **Siguiente pregunta:** ¿puede una prueba de integración sobre el HEAD exacto simular una operación persistida cuya respuesta se perdió, recuperar la misma operación al reintentar y rechazar un contexto de firma distinto sin un segundo efecto económico? Hasta registrar esa evidencia, sigue siendo un requisito, no una garantía verificada.
 
+**Precisión del contrato del SDK:** el método inspeccionado `SailsOpenP2PModule.trade(offerId, amount, idempotencyKey?)` envía la clave opcional a `/v1/openp2p/trades`. El comentario del código describe como contrato del servidor un máximo de una operación por clave reutilizada, pero advierte que omitirla permite duplicados tras una respuesta perdida. Es un *contrato acotado de la API*, no prueba de integración con Wallet, liquidación exactamente una vez ni seguridad al cambiar la clave entre reintentos.
+
 ## Límite respaldado por el código y próxima prueba
 
 El SDK inspeccionado expone creación de operaciones con clave de idempotencia opcional; custodia y firma requieren pruebas separadas.
