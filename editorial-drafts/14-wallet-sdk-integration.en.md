@@ -40,6 +40,8 @@ The practical choice is to keep the wallet's signing and key material outside th
 
 **Next question:** can an exact-head integration test reproduce a persisted trade with a lost response, recover the same trade after retry, and show that mismatched signing context is rejected without a second economic effect? Until such a test is recorded, this remains an integration requirement rather than a verified guarantee.
 
+**SDK contract precision:** the inspected `SailsOpenP2PModule.trade(offerId, amount, idempotencyKey?)` forwards the optional key to `/v1/openp2p/trades`. Its source comment describes server-side at-most-one trade for a reused key, while warning that omission permits duplicate creation after a lost response. This is a *scoped API contract*, not a verified Wallet integration, an exactly-once settlement guarantee or proof that a retry with a changed key is safe.
+
 ## Source-backed boundary and next test
 
 The inspected SDK exposes trade creation with an optional idempotency key; wallet custody and signing guarantees need separate evidence.
