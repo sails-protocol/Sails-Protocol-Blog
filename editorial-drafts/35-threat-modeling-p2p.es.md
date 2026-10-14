@@ -20,6 +20,8 @@ El catálogo de Sails incluye ataques Sybil, liquidez falsa y exposición de cre
 
 **Fallo:** una URL WebSocket registrada expone una credencial reutilizable. Tratarlo como riesgo documentado y exigir evidencia de corrección en el HEAD actual antes de afirmar credenciales acotadas.
 
+**Precisión del estado de las fuentes:** el registro de amenazas marca la ausencia original de límite en `SEND_MESSAGE` como **resuelta el 15/08/2026** mediante un contador de ventana fija por participante, local al proceso (valor predeterminado documentado de 20 mensajes/10 segundos). Eso no demuestra control entre instancias. La exposición de un token de sesión completo en la URL WebSocket es un riesgo residual distinto; el token corto y limitado al WS sigue siendo una propuesta en ese registro. Ninguna observación verifica por sí sola la configuración actualmente desplegada.
+
 ## Siguiente pregunta
 
 ¿Qué evidencias del commit exacto muestran si las credenciales WebSocket tienen alcance restringido y si los límites de mensajes se mantienen entre procesos y reconexiones, sin confundir una propuesta arquitectónica con un control desplegado?
