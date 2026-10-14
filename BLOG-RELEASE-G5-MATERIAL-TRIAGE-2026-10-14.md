@@ -46,3 +46,16 @@ The consolidated [PR #103](https://github.com/sails-protocol/Sails-Protocol-Blog
 | WDK isolation and NODE_ENV boundary (related custody claims) | Protocol Gatekeeper | [Protocol #474](https://github.com/sails-protocol/Sails-Protocol/issues/474) and [Blog #106](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/106); test and deployment boundary unresolved, no exploit asserted |
 
 **Operational owners in this matrix are proposed functional roles, not verified assignees.** The G5 reviewer must confirm responsibility, disposition, dates, and evidence, including the non-editorial rows above. No automatic release-gate promotion. Netlify remains paused. **NO MATERIAL FINDING UNDER THE RUG.**
+
+## F-006 reconciliation checkpoint | separate editorial taxonomies
+
+**Verified documentary scope:** the published Season 02 is recorded as an introduction plus nine regulatory/custody/market articles; the separate Day 0 master backlog is **seven thematic seasons, 48 numbered topics, 144 draft language editions**. The Day 0 Season 2 is **Engineering Economic Coordination (IDs 06–13)**, **not** the published regulatory Season 02. Thus a matching season number is not a content mapping, and neither nine published articles nor their translations may be subtracted from the 144-edition Day 0 approval denominator.
+
+| Comparison | Published Season 02 | Day 0 planned library | Decision |
+| --- | --- | --- | --- |
+| Editorial organizing principle | Regulatory/custody/market reporting | Protocol economic coordination and technical topic taxonomy | Keep distinct |
+| Content units | Nine published article slugs, plus introduction in release contract | 48 numbered topics in seven seasons | No one-to-one mapping inferred |
+| Language accounting | Production locale acceptance still NOT VERIFIED | 144 EN/PT-BR/ES draft editions, 0 formally accepted | Never convert published status to Day 0 approval |
+| Reuse | Potential background references after individual review | Claim-ledger citations only when source and maturity match | Review article-by-article |
+
+**F-006 disposition: PARTIALLY RECONCILED, NOT CLOSED.** Structural/denominator collision is resolved as a documentary rule. A nine-row slug/title/source-to-topic crosswalk and review of public EN/PT-BR/ES routes remain unverified here; do not invent it from topic similarity. Owner/CTO must confirm whether any individual published article should be linked as contextual reading, without changing the frozen 48-topic scope. The release contract's E5 and G5 remain NOT VERIFIED; readiness remains 16%.
