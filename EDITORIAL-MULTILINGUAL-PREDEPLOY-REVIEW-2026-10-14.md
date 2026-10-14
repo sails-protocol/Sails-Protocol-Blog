@@ -26,3 +26,9 @@ The source evidence currently cited in the drafts is anchored to historical Prot
 - Historical Day 0 editorial acceptance remains **0/144** until approvals are evidenced; the operational release score remains **16%** at last accepted checkpoint.
 
 **NO MATERIAL FINDING UNDER THE RUG.**
+
+## Cross-project source maturity and review dependency (2026-10-14)
+
+A later source inspection confirmed the historical Protocol SHA `be6d3bc2ddfc384cfafa4276e01b8aacc096d421` was **identical to `main` at the time of comparison**. This upgrades the *revision currency at that checkpoint*, **not** the independent claim-to-line audit, real Postgres/provider runtime proof, native-language editorial approval or release acceptance. Do not continue describing the pin as necessarily stale without a new comparison; equally do not claim it is still current after subsequent commits without rechecking.
+
+For articles 36/37, preserve the separate EN (#98) and PT-BR/ES (#97) review heads until integrated compatibility and semantic parity are verified together. For custody and settlement statements in related articles, the [Protocol Gatekeeper issue #474](https://github.com/sails-protocol/Sails-Protocol/issues/474) tracks WDK production isolation tests; [Blog PR #106](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/106) holds the evolving, source-bounded editorial assessment. Neither issue closure nor CI success may be inferred here. Publication remains blocked.
