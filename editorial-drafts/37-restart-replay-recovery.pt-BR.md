@@ -20,6 +20,9 @@ O registro de Recovery/Reconciliation Conformance informa que a automação M9 (
 
 **Falha:** o processo cai durante uma liberação fora de MULTISIG. Um método funcional do provedor não demonstra recuperação durável após reinício. A afirmação editorial deve identificar a rede e o alcance da evidência.
 
+
+**Limite adicional:** detectar uma divergência entre o estado registrado e o resultado externo não significa conseguir reconstruir ou concluir uma operação interrompida. A verificação de correspondência e a recuperação após falha são obrigações diferentes e precisam de evidências próprias por rede.
+
 ### Registro de evidências
 
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/RECOVERY_RECONCILIATION_CONFORMANCE_EVIDENCE.md
