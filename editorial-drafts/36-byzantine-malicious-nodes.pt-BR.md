@@ -1,10 +1,10 @@
-# Nodes bizantinos e maliciosos: quais premissas adotar
+# Nós bizantinos e maliciosos: quais premissas adotar
 
 *Temporada 6. Rascunho editorial. Auditoria das fontes e aprovação pendentes.*
 
 ## Pergunta
 
-Um node pode estar online e ainda assim agir de forma desonesta. Verificar disponibilidade não prova que seus estados, assinaturas ou observações externas sejam corretos.
+Um nó pode estar online e ainda assim agir de forma desonesta. Verificar disponibilidade não prova que seus estados, assinaturas ou observações externas sejam corretos.
 
 ## Limites e escolhas
 
