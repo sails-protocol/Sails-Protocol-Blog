@@ -14,19 +14,15 @@ A threat is not mitigated because a catalog names it. For each scenario, the rev
 
 If multiple sockets or nodes can bypass a local counter, the rate-limit claim must state that scope. If a session URL is logged, a valid token can leak despite correct signature verification elsewhere. The source record describes historical findings; whether either residual is fixed in the current HEAD requires a new review, not an assumption.
 
-## Boundaries and tradeoffs
-
-Separate funds, signing keys, payment claims, evidence and trade state into assets with different authorities. Evaluate spoofed identity, forged receipts, duplicate requests, malicious nodes and unavailable providers. A mitigation is useful only if its enforcement boundary is explicit.
-
-## Failure and verification
-
-This is a threat-modeling framework, not a completed audit. Before publishing security claims, tie each threat to exact code, adversarial tests, residual risk and a dated technical review.
-
 ## Threat catalog versus demonstrated mitigation
 
 The Sails threat catalog names Sybil attacks, fake liquidity and credential exposure, but it explicitly warns that documented mitigations are only real where implementation/deployment evidence exists. It also records a WebSocket credential exposure boundary: full-privilege session tokens in query strings can reach logs or history, and a separate narrow handshake token is a design decision rather than a deployed fix in that record.
 
 **Failure:** a logged WebSocket URL exposes a reusable session credential. Treat the risk as a documented residual and demand current-head remediation evidence before asserting secure credential scoping.
+
+## Next question
+
+What exact-head evidence shows whether WebSocket credentials are scoped and message limits remain effective across workers and reconnects, without confusing an architectural proposal with a deployed control?
 
 ### Source and maturity
 
