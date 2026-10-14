@@ -2,6 +2,12 @@
 
 **Baseline date:** 2026-10-10. **Status:** proposed editorial scope freeze, pending CTO/owner acceptance. **Not a publication authorization.**
 
+## Current reading guide (2026-10-14)
+
+**Do not use the 2026-10-10 baseline table below as today's draft count.** That table captures the original 41-topic/123-edition starting point. The later **G0 writing milestone** at the bottom of this document records completion of the planned **48 topics / 144 first-draft editions**. The [Day 0 evidence audit](./EDITORIAL-DAY0-EVIDENCE-AUDIT.md) subsequently records a first-pass source-scope correction for all 48/144, but expressly says that some corrections are short boundary notes rather than complete source audits or substantive narrative approval. Thus **draft inventory = 144/144 historically recorded; first-pass source-scope coverage = 144/144 historically recorded; independently approved editions = 0/144 in the last formal acceptance record**. These are three different milestones, none is permission to publish.
+
+The earlier step “Draft Season 7” in the recommended work sequence is retained as historical planning, **not an outstanding task**. Current outstanding work: full source-to-claim audit at authoritative Protocol HEAD, substantial narrative QA, native PT-BR/ES signoff, release integration and real browser/production acceptance, CTO/owner decisions. Do not infer live repository inventory from documentary counts without an independent file scan.
+
 ## North star
 
 On Day 0, launch the largest **reviewed, technically defensible** library feasible in EN, PT-BR and ES. No artificial drip-feed or weekly schedule. A planned article is not an implemented capability. A draft is not a reviewed article.
