@@ -24,7 +24,7 @@ Un artículo técnico debe identificar operación, proveedor, custodio de claves
 
 ¿Qué proveedores, configuraciones y pruebas end-to-end están autorizados para Day 0? Esa decisión corresponde al CTO y al gate de lanzamiento, no a este artículo.
 
-## Source ledger
+## Registro de fuentes
 
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/common/idempotency.ts
@@ -32,4 +32,4 @@ Un artículo técnico debe identificar operación, proveedor, custodio de claves
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/multisig.provider.ts
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/lightning-hodl.provider.ts
 
-**Maturity:** source-inspected, runtime verification pending. CTO review pending.
+**Madurez:** código fuente inspeccionado; verificación en ejecución pendiente. Revisión del CTO pendiente.
