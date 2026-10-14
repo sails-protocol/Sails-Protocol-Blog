@@ -14,7 +14,7 @@ Una prueba útil termina el proceso en puntos definidos cerca de la confirmació
 
 Un PASS solo con mocks es insuficiente. Documente base de datos, commit exacto, concurrencia, punto de interrupción y poscondiciones persistentes. La guía es propuesta hasta enlazar esas ejecuciones.
 
-*No verified implementation claim or permission to publish is implied by this draft.*
+*Este borrador no acredita una implementación verificada ni autoriza su publicación.*
 
 ## Evidencia de conformidad: la recuperación no es uniforme
 
@@ -22,8 +22,8 @@ El registro de Recovery/Reconciliation Conformance informa que la automatizació
 
 **Fallo:** el proceso cae durante una liberación fuera de MULTISIG. Un método funcional del proveedor no demuestra recuperación duradera tras reinicio. La afirmación editorial debe identificar la red y el alcance de la evidencia.
 
-### Evidence ledger
+### Registro de evidencias
 
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/RECOVERY_RECONCILIATION_CONFORMANCE_EVIDENCE.md
 
-*Historical evidence record and source inspection; latest deployment, CTO review and publication remain unverified.*
+*Registro histórico de evidencias e inspección del código. Despliegue actual, revisión del CTO y publicación aún sin verificar.*
