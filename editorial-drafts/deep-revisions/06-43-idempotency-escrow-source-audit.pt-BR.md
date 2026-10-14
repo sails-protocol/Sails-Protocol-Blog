@@ -1,6 +1,6 @@
 # Idempotência e escrow: o que o código realmente garante
 
-*Source-backed editorial companion for articles 06, 08, 37 and 43. Draft only; no publication approval.*
+*Material editorial com fontes para os artigos 06, 08, 37 e 43. Rascunho, sem aprovação para publicação.*
 
 ## Uma requisição que falha depois de ter funcionado
 
