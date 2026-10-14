@@ -1,6 +1,6 @@
 # Nodos bizantinos y maliciosos: qué debemos asumir
 
-*Season 6 / Temporada 6. Solo borrador editorial. Auditoría de fuentes y aprobación pendientes.*
+*Temporada 6. Borrador editorial. Auditoría de fuentes y aprobación pendientes.*
 
 ## Pregunta
 
