@@ -14,16 +14,16 @@ Distinga participante malicioso, operador comprometido e nodes em conluio. Pergu
 
 Este tema pertence à preparação adversarial. Qualquer alegação de resiliência bizantina exige modelo de falhas, topologia de teste e evidência além de diagramas.
 
-*No verified implementation claim or permission to publish is implied by this draft.*
+*Este rascunho não comprova uma implementação nem autoriza publicação.*
 
 ## Verificabilidade independente ainda é propriedade em aberto
 
 A investigação Durable Protocol Truth identifica uma propriedade material ausente: um verificador independente ainda não consegue demonstrar toda a ligação Authority assinada → Outcome → DestinationBinding sem confiar nas associações guardadas pelo operador. O relatório situa a maior lacuna entre Outcome e DestinationBinding, inclusive para MULTISIG, e registra ausência de exportação dos fatos pelos participantes. É lacuna documentada de projeto e evidência, não prova de ataque explorado.
 
-**Pergunta adversarial:** se um operador alterar a associação no banco ou reter evidências, qual artefato exportável e vinculado criptograficamente permite a outro nó conferir o destino autorizado? As evidências não justificam alegação universal de resistência Byzantine.
+**Pergunta adversarial:** se um operador alterar a associação no banco ou reter evidências, qual artefato exportável e vinculado criptograficamente permite a outro nó conferir o destino autorizado? As evidências não justificam alegação universal de resistência bizantina.
 
-### Evidence ledger
+### Registro de evidências
 
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/DURABLE_PROTOCOL_TRUTH_EVIDENCE.md
 
-*Historical evidence record and source inspection; latest deployment, CTO review and publication remain unverified.*
+*Registro histórico de evidências e inspeção do código. Implantação atual, revisão do CTO e publicação ainda não verificadas.*
