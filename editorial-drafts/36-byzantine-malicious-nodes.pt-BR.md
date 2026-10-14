@@ -8,7 +8,7 @@ Um nó pode estar online e ainda assim agir de forma desonesta. Verificar dispon
 
 ## Limites e escolhas
 
-Distinga participante malicioso, operador comprometido e nodes em conluio. Pergunte quais transições podem ser verificadas independentemente, quais fatos dependem de provedores e onde o protocolo precisa falhar de forma segura. Vários nodes não comprovam, por si, tolerância bizantina.
+Distinga participante malicioso, operador comprometido e nós em conluio. Pergunte quais transições podem ser verificadas independentemente, quais fatos dependem de provedores e onde o protocolo precisa falhar de forma segura. Vários nós não comprovam, por si, tolerância bizantina.
 
 ## Falha e verificação
 
