@@ -1,0 +1,33 @@
+# Release G5 | Material findings triage matrix
+
+**Snapshot:** 2026-10-14 UTC. **Status:** proposed review evidence, **G5 NOT VERIFIED**. This document records known residuals and their dispositions; it is not a claim of closure or independent CTO acceptance.
+
+## Release and production residuals
+
+| Finding | Tracking | Current disposition | Evidence required to close |
+| --- | --- | --- | --- |
+| I1 exact-main push CI | [#85](https://github.com/sails-protocol/Sails-Protocol-Blog/issues/85) | OPEN, evidence missing | Successful `push` workflow for exact main SHA, run URL, reviewer/date |
+| Current-main production, locale/SEO/browser | [#29](https://github.com/sails-protocol/Sails-Protocol-Blog/issues/29) | BLOCKED by owner-directed Netlify credit pause | Approved deployment and production SHA match, HTTP/routes/assets, locale/SEO, browser and accessibility evidence |
+| Visual identity and image provenance | [#12](https://github.com/sails-protocol/Sails-Protocol-Blog/issues/12) | OPEN, visual acceptance missing | Licensed asset attribution, production responsive screenshots, contrast and review |
+| Day 0 article claims, maturity and translations | [Editorial evidence audit](./EDITORIAL-DAY0-EVIDENCE-AUDIT.md) | OPEN, 0/144 formal approvals in historical register | Per-edition source-to-claim, native-language, CTO and owner signoff |
+| Historic F-001 stale state snapshot | [Current-state checkpoints](./BLOG-CURRENT-STATE.md) | HISTORICAL, superseding dated checkpoints exist; final reviewer disposition needed | CTO confirms old snapshot superseded, not silently deleted |
+| Historic F-002 stale PR #14 | [Global audit checkpoint](./BLOG-GLOBAL-AUDIT-SCORECARD.md) | RESOLVED historically by PR #22; final G5 reviewer acknowledgement needed | Check immutable PR #22 evidence and reviewer/date |
+| Historic F-003 production/browser gap | [#29](https://github.com/sails-protocol/Sails-Protocol-Blog/issues/29) | OPEN | Same production/browser evidence as #29 |
+| Historic F-004 editorial acceptance | [Editorial evidence audit](./EDITORIAL-DAY0-EVIDENCE-AUDIT.md) | OPEN | Editorial gates G1–G7 and formal signoff |
+| Historic F-005 native WebMCP | [Global audit scorecard](./BLOG-GLOBAL-AUDIT-SCORECARD.md) | OPEN, real-browser support not independently verified | Supported browser run with native API and trace |
+| Historic F-006 Season 02 vs Day 0 taxonomy | [Release acceptance contract](./BLOG-RELEASE-ACCEPTANCE-CONTRACT.md) | OPEN reconciliation | Reviewed mapping of nine published Season 02 articles to 48 planned topics; avoid equating denominators |
+| Historic F-007 image provenance | [Global audit checkpoint](./BLOG-GLOBAL-AUDIT-SCORECARD.md) | Implementation/deploy resolved historically; visual acceptance remains OPEN | Review image provenance and live visual gate (#12) |
+
+## Protocol evidence residuals relevant to editorial accuracy
+
+These are **editorial claim restrictions**, not new allegations about current Protocol HEAD. Refer to [CTO material residuals](./EDITORIAL-CTO-MATERIAL-RESIDUALS-2026-10-10.md):
+
+- **R-01:** Historical automated recovery conformance is MULTISIG-scoped. Do not claim cross-rail restart safety without new evidence.
+- **R-02:** Historical independent Authority → Outcome → DestinationBinding proof and participant export gaps. Do not claim independent verifiability of all outcomes without new evidence.
+- **R-03:** Conformance tests, source inspection, exact-head CI and production observation are different evidence levels.
+
+## G5 acceptance decision required
+
+A reviewer must explicitly acknowledge each row, identify any additional material findings from current code/PRs, assign owner/next action and record review date and immutable evidence. **Do not promote G5 to PASS** while material findings are merely enumerated or blocked. G5 is a triage gate, not a license to hide unresolved work. Netlify remains paused; no merge or deploy is authorized by this file.
+
+**NO MATERIAL FINDING UNDER THE RUG.**
