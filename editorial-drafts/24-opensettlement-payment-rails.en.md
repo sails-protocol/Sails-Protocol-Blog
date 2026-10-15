@@ -30,6 +30,14 @@ Text equivalent: the proposal progresses from design intent to a bounded integra
 
 *Pending: source-of-truth verification, specific citations, editorial review and owner approval.*
 
+## Failure scenario: a timeout is not a reversal
+
+A coordinator broadcasts a release on one rail and loses the provider response. A second worker sees a timeout and retries the economic effect before reconciling the original transaction. A duplicate release or conflicting local outcome becomes possible if authorization and provider observations are not tied to the same durable intent. Confirmation rules on a Bitcoin multisig path cannot simply be copied to a Lightning hold or an EVM contract.
+
+**Architectural choice:** a generic settled boolean is simple but erases rail-specific finality, recovery and authority. Explicit provider states and reconciliation are more complex but preserve uncertainty.
+
+**Next test:** inject a timeout after broadcast, restart two workers and replay the same release request. Require a single authorized transition, destination binding and independently observed provider outcome for the named rail. The registry and historical MULTISIG-scoped conformance do not prove cross-rail safety or production eligibility for WDK_USDT_EVM or SAFE_GUARD_EVM.
+
 ## Inspected boundary, not production certification
 
 The registry names different rails with different readiness and authority; not all are production eligible. **Failure:** confusing a documented design with deployed behavior. Exact-head integration and runtime verification remain required.
