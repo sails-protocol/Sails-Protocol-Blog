@@ -21,3 +21,11 @@ If two applications display different trade states after reconnection, the sourc
 Shared economic semantics require executable cross-client evidence, not merely a common protocol label. **Failure:** mistaking documented intent for verified production behavior. Exact-head runtime evidence and release approval remain pending.
 
 - [PROTOCOL_INVARIANTS.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROTOCOL_INVARIANTS.md)
+
+## Failure drill: two interfaces, conflicting authority
+
+A wallet displays a trade as pending while the web market shows completed after receiving an out-of-order event. The user tries to release funds again from the wallet. Sharing a protocol name does not establish that both clients share the same durable state, idempotency key or signing permissions.
+
+**Trade-off:** each application can offer its own user experience, but economic transitions must remain anchored to the same verified node authority. A shared backend may simplify reconciliation while introducing an operator dependency; multiple nodes require stronger independent-verification and conflict-handling evidence.
+
+**Next test:** open the same trade in wallet and market, disconnect one client, deliver duplicate and reordered events, then reconnect. Verify identical authoritative outcomes and no second release. Treat this as an interoperability acceptance scenario, not proof that both applications already interoperate.
