@@ -14,7 +14,7 @@ Mantenga cadena de evidencia: requisito, invariante, commit, entorno, resultado,
 
 La publicación debe declarar alcance y puntos ciegos. Una prueba aprobada demuestra esa prueba, no seguridad universal ni preparación para producción.
 
-*No verified implementation claim or permission to publish is implied by this draft.*
+*Este borrador no acredita una implementación verificada ni autoriza su publicación.*
 
 ## Qué demuestran realmente los registros de evidencia
 
