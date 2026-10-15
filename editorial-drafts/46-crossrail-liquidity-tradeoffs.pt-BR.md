@@ -22,6 +22,8 @@ O mapeamento padrão de escrow examinado é `BTC → MULTISIG`, `LN_BTC → LIGH
 
 A construção de taxa também está declarada apenas para MULTISIG. A existência de vários provedores não comprova swap cross-chain atômico, finalidade compartilhada ou roteamento de liquidez implantado. Verifique separadamente ponte externa, cotação, custódia e recuperação.
 
+**Limite verificável para a revisão:** selecionar um par concreto de ativo do comprador e ativo do vendedor e identificar cotação, contraparte, transferência de custódia, evidência de liquidação nas duas redes e comportamento após falha ou reinício. Se a evidência mostrar apenas entradas em `DEFAULT_ESCROW_TYPE_FOR_ASSET`, classificar como *mapeamento de ativo para provedor*, não negociação entre redes. As [linhas 332–347 do registro](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts#L332-L347) sustentam somente a afirmação mais restrita.
+
 ### Fonte primária e revisão
 
 - [Provider registry, custody metadata, default asset routing and fee capability](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts)
@@ -29,5 +31,3 @@ A construção de taxa também está declarada apenas para MULTISIG. A existênc
 - [SAFE_GUARD_EVM verification limits](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/safe-guard-evm.provider.ts)
 
 *Correção editorial baseada em fontes; aprovação do CTO, verificação de implantação e publicação em produção ainda pendentes.*
-
-**Limite verificável para a revisão:** selecionar um par concreto de ativo do comprador e ativo do vendedor e identificar cotação, contraparte, transferência de custódia, evidência de liquidação nas duas redes e comportamento após falha ou reinício. Se a evidência mostrar apenas entradas em `DEFAULT_ESCROW_TYPE_FOR_ASSET`, classificar como *mapeamento de ativo para provedor*, não negociação entre redes. As [linhas 332–347 do registro](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts#L332-L347) sustentam somente a afirmação mais restrita.
