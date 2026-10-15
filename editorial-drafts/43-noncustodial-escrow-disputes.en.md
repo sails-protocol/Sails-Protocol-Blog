@@ -1,6 +1,6 @@
 # Non-Custodial Escrow and Dispute Authority
 
-*Season 7 / Temporada 7. Editorial draft. Source and CTO review pending.*
+*Season 7. Editorial draft. Source and CTO review pending.*
 
 ## Question
 
