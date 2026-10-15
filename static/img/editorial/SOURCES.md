@@ -17,3 +17,11 @@ The hero image was generated specifically for the Sails Protocol Blog using Open
 5. Require exact-head CI success; merge; verify Netlify production commit and HTTP 200 on the hero image.
 
 **Do not mark #12 complete or claim 100% before the files are actually committed and visually verified.**
+
+## Verified repository-state reconciliation | 2026-10-15 | DRAFT PR #115
+
+The original "Required release sequence" above is historical. At reviewed commit `963019c873f00fe6e8fdeac1da6e06ae3b11957d`, the generated `sails-earth-horizon-hero.webp` is **already committed** in `static/img/editorial/` and `src/css/custom.css` references it in the hero background (including mobile styles). The six topic-specific SVGs `market-crossroads.svg`, `software-boundary.svg`, `immutable-contract.svg`, `financial-gates.svg`, `noncustodial-keys.svg` and `stablecoin-rails.svg` are also present. These are distinct illustrations, **not licensed documentary photographs**.
+
+The older `earth-horizon.svg` still exists and remains referenced by the `.sails-art-orbit` CSS class. That fact alone does not prove it is displayed on a live route; inspect rendered usage before deleting or replacing it. Do not describe the hero as missing, or claim that the issue's original proposed NASA photograph has been adopted. The current hero is AI-generated illustration, with no NASA endorsement.
+
+**Outstanding issue #12 decision:** explicitly accept the existing generated-hero plus distinct SVG illustration system **or** authorize a separately sourced, licensed photographic redesign. No automatic image replacement should occur under a documentation-only gate. For either decision, verify provenance, actual rendered cards, responsive crop, contrast, keyboard focus and the current-main production assets after authorized deployment. This repository-state inspection does **not** satisfy the visual or production acceptance gates and does not close #12.
