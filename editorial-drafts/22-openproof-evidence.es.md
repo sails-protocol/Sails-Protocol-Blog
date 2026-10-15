@@ -30,6 +30,18 @@ Equivalente textual: la propuesta pasa de la intención de diseño a una integra
 
 *Pendiente: verificación en fuentes técnicas, citas específicas, revisión editorial y aprobación del responsable.*
 
+## Escenario: comprobante auténtico de otra obligación
+
+Un comprador adjunta a una operación nueva un comprobante correctamente firmado de un pago anterior. El digest del archivo y la firma son válidos, pero el importe, beneficiario, referencia y momento no corresponden a la obligación actual. Si la aplicación equipara procedencia válida con pago completado, podría liberar escrow sin que el vendedor haya recibido los fondos previstos.
+
+Otro fallo es el agotamiento de recursos: un participante envía repetidamente evidencias excesivas o profundamente anidadas, forzando procesamiento o almacenamiento costoso antes de aplicar límites. El orden de validación y las cuotas por reclamación importan independientemente de la firma.
+
+## Alternativa y verificación
+
+Aceptar cualquier archivo firmado es sencillo, pero delega la verdad del pago a quien presenta evidencia no confiable. Separar procedencia, relevancia para la operación, observación independiente del pago y almacenamiento limitado exige más comprobaciones, pero evita una certeza falsa. Los proveedores externos de evidencia necesitan sus propias reglas de retención y disponibilidad.
+
+**Siguiente prueba:** adjuntar un comprobante firmado válido de otra operación y después enviar evidencia malformada y excesiva mediante reintentos concurrentes. Comprobar que las referencias inválidas no autorizan liquidación y que el rechazo ocurre antes de efectos económicos o almacenamiento duradero. Revisar implementación exacta, límites del proveedor y configuración de recursos. El archivo del servicio citado no certifica la verdad del pago de extremo a extremo.
+
 ## Límite examinado, no certificación de producción
 
 La atribución de medios firmados no demuestra un pago externo. **Fallo:** confundir diseño documentado con comportamiento desplegado. Faltan pruebas de integración y ejecución del HEAD exacto.
