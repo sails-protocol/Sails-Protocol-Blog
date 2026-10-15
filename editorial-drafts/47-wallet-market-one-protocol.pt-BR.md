@@ -16,12 +16,6 @@ Se duas aplicações exibirem estados diferentes após reconexão, a autoridade 
 
 *Este texto não afirma implementação em produção nem aprovação para publicação.*
 
-## Fronteira de evidência
-
-Semântica econômica compartilhada exige provas executáveis entre clientes, não apenas o nome do protocolo. **Falha:** confundir intenção documentada com comportamento verificado em produção. Evidência de execução no HEAD exato e aprovação pendentes.
-
-- [PROTOCOL_INVARIANTS.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROTOCOL_INVARIANTS.md)
-
 ## Teste de falha: duas interfaces, autoridades conflitantes
 
 Uma carteira mostra negociação pendente enquanto o mercado web exibe concluída após receber evento fora de ordem. A pessoa tenta liberar os fundos novamente pela carteira. Compartilhar o nome do protocolo não comprova estado durável comum, mesma chave de idempotência ou permissões de assinatura equivalentes.
@@ -31,3 +25,9 @@ Uma carteira mostra negociação pendente enquanto o mercado web exibe concluíd
 **Vetor de reconciliação:** registrar identificador canônico, decisão de autoridade, resultado persistente e referência de liquidação externa de uma negociação. Entregar os mesmos eventos à carteira e ao mercado em ordens diferentes, incluindo conclusão duplicada após reconexão. Comparar as interfaces com um snapshot autoritativo consultado novamente e tentar uma segunda liberação. O resultado exigido é convergência **sem segundo efeito econômico**; compartilhar SDK não comprova isso. O teste permanece proposto, não executado.
 
 **Próximo teste:** abrir a mesma negociação na carteira e no mercado, desconectar um cliente, entregar eventos duplicados e fora de ordem e reconectar. Verificar resultado autoritativo idêntico e ausência de segunda liberação. É cenário de aceitação de interoperabilidade, não prova de que as aplicações já interoperam.
+
+## Fronteira de evidência
+
+Semântica econômica compartilhada exige provas executáveis entre clientes, não apenas o nome do protocolo. **Falha:** confundir intenção documentada com comportamento verificado em produção. Evidência de execução no HEAD exato e aprovação pendentes.
+
+- [PROTOCOL_INVARIANTS.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROTOCOL_INVARIANTS.md)
