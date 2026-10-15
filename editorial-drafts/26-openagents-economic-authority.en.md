@@ -28,6 +28,6 @@ Text equivalent: the proposal progresses from design intent to a bounded integra
 
 ## Source-inspected boundary
 
-Un agente delegado no adquiere autoridad económica independiente. A documented boundary is not exact-head runtime proof; test the stated failure against durable state before asserting readiness.
+A delegated agent does not acquire independent economic authority. A documented boundary is not exact-head runtime proof; test the stated failure against durable state before asserting readiness.
 
 - [RFC-001-participant-model.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/rfcs/RFC-001-participant-model.md)
