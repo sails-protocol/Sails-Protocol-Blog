@@ -145,3 +145,15 @@ Inspected the PT-BR and ES Markdown sources on `main` for articles **01, 04, 05,
 | 08 Economic Coordination Protocol | Both preserve architectural/production uncertainty boundaries. **Concrete i18n finding:** PT-BR and ES Mermaid diagrams retain English labels such as `Authoritative settlement evidence?`, `Record verified outcome`, `Preserve pending or uncertain state`, `External settlement rails` | Translate diagram labels without changing state-machine semantics; isolated reviewed content PR |
 
 **Tracked remediation:** F-006-L10N-META localized Tornado Cash description fix is proposed in **DRAFT PR #108**, HEAD `42e63ee27ad5de894daaa4f8e4c734e9e474f116`, pending exact-head CI/reviewer signoff; do not mark as merged. **New finding F-006-L10N-DIAGRAM:** untranslated article 08 Mermaid diagram labels in PT-BR/ES. No merge, deployment, gate closure or readiness-score increase: **16%; 0/144 Day 0 approvals**.
+
+## Closure checkpoint: localized Season 02 defects | 2026-10-14
+
+Independent GitHub exact-head checks and PR snapshots:
+
+| Finding | Remediation PR / immutable HEAD | Validate Blog | Isolated preview | Browser accessibility | Release authority |
+| --- | --- | --- | --- | --- | --- |
+| F-006-L10N-META, article 03 PT-BR/ES truncated descriptions | [DRAFT #108](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/108) `42e63ee27ad5de894daaa4f8e4c734e9e474f116` | PASS | PASS | PASS | Code fix verified in draft; native editorial review, authorized merge, production check outstanding |
+| F-006-L10N-DIAGRAM, article 08 PT-BR/ES English Mermaid labels | [DRAFT #109](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/109) `f918ec9103a3baa29b237d4a60b91bbefbc6137d` | PASS | PASS | PASS | Graph nodes A–G, links and yes/no semantics preserved in source; native editorial review, authorized merge, production check outstanding |
+| F-006 crosswalk and 27/27 published Season 02 source inspection | [DRAFT #102](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/102) `138739685acae9f4b2e42d0a6e95cda5e5231e95` | PASS | PASS | PASS | Documentation and source inventory verified; G5 and E1–E5 remain open pending review, production and Day 0 reconciliation |
+
+**Do not conflate:** 27/27 published Season 02 source files inspected is not 144/144 Day 0 editorial approvals, native translation signoff, or browser/production acceptance. The two defects are **FIX PREPARED + CI PASS**, not CLOSED IN PRODUCTION. The release acceptance contract requires 25/25 evidence gates for operational 100% and separate G1–G7 owner/editor signoff for 144/144 Day 0. Current operational **16%**, editorial **0/144**. Netlify production remains subject to owner-approved consolidated release and billing credits. No merge or deploy was performed.
