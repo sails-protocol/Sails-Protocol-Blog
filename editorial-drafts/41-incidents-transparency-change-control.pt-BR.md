@@ -1,6 +1,6 @@
 # Revisões de incidentes, transparência e controle de mudanças
 
-*Season 6 / Temporada 6. Somente rascunho editorial. Auditoria de fontes e aprovação pendentes.*
+*Temporada 6. Somente rascunho editorial. Auditoria de fontes e aprovação pendentes.*
 
 ## Pergunta
 
