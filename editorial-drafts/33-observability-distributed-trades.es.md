@@ -16,6 +16,14 @@ Un ejercicio eficaz sigue una operación por cliente, SDK, nodo, base de datos y
 
 *Verificación de fuentes y referencias exactas de API pendientes.*
 
+## Prueba de fallo: el registro indica éxito, el destino no coincide
+
+Un panel operativo muestra una operación completada, pero la transferencia externa fue enviada a un destino distinto del autorizado por el participante. Los registros con el mismo identificador de correlación explican la ejecución, pero no demuestran de forma independiente el vínculo entre autoridad, resultado y destino. Además, los diagnósticos excesivos pueden exponer datos de pago sensibles o material relacionado con semillas.
+
+**Alternativa:** recopilarlo todo facilita depuración, pero aumenta riesgos de privacidad y credenciales. Las trazas estructuradas, con datos sensibles eliminados y estados UNKNOWN explícitos, conservan evidencia sin suponer finalidad económica.
+
+**Siguiente prueba:** inyectar un evento fuera de orden y un destino diferente, siguiendo el mismo identificador entre cliente, nodo, base de datos y proveedor. Verificar la distinción entre observado, pendiente y comprobado, la eliminación de secretos y la imposibilidad de autorizar liquidación solo con telemetría. El documento de verdad duradera citado no certifica observabilidad de producción.
+
 ## Evidencia de fuente y límite de fallo
 
 Las trazas operativas no son prueba independiente del vínculo entre resultado y destino. El siguiente gate requiere verificación operativa del HEAD exacto; esta fuente no autoriza lanzamiento.
