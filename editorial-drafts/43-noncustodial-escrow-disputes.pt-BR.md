@@ -1,6 +1,6 @@
 # Escrow não custodial e autoridade de disputa
 
-*Season 7 / Temporada 7. Rascunho editorial. Fontes e revisão do CTO pendentes.*
+*Temporada 7. Rascunho editorial. Fontes e revisão do CTO pendentes.*
 
 ## Pergunta
 
@@ -14,7 +14,7 @@ Distinga custódia das chaves, controle do mecanismo de bloqueio, decisão da di
 
 Uma negociação em disputa atinge o prazo enquanto o árbitro está indisponível. O comportamento seguro depende da política de escrow e timeout específica; um diagrama genérico não prova recuperabilidade. Verifique redes suportadas e cenários adversariais no código.
 
-*No production implementation or publication approval is asserted.*
+*Não há alegação de implementação em produção nem aprovação para publicação.*
 
 ## Limite verificado no código: a custódia varia por provedor
 
@@ -28,4 +28,4 @@ Aprovação dupla na aplicação não é multisig criptográfico. Avalie cada es
 - [WDK custody](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/wdk-settlement.provider.ts)
 - [SAFE_GUARD_EVM verification limits](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/safe-guard-evm.provider.ts)
 
-*Source-inspected editorial correction; CTO approval, deployment verification and production publication remain pending.*
+*Correção editorial baseada em fontes; aprovação do CTO, verificação de implantação e publicação em produção ainda pendentes.*
