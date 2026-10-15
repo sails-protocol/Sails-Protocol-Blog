@@ -18,7 +18,7 @@ Um atacante reutiliza um comprovante antigo em outra negociação. O sistema nã
 
 ## Evidência não é verdade do pagamento
 
-O caminho OpenProof examinado verifica quem assinou a mídia e se essa pessoa pode anexá-la à Claim; ele não valida liquidação PIX ou DePix. Um comprovante, arquivo assinado ou hash de armazenamento pode ser autêntico e ainda assim induzir a erro econômico. Qualquer afirmação de pagamento confirmado, irreversível ou liquidado exige autoridade externa identificada, conciliação de identificadores e regras aplicáveis de confirmação e reversão.
+O caminho OpenProof examinado verifica assinaturas e autorização para anexar evidências no contexto da prova; essas verificações não validam a liquidação PIX ou DePix. Um comprovante, arquivo assinado ou hash de armazenamento pode ser autêntico e ainda assim induzir a erro econômico. Qualquer afirmação de pagamento confirmado, irreversível ou liquidado exige autoridade externa identificada, conciliação de identificadores e regras aplicáveis de confirmação e reversão.
 
 **Falha:** um comprovante PIX aparentemente legítimo é anexado à negociação, mas o pagamento externo não existe ou é revertido. O protocolo deve preservar a origem da evidência sem tratá-la como confirmação de pagamento. **Gate aberto:** inspecionar os adapters PIX/DePix e callbacks autoritativos antes de alegar conciliação automática.
 
