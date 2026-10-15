@@ -26,6 +26,14 @@ Text equivalent: the proposal progresses from design intent to a bounded integra
 
 *Pending: source-of-truth verification, specific citations, editorial review and owner approval.*
 
+## Failure scenario: visible depth cannot be executed
+
+A marketplace aggregates two offers denominated in the same asset. One offer requires a payment method unavailable to the buyer; the other is stale after its maker withdraws. The interface adds their amounts and displays deep shared liquidity. Yet neither offer can be executed by that user at the displayed price. Discovery has been mistaken for an executable market.
+
+**Trade-off:** aggregating every visible offer increases apparent breadth but risks misleading price and availability signals. A narrower, permission-aware view can show less depth while remaining more useful. Neither choice establishes atomic routing or guaranteed settlement across providers.
+
+**Next test:** remove maker availability between discovery and acceptance, change the buyer's payment permissions and replay a stale quote. Measure explicit rejection and reconciliation rather than treating offer visibility as execution. Provider-substitution invariance evidence is scoped; it is not proof of a live universal order book.
+
 ## Source-backed scope
 
 Selected provider substitution properties do not prove shared cross-rail liquidity. **Failure:** treating a source-level design or API as universal production readiness. Exact-head tests and approval remain outstanding.
