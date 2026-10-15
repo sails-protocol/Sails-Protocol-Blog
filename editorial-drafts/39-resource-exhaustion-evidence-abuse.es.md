@@ -30,6 +30,9 @@ El esquema HTTP de disputas conserva `evidenceReferenceId` y el marcador explíc
 
 ¿Qué ámbitos de actor y de prueba responden por la cuota persistente cuando llegan solicitudes simultáneas a distintos procesos? ¿Qué pruebas en el commit exacto demuestran que una solicitud rechazada no deja evidencia almacenada ni cargos en el registro autoritativo de cuotas?
 
+
+**Límite concreto de la fuente:** el [esquema de descriptores](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/evidence-descriptor-schema.ts#L18-L30) de la revisión fijada declara `uri`, `evidenceReferenceId` y `externalReference: true` como opcionales. Ese esquema no aplica por sí solo cuotas persistentes por participante ni demuestra rechazo antes del almacenamiento. Hace falta código del servicio y evidencia de ejecución adversarial, no solo inspección del esquema.
+
 ### Fuentes y estado de verificación
 
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/evidence-descriptor-schema.ts
@@ -38,5 +41,3 @@ El esquema HTTP de disputas conserva `evidenceReferenceId` y el marcador explíc
 *Solo inspección de fuentes. Sin nuevas pruebas de cuotas, ejecución en producción, aprobación del CTO ni publicación.*
 
 *Este borrador no acredita una implementación verificada ni autoriza su publicación.*
-
-**Límite concreto de la fuente:** el [esquema de descriptores](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/evidence-descriptor-schema.ts#L18-L30) de la revisión fijada declara `uri`, `evidenceReferenceId` y `externalReference: true` como opcionales. Ese esquema no aplica por sí solo cuotas persistentes por participante ni demuestra rechazo antes del almacenamiento. Hace falta código del servicio y evidencia de ejecución adversarial, no solo inspección del esquema.
