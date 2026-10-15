@@ -20,7 +20,6 @@ El registro de Recovery/Reconciliation Conformance informa que la automatizació
 
 **Fallo:** el proceso cae durante una liberación fuera de MULTISIG. Un método funcional del proveedor no demuestra recuperación duradera tras reinicio. La afirmación editorial debe identificar la red y el alcance de la evidencia.
 
-
 **Límite adicional:** detectar una divergencia entre el estado registrado y el resultado externo no significa poder reconstruir o completar una operación interrumpida. La verificación de correspondencia y la recuperación tras un fallo son obligaciones distintas que requieren evidencias propias para cada red.
 
 ### Registro de evidencias
