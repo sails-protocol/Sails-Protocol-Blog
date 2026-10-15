@@ -1,6 +1,6 @@
 # Privacidad, metadatos y vinculación de identidades
 
-*Season 6 / Temporada 6. Solo borrador editorial. Auditoría de fuentes y aprobación pendientes.*
+*Temporada 6. Solo borrador editorial. Auditoría de fuentes y aprobación pendientes.*
 
 ## Pregunta
 
