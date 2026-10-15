@@ -30,6 +30,9 @@ The dispute HTTP schema preserves `evidenceReferenceId` and the explicit `extern
 
 Which actor and proof scopes own the durable budget when concurrent requests arrive on different workers, and what exact-head tests demonstrate that a rejected request leaves neither stored evidence nor an authoritative quota debit?
 
+
+**Concrete source boundary:** the pinned [evidence descriptor schema](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/evidence-descriptor-schema.ts#L18-L30) declares optional `uri`, `evidenceReferenceId` and `externalReference: true`. That schema does not itself enforce a durable per-actor quota or establish that rejection precedes storage. These require service-level code and adversarial execution evidence, not schema inspection alone.
+
 ### Source and verification status
 
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/evidence-descriptor-schema.ts
@@ -38,5 +41,3 @@ Which actor and proof scopes own the durable budget when concurrent requests arr
 *Source inspection only. No new quota test, production execution, CTO approval or publication.*
 
 *No verified implementation claim or permission to publish is implied by this draft.*
-
-**Concrete source boundary:** the pinned [evidence descriptor schema](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/evidence-descriptor-schema.ts#L18-L30) declares optional `uri`, `evidenceReferenceId` and `externalReference: true`. That schema does not itself enforce a durable per-actor quota or establish that rejection precedes storage. These require service-level code and adversarial execution evidence, not schema inspection alone.
