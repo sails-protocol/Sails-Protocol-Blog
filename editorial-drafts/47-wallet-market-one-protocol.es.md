@@ -21,3 +21,11 @@ Si dos aplicaciones muestran estados distintos tras reconectar, la autoridad eco
 La semántica económica compartida requiere pruebas entre clientes, no solo un nombre de protocolo. **Fallo:** confundir intención documentada con comportamiento verificado en producción. Faltan evidencia del HEAD exacto y aprobación.
 
 - [PROTOCOL_INVARIANTS.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROTOCOL_INVARIANTS.md)
+
+## Prueba de fallo: dos interfaces, autoridades contradictorias
+
+Una billetera muestra una operación pendiente mientras el mercado web indica completada tras recibir un evento fuera de orden. La persona intenta liberar los fondos de nuevo desde la billetera. Compartir el nombre del protocolo no demuestra estado duradero común, misma clave de idempotencia ni permisos de firma equivalentes.
+
+**Alternativa:** cada aplicación puede ofrecer su propia experiencia, pero las transiciones económicas deben permanecer vinculadas a la misma autoridad de nodo verificada. Un backend compartido simplifica reconciliación y crea dependencia operativa; varios nodos exigen pruebas más fuertes de verificabilidad independiente y resolución de conflictos.
+
+**Siguiente prueba:** abrir la misma operación en billetera y mercado, desconectar un cliente, entregar eventos duplicados y desordenados y reconectar. Verificar resultado autoritativo idéntico y ausencia de segunda liberación. Es un escenario de aceptación de interoperabilidad, no prueba de que ambas aplicaciones ya interoperan.
