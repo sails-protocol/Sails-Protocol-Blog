@@ -26,6 +26,18 @@ Equivalente textual: a proposta vai da intenção de projeto para uma integraç�
 
 *Pendente: verificação na fonte técnica, citações específicas, revisão editorial e aprovação do responsável.*
 
+## Cenário: um sinal portável de sucesso perde o contexto
+
+Um vendedor conclui dez negociações pequenas em um mercado. Outra aplicação importa uma nota positiva sem identificar mercado emissor, valores, meios de pagamento, disputas ou período. Em seguida, trata o vendedor como confiável para uma obrigação muito maior e diferente. Mesmo que todos os eventos originais sejam autênticos, a nova conclusão não decorre das evidências.
+
+Um participante malicioso também poderia reutilizar um sinal positivo antigo após uma disputa posterior ou a retirada do consentimento. Identidade portável, por si só, não informa se o sinal ainda é atual, representativo ou relevante.
+
+## Decisão e próximo teste
+
+Uma nota universal é conveniente, mas apaga contexto e governança. A alternativa mais prudente é transportar alegações de eventos atribuíveis com emissor, escopo, data, procedência, consentimento e revogação, deixando a avaliação de risco a cada mercado receptor. Isso aumenta o custo de interoperabilidade e exige proteção de privacidade; não significa que a infraestrutura esteja implantada.
+
+**Próximo teste:** importar sinal de sucesso válido, porém antigo, omitir seu contexto de disputa e revogar consentimento antes da reutilização. Verificar que a aplicação receptora não o transforma silenciosamente em garantia universal de confiança atual. O RFC de participantes identifica atores, não implementa um mecanismo de reputação entre mercados.
+
 ## Escopo fundamentado em fonte
 
 Identidade de participante não é reputação universal portável. **Falha:** tratar design ou API examinada como prontidão universal de produção. Testes no HEAD exato e aprovação seguem pendentes.
