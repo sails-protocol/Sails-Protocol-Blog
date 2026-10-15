@@ -31,4 +31,3 @@ A room moderator revokes a participant while the participant's browser still hol
 **Authorization race to review:** capture the exact membership version and offer version read by the acceptance handler, then revoke access between that read and economic commit. A correct outcome requires either a transactionally valid authorization snapshot or rejection before any settlement side effect; checking a browser badge is insufficient. This is a proposed concurrency test. The pinned threat catalog does not establish that a production private-room authorization path exists.
 
 **Next test:** race membership revocation with offer acceptance across two sessions, replay a stale offer and verify rejection without an economic side effect. Independently review abuse reporting and what room metadata leaks to outsiders. This is a proposed test, not evidence that private rooms are deployed.
-
