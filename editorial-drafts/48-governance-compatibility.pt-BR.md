@@ -4,7 +4,7 @@
 
 ## Pergunta
 
-Um protocolo evolui enquanto aplicações e nodes atualizam em ritmos diferentes. Uma mudança aparentemente pequena pode redefinir o significado econômico de um campo.
+Um protocolo evolui enquanto aplicações e nós atualizam em ritmos diferentes. Uma mudança aparentemente pequena pode redefinir o significado econômico de um campo.
 
 ## Decisão: compatibilidade precisa nomear a propriedade exata
 
