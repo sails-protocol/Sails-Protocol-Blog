@@ -33,3 +33,5 @@ What exact-head evidence shows whether WebSocket credentials are scoped and mess
 *Historical evidence/source inspection only; no latest-head test or publication approval.*
 
 *No verified implementation claim or permission to publish is implied by this draft.*
+
+**Source-line boundary:** the historical [threat-model ledger, lines 77–88](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md#L77-L88) calls the limiter a single-instance measure; [lines 161–176](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md#L161-L176) distinguish the unresolved token-scope design. Neither record establishes a production-wide mitigation.
