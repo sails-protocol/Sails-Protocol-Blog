@@ -26,6 +26,14 @@ Text equivalent: the proposal progresses from design intent to a bounded integra
 
 *Pending: source-of-truth verification, specific citations, editorial review and owner approval.*
 
+## Failure scenario: an agent exceeds a revoked mandate
+
+A user delegates authority to an agent to propose trades below a specified limit. The agent prepares a proposal, but the user revokes the mandate before submission. A delayed agent message arrives after revocation and requests escrow release, or changes the destination while retaining a valid signature. Model output and key possession are not substitutes for fresh participant authorization.
+
+**Design trade-off:** giving agents broad standing permissions reduces friction but concentrates economic risk. Scoped mandates, expiration, explicit confirmation and revocation checks impose extra steps while making accountability testable. The principal remains the economic actor.
+
+**Next test:** race revocation against submission, exceed a delegated amount limit, replay a signed request and change its destination. Verify exact-head authorization rejection before durable state changes or external economic effects. The participant RFC documents roles; it does not establish a deployed autonomous trading agent.
+
 ## Source-inspected boundary
 
 A delegated agent does not acquire independent economic authority. A documented boundary is not exact-head runtime proof; test the stated failure against durable state before asserting readiness.
