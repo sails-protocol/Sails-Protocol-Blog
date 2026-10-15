@@ -16,7 +16,7 @@ Este tema pertence à preparação adversarial. Qualquer alegação de resiliên
 
 ## Verificabilidade independente ainda é propriedade em aberto
 
-A investigação Durable Protocol Truth identifica uma propriedade material ausente: um verificador independente ainda não consegue demonstrar toda a ligação Authority assinada → Outcome → DestinationBinding sem confiar nas associações guardadas pelo operador. O relatório situa a maior lacuna entre Outcome e DestinationBinding, inclusive para MULTISIG, e registra ausência de exportação dos fatos pelos participantes. É lacuna documentada de projeto e evidência, não prova de ataque explorado.
+A investigação Durable Protocol Truth identifica uma propriedade material ausente: um verificador independente ainda não consegue demonstrar toda a ligação Authority assinada → Outcome → DestinationBinding sem confiar nas associações guardadas pelo operador. O relatório identifica a ruptura específica entre Outcome e DestinationBinding, inclusive para MULTISIG. A decisão de Authority assinada pode ser verificada independentemente; o conteúdo de Outcome é derivável sob condições e com dados adicionais, mas o destino autorizado não possui vínculo verificável independente. Não há demonstração de exportação pelos participantes de toda a cadeia de verificação. É lacuna documentada de projeto e evidência, não prova de ataque explorado.
 
 **Pergunta adversarial:** se um operador alterar a associação no banco ou reter evidências, qual artefato exportável e vinculado criptograficamente permite a outro nó conferir o destino autorizado? As evidências não justificam alegação universal de resistência bizantina.
 
