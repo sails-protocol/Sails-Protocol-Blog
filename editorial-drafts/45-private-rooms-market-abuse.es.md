@@ -14,7 +14,7 @@ Separe membresía, descubrimiento de ofertas, control de acceso y autorización 
 
 Un miembro expulsado intenta aceptar una oferta en caché. El nodo debe verificar autorización actual y vigencia de la oferta, no confiar en la interfaz antigua. Privacidad y moderación siguen siendo decisiones de diseño.
 
-*No production implementation or publication approval is asserted.*
+*Este texto no afirma una implementación en producción ni autorización para publicar.*
 
 ## Límite de evidencia
 
