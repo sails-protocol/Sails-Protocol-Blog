@@ -85,3 +85,11 @@ G3 now PASS based on merged PR #28 (8446a2efd1928eb5a54e8bea9e5c0cff59c3f84e), w
 - **Day 0 editorial acceptance remains separately unverified**; 48 planned topics × 3 locales is a planning denominator, not a claim of 144 published or approved editions.
 
 **NO MATERIAL FINDING UNDER THE RUG.**
+
+## Current-main I1 exact-head CI evidence | 2026-10-14
+
+**Independent GitHub Actions verification:** `main` ref resolves to `fbba5cd9176cf973e826d98a130cd924e3ed0799`. [Validate Blog push workflow run 38470073314](https://github.com/sails-protocol/Sails-Protocol-Blog/actions/runs/38470073314) reports `event=push`, `head_sha=fbba5cd9176cf973e826d98a130cd924e3ed0799`, `status=completed`, `conclusion=success`. Evidence reviewer: preliminary AI-assisted release audit, 2026-10-14. This is **current-main push CI**, not a PR-only result. **I1 is evidence-backed PASS for this current main SHA**, subject to release owner/CTO acceptance and recheck if main moves.
+
+**Scoring reconciliation:** previously verified I2 and G1–G4 = 16% (5/25). Adding I1 (+4 weighted points) yields **20% operational evidence coverage (6/25)** at the current main SHA, **pending owner/CTO acceptance of this ledger checkpoint**. This does **not** promote I3: production is still on an older SHA and Netlify remains paused. I4–I5, U1–U5, L1–L5, E1–E5 and G5 remain NOT VERIFIED. Day 0 acceptance remains **0/144**; corrected drafts are not approved editions.
+
+**Integration distinction:** [DRAFT PR #115](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/115) at `c2a623531c9db8b191c232b863a253e19710d517` separately passed 3/3 exact-head PR workflows (Validate Blog, isolated preview, browser accessibility). This is evidence of the **unmerged combined branch**, not a successful push on main or live production verification. No merge or deploy authorized. **NO MATERIAL FINDING UNDER THE RUG.**
