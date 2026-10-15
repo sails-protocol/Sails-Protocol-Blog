@@ -1,7 +1,7 @@
 ---
 slug: season-2-08-economic-coordination-protocol
 title: "O protocolo de coordenação econômica"
-description: "A grande ideia não é criar outra exchange. É um Economic Coordination Protocol for Building Interoperable P2P Financial Marketplaces."
+description: "A proposta é um protocolo de coordenação econômica para mercados financeiros P2P interoperáveis, não outra exchange."
 tags: [protocol, editorial]
 draft: false
 ---
