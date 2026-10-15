@@ -1,6 +1,6 @@
 # Salas privadas, ofertas públicas y abuso de mercado
 
-*Season 7 / Temporada 7. Borrador editorial. Fuentes y revisión del CTO pendientes.*
+*Temporada 7. Borrador editorial. Fuentes y revisión del CTO pendientes.*
 
 ## Pregunta
 
