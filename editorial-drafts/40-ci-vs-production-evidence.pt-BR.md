@@ -14,7 +14,7 @@ Mantenha cadeia de evidência: requisito, invariante, commit, ambiente, resultad
 
 A publicação deve declarar escopo e pontos cegos. Um teste aprovado comprova aquele teste, não segurança universal ou prontidão para produção.
 
-*No verified implementation claim or permission to publish is implied by this draft.*
+*Este rascunho não comprova implementação verificada nem autoriza publicação.*
 
 ## O que os registros de evidência realmente demonstram
 
