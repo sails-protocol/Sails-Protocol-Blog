@@ -26,6 +26,9 @@ El catálogo de Sails incluye ataques Sybil, liquidez falsa y exposición de cre
 
 ¿Qué evidencias del commit exacto muestran si las credenciales WebSocket tienen alcance restringido y si los límites de mensajes se mantienen entre procesos y reconexiones, sin confundir una propuesta arquitectónica con un control desplegado?
 
+
+**Alcance comprobado por las fuentes:** el [registro de amenazas, líneas 77–88](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md#L77-L88) clasifica el limitador como protección de instancia única; las [líneas 161–176](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md#L161-L176) distinguen la decisión pendiente sobre el alcance del token. Ninguno de estos registros demuestra mitigación en toda la producción.
+
 ### Fuente y madurez de la evidencia
 
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md
@@ -33,5 +36,3 @@ El catálogo de Sails incluye ataques Sybil, liquidez falsa y exposición de cre
 *Solo registro histórico de evidencias e inspección de fuentes; sin pruebas del HEAD actual ni aprobación para publicar.*
 
 *Este borrador no acredita una implementación verificada ni autoriza su publicación.*
-
-**Alcance comprobado por las fuentes:** el [registro de amenazas, líneas 77–88](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md#L77-L88) clasifica el limitador como protección de instancia única; las [líneas 161–176](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md#L161-L176) distinguen la decisión pendiente sobre el alcance del token. Ninguno de estos registros demuestra mitigación en toda la producción.
