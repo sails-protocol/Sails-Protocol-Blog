@@ -38,3 +38,5 @@ Quais escopos de ator e de prova respondem pela cota persistente quando requisi�
 *Somente inspeção das fontes. Sem novos testes de cotas, execução em produção, aprovação do CTO ou publicação.*
 
 *Este rascunho não comprova uma implementação verificada nem autoriza sua publicação.*
+
+**Fronteira concreta da fonte:** o [schema de descritores](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/evidence-descriptor-schema.ts#L18-L30) da revisão fixada declara `uri`, `evidenceReferenceId` e `externalReference: true` opcionais. Esse schema não aplica, por si, cota persistente por participante nem comprova rejeição antes do armazenamento. Isso exige código do serviço e evidência de execução adversarial, não apenas inspeção do schema.
