@@ -30,6 +30,14 @@ Equivalente textual: la propuesta pasa de la intención de diseño a una integra
 
 *Pendiente: verificación en fuentes técnicas, citas específicas, revisión editorial y aprobación del responsable.*
 
+## Escenario de fallo: un timeout no equivale a reversión
+
+Un coordinador transmite una liberación en una red y pierde la respuesta del proveedor. Otro worker observa un timeout y repite el efecto económico antes de reconciliar la transacción original. Puede producirse una liberación duplicada o un resultado local contradictorio si la autorización y las observaciones del proveedor no se vinculan a la misma intención duradera. Las reglas de confirmación de multisig Bitcoin no se pueden trasladar automáticamente a Lightning hold o a un contrato EVM.
+
+**Decisión arquitectónica:** un indicador genérico de liquidación es sencillo, pero borra finalidad, recuperación y autoridad específicas de cada red. Los estados explícitos del proveedor y la reconciliación añaden complejidad, pero conservan la incertidumbre.
+
+**Siguiente prueba:** inyectar un timeout tras la transmisión, reiniciar dos workers y repetir la solicitud de liberación. Exigir una sola transición autorizada, vinculación al destino y resultado del proveedor observado de manera independiente para la red probada. El registro y la conformidad histórica limitada a MULTISIG no prueban seguridad entre redes ni aptitud para producción de WDK_USDT_EVM o SAFE_GUARD_EVM.
+
 ## Límite examinado en el código
 
 El registro enumera redes con distinta autoridad y madurez; no todas son aptas para producción. Un límite documentado no es prueba de ejecución del HEAD actual; hay que probar el fallo contra estado duradero antes de afirmar madurez.
