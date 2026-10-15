@@ -1,6 +1,6 @@
 # Comisiones, incentivos y sostenibilidad económica
 
-*Season 7 / Temporada 7. Borrador editorial. Fuentes y revisión del CTO pendientes.*
+*Temporada 7. Borrador editorial. Fuentes y revisión del CTO pendientes.*
 
 ## Pregunta
 
@@ -14,7 +14,7 @@ Separe política de comisiones del protocolo, costos de red, cargos de proveedor
 
 Un reintento no debe cobrar dos veces la misma comisión. Las invariantes requieren evidencia persistente y política económica actual aprobada por el CTO. Este texto no afirma una tasa vigente en producción.
 
-*No production implementation or publication approval is asserted.*
+*No se afirma implementación en producción ni aprobación de publicación.*
 
 ## Límite comprobado en el código: las comisiones dependen de la red
 
@@ -28,4 +28,4 @@ Antes de describir una comisión universal, verifique versión de política, den
 - [WDK custody](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/wdk-settlement.provider.ts)
 - [SAFE_GUARD_EVM verification limits](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/safe-guard-evm.provider.ts)
 
-*Source-inspected editorial correction; CTO approval, deployment verification and production publication remain pending.*
+*Corrección editorial basada en fuentes; aprobación del CTO, verificación del despliegue y publicación en producción pendientes.*
