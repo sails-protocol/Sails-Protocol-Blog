@@ -29,3 +29,7 @@ Before describing a universal fee model, verify policy version, denomination, ro
 - [SAFE_GUARD_EVM verification limits](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/safe-guard-evm.provider.ts)
 
 *Source-inspected editorial correction; CTO approval, deployment verification and production publication remain pending.*
+
+## Activation is not collection
+
+At pinned Protocol revision `be6d3bc2`, `FEE_COLLECTION_CAPABLE_RAILS` contains only `MULTISIG`, and `assertRailCanActivateFeeCollection()` rejects fee-policy activation for other real rails without an atomic collection implementation. This is an **activation guard**, not evidence of an actual production charge, a deployed percentage or a completed refund. Reviewers must inspect the policy version and exact settlement transaction, including retry and dispute behavior, before calling a fee collected.
