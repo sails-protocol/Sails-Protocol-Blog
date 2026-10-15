@@ -14,7 +14,7 @@ Separe participação na sala, descoberta de ofertas, controle de acesso e autor
 
 Um membro removido tenta aceitar uma oferta em cache. O node precisa verificar autorização atual e validade da oferta, não confiar na interface antiga. Privacidade e moderação continuam sendo questões de desenho.
 
-*No production implementation or publication approval is asserted.*
+*Este texto não afirma implementação em produção nem aprovação para publicação.*
 
 ## Fronteira de evidência
 
