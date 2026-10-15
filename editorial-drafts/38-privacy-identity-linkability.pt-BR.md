@@ -14,7 +14,7 @@ Modele identificadores públicos, horários, histórico de ofertas, metadados de
 
 Uma alegação de privacidade exige rastrear fluxos reais, armazenamento e observabilidade da rede. Este artigo não afirma anonimato de implementação implantada.
 
-*No verified implementation claim or permission to publish is implied by this draft.*
+*Este rascunho não comprova implementação verificada nem autoriza publicação.*
 
 ## Evidência de fonte e fronteira de falha
 
