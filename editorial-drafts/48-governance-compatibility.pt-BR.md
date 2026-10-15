@@ -8,7 +8,7 @@ Um protocolo evolui enquanto aplicações e nós atualizam em ritmos diferentes.
 
 ## Decisão: compatibilidade precisa nomear a propriedade exata
 
-Número de versão não substitui contrato econômico. Um cliente pode decodificar a mensagem e ainda interpretar de outro modo uma tarifa, um resultado de liquidação ou uma condição de autorização. Uma alegação séria identifica schema ou ruleset, par de implementações, operação, rede e testes que falhariam se a semântica mudasse. A constituição de invariantes separa princípios arquiteturais, obrigações executáveis e evidência verificável.
+Número de versão não substitui contrato econômico. Um cliente pode decodificar a mensagem e ainda interpretar de outro modo uma taxa, um resultado de liquidação ou uma condição de autorização. Uma alegação séria identifica schema ou ruleset, par de implementações, operação, rede e testes que falhariam se a semântica mudasse. A constituição de invariantes separa princípios arquiteturais, obrigações executáveis e evidência verificável.
 
 ## Falha: conformidade da álgebra vira alegação universal
 
