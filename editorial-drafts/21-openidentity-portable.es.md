@@ -26,6 +26,16 @@ Equivalente textual: la propuesta pasa de la intención de diseño a una integra
 
 *Pendiente: verificación en fuentes técnicas, citas específicas, revisión editorial y aprobación del responsable.*
 
+## Escenario: clave válida sin autoridad económica
+
+Un agente delegado firma correctamente un desafío de autenticación e intenta liberar escrow de una operación perteneciente a otro participante principal. La firma demuestra control de la clave del agente, no autoridad sobre esa operación ni su destino. Otra solicitud repite una autorización antes válida después de revocar la delegación. Si el servidor solo verifica la clave, podría aceptar ambas indebidamente.
+
+## Alternativa y prueba
+
+Tratar toda clave válida como participante plenamente autorizado es sencillo, pero inseguro. Una delegación delimitada debe vincular principal, agente, rol, acción, contexto de operación, expiración y revocación, además de impedir replay. La portabilidad entre aplicaciones exige que cada servicio reconozca explícitamente esos límites.
+
+**Siguiente prueba:** enviar una solicitud autenticada por el principal equivocado, repetir una delegación revocada y cambiar el destino conservando el mismo firmante. Registrar rechazo en el HEAD exacto y comprobar que no se produce transición de escrow. El RFC de participantes citado documenta el diseño, no demuestra autoridad delegada entre aplicaciones en producción.
+
 ## Límite examinado, no certificación de producción
 
 Los agentes delegados no son participantes económicos independientes. **Fallo:** confundir diseño documentado con comportamiento desplegado. Faltan pruebas de integración y ejecución del HEAD exacto.
