@@ -22,11 +22,12 @@ La ruta OpenProof inspeccionada comprueba firmas y autorización para adjuntar e
 
 **Fallo:** se adjunta un comprobante PIX aparentemente legítimo, pero el pago externo no existe o se revierte. El protocolo debe conservar la procedencia de la evidencia sin tratarla como confirmación de pago. **Gate abierto:** inspeccionar los adaptadores PIX/DePix y sus callbacks autoritativos antes de afirmar conciliación automática.
 
+
+**Prueba negativa antes de publicar:** presentar un comprobante correctamente firmado de otra transacción o uno válido para otro beneficiario. La firma y la integridad del archivo no deben promover la operación a *pagada* sin una observación de pago autenticada por separado y coincidencia de importe, destinatario y referencia. Es una prueba propuesta, no un resultado ejecutado.
+
 ### Registro de fuentes
 
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/proof.service.ts
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/evidence-provider.ts
 
 *Fuentes inspeccionadas; verificación externa de pagos, pruebas reales, revisión del CTO y publicación pendientes.*
-
-**Prueba negativa antes de publicar:** presentar un comprobante correctamente firmado de otra transacción o uno válido para otro beneficiario. La firma y la integridad del archivo no deben promover la operación a *pagada* sin una observación de pago autenticada por separado y coincidencia de importe, destinatario y referencia. Es una prueba propuesta, no un resultado ejecutado.
