@@ -31,6 +31,8 @@ El documento de invariantes distingue leyes arquitectónicas, obligaciones concr
 
 **Gate de compatibilidad:** indicar identidad exacta del ruleset, versión del protocolo/SDK, red, implementación independiente y vector falsable. Mantener una migración cuando cambie la semántica; no convertir un PASS específico en compatibilidad universal.
 
+**Vector negativo de compatibilidad:** utilizar dos clientes desarrollados de forma independiente con distintas revisiones de esquema/ruleset. Ambos deben interpretar el mismo mensaje de operación y luego variar el significado económico de un campo (denominación de comisión, identidad del beneficiario o condición de liquidación). Poder leer el mensaje no basta: exigir resultados económicos autorizados idénticos o rechazo explícito por versión. Es un escenario de verificación propuesto, no una ejecución de conformidad demostrada.
+
 ### Fuentes y madurez
 
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROTOCOL_INVARIANTS.md
@@ -38,5 +40,3 @@ El documento de invariantes distingue leyes arquitectónicas, obligaciones concr
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROVIDER_SUBSTITUTION_INVARIANCE_EVIDENCE.md
 
 *Solo evidencias históricas e inspección de fuentes; sin prueba del HEAD actual ni aprobación de publicación.*
-
-**Vector negativo de compatibilidad:** utilizar dos clientes desarrollados de forma independiente con distintas revisiones de esquema/ruleset. Ambos deben interpretar el mismo mensaje de operación y luego variar el significado económico de un campo (denominación de comisión, identidad del beneficiario o condición de liquidación). Poder leer el mensaje no basta: exigir resultados económicos autorizados idénticos o rechazo explícito por versión. Es un escenario de verificación propuesto, no una ejecución de conformidad demostrada.
