@@ -14,7 +14,7 @@ Sails Protocol define contratos de coordenação; o Trading SDK é uma superfíc
 
 Se duas aplicações exibirem estados diferentes após reconexão, a autoridade econômica precisa ser explícita e a reconciliação testável. Isto é um objetivo arquitetural, não prova de interoperabilidade implantada.
 
-*No production implementation or publication approval is asserted.*
+*Este texto não afirma implementação em produção nem aprovação para publicação.*
 
 ## Fronteira de evidência
 
