@@ -1,6 +1,6 @@
 # Taxas, incentivos e sustentabilidade econômica
 
-*Season 7 / Temporada 7. Rascunho editorial. Fontes e revisão do CTO pendentes.*
+*Temporada 7. Rascunho editorial. Fontes e revisão do CTO pendentes.*
 
 ## Pergunta
 
@@ -14,7 +14,7 @@ Separe política de taxa do protocolo, custos de rede, cobranças de provedores,
 
 Uma tentativa repetida não pode cobrar a mesma taxa duas vezes. Invariantes de cobrança exigem evidência persistente e política econômica atual aprovada pelo CTO. Este texto não afirma uma taxa vigente em produção.
 
-*No production implementation or publication approval is asserted.*
+*Não há alegação de implementação em produção nem aprovação para publicação.*
 
 ## Limite verificado no código: taxas dependem da rede
 
@@ -28,4 +28,4 @@ Antes de descrever uma taxa universal, verifique versão da política, denomina�
 - [WDK custody](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/wdk-settlement.provider.ts)
 - [SAFE_GUARD_EVM verification limits](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/safe-guard-evm.provider.ts)
 
-*Source-inspected editorial correction; CTO approval, deployment verification and production publication remain pending.*
+*Correção editorial baseada em fontes; aprovação do CTO, verificação de implantação e publicação em produção ainda pendentes.*
