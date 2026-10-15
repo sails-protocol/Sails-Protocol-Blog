@@ -14,7 +14,7 @@ Uma revisão deve separar sintomas observados, causa confirmada, fluxos afetados
 
 Não use a narrativa de um incidente como prova de segurança. Cite relatórios primários e evidência da mitigação; publique correções quando o entendimento mudar.
 
-*No verified implementation claim or permission to publish is implied by this draft.*
+*Este rascunho não comprova implementação verificada nem autoriza publicação.*
 
 ## Fronteira de evidência
 
