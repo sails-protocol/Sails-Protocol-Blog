@@ -26,6 +26,14 @@ Equivalente textual: la intención de diseño pasa a una integración delimitada
 
 *Pendientes: verificación de fuentes, referencias específicas, revisión editorial y aprobación de la persona responsable.*
 
+## Escenario de fallo: un agente supera un mandato revocado
+
+Una persona delega en un agente la facultad de proponer operaciones por debajo de un límite. El agente prepara una propuesta, pero la persona revoca el mandato antes de enviarla. Un mensaje retrasado llega después de la revocación y solicita liberar escrow, o cambia el destino conservando una firma válida. La salida del modelo y la posesión de una clave no sustituyen la autorización vigente del participante.
+
+**Alternativa:** los permisos permanentes amplios reducen pasos, pero concentran riesgo económico. Mandatos delimitados, expiración, confirmación explícita y comprobación de revocación exigen más pasos y permiten verificar la responsabilidad. El principal sigue siendo el actor económico.
+
+**Siguiente prueba:** hacer competir revocación y envío, superar un límite delegado, repetir una solicitud firmada y cambiar su destino. Comprobar rechazo en el HEAD exacto antes de cambios duraderos de estado o efectos económicos externos. El RFC de participantes documenta roles, no demuestra un agente autónomo de negociación desplegado.
+
 ## Límite examinado en el código
 
 Un agente delegado no adquiere autoridad económica independiente. Un límite documentado no es prueba de ejecución del HEAD actual; hay que probar el fallo contra estado duradero antes de afirmar madurez.
