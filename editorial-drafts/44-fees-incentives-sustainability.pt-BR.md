@@ -29,3 +29,7 @@ Antes de descrever uma taxa universal, verifique versão da política, denomina�
 - [SAFE_GUARD_EVM verification limits](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/safe-guard-evm.provider.ts)
 
 *Correção editorial baseada em fontes; aprovação do CTO, verificação de implantação e publicação em produção ainda pendentes.*
+
+## Ativar não é cobrar
+
+Na revisão `be6d3bc2` do Protocol, `FEE_COLLECTION_CAPABLE_RAILS` contém somente `MULTISIG`, e `assertRailCanActivateFeeCollection()` impede a ativação da política nos demais caminhos reais sem implementação atômica de cobrança. Trata-se de uma **proteção de ativação**, não de prova de cobrança em produção, percentual vigente ou reembolso concluído. Antes de afirmar que uma taxa foi efetivamente cobrada, é preciso verificar a versão da política e a transação de liquidação, inclusive novas tentativas e disputas.
