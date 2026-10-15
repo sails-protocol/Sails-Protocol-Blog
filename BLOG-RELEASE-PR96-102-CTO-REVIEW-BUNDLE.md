@@ -75,3 +75,20 @@ Read current GitHub PR metadata and full changed-file lists for **all 14 open DR
 **Immutable snapshot:** #96 `0e4de7e`; #97 `a0ea374`; #98 `8ae0390`; #99 `a8ebe46`; #100 `1575719`; #101 `eb55fb2`; #102 `de99c26`; #103 previous head `c1b8a64` (this bundle will advance with this addendum); #104 `d276e6c`; #105 `72044bd`; #106 `c65fdad`; #107 `fda6beb`; #108 `42e63ee`; #109 `f918ec9`. All were open DRAFT, GitHub marked individually mergeable at inspection; this is **not owner approval**. The #102 latest head was independently 3/3 CI PASS; #103 `c1b8a64` was 2/3 PASS with browser accessibility still running at last check.
 
 **Release gate:** no merge while Netlify auto-deploy/credit behavior and explicit owner authorization remain unresolved. After authorized integration, re-run exact combined-main CI, confirm content, then deploy once on approved billing and run live I3–I5/U1–U5/L1–L5/E1–E5. G5 closes only when material findings have disposition and verification, not because filenames do not overlap. **16% current operational; 0/144 Day 0 approvals**.
+
+## Integrated batch verification | 2026-10-14 | immutable CI checkpoint
+
+This addendum **supersedes the prior pre-integration planning table as the current integration status**, while preserving the earlier historical inventory. Three DRAFT batch PRs were created from the same `main` baseline `fbba5cd9176cf973e826d98a130cd924e3ed0799`:
+
+| Batch | PR | Source PRs integrated | Changed paths | Exact-head workflow evidence |
+| --- | --- | --- | ---: | --- |
+| Published Season 02 localization | [#112](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/112) `13ede3b7bbed4ebd02689c0bd659aaa273528cc8` | #108–#111 | 6 | 3/3 PASS |
+| Governance and evidence | [#113](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/113) `33a48593da6f2ccf9b7594db677df1172e26d15b` | #101–#106 | 6 | 3/3 PASS |
+| Day 0 draft claim boundaries | [#114](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/114) `fde6f689d968c2a175a64b6d4ce7ae63f63d35d9` | #96–#100 and #107 | 17 | 3/3 PASS |
+| Combined integration | [#115](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/115) `2c1ef3e60cc4db9053c73a1a4e01b8201ba43180` | #112 + #113 + #114 | **29 unique** | **3/3 PASS** |
+
+For each PASS, GitHub Actions reported **Validate Blog**, **Build isolated blog preview artifact**, and **Browser accessibility audit** completed successfully on the listed exact commit. The 29 changed paths have **zero path overlaps across the three batch PRs**. The two article 08 files overlapping in original #109/#111 were intentionally reconciled **inside** #112; no claim of zero overlap among the original 16 source PRs is made.
+
+**What this proves:** the combined branch has an exact-head successful automated validation, isolated preview build and workflow accessibility audit. **What it does not prove:** native-language independent signoff, complete source-to-claim CTO approval, production deployment, live route/SEO/browser verification, G5 material finding closure, or 144/144 Day 0 editorial acceptance. All source PRs and batches remain DRAFT; selecting #115 as the single authorized integration route would avoid applying individual batches twice. Reviewers must recheck the latest HEAD and current `main` before any approved merge.
+
+**Decision pending:** CTO/owner chooses integration route and signs off; editors approve per-edition claims/translations; owner separately authorizes merge and Netlify production after credit constraints resolve. Operational acceptance **16%**; Day 0 editorial acceptance **0/144**. No merge or deploy was performed. **NO MATERIAL FINDING UNDER THE RUG.**
