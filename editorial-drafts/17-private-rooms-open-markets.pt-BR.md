@@ -28,6 +28,18 @@ Equivalente textual: o diagrama mostra os limites de responsabilidade descritos 
 
 *Referências, revisão técnica e aprovação do responsável pela publicação pendentes.*
 
+## Cenário de falha: a participação muda durante uma negociação
+
+O administrador remove alguém de uma sala depois que essa pessoa visualizou uma oferta, mas antes de aceitá-la. A oferta pode continuar no cache do aplicativo. Se o servidor verificar apenas que a oferta já foi descoberta, a pessoa removida ainda poderá iniciar uma negociação. Por outro lado, cancelar automaticamente toda negociação em andamento após uma remoção pode impedir a conclusão ou a disputa de obrigações legítimas. Visibilidade, autorização para iniciar uma ação nova e autoridade sobre uma obrigação já criada exigem regras distintas.
+
+Também seria incorreto presumir que descoberta privada significa transporte confidencial. Mesmo com a lista de ofertas oculta, horários de notificações, contrapartes e metadados de liquidação podem vazar por outros sistemas. A interface não deve prometer anonimato ou mensagens criptografadas sem evidências verificadas.
+
+## Decisão, alternativa e próximo teste
+
+O produto precisa definir o estado da participação no momento da ação, a semântica da revogação, o destino das negociações em andamento e as permissões independentes de liquidação. Revogação rígida reduz novas ações indevidas, mas exige recuperação das obrigações existentes. Permitir sua conclusão preserva continuidade, mas não pode conceder autoridade nova silenciosamente.
+
+**Próximo teste:** disputar a corrida entre remoção da sala e aceite da oferta, depois repetir uma solicitação anteriormente autorizada após a revogação. Verificar rejeição de novas transições não autorizadas e tratamento explícito das obrigações existentes. Testar exposição de metadados separadamente. O modelo de ameaças citado descreve riscos, **não** certifica salas privadas implantadas nem garantias de privacidade.
+
 ## Fronteira examinada e falha
 
 Visibilidade privada não impede conluio nem transições sem autorização. **Falha:** apresentar design como implantação comprovada. A fonte fixada sustenta apenas esse escopo; gates de execução e CTO seguem abertos.
