@@ -1,6 +1,6 @@
 # Integrando provedores externos sem delegar a verdade econômica
 
-*Somente rascunho. Publicação não aprovada. Season 5, article 34.*
+*Somente rascunho. Publicação não aprovada. Temporada 5, artigo 34.*
 
 ## Pergunta
 
