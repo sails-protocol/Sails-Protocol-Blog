@@ -1,6 +1,6 @@
 # Exaustão de recursos, limites de taxa e abuso de evidências
 
-*Season 6 / Temporada 6. Somente rascunho editorial. Auditoria de fontes e aprovação pendentes.*
+*Temporada 6. Rascunho editorial. Auditoria das fontes e aprovação pendentes.*
 
 ## Pergunta
 
@@ -14,16 +14,9 @@ Um atacante pode usar muitas requisições pequenas com o mesmo efeito de um upl
 
 Um cliente envia uma URI bruta como se fosse referência vinculada à integridade. Aceitar sem verificar o tipo declarado permite uma falsa alegação de proveniência. Outra falha ocorre quando a rejeição acontece depois de gravar bytes ou emitir eventos. O gate editorial deve exigir aceitação no limite, rejeição em +1 e ausência de efeitos, pelo caminho real do serviço e pelo ledger durável de cotas.
 
-
-## Limites e escolhas
-
-Limite tamanho, profundidade, complexidade, cotas cumulativas e tentativas no limite do serviço antes de trabalho caro. Atribua uso a atores autenticados e identificadores persistentes de prova, não apenas a contadores de processo.
-
 ## Falha e verificação
 
 Testes de limite devem mostrar aceitação no valor exato, rejeição uma unidade acima e zero efeitos após rejeição. Valores da política precisam ser conferidos com decisões e implementação atuais antes de publicar.
-
-*No verified implementation claim or permission to publish is implied by this draft.*
 
 ## Descritores não equivalem a evidência armazenada
 
@@ -31,9 +24,17 @@ O schema HTTP de disputa preserva `evidenceReferenceId` e o marcador explícito 
 
 **Teste de abuso:** enviar descritores enormes ou aninhados, referências repetidas e URIs externas fingindo ser mídia verificada. Exigir enforcement exato, rejeição sem efeitos e contabilização por escopo antes de alegar proteção abrangente.
 
-### Source and verification status
+**Limite específico das fontes:** o schema Zod compartilhado preserva os campos, mas a exclusividade entre `uri` e `evidenceReferenceId` é aplicada posteriormente no serviço de disputas, não pelo próprio schema. O contrato `store()`/`retrieve()` do provedor cobre armazenamento e hash da mídia, não a autoridade da assinatura da prova. Nenhuma dessas fontes, isoladamente, certifica a aplicação das cotas de upload.
+
+## Próxima pergunta
+
+Quais escopos de ator e de prova respondem pela cota persistente quando requisições simultâneas chegam a workers diferentes? Que testes no commit exato demonstram que uma requisição rejeitada não deixa evidência armazenada nem débito no registro autoritativo de cotas?
+
+### Fontes e estado da verificação
 
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/evidence-descriptor-schema.ts
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/evidence-provider.ts
 
-*Source inspection only. No new quota test, production execution, CTO approval or publication.*
+*Somente inspeção das fontes. Sem novos testes de cotas, execução em produção, aprovação do CTO ou publicação.*
+
+*Este rascunho não comprova uma implementação verificada nem autoriza sua publicação.*

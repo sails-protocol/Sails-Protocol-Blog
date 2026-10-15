@@ -1,6 +1,6 @@
 # Modelado de amenazas de un protocolo económico P2P
 
-*Season 6 / Temporada 6. Solo borrador editorial. Auditoría de fuentes y aprobación pendientes.*
+*Temporada 6. Borrador editorial. Auditoría de fuentes y aprobación pendientes.*
 
 ## Pregunta
 
@@ -14,25 +14,22 @@ Una amenaza no está mitigada solo porque figure en el catálogo. Cada escenario
 
 Si varias conexiones o nodos pueden eludir un contador local, la afirmación sobre límites debe precisar ese alcance. Si una URL de sesión llega a registros, un token válido puede filtrarse pese a las firmas correctas en otros flujos. El documento recoge hallazgos históricos; comprobar su estado en el HEAD actual exige otra revisión.
 
-
-## Límites y decisiones
-
-Separe fondos, claves de firma, afirmaciones de pago, evidencias y estado de la operación como activos con autoridades distintas. Evalúe identidad falsa, comprobantes falsificados, solicitudes duplicadas, nodos maliciosos y proveedores caídos. Una mitigación solo sirve cuando su límite de aplicación es explícito.
-
-## Fallo y verificación
-
-Esto es un marco de modelado, no una auditoría terminada. Antes de publicar garantías, vincule cada amenaza con código exacto, pruebas adversariales, riesgo residual y revisión técnica fechada.
-
-*No verified implementation claim or permission to publish is implied by this draft.*
-
 ## Catálogo de amenazas frente a mitigación demostrada
 
 El catálogo de Sails incluye ataques Sybil, liquidez falsa y exposición de credenciales, pero advierte que una mitigación documentada solo existe cuando hay evidencia de implementación y despliegue. También registra un límite de WebSocket: tokens de sesión con privilegios amplios en la URL pueden filtrarse a registros o historial; un token corto y restringido al handshake es una decisión de diseño, no una corrección desplegada en ese registro.
 
 **Fallo:** una URL WebSocket registrada expone una credencial reutilizable. Tratarlo como riesgo documentado y exigir evidencia de corrección en el HEAD actual antes de afirmar credenciales acotadas.
 
-### Source and maturity
+**Precisión del estado de las fuentes:** el registro de amenazas marca la ausencia original de límite en `SEND_MESSAGE` como **resuelta el 15/08/2026** mediante un contador de ventana fija por participante, local al proceso (valor predeterminado documentado de 20 mensajes/10 segundos). Eso no demuestra control entre instancias. La exposición de un token de sesión completo en la URL WebSocket es un riesgo residual distinto; el token corto y limitado al WS sigue siendo una propuesta en ese registro. Ninguna observación verifica por sí sola la configuración actualmente desplegada.
+
+## Siguiente pregunta
+
+¿Qué evidencias del commit exacto muestran si las credenciales WebSocket tienen alcance restringido y si los límites de mensajes se mantienen entre procesos y reconexiones, sin confundir una propuesta arquitectónica con un control desplegado?
+
+### Fuente y madurez de la evidencia
 
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md
 
-*Historical evidence/source inspection only; no latest-head test or publication approval.*
+*Solo registro histórico de evidencias e inspección de fuentes; sin pruebas del HEAD actual ni aprobación para publicar.*
+
+*Este borrador no acredita una implementación verificada ni autoriza su publicación.*
