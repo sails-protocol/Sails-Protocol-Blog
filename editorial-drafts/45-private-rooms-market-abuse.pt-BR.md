@@ -31,4 +31,3 @@ Um moderador remove um participante enquanto o navegador dele ainda mantém uma 
 **Corrida de autorização a revisar:** registrar as versões de participação na sala e da oferta lidas pelo handler de aceite; revogar o acesso entre essa leitura e o commit econômico. O resultado correto exige snapshot de autorização válido transacionalmente ou rejeição antes de qualquer efeito de liquidação. Conferir o selo exibido no navegador não basta. É teste de concorrência proposto; o catálogo de ameaças da revisão fixada não demonstra um fluxo de autorização de salas privadas em produção.
 
 **Próximo teste:** disputar a corrida entre revogação e aceite em duas sessões, repetir oferta antiga e verificar rejeição sem efeito econômico. Revisar separadamente denúncias de abuso e metadados da sala expostos a terceiros. É teste proposto, não prova de salas privadas implantadas.
-
