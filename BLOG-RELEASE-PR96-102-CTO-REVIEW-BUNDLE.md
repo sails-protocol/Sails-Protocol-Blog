@@ -47,3 +47,17 @@ The five editorial PRs #96–#100 received focused, source-bounded edits after t
 **Primary Protocol revision:** `be6d3bc2ddfc384cfafa4276e01b8aacc096d421` was compared to Protocol `main` and found identical at the 2026-10-14 checkpoint. That is revision currency *at inspection*, not perpetual freshness or execution proof. The cross-project WDK/NODE_ENV review is tracked separately in Protocol [#474](https://github.com/sails-protocol/Sails-Protocol/issues/474) and Blog [#106](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/106).
 
 **Still blocked:** independent native-language review, full claim-to-line technical acceptance, integrated branch CI, G5/G6/G7 and owner merge/deploy authorization. No Day 0 edition is accepted by this bundle. Formal readiness stays **16%**.
+
+## Release review addendum: published Season 02 localization and G5 | 2026-10-14
+
+The seven-PR table above is a **historical snapshot**, not the current HEAD for #102. Rechecked GitHub DRAFT PRs and exact-head CI:
+
+| PR | Current reviewed HEAD | Automated checks | Reviewer / production status |
+| --- | --- | --- | --- |
+| [#102](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/102) | `138739685acae9f4b2e42d0a6e95cda5e5231e95` | 3/3 PASS (Validate Blog, isolated preview, browser accessibility) | G5 review pending; later documentation-only commit `de99c265f33afd5a483dcdb8b87d82ed946f8453` was observed 2/3 PASS and accessibility in progress at checkpoint |
+| [#108](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/108) | `42e63ee27ad5de894daaa4f8e4c734e9e474f116` | 3/3 PASS | Article 03 PT-BR/ES frontmatter descriptions repaired; native review and merge pending |
+| [#109](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/109) | `f918ec9103a3baa29b237d4a60b91bbefbc6137d` | 3/3 PASS | Article 08 PT-BR/ES Mermaid labels localized; original graph semantics retained; native review and merge pending |
+
+**Content inspection coverage:** nine published Season 02 articles in EN/PT-BR/ES = 27 source files inspected for metadata, sources and high-risk claim boundaries; targeted first-party checks covered FinCEN, CFTC Phantom, Van Loon, Coinext, Bity, Bitso and Bybit. This does **not** constitute a complete legal review, translation signoff or release acceptance. The Day 0 **48 topics x three locales** are a separate editorial denominator. Source review details, explicit caveats and F-006 crosswalk reside in #102.
+
+**Required before 100%:** review and authorized merge of all relevant DRAFT PRs; integrated current-main CI; verified Netlify production SHA, public routes and browser/SEO/a11y checks; complete material findings closure (G5); owner/editor acceptance of 144/144 Day 0 editions through G1–G7. **Current operational 16%, editorial 0/144**. Do not merge, trigger deploy or upgrade Netlify credits without explicit authorization.
