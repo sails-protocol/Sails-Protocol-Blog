@@ -55,6 +55,6 @@ flowchart TD
     A["Carteira A"] --> C["Estado autoritativo compartilhado"]
     B["Carteira B"] --> C
     C --> D{"Reservar quantidade atomicamente"}
-    D -->|Success| E["Execução confirmada"]
-    D -->|Conflict| F["Rejeitar ou tentar novamente"]
+    D -->|Sucesso| E["Execução confirmada"]
+    D -->|Conflito| F["Rejeitar ou tentar novamente"]
 ```
