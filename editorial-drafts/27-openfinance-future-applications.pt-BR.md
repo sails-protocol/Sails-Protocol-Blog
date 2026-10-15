@@ -24,7 +24,7 @@ flowchart LR
 
 Equivalente textual: a intenção de projeto passa por uma integração delimitada e verificação independente. Não comprova implantação.
 
-*Source verification, references, editorial review and owner approval pending.*
+*Pendente: verificação das fontes, referências específicas, revisão editorial e aprovação do responsável pela publicação.*
 
 ## Escopo fundamentado em fonte
 
