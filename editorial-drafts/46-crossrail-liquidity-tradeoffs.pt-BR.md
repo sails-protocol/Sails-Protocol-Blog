@@ -1,6 +1,6 @@
 # Liquidação entre redes e escolhas de roteamento de liquidez
 
-*Season 7 / Temporada 7. Rascunho editorial. Fontes e revisão do CTO pendentes.*
+*Temporada 7. Rascunho editorial. Fontes e revisão do CTO pendentes.*
 
 ## Pergunta
 
@@ -14,7 +14,7 @@ Separe cotação, execução de swap, custódia de pontes ou provedores, políti
 
 Um provedor confirma a cotação, mas falha antes do swap. A recuperação precisa preservar o último estado confirmado e expor o risco residual. Não publique matriz de redes suportadas sem conferir os adaptadores.
 
-*No production implementation or publication approval is asserted.*
+*Não há alegação de implementação em produção nem aprovação para publicação.*
 
 ## Limite verificado no código: mapear ativos não é construir uma ponte
 
@@ -28,4 +28,4 @@ A construção de taxa também está declarada apenas para MULTISIG. A existênc
 - [WDK custody](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/wdk-settlement.provider.ts)
 - [SAFE_GUARD_EVM verification limits](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/safe-guard-evm.provider.ts)
 
-*Source-inspected editorial correction; CTO approval, deployment verification and production publication remain pending.*
+*Correção editorial baseada em fontes; aprovação do CTO, verificação de implantação e publicação em produção ainda pendentes.*
