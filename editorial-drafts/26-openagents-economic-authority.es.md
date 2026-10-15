@@ -24,7 +24,7 @@ flowchart LR
 
 Equivalente textual: la intención de diseño pasa a una integración delimitada y a verificación independiente. No demuestra un despliegue.
 
-*Source verification, references, editorial review and owner approval pending.*
+*Pendientes: verificación de fuentes, referencias específicas, revisión editorial y aprobación de la persona responsable.*
 
 ## Límite examinado en el código
 
