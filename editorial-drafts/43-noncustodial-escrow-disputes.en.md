@@ -29,3 +29,7 @@ Application-layer dual approval is not cryptographic multisig. The escrow must b
 - [SAFE_GUARD_EVM verification limits](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/safe-guard-evm.provider.ts)
 
 *Source-inspected editorial correction; CTO approval, deployment verification and production publication remain pending.*
+
+## Source-verification checkpoint
+
+The pinned Protocol registry at `be6d3bc2` explicitly distinguishes provider routing from fee collection: BTC maps to MULTISIG, LN_BTC to LIGHTNING_HODL, and USDT_ERC20 to WDK_USDT_EVM. The same registry limits real protocol-fee activation to MULTISIG. **An asset mapping does not prove a cross-rail swap, non-custodial key ownership on every rail, or production activation.** Review each custody and recovery claim against its actual provider before publication.
