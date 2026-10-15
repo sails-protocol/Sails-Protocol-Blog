@@ -1,6 +1,6 @@
 # Salas privadas, ofertas públicas e abuso de mercado
 
-*Season 7 / Temporada 7. Rascunho editorial. Fontes e revisão do CTO pendentes.*
+*Temporada 7. Rascunho editorial. Fontes e revisão do CTO pendentes.*
 
 ## Pergunta
 
