@@ -29,3 +29,7 @@ Antes de describir una comisión universal, verifique versión de política, den
 - [SAFE_GUARD_EVM verification limits](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/safe-guard-evm.provider.ts)
 
 *Corrección editorial basada en fuentes; aprobación del CTO, verificación del despliegue y publicación en producción pendientes.*
+
+## Activar no equivale a cobrar
+
+En la revisión `be6d3bc2` del Protocol, `FEE_COLLECTION_CAPABLE_RAILS` contiene únicamente `MULTISIG`, y `assertRailCanActivateFeeCollection()` impide activar la política en las demás vías reales sin una implementación atómica del cobro. Es una **protección de activación**, no prueba de un cargo en producción, un porcentaje vigente ni un reembolso completado. Antes de afirmar que se cobró una comisión, deben verificarse la versión de la política y la transacción de liquidación, incluidos reintentos y disputas.
