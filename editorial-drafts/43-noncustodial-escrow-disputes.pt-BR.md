@@ -22,6 +22,10 @@ O registro de provedores distingue MULTISIG Bitcoin (chaves do comprador e vende
 
 Aprovação dupla na aplicação não é multisig criptográfico. Avalie cada escrow por titular das chaves, limiar de assinatura, rede, timeout, configuração e evidências reais de recuperação.
 
+## Verificação pontual das fontes
+
+O registro de provedores do Protocol na revisão `be6d3bc2` distingue roteamento de ativos de cobrança de taxas: BTC aponta para MULTISIG, LN_BTC para LIGHTNING_HODL e USDT_ERC20 para WDK_USDT_EVM. O mesmo registro limita a ativação real de taxas de protocolo ao MULTISIG. **Mapear um ativo não comprova swap entre redes, custódia não custodial em todos os caminhos nem ativação em produção.** Cada alegação sobre chaves e recuperação exige revisão do provedor correspondente.
+
 ### Fonte primária e revisão
 
 - [Provider registry, custody metadata, default asset routing and fee capability](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts)
@@ -29,7 +33,3 @@ Aprovação dupla na aplicação não é multisig criptográfico. Avalie cada es
 - [SAFE_GUARD_EVM verification limits](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/safe-guard-evm.provider.ts)
 
 *Correção editorial baseada em fontes; aprovação do CTO, verificação de implantação e publicação em produção ainda pendentes.*
-
-## Verificação pontual das fontes
-
-O registro de provedores do Protocol na revisão `be6d3bc2` distingue roteamento de ativos de cobrança de taxas: BTC aponta para MULTISIG, LN_BTC para LIGHTNING_HODL e USDT_ERC20 para WDK_USDT_EVM. O mesmo registro limita a ativação real de taxas de protocolo ao MULTISIG. **Mapear um ativo não comprova swap entre redes, custódia não custodial em todos os caminhos nem ativação em produção.** Cada alegação sobre chaves e recuperação exige revisão do provedor correspondente.
