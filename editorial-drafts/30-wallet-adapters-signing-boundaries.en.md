@@ -16,6 +16,14 @@ A realistic failure case is an adapter returning an address from an unexpected d
 
 *Source verification and exact API references pending.*
 
+## Failure drill: signing the right transaction for the wrong trade
+
+An adapter displays an address that looks valid, but it belongs to another network or derivation path. The user signs a transaction whose destination differs from the trade's authorized destination. A valid wallet signature proves consent to bytes, not that the application correctly represented the economic obligation. Recovery also fails if an imported seed produces a different address set than the original wallet.
+
+**Trade-off:** tightly coupling one wallet implementation simplifies support but reduces portability; abstract adapters enable choice but demand explicit network, derivation, signing and recovery contracts. Neither approach permits an SDK to access seed material implicitly.
+
+**Next test:** compare deterministic derivation vectors, reject wrong-network destinations, tamper with the proposed output after user confirmation and restore in a second wallet implementation. Record actual supported versions and signer behavior. The cited provider registry does not prove WDK/BDK compatibility or production seed isolation.
+
 ## Source-inspected boundary
 
 Provider routing does not prove wallet seed isolation or derivation compatibility. A documented boundary is not exact-head runtime proof; test the stated failure against durable state before asserting readiness.
