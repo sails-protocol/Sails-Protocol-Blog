@@ -26,6 +26,9 @@ O catálogo do Sails cita ataques Sybil, liquidez falsa e exposição de credenc
 
 Quais evidências no commit exato mostram se as credenciais WebSocket têm escopo restrito e se os limites de mensagens funcionam entre workers e reconexões, sem confundir proposta arquitetural com controle implantado?
 
+
+**Limite comprovado nas fontes:** o [registro de ameaças, linhas 77–88](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md#L77-L88) classifica o limitador como proteção de instância única; as [linhas 161–176](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md#L161-L176) distinguem a decisão ainda pendente sobre escopo de token. Nenhum desses registros demonstra mitigação em toda a produção.
+
 ### Fonte e maturidade da evidência
 
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md
@@ -33,5 +36,3 @@ Quais evidências no commit exato mostram se as credenciais WebSocket têm escop
 *Somente registro histórico de evidências e inspeção de fontes; sem testes no HEAD atual ou aprovação para publicação.*
 
 *Este rascunho não comprova uma implementação verificada nem autoriza sua publicação.*
-
-**Limite comprovado nas fontes:** o [registro de ameaças, linhas 77–88](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md#L77-L88) classifica o limitador como proteção de instância única; as [linhas 161–176](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md#L161-L176) distinguem a decisão ainda pendente sobre escopo de token. Nenhum desses registros demonstra mitigação em toda a produção.
