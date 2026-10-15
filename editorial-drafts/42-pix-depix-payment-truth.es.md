@@ -18,7 +18,7 @@ Un atacante reutiliza un comprobante anterior en otra operación. El sistema no 
 
 ## La evidencia no es la verdad del pago
 
-La ruta OpenProof inspeccionada verifica quién firmó un archivo y si esa persona puede adjuntarlo a una Claim; no valida la liquidación de PIX o DePix. Un comprobante, archivo firmado o hash de almacenamiento puede ser auténtico y, aun así, engañoso económicamente. Toda afirmación de pago confirmado, irreversible o liquidado exige autoridad externa identificada, conciliación de identificadores y reglas aplicables de confirmación y reversión.
+La ruta OpenProof inspeccionada comprueba firmas y autorización para adjuntar evidencias en el contexto de la prueba; esos controles no validan la liquidación de PIX o DePix. Un comprobante, archivo firmado o hash de almacenamiento puede ser auténtico y, aun así, engañoso económicamente. Toda afirmación de pago confirmado, irreversible o liquidado exige autoridad externa identificada, conciliación de identificadores y reglas aplicables de confirmación y reversión.
 
 **Fallo:** se adjunta un comprobante PIX aparentemente legítimo, pero el pago externo no existe o se revierte. El protocolo debe conservar la procedencia de la evidencia sin tratarla como confirmación de pago. **Gate abierto:** inspeccionar los adaptadores PIX/DePix y sus callbacks autoritativos antes de afirmar conciliación automática.
 
