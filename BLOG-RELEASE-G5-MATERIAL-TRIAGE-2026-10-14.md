@@ -6,7 +6,7 @@
 
 | Finding | Tracking | Current disposition | Evidence required to close |
 | --- | --- | --- | --- |
-| I1 exact-main push CI | [#85](https://github.com/sails-protocol/Sails-Protocol-Blog/issues/85) | OPEN, evidence missing | Successful `push` workflow for exact main SHA, run URL, reviewer/date |
+| I1 exact-main push CI | [#85](https://github.com/sails-protocol/Sails-Protocol-Blog/issues/85) | EVIDENCE FOUND for `main` `fbba5cd9176cf973e826d98a130cd924e3ed0799`; owner/CTO acceptance pending | [Successful `push` run 38470073314](https://github.com/sails-protocol/Sails-Protocol-Blog/actions/runs/38470073314) at exact SHA; record reviewer/date and recheck if main moves |
 | Current-main production, locale/SEO/browser | [#29](https://github.com/sails-protocol/Sails-Protocol-Blog/issues/29) | BLOCKED by owner-directed Netlify credit pause | Approved deployment and production SHA match, HTTP/routes/assets, locale/SEO, browser and accessibility evidence |
 | Visual identity and image provenance | [#12](https://github.com/sails-protocol/Sails-Protocol-Blog/issues/12) | OPEN, visual acceptance missing | Licensed asset attribution, production responsive screenshots, contrast and review |
 | Day 0 article claims, maturity and translations | [Editorial evidence audit](./EDITORIAL-DAY0-EVIDENCE-AUDIT.md) | OPEN, 0/144 formal approvals in historical register | Per-edition source-to-claim, native-language, CTO and owner signoff |
