@@ -29,3 +29,7 @@ La aprobación doble en la aplicación no es multisig criptográfico. Evalúe ca
 - [SAFE_GUARD_EVM verification limits](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/safe-guard-evm.provider.ts)
 
 *Corrección editorial basada en fuentes; aprobación del CTO, verificación del despliegue y publicación en producción pendientes.*
+
+## Verificación puntual de las fuentes
+
+El registro de proveedores del Protocol en la revisión `be6d3bc2` distingue el enrutamiento de activos del cobro de comisiones: BTC se asigna a MULTISIG, LN_BTC a LIGHTNING_HODL y USDT_ERC20 a WDK_USDT_EVM. El mismo registro limita la activación real de comisiones de protocolo a MULTISIG. **Asignar un activo no demuestra un intercambio entre redes, custodia no custodial en todas las vías ni activación en producción.** Cada afirmación sobre claves y recuperación requiere revisar el proveedor correspondiente.
