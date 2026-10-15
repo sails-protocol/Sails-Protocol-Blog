@@ -2,6 +2,16 @@
 
 > **LATEST EVIDENCE CHECKPOINT | 2026-10-14 | 20% weighted, 6/25 gates, pending owner/CTO acceptance.** The historical table below contains an I3 PASS for an older Netlify production commit. For the current release, **I3 = NOT VERIFIED** because production is not at the reviewed main SHA. Current evidence-backed PASS gates are **I1, I2, G1, G2, G3, G4**; I1 is documented in the latest checkpoint below. The historical **20%** score is retained for audit history, not as current readiness. The Day 0 editorial acceptance denominator (144 language editions) is separate and has no formal signoffs recorded. PR CI success and editorial draft improvements do not automatically promote a release gate. See the 2026-10-13 authority checkpoint below.
 
+## Exact-HEAD draft validation checkpoint | 2026-10-15 UTC | PR #115
+
+**Scope:** consolidated editorial DRAFT branch only, commit `f25fb8558381221cd02402bc35c6855089f3294c`. All three checks completed successfully on this immutable SHA:
+
+- [Validate Blog, run 38778186830](https://github.com/sails-protocol/Sails-Protocol-Blog/actions/runs/38778186830): SUCCESS.
+- [Browser accessibility audit, run 38778186921](https://github.com/sails-protocol/Sails-Protocol-Blog/actions/runs/38778186921): SUCCESS.
+- [Build isolated blog preview artifact, run 38778187299](https://github.com/sails-protocol/Sails-Protocol-Blog/actions/runs/38778187299): SUCCESS.
+
+**Evidence boundary:** subsequent editorial/localization commits advance the PR HEAD and require a new exact-HEAD check. These draft-branch checks do not satisfy I1 (current `main` push CI), I3 (Netlify production SHA), manual production U/L gates, native-language E4, G5, or Day 0 G1–G7 signoffs. **Strict current-release acceptance remains 16%; Day 0 formal approvals remain 0/144.** PR #115 stays DRAFT, with no merge or deploy authorization.
+
 ## Next evidence gates, in execution order
 
 1. **I1, +4 weighted points evidenced, pending reviewer acceptance:** Exact-main `push` Validate Blog success at `fbba5cd9176cf973e826d98a130cd924e3ed0799`, [run 38470073314](https://github.com/sails-protocol/Sails-Protocol-Blog/actions/runs/38470073314). Recheck if main advances; issue #85 may need reviewer disposition.
