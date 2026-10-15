@@ -61,3 +61,17 @@ The seven-PR table above is a **historical snapshot**, not the current HEAD for 
 **Content inspection coverage:** nine published Season 02 articles in EN/PT-BR/ES = 27 source files inspected for metadata, sources and high-risk claim boundaries; targeted first-party checks covered FinCEN, CFTC Phantom, Van Loon, Coinext, Bity, Bitso and Bybit. This does **not** constitute a complete legal review, translation signoff or release acceptance. The Day 0 **48 topics x three locales** are a separate editorial denominator. Source review details, explicit caveats and F-006 crosswalk reside in #102.
 
 **Required before 100%:** review and authorized merge of all relevant DRAFT PRs; integrated current-main CI; verified Netlify production SHA, public routes and browser/SEO/a11y checks; complete material findings closure (G5); owner/editor acceptance of 144/144 Day 0 editions through G1–G7. **Current operational 16%, editorial 0/144**. Do not merge, trigger deploy or upgrade Netlify credits without explicit authorization.
+
+## Pre-integration conflict inventory | 2026-10-14
+
+Read current GitHub PR metadata and full changed-file lists for **all 14 open DRAFT PRs #96–#109**. The combined change set touches **27 unique file paths; zero exact-path overlaps** among these PRs at the inspected HEADs. This is a path-level conflict inventory, **not** proof that combined code/Markdown builds or that no semantic dependencies exist.
+
+| Suggested review/merge batch, only after explicit authorization | PRs | Files / dependency rationale |
+| --- | --- | --- |
+| A. Governance and evidence | #101, #102, #103, #104, #105, #106 | Separate ledger, triage, review bundle, multilingual review, Day 0 backlog, and Protocol source audit files. Reconcile cross-links and the historical vs current readiness ledger before approval |
+| B. Draft source corrections | #96, #97, #98, #99, #100, #107 | Distinct Day 0 editorial-draft paths. Obtain technical claim and native-language signoffs; never count corrections as G1–G7 approvals |
+| C. Published locale quality | #108, #109 | Distinct localized article 03 metadata and article 08 Mermaid labels. Both 3/3 exact-head CI PASS, still require native review and release authorization |
+
+**Immutable snapshot:** #96 `0e4de7e`; #97 `a0ea374`; #98 `8ae0390`; #99 `a8ebe46`; #100 `1575719`; #101 `eb55fb2`; #102 `de99c26`; #103 previous head `c1b8a64` (this bundle will advance with this addendum); #104 `d276e6c`; #105 `72044bd`; #106 `c65fdad`; #107 `fda6beb`; #108 `42e63ee`; #109 `f918ec9`. All were open DRAFT, GitHub marked individually mergeable at inspection; this is **not owner approval**. The #102 latest head was independently 3/3 CI PASS; #103 `c1b8a64` was 2/3 PASS with browser accessibility still running at last check.
+
+**Release gate:** no merge while Netlify auto-deploy/credit behavior and explicit owner authorization remain unresolved. After authorized integration, re-run exact combined-main CI, confirm content, then deploy once on approved billing and run live I3–I5/U1–U5/L1–L5/E1–E5. G5 closes only when material findings have disposition and verification, not because filenames do not overlap. **16% current operational; 0/144 Day 0 approvals**.
