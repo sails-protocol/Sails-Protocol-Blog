@@ -1,6 +1,6 @@
 # Satsails Wallet y Sails Market: dos aplicaciones, un protocolo
 
-*Season 7 / Temporada 7. Borrador editorial. Fuentes y revisión del CTO pendientes.*
+*Temporada 7. Borrador editorial. Fuentes y revisión del CTO pendientes.*
 
 ## Pregunta
 
