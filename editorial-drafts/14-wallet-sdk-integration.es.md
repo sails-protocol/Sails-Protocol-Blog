@@ -26,7 +26,7 @@ flowchart TD
 
 Equivalente textual: el diagrama muestra los límites de responsabilidad descritos arriba, no un despliegue verificado.
 
-*Referencias, revisión técnica y aprobación del responsable de publicación pendientes.*
+*Se incluye más abajo una referencia inmutable al SDK. Siguen pendientes la verificación completa de las afirmaciones frente a las fuentes, la revisión técnica y la aprobación de publicación.*
 
 ## Una respuesta perdida no convierte el reintento en una operación segura
 
@@ -39,6 +39,8 @@ Hay otro límite al solicitar la firma. El identificador de la operación, la au
 La decisión de integración es mantener las claves y las firmas bajo control de la billetera, y hacer explícitas la identidad de los reintentos y el contexto de aprobación. Esto añade trabajo a la experiencia de recuperación, pero evita convertir un reintento de red o una firma genérica en consentimiento económico.
 
 **Siguiente pregunta:** ¿puede una prueba de integración sobre el HEAD exacto simular una operación persistida cuya respuesta se perdió, recuperar la misma operación al reintentar y rechazar un contexto de firma distinto sin un segundo efecto económico? Hasta registrar esa evidencia, sigue siendo un requisito, no una garantía verificada.
+
+**Precisión del contrato del SDK:** el método inspeccionado `SailsOpenP2PModule.trade(offerId, amount, idempotencyKey?)` envía la clave opcional a `/v1/openp2p/trades`. El comentario del código describe como contrato del servidor un máximo de una operación por clave reutilizada, pero advierte que omitirla permite duplicados tras una respuesta perdida. Es un *contrato acotado de la API*, no prueba de integración con Wallet, liquidación exactamente una vez ni seguridad al cambiar la clave entre reintentos.
 
 ## Límite respaldado por el código y próxima prueba
 
