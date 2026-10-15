@@ -12,7 +12,7 @@ Separe participação na sala, descoberta de ofertas, controle de acesso e autor
 
 ## Falha e evidência
 
-Um membro removido tenta aceitar uma oferta em cache. O node precisa verificar autorização atual e validade da oferta, não confiar na interface antiga. Privacidade e moderação continuam sendo questões de desenho.
+Um membro removido tenta aceitar uma oferta em cache. O nó precisa verificar autorização atual e validade da oferta, não confiar na interface antiga. Privacidade e moderação continuam sendo questões de desenho.
 
 *Este texto não afirma implementação em produção nem aprovação para publicação.*
 
