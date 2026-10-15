@@ -44,9 +44,9 @@ En `ProofService.attachEvidence()`, el servicio comprueba primero el acceso al a
 
 **Fallo:** alguien firma un archivo legítimo e intenta adjuntarlo a una prueba ajena. La firma no autoriza ese acto; la comprobación de alcance debe preceder al almacenamiento.
 
-### Source ledger
+### Registro de fuentes
 
 - [proof.service.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/proof.service.ts)
 - [evidence-provider.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/evidence-provider.ts)
 
-*Source-inspected; external payment verification, live tests, CTO review and publication pending.*
+*Código fuente inspeccionado; verificación externa del pago, pruebas en ejecución, revisión del CTO y publicación aún pendientes.*
