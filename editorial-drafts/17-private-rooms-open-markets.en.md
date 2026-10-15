@@ -28,6 +28,18 @@ Text equivalent: the diagram shows the responsibility boundaries discussed above
 
 *Source references, technical review and owner publication approval pending.*
 
+## Failure scenario: membership changes while a trade is in flight
+
+A room administrator removes a participant after that participant has viewed an offer but before accepting it. The cached offer may remain visible in the client. If the server checks only whether the offer was once discovered, the removed participant might still initiate a trade. If the system instead invalidates every active trade on membership change, legitimate trades may become impossible to finish or dispute. Visibility, authorization to initiate a new action, and authority over an already-created obligation need separate rules.
+
+A second risk is assuming that private discovery provides confidential transport. Even when the offer list is hidden, notification timing, counterparties and settlement metadata can still be exposed through other systems. The interface should not promise anonymity or encrypted messaging without verified evidence.
+
+## Decision, trade-off and next test
+
+The product must define membership snapshots, revocation semantics, the fate of in-flight trades and independent settlement permissions. Strict revocation reduces unwanted new activity but requires recovery rules for existing obligations. Permissive completion preserves continuity but must not silently grant new authority.
+
+**Next test:** race a room membership revocation against offer acceptance and replay a previously authorized request after revocation. Verify that new unauthorized transitions are rejected, while existing obligations follow explicit dispute and settlement rules. Test metadata visibility separately. The pinned threat model describes risks; it does **not** certify deployed private rooms or privacy guarantees.
+
 ## Inspected boundary and failure
 
 Private visibility is not immunity from collusion or unauthorized transitions. **Failure:** overstating design as verified deployment. The pinned source supports only the stated scope; runtime and CTO gates remain open.
