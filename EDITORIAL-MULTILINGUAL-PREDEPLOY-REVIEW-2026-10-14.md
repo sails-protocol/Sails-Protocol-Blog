@@ -41,3 +41,18 @@ Inspected the exact PR-specific article files at #98 EN HEAD `8dbfb68dbf61eda84b
 - **37:** `docs/RECOVERY_RECONCILIATION_CONFORMANCE_EVIDENCE.md` explicitly describes MULTISIG-only C4/M9 recovery coverage and no automated recovery path for LIGHTNING_HODL, WDK_USDT_EVM, SAFE_GUARD_EVM. EN/PT-BR/ES all preserve the crucial distinction between *crash recovery* and *divergence/correspondence detection*, although that second distinction is not spelled out as a named contrast in each article. **Targeted semantic/source consistency: no material mismatch found.** This is a scoped historical code/documentary observation, not executed conformance verification.
 
 **Editorial improvement candidate, not a publication blocker proven here:** make the recovery-vs-correspondence distinction explicit in all three article 37 versions before G1 approval. Do not rewrite article 36 without a concrete defect. **Unresolved:** native-speaker independent copyedit, source-line signoff, exact-head runtime tests, integrated preview, CTO/owner approval. No G1/G2/G4 acceptance claimed.
+
+## Article 37 candidate recheck and Season 02 localization batch | 2026-10-14
+
+The previously proposed recovery-versus-correspondence editorial improvement **already exists** in all three current article 37 draft HEADs: EN #98 `8ae03906dcf54cabf4b57e46a3c11ea9fdee3cfb`, PT-BR/ES #97 `a0ea37451518cfcfb2d025c0c4453c7482fa54c2`. Each includes an explicit **Additional boundary / Limite adicional / Límite adicional** paragraph distinguishing divergence/correspondence detection from recovery after interruption. **No further edit is warranted** on this point; native review and runtime proof remain outstanding.
+
+The 18 localized published Season 02 source files (nine topics, PT-BR and ES) were scanned on `main` for literal-truncated frontmatter descriptions and Mermaid language residue. Specific remediations are isolated in DRAFT PRs:
+
+| Finding | PR | Scope | Release state |
+| --- | --- | --- | --- |
+| Article 03 descriptions end with ellipsis | [#108](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/108) | Two frontmatter descriptions | 3/3 exact-head CI PASS; not merged |
+| Article 08 Mermaid labels in English | [#109](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/109) | Two Mermaid diagrams | 3/3 exact-head CI PASS; not merged |
+| Article 07 Mermaid edges `Success` / `Conflict` untranslated | [#110](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/110) | PT-BR `Sucesso` / `Conflito`; ES `Éxito` / `Conflicto` | 2/3 CI PASS and browser accessibility in progress at checkpoint; not merged |
+| Article 08 PT-BR/ES descriptions retain English slogan | [#111](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/111) | Two SEO descriptions, no body changes | 2/3 CI PASS and browser accessibility in progress at checkpoint; not merged |
+
+This is a **targeted metadata/diagram scan**, not exhaustive proofreading of 18 localized articles, native review or acceptance. PR #109 and #111 touch the same two article 08 paths, but different content spans; integrate/rebase and run combined CI after authorization. Earlier 14-PR zero-overlap inventory did **not** include #110/#111. No merge/deploy or G1–G7 approval implied. Operational 16%; Day 0 0/144.
