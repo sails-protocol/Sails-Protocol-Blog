@@ -28,3 +28,5 @@ O caminho OpenProof examinado verifica assinaturas e autorização para anexar e
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/evidence-provider.ts
 
 *Fontes examinadas; verificação externa de pagamentos, testes reais, revisão do CTO e publicação pendentes.*
+
+**Teste negativo antes da publicação:** apresentar comprovante corretamente assinado de outra transação ou comprovante válido para destinatário diferente. Assinatura e integridade do arquivo não podem promover a negociação para *paga* sem observação autenticada e independente do pagamento e correspondência de valor, destinatário e referência. Este é um teste proposto, não um resultado executado.
