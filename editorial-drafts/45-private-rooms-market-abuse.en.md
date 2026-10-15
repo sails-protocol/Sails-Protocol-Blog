@@ -16,12 +16,6 @@ A revoked room member attempts to accept a cached offer. The node must evaluate 
 
 *No production implementation or publication approval is asserted.*
 
-## Evidence boundary
-
-Private-room access controls do not alone prevent collusion, Sybil activity or market abuse. **Failure:** mistaking documented intent for verified production behavior. Exact-head runtime evidence and release approval remain pending.
-
-- [THREAT_MODEL.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md)
-
 ## Failure drill: revoked access and stale offers
 
 A room moderator revokes a participant while the participant's browser still holds a cached offer. The browser submits acceptance after revocation; a second account controlled by the same actor attempts to re-enter under a new identifier. A private-room badge is not proof of current membership, honest pricing or independent identity.
@@ -31,3 +25,9 @@ A room moderator revokes a participant while the participant's browser still hol
 **Authorization race to review:** capture the exact membership version and offer version read by the acceptance handler, then revoke access between that read and economic commit. A correct outcome requires either a transactionally valid authorization snapshot or rejection before any settlement side effect; checking a browser badge is insufficient. This is a proposed concurrency test. The pinned threat catalog does not establish that a production private-room authorization path exists.
 
 **Next test:** race membership revocation with offer acceptance across two sessions, replay a stale offer and verify rejection without an economic side effect. Independently review abuse reporting and what room metadata leaks to outsiders. This is a proposed test, not evidence that private rooms are deployed.
+
+## Evidence boundary
+
+Private-room access controls do not alone prevent collusion, Sybil activity or market abuse. **Failure:** mistaking documented intent for verified production behavior. Exact-head runtime evidence and release approval remain pending.
+
+- [THREAT_MODEL.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md)
