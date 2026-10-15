@@ -31,4 +31,3 @@ Uma carteira mostra negociação pendente enquanto o mercado web exibe concluíd
 **Vetor de reconciliação:** registrar identificador canônico, decisão de autoridade, resultado persistente e referência de liquidação externa de uma negociação. Entregar os mesmos eventos à carteira e ao mercado em ordens diferentes, incluindo conclusão duplicada após reconexão. Comparar as interfaces com um snapshot autoritativo consultado novamente e tentar uma segunda liberação. O resultado exigido é convergência **sem segundo efeito econômico**; compartilhar SDK não comprova isso. O teste permanece proposto, não executado.
 
 **Próximo teste:** abrir a mesma negociação na carteira e no mercado, desconectar um cliente, entregar eventos duplicados e fora de ordem e reconectar. Verificar resultado autoritativo idêntico e ausência de segunda liberação. É cenário de aceitação de interoperabilidade, não prova de que as aplicações já interoperam.
-
