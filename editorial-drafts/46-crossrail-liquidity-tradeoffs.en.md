@@ -29,3 +29,5 @@ Likewise, fee construction is presently declared only for MULTISIG. Do not infer
 - [SAFE_GUARD_EVM verification limits](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/safe-guard-evm.provider.ts)
 
 *Source-inspected editorial correction; CTO approval, deployment verification and production publication remain pending.*
+
+**Reviewer's falsifiable boundary:** choose one concrete buyer-asset/seller-asset pair and identify a quote identifier, counterparty, custody handoff, settlement evidence on both networks and restart/rollback behavior. If the evidence only shows `DEFAULT_ESCROW_TYPE_FOR_ASSET` entries, classify the result as *asset-to-provider mapping*, not a cross-rail trade. The inspected [registry lines 332–347](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts#L332-L347) supports only the narrower mapping statement.
