@@ -16,12 +16,6 @@ Um membro removido tenta aceitar uma oferta em cache. O nó precisa verificar au
 
 *Este texto não afirma implementação em produção nem aprovação para publicação.*
 
-## Fronteira de evidência
-
-Controle de acesso a salas privadas não impede sozinho conluio, Sybil ou abuso de mercado. **Falha:** confundir intenção documentada com comportamento verificado em produção. Evidência de execução no HEAD exato e aprovação pendentes.
-
-- [THREAT_MODEL.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md)
-
 ## Teste de falha: acesso revogado e ofertas antigas
 
 Um moderador remove um participante enquanto o navegador dele ainda mantém uma oferta em cache. O navegador envia o aceite após a revogação; outra conta controlada pela mesma pessoa tenta voltar com nova identidade. O selo de sala privada não comprova participação atual, preço honesto nem identidade independente.
@@ -31,3 +25,9 @@ Um moderador remove um participante enquanto o navegador dele ainda mantém uma 
 **Corrida de autorização a revisar:** registrar as versões de participação na sala e da oferta lidas pelo handler de aceite; revogar o acesso entre essa leitura e o commit econômico. O resultado correto exige snapshot de autorização válido transacionalmente ou rejeição antes de qualquer efeito de liquidação. Conferir o selo exibido no navegador não basta. É teste de concorrência proposto; o catálogo de ameaças da revisão fixada não demonstra um fluxo de autorização de salas privadas em produção.
 
 **Próximo teste:** disputar a corrida entre revogação e aceite em duas sessões, repetir oferta antiga e verificar rejeição sem efeito econômico. Revisar separadamente denúncias de abuso e metadados da sala expostos a terceiros. É teste proposto, não prova de salas privadas implantadas.
+
+## Fronteira de evidência
+
+Controle de acesso a salas privadas não impede sozinho conluio, Sybil ou abuso de mercado. **Falha:** confundir intenção documentada com comportamento verificado em produção. Evidência de execução no HEAD exato e aprovação pendentes.
+
+- [THREAT_MODEL.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md)
