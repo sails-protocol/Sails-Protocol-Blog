@@ -26,6 +26,14 @@ Text equivalent: design intent progresses to a bounded integration and independe
 
 *Source verification, references, editorial review and owner approval pending.*
 
+## Failure scenario: one interface hides two independent contracts
+
+A user approves a swap and a loan from the same application screen. The swap settles, but the loan provider rejects the application after receiving preliminary information. If the interface marks the whole sequence completed, the user may misunderstand outstanding exposure, fees or custody. One app does not create one legal or economic authority.
+
+**Trade-off:** a unified dashboard is convenient but can hide provider identity, risk and recovery responsibilities. Explicit per-provider disclosures, independent confirmations and distinct pending/failed states add friction but preserve informed consent.
+
+**Next test:** simulate one external service succeeding while another fails or delays its callback. Verify that statuses, permissions, fees and custody disclosures remain provider-specific, and that retries do not silently authorize a second action. This is a proposed verification scenario, not evidence that OpenFinance or named external services are available in production.
+
 ## Source-backed scope
 
 OpenFinance is a proposed module, not a demonstrated production financial service. **Failure:** treating a source-level design or API as universal production readiness. Exact-head tests and approval remain outstanding.
