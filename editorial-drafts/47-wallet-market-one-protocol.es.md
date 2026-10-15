@@ -31,4 +31,3 @@ Una billetera muestra una operación pendiente mientras el mercado web indica co
 **Vector de reconciliación:** registrar identificador canónico, decisión de autoridad, resultado persistente y referencia de liquidación externa de una operación. Entregar los mismos eventos a billetera y mercado en órdenes distintas, incluida una finalización duplicada tras reconectar. Comparar las interfaces con una instantánea autoritativa consultada de nuevo e intentar una segunda liberación. El resultado exigido es convergencia **sin un segundo efecto económico**; compartir SDK no lo demuestra. La prueba sigue propuesta, no ejecutada.
 
 **Siguiente prueba:** abrir la misma operación en billetera y mercado, desconectar un cliente, entregar eventos duplicados y desordenados y reconectar. Verificar resultado autoritativo idéntico y ausencia de segunda liberación. Es un escenario de aceptación de interoperabilidad, no prueba de que ambas aplicaciones ya interoperan.
-
