@@ -23,3 +23,7 @@ For each claim, record: reviewer and independent role; UTC date; exact Blog PR S
 4. **Owner:** separately authorize merge and Netlify publication after applicable release gates. Current strict release acceptance stays **16%** and Day 0 **0/144**.
 
 Tracking: [review issue #116](https://github.com/sails-protocol/Sails-Protocol-Blog/issues/116), [G5 triage](./BLOG-RELEASE-G5-MATERIAL-TRIAGE-2026-10-14.md), [editorial audit](./EDITORIAL-DAY0-EVIDENCE-AUDIT.md). **NO MATERIAL FINDING UNDER THE RUG.**
+
+## Source-ref reconciliation | 2026-10-15
+
+Direct GitHub repository inspection returned Protocol `main` = `be6d3bc2ddfc384cfafa4276e01b8aacc096d421`, matching the immutable revision linked in the six draft evidence rows **at this inspection time**. The inspected `docs/DURABLE_PROTOCOL_TRUTH_EVIDENCE.md` expressly labels its mission *investigation-only*, separates output/evidence/property/claim, and records a missing F01 Foundations source and a historical OpenProof Project-card bookkeeping discrepancy. These are source-provenance caveats, not evidence of a deployed exploit or current failure. Recheck Protocol `main` at actual reviewer signoff, since branches can advance; code at HEAD is not automatically production deployment or successful adversarial tests. Article 36's independent-verification limitation remains BLOCKED until demonstrated export/proof and reviewer disposition.
