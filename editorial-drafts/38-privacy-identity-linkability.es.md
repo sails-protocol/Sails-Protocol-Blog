@@ -21,3 +21,11 @@ Una afirmación de privacidad exige rastrear flujos reales, almacenamiento y obs
 Los catálogos de amenazas y el diseño de identidad no prueban desvinculación ni privacidad desplegada. El siguiente gate requiere verificación operativa del HEAD exacto; esta fuente no autoriza lanzamiento.
 
 - [THREAT_MODEL.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/THREAT_MODEL.md)
+
+## Prueba concreta de correlación de identidad
+
+Una persona utiliza la misma identidad pública en dos aplicaciones independientes. Un observador combina horarios, importes recurrentes de ofertas, referencias de proveedores y un identificador estable para inferir que ambas actividades pertenecen a la misma persona. Ninguna aplicación publica su nombre legal, pero los metadatos combinados pueden revelar su comportamiento.
+
+**Alternativa:** un identificador universal facilita la portabilidad de cuentas y la consulta de reputación, pero crea una clave persistente de seguimiento entre mercados. Identificadores distintos por servicio y divulgación selectiva reducen correlación, aunque complican recuperación, pruebas de disputas y portabilidad de reputación.
+
+**Siguiente prueba:** enumerar campos que salen del cliente, nodo, WebSocket, registros y proveedor de evidencia; después intentar correlacionar dos operaciones usando solo datos observables. Medir retención y acceso a cada identificador. Es una auditoría de privacidad propuesta, no prueba de anonimato o imposibilidad de correlación en producción.
