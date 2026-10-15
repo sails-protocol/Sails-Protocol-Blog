@@ -14,7 +14,7 @@ Modele identificadores públicos, horarios, historial de ofertas, metadatos de e
 
 Una afirmación de privacidad exige rastrear flujos reales, almacenamiento y observabilidad de red. Este artículo no afirma anonimato de una implementación desplegada.
 
-*No verified implementation claim or permission to publish is implied by this draft.*
+*Este borrador no acredita una implementación verificada ni autoriza su publicación.*
 
 ## Evidencia de fuente y límite de fallo
 
