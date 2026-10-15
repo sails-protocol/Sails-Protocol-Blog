@@ -28,3 +28,5 @@ The inspected OpenProof path checks signatures and attachment authorization with
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/evidence-provider.ts
 
 *Source-inspected; external payment verification, live tests, CTO review and publication pending.*
+
+**Negative test before release:** submit a correctly signed receipt from a different transaction, or a valid receipt for the wrong beneficiary. Signature validity and storage integrity must not promote the trade to *paid* without a separately authenticated payment observation and matching amount, recipient and reference. This is a proposed test, not an executed result.
