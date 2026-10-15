@@ -22,6 +22,8 @@ El mapeo predeterminado de escrow inspeccionado es `BTC → MULTISIG`, `LN_BTC �
 
 La construcción de comisiones también está declarada solo para MULTISIG. Varios proveedores no prueban swap atómico entre cadenas, finalidad compartida ni enrutamiento de liquidez desplegado. Verifique por separado puente externo, cotización, custodia y recuperación.
 
+**Límite verificable para la revisión:** elegir un par concreto de activos del comprador y vendedor e identificar cotización, contraparte, transferencia de custodia, evidencia de liquidación en ambas redes y comportamiento tras fallo o reinicio. Si la evidencia solo muestra entradas de `DEFAULT_ESCROW_TYPE_FOR_ASSET`, clasificarla como *asignación de activo a proveedor*, no operación entre redes. Las [líneas 332–347 del registro](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts#L332-L347) solo respaldan la afirmación más limitada.
+
 ### Fuente primaria y revisión
 
 - [Provider registry, custody metadata, default asset routing and fee capability](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts)
@@ -29,5 +31,3 @@ La construcción de comisiones también está declarada solo para MULTISIG. Vari
 - [SAFE_GUARD_EVM verification limits](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/safe-guard-evm.provider.ts)
 
 *Corrección editorial basada en fuentes; aprobación del CTO, verificación del despliegue y publicación en producción pendientes.*
-
-**Límite verificable para la revisión:** elegir un par concreto de activos del comprador y vendedor e identificar cotización, contraparte, transferencia de custodia, evidencia de liquidación en ambas redes y comportamiento tras fallo o reinicio. Si la evidencia solo muestra entradas de `DEFAULT_ESCROW_TYPE_FOR_ASSET`, clasificarla como *asignación de activo a proveedor*, no operación entre redes. Las [líneas 332–347 del registro](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts#L332-L347) solo respaldan la afirmación más limitada.
