@@ -75,3 +75,11 @@ G3 now PASS based on merged PR #28 (8446a2efd1928eb5a54e8bea9e5c0cff59c3f84e), w
 - **Day 0 editorial acceptance remains separately unverified**; 48 planned topics × 3 locales is a planning denominator, not a claim of 144 published or approved editions.
 
 **NO MATERIAL FINDING UNDER THE RUG.**
+
+## I1 direct push CI evidence candidate | 2026-10-16 UTC | review pending
+
+- GitHub branch API returned current `main` HEAD `fbba5cd9176cf973e826d98a130cd924e3ed0799`.
+- GitHub Actions run [38470073314](https://github.com/sails-protocol/Sails-Protocol-Blog/actions/runs/38470073314) is workflow **Validate Blog**, triggered by **push** to `main` on exact SHA `fbba5cd9176cf973e826d98a130cd924e3ed0799`, created `2026-10-13T21:22:14Z`, status **completed**, conclusion **success**. This is direct main push CI evidence, not inferred from PR checks.
+- Evidence discovery recorded in [issue #85](https://github.com/sails-protocol/Sails-Protocol-Blog/issues/85). **Independent reviewer identity/date and formal acceptance are pending**. Keep I1 **NOT VERIFIED** for acceptance until reviewer signs off; do not treat this candidate as an automatic 4-point promotion.
+- **Current-release weighted acceptance remains 16%** (I2 and G1–G4 only). If I1 receives documented independent approval, its 4-point weight may raise the total to 20%, subject to the acceptance contract.
+- No Netlify deploy, PR merge, editorial signoff, or production/browser QA is implied.
