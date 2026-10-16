@@ -47,6 +47,26 @@ try {
           await page.screenshot({path: join(output, file), fullPage: true, animations: 'disabled'});
           manifest.push({route: route.path, viewport: viewport.name, width: viewport.width, theme, file});
           console.log('captured', file);
+          // Verify that the intentionally wide Mermaid diagram is actually
+          // horizontally scrollable on mobile, and capture its far edge.
+          // A static full-page screenshot only shows the initial scroll position.
+          if (route.name.startsWith('article-') && viewport.name === 'mobile') {
+            const diagram = page.locator('.markdown .docusaurus-mermaid-container').first();
+            await diagram.waitFor({state: 'visible'});
+            const scroll = await diagram.evaluate(element => {
+              const available = element.scrollWidth - element.clientWidth;
+              if (available <= 0) return {available, moved: 0};
+              element.scrollLeft = available;
+              return {available, moved: element.scrollLeft};
+            });
+            if (scroll.available <= 0 || scroll.moved < scroll.available - 2) {
+              throw new Error(route.path + ': mobile Mermaid diagram cannot be inspected by horizontal scrolling: ' + JSON.stringify(scroll));
+            }
+            const scrolledFile = [route.name, 'mobile', theme, 'diagram-scroll-end'].join('__') + '.png';
+            await diagram.screenshot({path: join(output, scrolledFile), animations: 'disabled'});
+            manifest.push({route: route.path, viewport: viewport.name, width: viewport.width, theme, file: scrolledFile, detail: 'Mermaid diagram at horizontal scroll end'});
+            console.log('captured', scrolledFile);
+          }
         } finally {
           await context.close();
         }
