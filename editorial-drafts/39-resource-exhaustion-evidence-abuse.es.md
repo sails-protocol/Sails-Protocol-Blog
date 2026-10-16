@@ -1,6 +1,6 @@
 # Agotamiento de recursos, límites de tasa y abuso de evidencias
 
-*Season 6 / Temporada 6. Solo borrador editorial. Auditoría de fuentes y aprobación pendientes.*
+*Temporada 6. Borrador editorial. Auditoría de fuentes y aprobación pendientes.*
 
 ## Pregunta
 
@@ -14,16 +14,9 @@ Muchas solicitudes pequeñas pueden agotar recursos igual que una carga enorme. 
 
 Un cliente envía una URI sin procesar como si fuera una referencia ligada a integridad. Aceptarla sin comprobar su tipo permite una afirmación falsa de procedencia. Otro fallo ocurre si se rechaza después de guardar bytes o emitir eventos. El gate editorial debe exigir aceptación en el límite, rechazo en +1 y cero efectos mediante la ruta real del servicio y el ledger duradero de cuotas.
 
-
-## Límites y decisiones
-
-Limite tamaño, profundidad, complejidad, cuotas acumuladas e intentos en el límite del servicio antes del trabajo costoso. Atribuya uso a actores autenticados e identificadores persistentes de prueba, no solo a contadores de proceso.
-
 ## Fallo y verificación
 
 Las pruebas de límite deben mostrar aceptación en el valor exacto, rechazo una unidad por encima y cero efectos tras el rechazo. Los valores deben comprobarse con decisiones e implementación actuales antes de publicar.
-
-*No verified implementation claim or permission to publish is implied by this draft.*
 
 ## Los descriptores no equivalen a evidencia almacenada
 
@@ -31,9 +24,20 @@ El esquema HTTP de disputas conserva `evidenceReferenceId` y el marcador explíc
 
 **Prueba de abuso:** enviar descriptores enormes o anidados, referencias repetidas y URI externas que simulan ser medios verificados. Exigir enforcement exacto, rechazo sin efectos y contabilidad por alcance antes de afirmar protección completa.
 
-### Source and verification status
+**Límite específico de las fuentes:** el esquema Zod compartido conserva los campos, pero la exclusividad entre `uri` y `evidenceReferenceId` se aplica después en el servicio de disputas, no en el propio esquema. El contrato `store()`/`retrieve()` del proveedor cubre almacenamiento y hash del medio, no la autoridad de la firma de la prueba. Ninguna de esas fuentes, por sí sola, certifica la aplicación de cuotas de carga.
+
+## Siguiente pregunta
+
+¿Qué ámbitos de actor y de prueba responden por la cuota persistente cuando llegan solicitudes simultáneas a distintos procesos? ¿Qué pruebas en el commit exacto demuestran que una solicitud rechazada no deja evidencia almacenada ni cargos en el registro autoritativo de cuotas?
+
+
+**Límite concreto de la fuente:** el [esquema de descriptores](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/evidence-descriptor-schema.ts#L18-L30) de la revisión fijada declara `uri`, `evidenceReferenceId` y `externalReference: true` como opcionales. Ese esquema no aplica por sí solo cuotas persistentes por participante ni demuestra rechazo antes del almacenamiento. Hace falta código del servicio y evidencia de ejecución adversarial, no solo inspección del esquema.
+
+### Fuentes y estado de verificación
 
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/evidence-descriptor-schema.ts
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/evidence-provider.ts
 
-*Source inspection only. No new quota test, production execution, CTO approval or publication.*
+*Solo inspección de fuentes. Sin nuevas pruebas de cuotas, ejecución en producción, aprobación del CTO ni publicación.*
+
+*Este borrador no acredita una implementación verificada ni autoriza su publicación.*

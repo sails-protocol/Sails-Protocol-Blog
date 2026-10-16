@@ -1,6 +1,6 @@
 # Byzantine and Malicious Nodes: What Must Be Assumed
 
-*Season 6 / Temporada 6. Editorial draft only. Source audit and approval pending.*
+*Season 6. Editorial draft only. Source audit and approval pending.*
 
 ## Question
 
@@ -14,11 +14,9 @@ Distinguish a malicious participant, a compromised operator and colluding nodes.
 
 This topic belongs to adversarial readiness. Any claim of Byzantine resilience requires a defined fault model, test topology and evidence beyond conceptual diagrams.
 
-*No verified implementation claim or permission to publish is implied by this draft.*
-
 ## Independent verifiability is an open property
 
-The Durable Protocol Truth investigation identifies a material missing property: an independent verifier cannot yet establish the full signed Authority → Outcome → DestinationBinding relationship without trusting operator-held associations. The report narrows the strongest gap to Outcome → DestinationBinding, even for MULTISIG, and records the absence of participant export capability for the facts. This is a documented design/evidence gap, not proof of a presently exploited attack.
+The Durable Protocol Truth investigation identifies a material missing property: an independent verifier cannot yet establish the full signed Authority → Outcome → DestinationBinding relationship without trusting operator-held associations. The report identifies the precise break at Outcome → DestinationBinding, even for MULTISIG. Signed Authority decisions can be independently checked; Outcome content is conditionally derivable from signed fields and additional inputs, while the authorized destination is not independently bound. Participant export of the complete verification chain is not demonstrated. This is a documented design/evidence gap, not proof of a presently exploited attack.
 
 **Adversarial question:** if an operator alters its database association or withholds evidence, what independently exported, cryptographically bound artifact lets another node verify the authorized destination? No universal Byzantine-resistance claim is justified by the inspected evidence.
 
@@ -27,3 +25,5 @@ The Durable Protocol Truth investigation identifies a material missing property:
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/DURABLE_PROTOCOL_TRUTH_EVIDENCE.md
 
 *Historical evidence record and source inspection; latest deployment, CTO review and publication remain unverified.*
+
+*No verified implementation claim or permission to publish is implied by this draft.*

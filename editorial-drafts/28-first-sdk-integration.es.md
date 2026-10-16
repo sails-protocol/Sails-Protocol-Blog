@@ -1,6 +1,6 @@
 # Primera integración: de instalar el SDK a una operación P2P segura
 
-*Solo borrador. Publicación no aprobada. Season 5, article 28.*
+*Solo borrador. Publicación no aprobada. Temporada 5, artículo 28.*
 
 ## Pregunta
 

@@ -16,6 +16,14 @@ Um exercício de reinício deve interromper a negociação entre o commit persis
 
 *Verificação de fontes e referências exatas de API pendentes.*
 
+## Teste de falha: reinício entre commit e resposta
+
+Um nó confirma uma transição no PostgreSQL e cai antes de responder. O cliente reconecta e repete a solicitação. Se o nó depender de sinalizadores em memória, poderá executar novamente; se presumir falha da primeira chamada, poderá criar um segundo efeito externo. Workers simultâneos e retorno atrasado do provedor ampliam a incerteza.
+
+**Alternativa:** coordenação local ao processo é simples, mas não garante autoridade durável entre workers. Verificações atômicas no banco e reconciliação específica da rede aumentam a complexidade operacional e tornam a recuperação testável. Backups e migrações devem preservar o significado econômico do estado, não apenas linhas.
+
+**Próximo teste:** encerrar um worker após commit durável, repetir a operação em outro e reiniciar com retorno atrasado do provedor. Inspecionar estado, eventos, recibos e efeitos duplicados. A evidência existente de recuperação MULTISIG é delimitada e não comprova prontidão operacional entre redes.
+
 ## Evidência de fonte e fronteira de falha
 
 A recuperação registrada cobre cenários MULTISIG específicos, não todas as redes. O próximo gate exige verificação operacional no HEAD exato; a fonte não autoriza lançamento.

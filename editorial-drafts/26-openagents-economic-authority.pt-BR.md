@@ -26,6 +26,14 @@ Equivalente textual: a proposta vai da intenção de projeto para uma integraç�
 
 *Pendente: verificação na fonte técnica, citações específicas, revisão editorial e aprovação do responsável.*
 
+## Cenário de falha: agente ultrapassa mandato revogado
+
+Uma pessoa delega a um agente permissão para propor negociações abaixo de certo limite. O agente prepara a proposta, mas a pessoa revoga o mandato antes do envio. Uma mensagem atrasada chega depois da revogação e solicita liberação de escrow, ou altera o destino mantendo assinatura válida. Saída de modelo e posse de chave não substituem autorização atual do participante.
+
+**Alternativa:** permissões permanentes amplas reduzem etapas, mas concentram risco econômico. Mandatos delimitados, expiração, confirmação explícita e verificação de revogação exigem mais passos e tornam a responsabilidade testável. O principal continua sendo o ator econômico.
+
+**Próximo teste:** disputar a corrida entre revogação e envio, exceder limite de valor delegado, repetir solicitação assinada e alterar seu destino. Verificar rejeição no HEAD exato antes de mudança durável de estado ou efeito econômico externo. O RFC de participantes documenta papéis, não comprova agente autônomo de negociação implantado.
+
 ## Fronteira examinada no código
 
 Um agente delegado não adquire autoridade econômica independente. Fronteira documentada não é prova de execução no HEAD atual; testar a falha contra estado durável antes de afirmar prontidão.

@@ -1,6 +1,6 @@
 # Open Protocol Governance and Compatibility Over Time
 
-*Season 7 / Temporada 7. Editorial draft. Source and CTO review pending.*
+*Season 7. Editorial draft. Source and CTO review pending.*
 
 ## Question
 
@@ -30,6 +30,8 @@ A client interprets a changed fee denomination as the old one. Even if both side
 The protocol's invariant document distinguishes architectural laws, concrete implementation obligations and executable evidence where testable. The condition-algebra conformance record explicitly proves a bounded algebra property while noting that the published ruleset does not itself compose conditions. Provider-substitution evidence likewise supports selected properties, not full K3 or universal interoperability. Publishing a version or passing one harness does not certify the whole protocol.
 
 **Compatibility gate:** name the exact ruleset identity, protocol/SDK version, rail, independent implementation and falsifiable test vector. Preserve a migration story when semantics change; do not turn a single conformance PASS into universal compatibility.
+
+**Negative compatibility vector:** use two independently built clients at different schema/ruleset revisions. Have both parse the same trade message, then change one economically meaningful field interpretation (fee denomination, beneficiary identity or settlement condition). A successful parse is insufficient: require identical authorized economic outputs or an explicit version rejection. This is a proposed verification scenario, not a reported conformance run.
 
 ### Source and maturity
 

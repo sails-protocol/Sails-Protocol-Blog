@@ -24,7 +24,15 @@ flowchart LR
 
 Equivalente textual: la intención de diseño pasa a una integración delimitada y a verificación independiente. No demuestra un despliegue.
 
-*Source verification, references, editorial review and owner approval pending.*
+*Pendientes: verificación de fuentes, referencias específicas, revisión editorial y aprobación de la persona responsable.*
+
+## Escenario de fallo: una interfaz oculta dos contratos independientes
+
+Una persona aprueba un intercambio y una solicitud de préstamo en la misma pantalla. El intercambio se liquida, pero el proveedor del préstamo rechaza la solicitud después de recibir información preliminar. Si la interfaz marca toda la secuencia como completada, la persona puede interpretar mal exposición, comisiones o custodia. Una sola aplicación no crea una sola autoridad jurídica o económica.
+
+**Alternativa:** un panel unificado es cómodo, pero puede ocultar identidad del proveedor, riesgos y responsabilidades de recuperación. Avisos por proveedor, confirmaciones independientes y estados separados de pendiente y fallido añaden pasos, pero preservan el consentimiento informado.
+
+**Siguiente prueba:** simular el éxito de un servicio externo mientras otro falla o retrasa su respuesta. Comprobar estados, permisos, comisiones e información de custodia específicos de cada proveedor, sin autorizar silenciosamente una segunda acción en reintentos. Es una prueba propuesta, no evidencia de OpenFinance ni de servicios externos disponibles en producción.
 
 ## Alcance respaldado por fuente
 

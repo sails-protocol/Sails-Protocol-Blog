@@ -1,6 +1,6 @@
 # Nodos bizantinos y maliciosos: qué debemos asumir
 
-*Season 6 / Temporada 6. Solo borrador editorial. Auditoría de fuentes y aprobación pendientes.*
+*Temporada 6. Borrador editorial. Auditoría de fuentes y aprobación pendientes.*
 
 ## Pregunta
 
@@ -14,16 +14,16 @@ Distinga participante malicioso, operador comprometido y nodos en colusión. Pre
 
 Este tema pertenece a la preparación adversarial. Toda afirmación de resiliencia bizantina exige modelo de fallos, topología de prueba y evidencias más allá de diagramas.
 
-*No verified implementation claim or permission to publish is implied by this draft.*
-
 ## La verificabilidad independiente sigue pendiente
 
-La investigación Durable Protocol Truth identifica una propiedad material ausente: un verificador independiente todavía no puede demostrar toda la relación Authority firmada → Outcome → DestinationBinding sin confiar en asociaciones mantenidas por el operador. El informe sitúa la mayor brecha entre Outcome y DestinationBinding, incluso en MULTISIG, y registra ausencia de exportación de hechos por participantes. Es una brecha de diseño y evidencia, no prueba de un ataque explotado.
+La investigación Durable Protocol Truth identifica una propiedad material ausente: un verificador independiente todavía no puede demostrar toda la relación Authority firmada → Outcome → DestinationBinding sin confiar en asociaciones mantenidas por el operador. El informe identifica la ruptura precisa entre Outcome y DestinationBinding, incluso en MULTISIG. La decisión firmada de Authority puede verificarse independientemente; el contenido de Outcome es derivable de forma condicional con datos adicionales, pero el destino autorizado no tiene un vínculo verificable independiente. No se ha demostrado la exportación por participantes de toda la cadena de verificación. Es una brecha de diseño y evidencia, no prueba de un ataque explotado.
 
-**Pregunta adversarial:** si un operador modifica la asociación en su base o retiene evidencias, ¿qué artefacto exportable y vinculado criptográficamente permite a otro nodo verificar el destino autorizado? La evidencia no justifica afirmar resistencia Byzantine universal.
+**Pregunta adversarial:** si un operador modifica la asociación en su base o retiene evidencias, ¿qué artefacto exportable y vinculado criptográficamente permite a otro nodo verificar el destino autorizado? La evidencia no justifica afirmar resistencia bizantina universal.
 
-### Evidence ledger
+### Registro de evidencias
 
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/DURABLE_PROTOCOL_TRUTH_EVIDENCE.md
 
-*Historical evidence record and source inspection; latest deployment, CTO review and publication remain unverified.*
+*Registro histórico de evidencias e inspección del código. Despliegue actual, revisión del CTO y publicación aún sin verificar.*
+
+*Este borrador no acredita una implementación verificada ni autoriza su publicación.*

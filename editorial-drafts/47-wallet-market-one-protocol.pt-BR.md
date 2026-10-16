@@ -1,6 +1,6 @@
 # Satsails Wallet e Sails Market: duas aplicações, um protocolo
 
-*Season 7 / Temporada 7. Rascunho editorial. Fontes e revisão do CTO pendentes.*
+*Temporada 7. Rascunho editorial. Fontes e revisão do CTO pendentes.*
 
 ## Pergunta
 
@@ -14,7 +14,17 @@ Sails Protocol define contratos de coordenação; o Trading SDK é uma superfíc
 
 Se duas aplicações exibirem estados diferentes após reconexão, a autoridade econômica precisa ser explícita e a reconciliação testável. Isto é um objetivo arquitetural, não prova de interoperabilidade implantada.
 
-*No production implementation or publication approval is asserted.*
+*Este texto não afirma implementação em produção nem aprovação para publicação.*
+
+## Teste de falha: duas interfaces, autoridades conflitantes
+
+Uma carteira mostra negociação pendente enquanto o mercado web exibe concluída após receber evento fora de ordem. A pessoa tenta liberar os fundos novamente pela carteira. Compartilhar o nome do protocolo não comprova estado durável comum, mesma chave de idempotência ou permissões de assinatura equivalentes.
+
+**Alternativa:** cada aplicação pode ter experiência própria, mas transições econômicas precisam permanecer vinculadas à mesma autoridade de nó verificada. Backend compartilhado simplifica reconciliação e cria dependência operacional; múltiplos nós exigem provas mais fortes de verificabilidade independente e resolução de conflitos.
+
+**Vetor de reconciliação:** registrar identificador canônico, decisão de autoridade, resultado persistente e referência de liquidação externa de uma negociação. Entregar os mesmos eventos à carteira e ao mercado em ordens diferentes, incluindo conclusão duplicada após reconexão. Comparar as interfaces com um snapshot autoritativo consultado novamente e tentar uma segunda liberação. O resultado exigido é convergência **sem segundo efeito econômico**; compartilhar SDK não comprova isso. O teste permanece proposto, não executado.
+
+**Próximo teste:** abrir a mesma negociação na carteira e no mercado, desconectar um cliente, entregar eventos duplicados e fora de ordem e reconectar. Verificar resultado autoritativo idêntico e ausência de segunda liberação. É cenário de aceitação de interoperabilidade, não prova de que as aplicações já interoperam.
 
 ## Fronteira de evidência
 

@@ -28,6 +28,18 @@ Equivalente textual: o diagrama mostra os limites de responsabilidade descritos 
 
 *Referências, revisão técnica e aprovação do responsável pela publicação pendentes.*
 
+## Cenário de falha: a resposta do provedor vira falsa finalidade
+
+Uma aplicação encaminha uma troca proposta por um adaptador externo. O provedor devolve o identificador de uma solicitação aceita, mas a liquidação continua pendente ou falha depois. Se a interface do Sails Market chamar esse reconhecimento de liquidação concluída, o usuário poderá agir com base em fundos que ainda não chegaram. O inverso ocorre quando o serviço externo conclui a operação, mas seu retorno atrasa e a aplicação repete a solicitação com outro identificador, criando possivelmente uma segunda obrigação.
+
+O limite de confiança precisa identificar quem controla os ativos, quem pode reverter ou contestar uma operação, qual rede ou provedor determina a finalidade e o que a aplicação apenas exibe. Um registro de adaptadores demonstra um ponto de integração no software, não que determinado produto externo esteja conectado, endosse o Sails, opere em todas as jurisdições ou seja seguro em produção.
+
+## Alternativa e verificação
+
+Integrações diretas simplificam a interface, mas também reúnem termos, taxas, recuperação e obrigações regulatórias diferentes numa única tela. Identificar claramente o provedor e exigir confirmação por operação acrescenta etapas, mas permite distinguir coordenação do protocolo e execução por terceiros.
+
+**Próximo teste:** simular uma resposta aceita sem liquidação, um retorno atrasado e uma repetição após timeout. Verificar que a aplicação preserva o estado pendente, reconcilia identificadores e não atribui garantias do provedor ao Sails Protocol. Conferir contratos e evidências operacionais específicos antes de anunciar lançamento. O registro citado **não** prova que esses cenários passaram.
+
 ## Fronteira examinada e falha
 
 O registro identifica adaptadores; serviços externos não se tornam o Sails Protocol. **Falha:** apresentar design como implantação comprovada. A fonte fixada sustenta apenas esse escopo; gates de execução e CTO seguem abertos.

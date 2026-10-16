@@ -1,6 +1,6 @@
 # Fees, Incentives and Economic Sustainability
 
-*Season 7 / Temporada 7. Editorial draft. Source and CTO review pending.*
+*Season 7. Editorial draft. Source and CTO review pending.*
 
 ## Question
 
@@ -21,6 +21,10 @@ A retry must not collect the same fee twice. Fee invariants require durable tran
 The inspected provider registry explicitly separates settlement capability from protocol-fee collection capability. Its `FEE_COLLECTION_CAPABLE_RAILS` set currently contains only `MULTISIG`. This is a code-level activation boundary, not evidence that the other rails collect the same fee.
 
 Before describing a universal fee model, verify policy version, denomination, rounding, payee, settlement construction, replay handling, dispute outcomes and deployment authorization. A published policy must not imply funds are actually collected on an ineligible rail.
+
+## Activation is not collection
+
+At pinned Protocol revision `be6d3bc2`, `FEE_COLLECTION_CAPABLE_RAILS` contains only `MULTISIG`, and `assertRailCanActivateFeeCollection()` rejects fee-policy activation for other real rails without an atomic collection implementation. This is an **activation guard**, not evidence of an actual production charge, a deployed percentage or a completed refund. Reviewers must inspect the policy version and exact settlement transaction, including retry and dispute behavior, before calling a fee collected.
 
 ### Primary source and review status
 

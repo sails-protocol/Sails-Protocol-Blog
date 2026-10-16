@@ -58,4 +58,4 @@ El modelo de amenazas advierte que una invariante del protocolo no implica mitig
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/DURABLE_PROTOCOL_TRUTH_EVIDENCE.md
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/PROVIDER_SUBSTITUTION_INVARIANCE_EVIDENCE.md
 
-*Historical evidence/source inspection only; no latest-head test or publication approval.*
+*Solo evidencias históricas e inspección del código; sin pruebas en el HEAD más reciente ni autorización de publicación.*

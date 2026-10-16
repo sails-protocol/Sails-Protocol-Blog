@@ -1,6 +1,6 @@
 # Contratos de protocolo, schemas e compatibilidade entre versões
 
-*Somente rascunho. Publicação não aprovada. Season 5, article 31.*
+*Somente rascunho. Publicação não aprovada. Temporada 5, artigo 31.*
 
 ## Pergunta
 

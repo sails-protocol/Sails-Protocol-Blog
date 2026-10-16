@@ -16,6 +16,14 @@ Un fallo realista es que un adaptador devuelva una dirección de una ruta de der
 
 *Verificación de fuentes y referencias exactas de API pendientes.*
 
+## Prueba de fallo: firma correcta para la operación equivocada
+
+Un adaptador muestra una dirección aparentemente válida, pero pertenece a otra red o ruta de derivación. El usuario firma una transacción cuyo destino difiere del autorizado para la operación. Una firma válida demuestra consentimiento sobre los bytes, no que la aplicación representó correctamente la obligación económica. La recuperación también falla si una semilla importada genera direcciones distintas de las de la billetera original.
+
+**Alternativa:** acoplar el producto a una billetera simplifica el soporte, pero reduce portabilidad; los adaptadores abstractos permiten elegir, aunque requieren contratos explícitos de red, derivación, firma y recuperación. Ninguna opción autoriza acceso implícito del SDK a la semilla.
+
+**Siguiente prueba:** comparar vectores deterministas de derivación, rechazar destinos de otra red, alterar la salida propuesta tras la confirmación del usuario y restaurar en otra billetera. Registrar versiones y comportamiento real de firma. El registro de proveedores citado no demuestra compatibilidad WDK/BDK ni aislamiento de semillas en producción.
+
 ## Límite examinado en el código
 
 El enrutamiento de proveedores no demuestra aislamiento de semillas ni compatibilidad de derivación. Un límite documentado no es prueba de ejecución del HEAD actual; hay que probar el fallo contra estado duradero antes de afirmar madurez.

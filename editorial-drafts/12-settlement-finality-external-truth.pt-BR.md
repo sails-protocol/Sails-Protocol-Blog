@@ -58,4 +58,4 @@ O registro de escrow mapeia BTC para MULTISIG, LN_BTC para LIGHTNING_HODL basead
 - [wdk-settlement.provider.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/wdk-settlement.provider.ts)
 - [lightning-hodl.provider.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/lightning-hodl.provider.ts)
 
-*Source inspection only; no new live test, CTO approval or publication authorization.*
+*Somente inspeção do código; sem novo teste em execução, aprovação do CTO ou autorização de publicação.*

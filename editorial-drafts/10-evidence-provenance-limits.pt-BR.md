@@ -44,9 +44,9 @@ Em `ProofService.attachEvidence()`, o serviço verifica primeiro o acesso ao esc
 
 **Falha:** um usuário assina mídia legítima, mas tenta anexá-la à prova de outra pessoa. A assinatura não autoriza esse ato; a checagem de escopo precisa anteceder a gravação.
 
-### Source ledger
+### Registro de fontes
 
 - [proof.service.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/proof.service.ts)
 - [evidence-provider.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-proof/evidence-provider.ts)
 
-*Source-inspected; external payment verification, live tests, CTO review and publication pending.*
+*Código-fonte inspecionado; verificação externa de pagamento, testes em execução, revisão do CTO e publicação ainda pendentes.*

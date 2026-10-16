@@ -1,6 +1,6 @@
 # Liquidação entre redes e escolhas de roteamento de liquidez
 
-*Season 7 / Temporada 7. Rascunho editorial. Fontes e revisão do CTO pendentes.*
+*Temporada 7. Rascunho editorial. Fontes e revisão do CTO pendentes.*
 
 ## Pergunta
 
@@ -14,7 +14,7 @@ Separe cotação, execução de swap, custódia de pontes ou provedores, políti
 
 Um provedor confirma a cotação, mas falha antes do swap. A recuperação precisa preservar o último estado confirmado e expor o risco residual. Não publique matriz de redes suportadas sem conferir os adaptadores.
 
-*No production implementation or publication approval is asserted.*
+*Não há alegação de implementação em produção nem aprovação para publicação.*
 
 ## Limite verificado no código: mapear ativos não é construir uma ponte
 
@@ -22,10 +22,12 @@ O mapeamento padrão de escrow examinado é `BTC → MULTISIG`, `LN_BTC → LIGH
 
 A construção de taxa também está declarada apenas para MULTISIG. A existência de vários provedores não comprova swap cross-chain atômico, finalidade compartilhada ou roteamento de liquidez implantado. Verifique separadamente ponte externa, cotação, custódia e recuperação.
 
+**Limite verificável para a revisão:** selecionar um par concreto de ativo do comprador e ativo do vendedor e identificar cotação, contraparte, transferência de custódia, evidência de liquidação nas duas redes e comportamento após falha ou reinício. Se a evidência mostrar apenas entradas em `DEFAULT_ESCROW_TYPE_FOR_ASSET`, classificar como *mapeamento de ativo para provedor*, não negociação entre redes. As [linhas 332–347 do registro](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts#L332-L347) sustentam somente a afirmação mais restrita.
+
 ### Fonte primária e revisão
 
 - [Provider registry, custody metadata, default asset routing and fee capability](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts)
 - [WDK custody](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/wdk-settlement.provider.ts)
 - [SAFE_GUARD_EVM verification limits](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/safe-guard-evm.provider.ts)
 
-*Source-inspected editorial correction; CTO approval, deployment verification and production publication remain pending.*
+*Correção editorial baseada em fontes; aprovação do CTO, verificação de implantação e publicação em produção ainda pendentes.*

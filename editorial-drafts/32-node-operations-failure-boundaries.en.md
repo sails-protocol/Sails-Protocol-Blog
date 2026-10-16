@@ -16,6 +16,14 @@ A restart drill should interrupt a trade between durable commit and client ackno
 
 *Source verification and exact API references pending.*
 
+## Failure drill: restart between commit and acknowledgment
+
+A node commits a trade transition to PostgreSQL, then crashes before replying. The client reconnects and retries. If the node trusts in-memory flags, the same request may execute again; if it assumes the first call failed, it may create a second external effect. Multiple workers and a stale provider response amplify the uncertainty.
+
+**Trade-off:** process-local coordination is easy to operate but cannot by itself guarantee durable cross-worker authority. Database-backed atomic checks and rail-specific reconciliation increase operational complexity but make recovery testable. Backups and migrations must preserve the meaning of economic state, not just rows.
+
+**Next test:** kill a worker after durable commit, replay from another worker, then restart with a delayed provider response. Inspect state, events, provider receipts and any duplicate side effects. Existing MULTISIG recovery evidence is scoped and does not establish cross-rail operational readiness.
+
 ## Source evidence and failure boundary
 
 Recorded recovery coverage is scoped to named MULTISIG scenarios, not every rail. The next gate is exact-head operational verification; this source citation does not grant release approval.

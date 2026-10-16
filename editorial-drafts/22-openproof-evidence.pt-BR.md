@@ -30,6 +30,18 @@ Equivalente textual: a proposta vai da intenção de projeto para uma integraç�
 
 *Pendente: verificação na fonte técnica, citações específicas, revisão editorial e aprovação do responsável.*
 
+## Cenário: comprovante autêntico de outra obrigação
+
+Um comprador anexa a uma nova negociação um comprovante corretamente assinado de pagamento anterior. O digest da mídia e a assinatura conferem, mas valor, beneficiário, referência e horário não correspondem à obrigação atual. Se a aplicação equiparar procedência válida à conclusão do pagamento, poderá liberar escrow sem que o vendedor tenha recebido os fundos esperados.
+
+Outra falha envolve exaustão de recursos: um participante envia repetidamente evidências grandes demais ou profundamente aninhadas, forçando processamento ou armazenamento caro antes da aplicação dos limites. A ordem das validações e as cotas por alegação importam independentemente da assinatura.
+
+## Alternativa e verificação
+
+Aceitar qualquer arquivo assinado é simples, mas transfere a verdade do pagamento a quem enviou uma evidência não confiável. Separar procedência, relevância para a negociação, observação independente do pagamento e armazenamento limitado exige mais verificações, porém evita falsa certeza. Provedores externos de evidências precisam de regras próprias de retenção e disponibilidade.
+
+**Próximo teste:** anexar comprovante válido de outra negociação e depois enviar evidências malformadas ou grandes demais em tentativas concorrentes. Verificar que referências inválidas não autorizam liquidação e que a rejeição ocorre antes de efeitos econômicos ou armazenamento durável. Conferir implementação exata, limites do provedor e configuração de recursos. O arquivo do serviço citado não certifica a verdade do pagamento de ponta a ponta.
+
 ## Fronteira examinada, não certificação de produção
 
 Atribuição de mídia assinada não comprova pagamento externo. **Falha:** confundir design documentado com comportamento implantado. Ainda são necessários testes de integração e execução no HEAD exato.

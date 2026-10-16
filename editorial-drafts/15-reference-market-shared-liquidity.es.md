@@ -28,6 +28,12 @@ Equivalente textual: el diagrama muestra los límites de responsabilidad descrit
 
 *Referencias, revisión técnica y aprobación del responsable de publicación pendientes.*
 
+## Una oferta desactualizada no es liquidez ejecutable
+
+Dos aplicaciones pueden mostrar la misma oferta aunque solo una persona pueda aceptar la capacidad restante. Si la billetera acepta primero, Sails Market no debe tratar su pantalla desactualizada como una reserva. El descubrimiento compartido es distinto de la elegibilidad, la aceptación y la liquidación. El método de pago, los permisos de la contraparte, la caducidad de la cotización y la capacidad disponible deben volver a comprobarse en el límite autoritativo. Una sala privada controla el acceso, no la verdad económica; los proveedores externos conservan sus propias reglas de ejecución.
+
+El compromiso es rechazar ocasionalmente una cotización vencida en lugar de inventar una ejecución. La experiencia de liquidez compartida propuesta sigue siendo un objetivo de diseño, no una prueba de que exista un libro de órdenes universal desplegado. **Siguiente prueba:** hacer que dos clientes compitan por la última capacidad y comprobar que el segundo recibe un rechazo o una actualización sin generar un compromiso económico duplicado.
+
 ## Límite de evidencia y fallo
 
 Propiedades seleccionadas de sustitución de proveedores no prueban liquidez compartida universal ni mercado operativo. **Fallo:** interpretar arquitectura o código inspeccionado como prueba de producción. Faltan pruebas del HEAD exacto y aprobación.

@@ -16,6 +16,14 @@ Um exercício eficaz acompanha uma negociação pelo cliente, SDK, node, banco e
 
 *Verificação de fontes e referências exatas de API pendentes.*
 
+## Teste de falha: o log diz sucesso, o destino discorda
+
+Um painel operacional indica negociação concluída, mas a transferência externa foi enviada a destino diferente do autorizado pelo participante. Logs com o mesmo identificador de correlação explicam o caminho de execução, porém não comprovam de forma independente o vínculo entre autoridade, resultado e destino. Além disso, diagnósticos excessivos podem expor dados sensíveis de pagamento ou material relacionado à seed.
+
+**Alternativa:** coletar tudo facilita depuração, mas aumenta riscos de privacidade e credenciais. Rastros estruturados, com dados sensíveis removidos e estados UNKNOWN explícitos, preservam evidências sem presumir finalidade econômica.
+
+**Próximo teste:** injetar evento fora de ordem e destino divergente, seguindo o mesmo identificador entre cliente, nó, banco e provedor. Verificar distinção entre observado, pendente e comprovado, remoção de segredos e impossibilidade de autorizar liquidação apenas por telemetria. O documento de verdade durável citado não certifica observabilidade de produção.
+
 ## Evidência de fonte e fronteira de falha
 
 Rastros operacionais não são prova independente do vínculo entre resultado e destino. O próximo gate exige verificação operacional no HEAD exato; a fonte não autoriza lançamento.

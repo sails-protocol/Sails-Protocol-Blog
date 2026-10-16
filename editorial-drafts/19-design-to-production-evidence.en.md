@@ -29,6 +29,18 @@ Text equivalent: the diagram shows the responsibility boundaries discussed above
 
 *Source references, technical review and owner publication approval pending.*
 
+## Failure scenario: green tests, unsafe recovery
+
+Suppose a trade transition passes its unit tests and the CI pipeline is green. Two workers then process the same delayed payment event while one instance restarts. Both workers may have individually valid observations, but if the database authority check is not atomic, they can produce conflicting outcomes. A successful build cannot establish that the concurrency and restart boundary is safe.
+
+The evidence chain should distinguish the architectural invariant, the exact implementation commit, the executable test and its environment, the observed result, and the still-open material findings. A PostgreSQL-backed race test can strengthen a scoped claim; it does not automatically prove that every production worker, provider callback and settlement rail behaves identically.
+
+## Decision, trade-off and release test
+
+A faster release process might accept unit CI and manually inspect edge cases. The stronger alternative requires exact-head integration tests, explicit authority and idempotency checks, failure injection, independent review and a production-specific verification plan. This costs time but reduces the risk of turning an untested economic assumption into a public promise.
+
+**Next test:** concurrently replay a delayed settlement observation across two workers, restart one mid-transition, and inspect whether exactly one authorized state transition is recorded while uncertain outcomes remain pending. Record test code, database version, run identifier, exact commit and reviewer disposition. Even a passing scoped test must not be advertised as universal production safety.
+
 ## Source-backed boundary and next test
 
 Protocol invariants distinguish architectural law, implementation obligation and executable evidence. A design decision does not prove deployment.

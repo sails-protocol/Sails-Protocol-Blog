@@ -16,6 +16,14 @@ Um caso de falha realista é um adaptador retornar endereço de um caminho de de
 
 *Verificação de fontes e referências exatas de API pendentes.*
 
+## Teste de falha: assinatura correta para a negociação errada
+
+Um adaptador exibe um endereço aparentemente válido, mas de outra rede ou caminho de derivação. O usuário assina uma transação cujo destino difere daquele autorizado na negociação. Uma assinatura válida comprova consentimento sobre os bytes, não que a aplicação representou corretamente a obrigação econômica. A recuperação também falha se uma seed importada produzir endereços diferentes dos da carteira original.
+
+**Alternativa:** vincular o produto a uma carteira facilita suporte, mas reduz portabilidade; adaptadores abstratos permitem escolha, porém exigem contratos explícitos de rede, derivação, assinatura e recuperação. Nenhuma opção autoriza acesso implícito do SDK à seed.
+
+**Próximo teste:** comparar vetores determinísticos de derivação, rejeitar destino de rede errada, alterar a saída proposta após a confirmação do usuário e restaurar em outra carteira. Registrar versões e comportamento real dos assinantes. O registro de provedores citado não comprova compatibilidade WDK/BDK nem isolamento de seed em produção.
+
 ## Fronteira examinada no código
 
 O roteamento de provedores não comprova isolamento da seed nem compatibilidade de derivação. Fronteira documentada não é prova de execução no HEAD atual; testar a falha contra estado durável antes de afirmar prontidão.

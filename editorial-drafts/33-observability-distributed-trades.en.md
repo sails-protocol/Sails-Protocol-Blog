@@ -16,6 +16,14 @@ An effective failure exercise follows one trade across client, SDK, node, databa
 
 *Source verification and exact API references pending.*
 
+## Failure drill: a trace says success, the destination disagrees
+
+An operator dashboard shows a successful trade outcome, but the external transfer was sent to a destination different from the participant's authorized one. Logs with matching correlation IDs can explain the execution path, yet they are not independent proof that authority, outcome and destination were correctly bound. Worse, verbose diagnostics might expose sensitive payment details or seed-related material.
+
+**Trade-off:** collecting everything speeds debugging but increases privacy and credential risk. Structured, redacted traces with explicit UNKNOWN states preserve incident evidence without implying economic finality.
+
+**Next test:** inject an out-of-order provider event and a mismatched destination, then follow the same correlation ID across client, node, database and provider. Confirm that telemetry distinguishes observed, pending and verified states, redacts secrets and cannot alone authorize settlement. The cited durable-truth document is not a production observability certification.
+
 ## Source evidence and failure boundary
 
 Operational traces are not independent participant proof of outcome-to-destination binding. The next gate is exact-head operational verification; this source citation does not grant release approval.

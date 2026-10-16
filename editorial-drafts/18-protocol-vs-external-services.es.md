@@ -28,6 +28,18 @@ Equivalente textual: el diagrama muestra los límites de responsabilidad descrit
 
 *Referencias, revisión técnica y aprobación del responsable de publicación pendientes.*
 
+## Escenario de fallo: la respuesta del proveedor se confunde con finalidad
+
+Una aplicación envía un intercambio propuesto mediante un adaptador externo. El proveedor devuelve el identificador de una solicitud aceptada, pero la liquidación sigue pendiente o falla más tarde. Si Sails Market presenta ese acuse como liquidación completada, el usuario puede actuar sobre fondos que todavía no llegaron. También puede ocurrir lo contrario: el servicio externo completa la operación, pero su respuesta se retrasa y la aplicación reintenta con otro identificador, creando posiblemente una segunda obligación.
+
+El límite de confianza debe identificar quién controla los activos, quién puede revertir o disputar una operación, qué red o proveedor determina la finalidad y qué información solo muestra la aplicación. Un registro de adaptadores demuestra un punto de integración en el software, no que un producto externo esté conectado, respalde Sails, esté disponible en todas las jurisdicciones o sea seguro en producción.
+
+## Alternativa y verificación
+
+Las integraciones directas simplifican la interfaz, pero también agrupan términos, comisiones, recuperación y obligaciones regulatorias diferentes detrás de una sola pantalla. Identificar al proveedor y solicitar confirmación por operación añade pasos, pero permite distinguir coordinación del protocolo y ejecución de terceros.
+
+**Siguiente prueba:** simular una respuesta aceptada sin liquidación, una devolución de llamada retrasada y un reintento tras agotar el tiempo de espera. Verificar que la aplicación conserva el estado pendiente, reconcilia identificadores y no atribuye garantías del proveedor a Sails Protocol. Comprobar contratos y evidencia operativa específicos antes de anunciar el lanzamiento. El registro citado **no** prueba que estas pruebas hayan pasado.
+
 ## Límite examinado y fallo
 
 El registro identifica adaptadores; los servicios externos no pasan a ser Sails Protocol. **Fallo:** presentar diseño como despliegue verificado. La fuente fijada solo respalda este alcance; siguen pendientes los gates de ejecución y CTO.

@@ -1,5 +1,25 @@
 # Sails Protocol Blog | Release acceptance ledger
 
+> **LATEST EVIDENCE CHECKPOINT | 2026-10-14 | 20% weighted, 6/25 gates, pending owner/CTO acceptance.** The historical table below contains an I3 PASS for an older Netlify production commit. For the current release, **I3 = NOT VERIFIED** because production is not at the reviewed main SHA. Current evidence-backed PASS gates are **I1, I2, G1, G2, G3, G4**; I1 is documented in the latest checkpoint below. The historical **20%** score is retained for audit history, not as current readiness. The Day 0 editorial acceptance denominator (144 language editions) is separate and has no formal signoffs recorded. PR CI success and editorial draft improvements do not automatically promote a release gate. See the 2026-10-13 authority checkpoint below.
+
+## Exact-HEAD draft validation checkpoint | 2026-10-15 UTC | PR #115
+
+**Scope:** consolidated editorial DRAFT branch only, commit `f25fb8558381221cd02402bc35c6855089f3294c`. All three checks completed successfully on this immutable SHA:
+
+- [Validate Blog, run 38778186830](https://github.com/sails-protocol/Sails-Protocol-Blog/actions/runs/38778186830): SUCCESS.
+- [Browser accessibility audit, run 38778186921](https://github.com/sails-protocol/Sails-Protocol-Blog/actions/runs/38778186921): SUCCESS.
+- [Build isolated blog preview artifact, run 38778187299](https://github.com/sails-protocol/Sails-Protocol-Blog/actions/runs/38778187299): SUCCESS.
+
+**Evidence boundary:** subsequent editorial/localization commits advance the PR HEAD and require a new exact-HEAD check. These draft-branch checks do not satisfy I1 (current `main` push CI), I3 (Netlify production SHA), manual production U/L gates, native-language E4, G5, or Day 0 G1–G7 signoffs. **Strict current-release acceptance remains 16%; Day 0 formal approvals remain 0/144.** PR #115 stays DRAFT, with no merge or deploy authorization.
+
+## Next evidence gates, in execution order
+
+1. **I1, +4 weighted points evidenced, pending reviewer acceptance:** Exact-main `push` Validate Blog success at `fbba5cd9176cf973e826d98a130cd924e3ed0799`, [run 38470073314](https://github.com/sails-protocol/Sails-Protocol-Blog/actions/runs/38470073314). Recheck if main advances; issue #85 may need reviewer disposition.
+2. **G5, possible +3 weighted points:** Triage all material findings and open editorial/visual release residuals with dispositions and reviewer evidence. Do not count a list of PRs as completed triage.
+3. **Predeploy editorial E2/E3/E5:** Reconcile claims, provenance and Day 0 scope against exact source evidence. These gates require recorded independent review, not simply new draft text.
+4. **Production-dependent I3–I5, U1–U5, L1–L5, E1/E4:** Remain NOT VERIFIED until owner-authorized Netlify deployment of reviewed main and production/browser/native-language evidence. Issue #29. Do not trigger deploy during the credit pause.
+
+
 **Baseline:** 2026-10-12 UTC. Source: BLOG-RELEASE-ACCEPTANCE-CONTRACT.md. Evidence owner: CTO review. PASS means this specific gate has been independently evidenced, not that neighboring gates pass.
 
 | Gate | State | Evidence / residual |
@@ -73,5 +93,24 @@ G3 now PASS based on merged PR #28 (8446a2efd1928eb5a54e8bea9e5c0cff59c3f84e), w
 - I2/G1–G4 remain PASS on their previously documented evidence. I3–I5, U1–U5, L1–L5, E1–E5, G5 require their respective current-release evidence. Green PR CI is not a production or editorial signoff.
 - Owner decision: finish GitHub and editorial preparation first, then deploy on Netlify once ready and permitted by team billing/credits, then conduct live production/browser/SEO and native editorial acceptance. Do not spend credits or bypass the paused deploy policy prematurely.
 - **Day 0 editorial acceptance remains separately unverified**; 48 planned topics × 3 locales is a planning denominator, not a claim of 144 published or approved editions.
+
+**NO MATERIAL FINDING UNDER THE RUG.**
+
+## Current-main I1 exact-head CI evidence | 2026-10-14
+
+**Independent GitHub Actions verification:** `main` ref resolves to `fbba5cd9176cf973e826d98a130cd924e3ed0799`. [Validate Blog push workflow run 38470073314](https://github.com/sails-protocol/Sails-Protocol-Blog/actions/runs/38470073314) reports `event=push`, `head_sha=fbba5cd9176cf973e826d98a130cd924e3ed0799`, `status=completed`, `conclusion=success`. Evidence reviewer: preliminary AI-assisted release audit, 2026-10-14. This is **current-main push CI**, not a PR-only result. **I1 is evidence-backed PASS for this current main SHA**, subject to release owner/CTO acceptance and recheck if main moves.
+
+**Scoring reconciliation:** previously verified I2 and G1–G4 = 16% (5/25). Adding I1 (+4 weighted points) yields **20% operational evidence coverage (6/25)** at the current main SHA, **pending owner/CTO acceptance of this ledger checkpoint**. This does **not** promote I3: production is still on an older SHA and Netlify remains paused. I4–I5, U1–U5, L1–L5, E1–E5 and G5 remain NOT VERIFIED. Day 0 acceptance remains **0/144**; corrected drafts are not approved editions.
+
+**Integration distinction:** [DRAFT PR #115](https://github.com/sails-protocol/Sails-Protocol-Blog/pull/115) at `c2a623531c9db8b191c232b863a253e19710d517` separately passed 3/3 exact-head PR workflows (Validate Blog, isolated preview, browser accessibility). This is evidence of the **unmerged combined branch**, not a successful push on main or live production verification. No merge or deploy authorized. **NO MATERIAL FINDING UNDER THE RUG.**
+
+## Predeploy gate reconciliation | 2026-10-15 | exact-main and DRAFT separation
+
+- Current GitHub `main`: `fbba5cd9176cf973e826d98a130cd924e3ed0799`. Independent [Validate Blog main push run 38470073314](https://github.com/sails-protocol/Sails-Protocol-Blog/actions/runs/38470073314): completed/success at that exact SHA. **I1 provisional evidence PASS, pending owner/CTO acceptance**; recheck if main changes.
+- DRAFT integration PR #115 exact HEAD `6ded8bb20d35d614b7bafe27b002d4015231ae32` has **3/3 exact-head PR workflows success**. This is **I2-related build evidence only**, not I1 push, I3 production or E4 native editorial signoff. If HEAD changes, all three must be rechecked.
+- **Formal evidence coverage: I1, I2, G1–G4 = 6/25, weighted 20% provisional.** The historical row marking I3 PASS concerns old production SHA `03f56ca704fb2db9e753ca87029a84fa4b7bd15c` and must not be counted for current release. No additional formal gate promoted.
+- **Day 0 editorial acceptance: 0/144** signed editions. 144/144 source-link/structure inspection and targeted semantic review are preparation, not signoff. Review request: [#116](https://github.com/sails-protocol/Sails-Protocol-Blog/issues/116).
+- **G5 NOT VERIFIED:** resolve material findings with individual decisions/evidence; [#12](https://github.com/sails-protocol/Sails-Protocol-Blog/issues/12) visual provenance, [#29](https://github.com/sails-protocol/Sails-Protocol-Blog/issues/29) Netlify production/QA, [#85](https://github.com/sails-protocol/Sails-Protocol-Blog/issues/85) I1 reviewer disposition, [#116](https://github.com/sails-protocol/Sails-Protocol-Blog/issues/116) editorial signoff. F-001–F-007 disposition remains open unless independently evidenced.
+- Netlify operational-credit pause remains owner-directed. **Do not merge, deploy, pay, or mark live gates PASS** from these PR checks. Continue predeploy evidence collection; require reviewed main SHA to equal published Netlify SHA before I3.
 
 **NO MATERIAL FINDING UNDER THE RUG.**

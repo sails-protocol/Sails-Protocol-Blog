@@ -26,6 +26,14 @@ Equivalente textual: a proposta vai da intenção de projeto para uma integraç�
 
 *Pendente: verificação na fonte técnica, citações específicas, revisão editorial e aprovação do responsável.*
 
+## Cenário de falha: profundidade visível não é executável
+
+Um mercado agrega duas ofertas do mesmo ativo. Uma exige meio de pagamento indisponível ao comprador; a outra ficou desatualizada depois da retirada pelo anunciante. A interface soma os valores e apresenta grande liquidez compartilhada. Entretanto, nenhuma oferta pode ser executada por aquele usuário ao preço exibido. Descoberta foi confundida com mercado executável.
+
+**Alternativa:** agregar toda oferta visível aumenta a amplitude aparente, mas pode enganar sobre preço e disponibilidade. Uma visão menor, filtrada por permissões, pode exibir menos profundidade e ser mais útil. Nenhuma das opções comprova roteamento atômico ou liquidação garantida entre provedores.
+
+**Próximo teste:** retirar a disponibilidade do anunciante entre descoberta e aceite, alterar permissões de pagamento do comprador e repetir uma cotação vencida. Medir rejeição explícita e reconciliação, não tratar visibilidade como execução. A evidência de substituição de provedores tem escopo limitado e não prova um livro universal de ofertas em operação.
+
 ## Escopo fundamentado em fonte
 
 Propriedades selecionadas de substituição não comprovam liquidez compartilhada entre redes. **Falha:** tratar design ou API examinada como prontidão universal de produção. Testes no HEAD exato e aprovação seguem pendentes.

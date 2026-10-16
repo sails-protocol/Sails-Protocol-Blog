@@ -1,7 +1,7 @@
 ---
 slug: season-2-08-economic-coordination-protocol
 title: "O protocolo de coordenação econômica"
-description: "A grande ideia não é criar outra exchange. É um Economic Coordination Protocol for Building Interoperable P2P Financial Marketplaces."
+description: "A proposta é um protocolo de coordenação econômica para mercados financeiros P2P interoperáveis, não outra exchange."
 tags: [protocol, editorial]
 draft: false
 ---
@@ -58,10 +58,10 @@ Este diagrama conceitual separa interfaces, coordenação e liquidação externa
 
 ```mermaid
 flowchart TD
-    A[Wallets and market applications] --> B[Sails P2P Trading SDK]
-    B --> C[Sails Node coordination]
-    C --> D{Authoritative settlement evidence?}
-    D -->|Yes| E[Record verified outcome]
-    D -->|No| F[Preserve pending or uncertain state]
-    G[External settlement rails] --> D
+    A[Carteiras e aplicações de mercado] --> B[Sails P2P Trading SDK]
+    B --> C[Coordenação pelo Sails Node]
+    C --> D{Evidência autoritativa de liquidação?}
+    D -->|Sim| E[Registrar resultado verificado]
+    D -->|Não| F[Preservar estado pendente ou incerto]
+    G[Redes externas de liquidação] --> D
 ```

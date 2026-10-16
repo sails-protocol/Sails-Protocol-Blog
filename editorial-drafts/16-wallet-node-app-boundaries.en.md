@@ -29,6 +29,18 @@ Text equivalent: the diagram shows the responsibility boundaries discussed above
 
 *Source references, technical review and owner publication approval pending.*
 
+## Failure scenario: the coordinator knows the trade, but not the user's consent
+
+A buyer starts a trade in an application. The coordination node stores its identifier and state. Later, the application asks the wallet to sign a transfer, but the displayed destination belongs to another trade. Even if the node's record is internally consistent and the wallet produces a valid cryptographic signature, the two facts do not establish that the buyer approved **this** destination for **this** trade. The wallet must verify the amount, asset, network, destination and trade context before presenting an approval. The node must independently enforce participant authority and valid state transitions; an external settlement observation must be checked at its own boundary.
+
+The opposite failure is also possible: a provider reports a payment or a transaction appears on a network, but the coordinator has not yet established the correct trade association or the necessary finality. Advancing the trade merely because an external message arrived would conflate a report with authoritative settlement. Recovery must preserve uncertainty instead of manufacturing success.
+
+## Architectural trade-off and verification
+
+A single application could hold signing keys, coordination state and settlement adapters in one service. That reduces integration boundaries but concentrates authority and makes it harder to audit who approved a transfer. Separating wallet signing, coordination and external settlement adds cross-component reconciliation, retries and explicit identity binding. The separation is worthwhile only if the implementation enforces it rather than merely drawing separate boxes.
+
+**Next test:** submit a correctly signed transfer request with a mismatched trade destination, then repeat after a lost coordination response and a delayed provider observation. Record whether each boundary rejects or holds the uncertain operation without a second economic effect. Verify the exact code revision and provider-specific evidence. The pinned protocol invariants document establishes intended boundaries, **not** that this test has passed or that any wallet/node combination is live.
+
 ## Evidence boundary and failure mode
 
 Responsibility boundaries do not prove a production deployment or independent node interoperability. **Failure:** interpreting this architectural or source-inspected statement as current production verification. Exact-head tests and approval are still required.

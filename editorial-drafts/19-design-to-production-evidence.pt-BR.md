@@ -29,6 +29,18 @@ Equivalente textual: o diagrama mostra os limites de responsabilidade descritos 
 
 *Referências, revisão técnica e aprovação do responsável pela publicação pendentes.*
 
+## Cenário de falha: testes verdes, recuperação insegura
+
+Imagine uma transição de negociação que passa nos testes unitários e deixa o CI verde. Depois, dois workers processam o mesmo evento atrasado de pagamento enquanto uma instância reinicia. Ambos podem ter observações individualmente válidas, mas, se a verificação de autoridade no banco não for atômica, poderão produzir resultados conflitantes. Um build bem-sucedido não demonstra que o limite de concorrência e reinicialização é seguro.
+
+A cadeia de evidências precisa separar a invariante arquitetural, o commit exato da implementação, o teste executável e seu ambiente, o resultado observado e os achados materiais ainda abertos. Um teste de corrida com PostgreSQL real fortalece uma afirmação delimitada, mas não comprova automaticamente o comportamento de todos os workers, callbacks de provedores e meios de liquidação em produção.
+
+## Decisão, alternativa e teste de lançamento
+
+Um processo de entrega mais rápido poderia aceitar apenas CI unitário e inspecionar manualmente casos extremos. A alternativa mais rigorosa exige testes de integração no HEAD exato, verificações explícitas de autoridade e idempotência, injeção de falhas, revisão independente e plano de validação específico de produção. Isso custa tempo, mas reduz o risco de transformar uma suposição econômica não testada em promessa pública.
+
+**Próximo teste:** repetir simultaneamente uma observação atrasada de liquidação em dois workers, reiniciar um deles durante a transição e conferir se somente uma transição autorizada é registrada, mantendo resultados incertos como pendentes. Registrar código de teste, versão do banco, execução, commit exato e decisão do revisor. Mesmo um teste delimitado aprovado não equivale a segurança universal em produção.
+
 ## Fronteira examinada, não certificação de produção
 
 Princípio arquitetural não é comprovação de implantação. **Falha:** confundir design documentado com comportamento implantado. Ainda são necessários testes de integração e execução no HEAD exato.

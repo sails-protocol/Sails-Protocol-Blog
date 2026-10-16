@@ -26,7 +26,7 @@ flowchart TD
 
 Equivalente textual: o diagrama mostra os limites de responsabilidade descritos acima, não uma implantação verificada.
 
-*Referências, revisão técnica e aprovação do responsável pela publicação pendentes.*
+*Há uma referência imutável ao SDK abaixo. A verificação completa das afirmações contra as fontes, a revisão técnica e a aprovação para publicação continuam pendentes.*
 
 ## Quando a resposta se perde, repetir não é necessariamente seguro
 
@@ -39,6 +39,8 @@ Existe outra fronteira no momento da assinatura. Identificador da negociação, 
 A decisão de integração é manter as chaves e a assinatura sob controle da carteira e tornar explícitos a identidade das tentativas e o contexto de aprovação. Isso exige mais cuidado na experiência de recuperação, mas evita transformar uma repetição de rede ou uma assinatura genérica em consentimento econômico.
 
 **Próxima pergunta:** um teste de integração no HEAD exato consegue simular uma negociação persistida com resposta perdida, recuperar a mesma negociação na repetição e rejeitar um contexto de assinatura divergente sem segundo efeito econômico? Até existir essa evidência, trata-se de um requisito, não de uma garantia verificada.
+
+**Precisão do contrato do SDK:** o método inspecionado `SailsOpenP2PModule.trade(offerId, amount, idempotencyKey?)` encaminha a chave opcional para `/v1/openp2p/trades`. O comentário do código descreve no servidor no máximo uma negociação para a mesma chave reutilizada, mas alerta que omiti-la permite duplicação após uma resposta perdida. É um *contrato delimitado da API*, não prova de integração com a Wallet, de liquidação exatamente uma vez ou de segurança ao trocar a chave entre tentativas.
 
 ## Fronteira comprovada no código e próximo teste
 

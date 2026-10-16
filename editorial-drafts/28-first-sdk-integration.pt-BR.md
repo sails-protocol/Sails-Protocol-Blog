@@ -1,6 +1,6 @@
 # Primeira integração: da instalação do SDK a uma negociação P2P segura
 
-*Somente rascunho. Publicação não aprovada. Season 5, article 28.*
+*Somente rascunho. Publicação não aprovada. Temporada 5, artigo 28.*
 
 ## Pergunta
 

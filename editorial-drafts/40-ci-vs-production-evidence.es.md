@@ -1,6 +1,6 @@
 # De CI a producción: lo que no demuestra una prueba aprobada
 
-*Season 6 / Temporada 6. Solo borrador editorial. Auditoría de fuentes y aprobación pendientes.*
+*Temporada 6. Solo borrador editorial. Auditoría de fuentes y aprobación pendientes.*
 
 ## Pregunta
 
@@ -14,7 +14,7 @@ Mantenga cadena de evidencia: requisito, invariante, commit, entorno, resultado,
 
 La publicación debe declarar alcance y puntos ciegos. Una prueba aprobada demuestra esa prueba, no seguridad universal ni preparación para producción.
 
-*No verified implementation claim or permission to publish is implied by this draft.*
+*Este borrador no acredita una implementación verificada ni autoriza su publicación.*
 
 ## Qué demuestran realmente los registros de evidencia
 
@@ -22,9 +22,9 @@ Recovery/Reconciliation Conformance distingue pruebas reutilizadas y recuperaci�
 
 **Regla de revisión:** cada afirmación requiere commit exacto, entorno, red, inyección de fallo, resultado y pendientes. Si hubo mocks, indique qué propiedades dependían de ellos; si la investigación encontró una brecha, consérvela en la declaración de madurez.
 
-### Evidence ledger
+### Registro de evidencias
 
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/RECOVERY_RECONCILIATION_CONFORMANCE_EVIDENCE.md
 - https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/DURABLE_PROTOCOL_TRUTH_EVIDENCE.md
 
-*Historical evidence record and source inspection; latest deployment, CTO review and publication remain unverified.*
+*Registro histórico de evidencias e inspección de fuentes; despliegue actual, revisión del CTO y publicación aún sin verificar.*

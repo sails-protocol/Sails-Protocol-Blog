@@ -2,7 +2,8 @@ name: Browser accessibility audit
 
 on:
   pull_request:
-    branches: [main]
+    # Validate stacked PRs as well as PRs targeting main.
+    branches: ['**']
 
 permissions:
   contents: read
@@ -36,3 +37,16 @@ jobs:
           exit 1
       - name: Audit core routes with axe
         run: node scripts/test-a11y.mjs
+      - name: Capture multilingual visual baseline
+        if: always()
+        run: node scripts/capture-visual-baseline.mjs
+        env:
+          VISUAL_OUTPUT_DIR: visual-baseline
+      - name: Upload visual screenshots for human review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sails-visual-baseline-${{ github.event.pull_request.head.sha }}
+          path: visual-baseline/
+          if-no-files-found: warn
+          retention-days: 14

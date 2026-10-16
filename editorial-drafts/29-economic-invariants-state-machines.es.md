@@ -1,6 +1,6 @@
 # Máquinas de estados e invariantes económicos en la práctica
 
-*Solo borrador. Publicación no aprobada. Season 5, article 29.*
+*Solo borrador. Publicación no aprobada. Temporada 5, artículo 29.*
 
 ## Pregunta
 

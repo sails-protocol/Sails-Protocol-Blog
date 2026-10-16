@@ -30,6 +30,18 @@ Text equivalent: the proposal progresses from design intent to a bounded integra
 
 *Pending: source-of-truth verification, specific citations, editorial review and owner approval.*
 
+## A concrete integration boundary: a lending offer is not a protocol guarantee
+
+Imagine an application displaying a proposed loan from an external provider next to a P2P trade. The user sees one interface and assumes the same dispute rules, asset custody and recovery process govern both actions. If the loan provider changes its terms or becomes unavailable after the user authorizes a transfer, a coordination record cannot reverse the provider's external contract. The application must distinguish the actor requesting the action, the signer authorizing it, the provider responsible for execution and the source of final settlement truth.
+
+One design option is to bundle every capability behind a unified service with shared branding and state. It simplifies the interface but risks hiding independent permissions, legal obligations and failure modes. A modular interface introduces explicit provider disclosures and separate confirmation steps, but makes authority and recovery boundaries auditable. An integration must never inherit a security claim solely because another module has passed its tests.
+
+## Evidence and next verification
+
+Before describing a future module as available, identify an exact source commit, implemented adapter and interface, supported networks, authorization checks, failure/retry tests and a provider-specific settlement observation. A roadmap entry, an architecture diagram or a green Trading SDK build is insufficient.
+
+**Failure-injection test to propose:** accept an external provider's request, then delay its final settlement response while the app restarts and the user retries. Verify that the app preserves the pending state, does not duplicate economic intent and does not mislabel provider acceptance as protocol finality. No claim is made here that this test exists or passes. The pinned invariants are architectural context, not evidence of a deployed OpenFinance integration.
+
 ## Inspected boundary and failure
 
 Future modules are roadmap concepts until separately implemented and verified. **Failure:** overstating design as verified deployment. The pinned source supports only the stated scope; runtime and CTO gates remain open.

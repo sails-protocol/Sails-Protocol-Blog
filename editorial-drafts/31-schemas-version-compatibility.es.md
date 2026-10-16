@@ -1,6 +1,6 @@
 # Contratos de protocolo, esquemas y compatibilidad entre versiones
 
-*Solo borrador. Publicación no aprobada. Season 5, article 31.*
+*Solo borrador. Publicación no aprobada. Temporada 5, artículo 31.*
 
 ## Pregunta
 

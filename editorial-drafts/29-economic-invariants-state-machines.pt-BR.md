@@ -1,6 +1,6 @@
 # Máquinas de estados e invariantes econômicos na prática
 
-*Somente rascunho. Publicação não aprovada. Season 5, article 29.*
+*Somente rascunho. Publicação não aprovada. Temporada 5, artigo 29.*
 
 ## Pergunta
 

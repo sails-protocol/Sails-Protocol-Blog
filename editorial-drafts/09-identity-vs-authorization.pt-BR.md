@@ -45,10 +45,10 @@ O middleware de autenticação documenta challenge-response, autenticação de r
 
 **Cenário adversarial:** uma requisição com assinatura válida tenta alterar a negociação de outra pessoa. A criptografia correta não substitui a checagem de participação. Limites e revogação de delegação exigem evidências próprias.
 
-### Primary source / maturity
+### Fontes primárias e nível de comprovação
 
 - [auth.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/common/middleware/auth.ts)
 - [trade.service.ts](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-p2p/trade.service.ts)
 - [RFC-001-participant-model.md](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/docs/rfcs/RFC-001-participant-model.md)
 
-*Source inspection only; no new live test, CTO approval or publication authorization.*
+*Somente inspeção de código; sem novo teste em execução, aprovação do CTO ou autorização de publicação.*

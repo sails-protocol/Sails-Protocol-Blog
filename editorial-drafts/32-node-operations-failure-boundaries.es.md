@@ -16,6 +16,14 @@ Un ejercicio de reinicio debe interrumpir la operación entre la confirmación p
 
 *Verificación de fuentes y referencias exactas de API pendientes.*
 
+## Prueba de fallo: reinicio entre commit y respuesta
+
+Un nodo confirma una transición en PostgreSQL y se detiene antes de responder. El cliente reconecta y repite la solicitud. Si el nodo depende de indicadores en memoria, puede ejecutarla otra vez; si supone que la primera llamada falló, puede crear un segundo efecto externo. Workers simultáneos y una respuesta retrasada del proveedor aumentan la incertidumbre.
+
+**Alternativa:** la coordinación local al proceso es sencilla, pero no garantiza autoridad duradera entre workers. Las comprobaciones atómicas en la base de datos y la reconciliación específica de cada red añaden complejidad operativa y permiten probar la recuperación. Las copias de seguridad y migraciones deben preservar el significado económico del estado, no solo las filas.
+
+**Siguiente prueba:** detener un worker tras el commit duradero, repetir la operación en otro y reiniciar con una respuesta retrasada del proveedor. Inspeccionar estado, eventos, recibos y efectos duplicados. La evidencia existente de recuperación MULTISIG es limitada y no demuestra preparación operativa entre redes.
+
 ## Evidencia de fuente y límite de fallo
 
 La recuperación registrada cubre escenarios MULTISIG específicos, no todas las redes. El siguiente gate requiere verificación operativa del HEAD exacto; esta fuente no autoriza lanzamiento.

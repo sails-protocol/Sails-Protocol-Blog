@@ -30,6 +30,18 @@ Text equivalent: the proposal progresses from design intent to a bounded integra
 
 *Pending: source-of-truth verification, specific citations, editorial review and owner approval.*
 
+## Scenario: an authentic receipt for a different obligation
+
+A buyer attaches a correctly signed receipt from an earlier payment to a new trade. The media digest and signer check out, but the amount, beneficiary, reference and timing do not match the current obligation. If an application equates valid media provenance with payment completion, escrow may be released without the seller receiving the intended funds.
+
+A second failure involves resource exhaustion: a participant submits repeated oversized or deeply nested evidence to force expensive parsing or storage before limits are enforced. Validation order and per-claim quotas matter independently of signature correctness.
+
+## Trade-off and verification
+
+Accepting any signed artifact is easy to implement but shifts payment truth onto an untrusted uploader. Separating media provenance, trade relevance, independent payment observation and bounded storage adds verification work while preventing false certainty. External evidence providers require their own retention and availability model.
+
+**Next test:** attach a valid signed receipt from another trade, then submit malformed and oversized evidence under concurrent retries. Confirm that invalid references cannot authorize settlement and that rejection occurs before economic or durable storage side effects. Inspect the exact implementation, provider boundaries and configured limits. The linked service file alone does not certify end-to-end payment truth.
+
 ## Inspected boundary, not production certification
 
 Signed media attribution is not independent payment truth. **Failure:** confusing a documented design with deployed behavior. Exact-head integration and runtime verification remain required.

@@ -2,7 +2,8 @@ name: Build isolated blog preview artifact
 
 on:
   pull_request:
-    branches: [main]
+    # Validate stacked PRs as well as PRs targeting main.
+    branches: ['**']
   workflow_dispatch:
 
 permissions:

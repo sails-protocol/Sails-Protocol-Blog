@@ -26,7 +26,7 @@ flowchart TD
 
 Text equivalent: the diagram shows the responsibility boundaries discussed above, not verified deployment.
 
-*Source references, technical review and owner publication approval pending.*
+*One immutable SDK source reference is included below. Full source-to-claim verification, technical review and owner publication approval remain pending.*
 
 ## A failed-response trade is not a harmless retry
 
@@ -39,6 +39,8 @@ A second boundary appears when the wallet is asked to sign. The trade identifier
 The practical choice is to keep the wallet's signing and key material outside the coordination SDK, while making retry identity and approval context explicit at the integration edge. This adds recovery and confirmation work to the wallet UX, but avoids silently treating a transport retry or generic signature as economic consent.
 
 **Next question:** can an exact-head integration test reproduce a persisted trade with a lost response, recover the same trade after retry, and show that mismatched signing context is rejected without a second economic effect? Until such a test is recorded, this remains an integration requirement rather than a verified guarantee.
+
+**SDK contract precision:** the inspected `SailsOpenP2PModule.trade(offerId, amount, idempotencyKey?)` forwards the optional key to `/v1/openp2p/trades`. Its source comment describes server-side at-most-one trade for a reused key, while warning that omission permits duplicate creation after a lost response. This is a *scoped API contract*, not a verified Wallet integration, an exactly-once settlement guarantee or proof that a retry with a changed key is safe.
 
 ## Source-backed boundary and next test
 

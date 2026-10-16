@@ -1,6 +1,6 @@
 # Escrow no custodial y autoridad de disputas
 
-*Season 7 / Temporada 7. Borrador editorial. Fuentes y revisión del CTO pendientes.*
+*Temporada 7. Borrador editorial. Fuentes y revisión del CTO pendientes.*
 
 ## Pregunta
 
@@ -14,7 +14,7 @@ Distinga custodia de claves, control del bloqueo, decisión de la disputa y ejec
 
 Una operación disputada alcanza el plazo mientras el árbitro no está disponible. El comportamiento seguro depende de la política concreta de escrow y plazos; un diagrama genérico no prueba recuperabilidad. Verifique redes admitidas y escenarios adversariales en el código.
 
-*No production implementation or publication approval is asserted.*
+*No se afirma implementación en producción ni aprobación de publicación.*
 
 ## Límite comprobado en el código: la custodia depende del proveedor
 
@@ -22,10 +22,14 @@ El registro distingue MULTISIG Bitcoin (claves de comprador y vendedor en el cli
 
 La aprobación doble en la aplicación no es multisig criptográfico. Evalúe cada escrow según titular de claves, umbral de firmas, red, plazo, configuración y pruebas reales de recuperación.
 
+## Verificación puntual de las fuentes
+
+El registro de proveedores del Protocol en la revisión `be6d3bc2` distingue el enrutamiento de activos del cobro de comisiones: BTC se asigna a MULTISIG, LN_BTC a LIGHTNING_HODL y USDT_ERC20 a WDK_USDT_EVM. El mismo registro limita la activación real de comisiones de protocolo a MULTISIG. **Asignar un activo no demuestra un intercambio entre redes, custodia no custodial en todas las vías ni activación en producción.** Cada afirmación sobre claves y recuperación requiere revisar el proveedor correspondiente.
+
 ### Fuente primaria y revisión
 
 - [Provider registry, custody metadata, default asset routing and fee capability](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/escrow-providers.ts)
 - [WDK custody](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/wdk-settlement.provider.ts)
 - [SAFE_GUARD_EVM verification limits](https://github.com/sails-protocol/Sails-Protocol/blob/be6d3bc2ddfc384cfafa4276e01b8aacc096d421/src/modules/open-settlement/safe-guard-evm.provider.ts)
 
-*Source-inspected editorial correction; CTO approval, deployment verification and production publication remain pending.*
+*Corrección editorial basada en fuentes; aprobación del CTO, verificación del despliegue y publicación en producción pendientes.*
