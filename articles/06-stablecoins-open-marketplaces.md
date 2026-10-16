@@ -52,4 +52,7 @@ A displayed exchange rate is not proof that liquidity will exist when settlement
 
 - [ESMA/European Commission MiCA guidance](https://www.esma.europa.eu/press-news/esma-news/esma-and-european-commission-publish-guidance-non-mica-compliant-arts-and-emts)
 
+
+- [ESMA supervisory expectations on services related to unauthorised entities (8 October 2026)](https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised). This later supervisory opinion is additional context about regulated service providers and unauthorised entities; it is not a blanket prohibition on stablecoins or a finding about Sails.
+
 The cited MiCA guidance addresses a particular regulatory transition; it does not validate liquidity, routing or a Sails deployment.
