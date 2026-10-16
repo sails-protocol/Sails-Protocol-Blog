@@ -2,7 +2,8 @@ name: Browser accessibility audit
 
 on:
   pull_request:
-    branches: [main]
+    # Validate stacked PRs as well as PRs targeting main.
+    branches: ['**']
 
 permissions:
   contents: read
