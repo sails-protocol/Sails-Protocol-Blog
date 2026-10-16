@@ -54,4 +54,6 @@ As implicações jurídicas dependem da jurisdição e dos fatos do operador. As
 
 - [ESMA/European Commission MiCA guidance](https://www.esma.europa.eu/press-news/esma-news/esma-and-european-commission-publish-guidance-non-mica-compliant-arts-and-emts)
 
+- [ESMA: expectativas de supervisão sobre serviços relacionados a entidades não autorizadas (8 de outubro de 2026)](https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised). O parecer posterior complementa o contexto de prestadores regulados e entidades não autorizadas; não representa uma proibição geral de stablecoins nem uma conclusão sobre o Sails.
+
 A orientação citada sobre MiCA trata de uma transição regulatória específica; não valida liquidez, roteamento ou uma implantação do Sails.

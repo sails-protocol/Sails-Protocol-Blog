@@ -52,4 +52,7 @@ The evidence supports a pressure toward consolidation, not yet a measured market
 - [ESMA MiCA stablecoins](https://www.esma.europa.eu/press-news/esma-news/esma-and-european-commission-publish-guidance-non-mica-compliant-arts-and-emts)
 - [Van Loon opinion](https://www.ca5.uscourts.gov/opinions/pub/23/23-50669-CV0.pdf)
 
+
+- [ESMA supervisory expectations on services related to unauthorised entities (8 October 2026)](https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised). This later opinion adds supervisory context; it does not establish that every token or independent software developer is prohibited.
+
 *These references provide regulatory context, not an audit of Sails deployment or a legal opinion. All factual claims about particular company closures, Tether motivations or runtime readiness require separate evidence.*

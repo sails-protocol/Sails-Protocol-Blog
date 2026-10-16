@@ -52,4 +52,6 @@ Esses fatos indicam pressão econômica favorável à consolidação, mas ainda 
 - [ESMA MiCA stablecoins](https://www.esma.europa.eu/press-news/esma-news/esma-and-european-commission-publish-guidance-non-mica-compliant-arts-and-emts)
 - [Van Loon opinion](https://www.ca5.uscourts.gov/opinions/pub/23/23-50669-CV0.pdf)
 
+- [ESMA: expectativas de supervisão sobre serviços relacionados a entidades não autorizadas (8 de outubro de 2026)](https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised). O parecer posterior acrescenta contexto de supervisão, sem estabelecer uma proibição geral de tokens ou desenvolvedores independentes de software.
+
 *Estas referências oferecem contexto regulatório, não uma auditoria da implantação do Sails nem parecer jurídico. Afirmações sobre encerramentos de empresas, motivações da Tether ou prontidão em produção exigem evidências específicas.*
